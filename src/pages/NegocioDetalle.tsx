@@ -31,6 +31,9 @@ import alpineOverview from '@/assets/alpine/slide-overview.png';
 
 // InfinityPay images
 import infinitypayLogo from '@/assets/infinitypay/logo.png';
+import infinitypayPassarella1 from '@/assets/infinitypay/passarella-1.png';
+import infinitypayPassarella2 from '@/assets/infinitypay/passarella-2.png';
+import infinitypaySeguretat from '@/assets/infinitypay/seguretat.png';
 
 // La Borda specific data
 const labordaKPIs = [
@@ -236,7 +239,7 @@ const businessesData: Record<string, {
       'Solucions de seguretat avançades',
       'Potencial de creixement 6x en facturació'
     ],
-    images: [infinitypayLogo],
+    images: [infinitypayLogo, infinitypayPassarella1, infinitypayPassarella2, infinitypaySeguretat],
     financialData: [
       { year: '2023', revenue: 230, ebitda: 78 },
       { year: '2024', revenue: 300, ebitda: 154 },
