@@ -11,11 +11,12 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import Footer from '@/components/Footer';
 
 // La Borda images
-import slide1 from '@/assets/carousel/slide-1-producto.png';
-import slide2 from '@/assets/carousel/slide-2-interior.png';
-import slide3 from '@/assets/carousel/slide-3-facturacion.png';
-import slide4 from '@/assets/carousel/slide-4-fachada.png';
-import slide5 from '@/assets/carousel/slide-5-collage.png';
+import labordaTerrassa from '@/assets/laborda/terrassa.png';
+import labordaFacturacio from '@/assets/laborda/facturacio.png';
+import labordaProducte from '@/assets/laborda/producte.png';
+import labordaCollage from '@/assets/laborda/collage.png';
+import labordaInterior from '@/assets/laborda/interior.png';
+import labordaFachada from '@/assets/laborda/fachada.png';
 
 // Alpine Security images
 import alpineLogo from '@/assets/alpine/logo-main.png';
