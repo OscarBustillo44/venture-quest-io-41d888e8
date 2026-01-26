@@ -15,41 +15,9 @@ import slide6 from '@/assets/carousel/slide-6-alpine-security.png';
 const slides = [
   {
     id: 'la-borda',
-    image: slide1,
-    title: "Producte de qualitat",
-    description: "Producte, servei i clientela creat i fidelitzat",
-    price: "75.000 €",
-    sector: "Hostelería"
-  },
-  {
-    id: 'la-borda',
-    image: slide2,
-    title: "Tradició Andorrana",
-    description: "Restaurant Borda amb menjar tradicional d'Andorra",
-    price: "75.000 €",
-    sector: "Hostelería"
-  },
-  {
-    id: 'la-borda',
-    image: slide3,
-    title: "Creixement Sostingut",
-    description: "Restaurant en funcionament, amb clientela fidel i un Equip que es desitja continuar al negoci i amb possibilitat de creixement addicional important nomes habilitant terrassa exterior",
-    price: "75.000 €",
-    sector: "Hostelería"
-  },
-  {
-    id: 'la-borda',
     image: slide4,
     title: "La Borda – Restaurant més antic d'Andorra",
     description: "Facturación 300.000 € · EBITDA 75.000 € · Rentabilidad 43%",
-    price: "75.000 €",
-    sector: "Hostelería"
-  },
-  {
-    id: 'la-borda',
-    image: slide5,
-    title: "La Borda",
-    description: "Restaurant més antiga d'Andorra",
     price: "75.000 €",
     sector: "Hostelería"
   },
