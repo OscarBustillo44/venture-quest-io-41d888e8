@@ -131,6 +131,15 @@ const priceRanges = [
   { value: "1000000-999999999", label: "Más de 1.000.000 €" },
 ];
 
+const profitabilityOptions = [
+  { value: "all", label: "Cualquier rentabilidad" },
+  { value: "10", label: "+10% mínimo" },
+  { value: "15", label: "+15% mínimo" },
+  { value: "20", label: "+20% mínimo" },
+  { value: "25", label: "+25% mínimo" },
+  { value: "30", label: "+30% mínimo" },
+];
+
 const sortOptions = [
   { value: "recent", label: "Más recientes" },
   { value: "price-asc", label: "Precio: menor a mayor" },
@@ -144,6 +153,7 @@ const ComprarNegocio = () => {
   const [selectedSector, setSelectedSector] = useState<string>("all");
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("recent");
+  const [minProfitability, setMinProfitability] = useState<string>("all");
 
   const filteredAndSortedBusinesses = useMemo(() => {
     // First filter
@@ -164,7 +174,13 @@ const ComprarNegocio = () => {
         matchesPrice = business.price >= min && business.price <= max;
       }
 
-      return matchesSearch && matchesSector && matchesPrice;
+      // Profitability filter
+      let matchesProfitability = true;
+      if (minProfitability !== "all") {
+        matchesProfitability = business.profitability >= Number(minProfitability);
+      }
+
+      return matchesSearch && matchesSector && matchesPrice && matchesProfitability;
     });
 
     // Then sort
@@ -183,15 +199,16 @@ const ComprarNegocio = () => {
           return b.publishedDate.getTime() - a.publishedDate.getTime();
       }
     });
-  }, [searchQuery, selectedSector, selectedPriceRange, sortBy]);
+  }, [searchQuery, selectedSector, selectedPriceRange, sortBy, minProfitability]);
 
   const clearFilters = () => {
     setSearchQuery("");
     setSelectedSector("all");
     setSelectedPriceRange("all");
+    setMinProfitability("all");
   };
 
-  const hasActiveFilters = searchQuery !== "" || selectedSector !== "all" || selectedPriceRange !== "all";
+  const hasActiveFilters = searchQuery !== "" || selectedSector !== "all" || selectedPriceRange !== "all" || minProfitability !== "all";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -282,7 +299,7 @@ const ComprarNegocio = () => {
             </div>
 
             {/* Filters */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 bg-white rounded-xl shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-white rounded-xl shadow-sm">
               <div>
                 <label className="block text-sm font-medium text-muted-foreground mb-2">
                   Sector
@@ -314,6 +331,21 @@ const ComprarNegocio = () => {
                   </SelectContent>
                 </Select>
               </div>
+              <div>
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
+                  Rentabilidad mínima
+                </label>
+                <Select value={minProfitability} onValueChange={setMinProfitability}>
+                  <SelectTrigger className="bg-white">
+                    <SelectValue placeholder="Cualquier rentabilidad" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white z-50">
+                    {profitabilityOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
 
             {/* Active filters badges */}
@@ -331,6 +363,14 @@ const ComprarNegocio = () => {
                   <Badge variant="secondary" className="px-3 py-1">
                     Precio: {priceRanges.find(r => r.value === selectedPriceRange)?.label}
                     <button onClick={() => setSelectedPriceRange("all")} className="ml-2 hover:text-destructive">
+                      <X className="w-3 h-3" />
+                    </button>
+                  </Badge>
+                )}
+                {minProfitability !== "all" && (
+                  <Badge variant="secondary" className="px-3 py-1">
+                    Rentabilidad: {profitabilityOptions.find(r => r.value === minProfitability)?.label}
+                    <button onClick={() => setMinProfitability("all")} className="ml-2 hover:text-destructive">
                       <X className="w-3 h-3" />
                     </button>
                   </Badge>
