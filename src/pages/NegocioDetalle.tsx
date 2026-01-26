@@ -396,7 +396,7 @@ const businessesData: Record<string, {
     ebitda: '100.000 €',
     profitability: '27%',
     employees: '4',
-    yearsOperating: '6',
+    yearsOperating: '9',
     targetRevenue: '>1,5 Mio €',
     targetEbitda: '500k €',
     percentForSale: '75%',
