@@ -45,7 +45,7 @@ const slides = [
   {
     id: 'confidencial-hosteleria',
     image: sectorHosteleria,
-    title: "Negoci Confidencial",
+    title: "Host260126 Sector Hosteleria - [Negoci Confidencial]",
     description: "Sector Hosteleria · Facturación 350k € · EBITDA 85k € · Rentabilidad 24%",
     price: "180.000 €",
     sector: "Hostelería",

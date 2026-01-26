@@ -256,7 +256,7 @@ const businessesData: Record<string, {
   },
   'confidencial-hosteleria': {
     id: 'confidencial-hosteleria',
-    title: 'Negoci Confidencial – Sector Hosteleria',
+    title: 'Host260126 Sector Hosteleria - [Negoci Confidencial]',
     sector: 'Hostelería',
     location: 'Andorra',
     price: '180.000 €',
