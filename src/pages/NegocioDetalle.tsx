@@ -107,7 +107,7 @@ const businessesData: Record<string, {
       'Ubicació privilegiada',
       'Cuina tradicional reconeguda'
     ],
-    images: [slide1, slide2, slide4, slide5],
+    images: [labordaFachada, labordaInterior, labordaProducte, labordaTerrassa, labordaCollage, labordaFacturacio],
     financialData: [
       { year: '2020', revenue: 220, ebitda: 45 },
       { year: '2021', revenue: 250, ebitda: 55 },
