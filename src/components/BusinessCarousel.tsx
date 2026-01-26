@@ -40,10 +40,10 @@ const slides = [
 
 const BusinessCarousel = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-8">
+    <div className="w-full max-w-7xl mx-auto px-4 py-6">
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
-        spaceBetween={24}
+        spaceBetween={16}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
@@ -53,40 +53,48 @@ const BusinessCarousel = () => {
           pauseOnMouseEnter: true
         }}
         breakpoints={{
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 12
+          },
           768: {
-            slidesPerView: 1
+            slidesPerView: 3,
+            spaceBetween: 16
           },
           1024: {
-            slidesPerView: 1
+            slidesPerView: 4,
+            spaceBetween: 20
           }
         }}
-        className="business-carousel"
+        className="business-carousel-grid"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="relative h-[450px] md:h-[500px] rounded-2xl overflow-hidden group">
+            <div className="relative h-[280px] md:h-[320px] rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-300">
               {/* Background Image */}
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-900/95 via-stone-900/30 to-transparent" />
+              
+              {/* Price Badge */}
+              <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
+                75.000 €
+              </div>
               
               {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
-                <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold mb-3 drop-shadow-lg">
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <h3 className="font-serif text-lg md:text-xl font-bold mb-1.5 drop-shadow-lg line-clamp-2">
                   {slide.title}
                 </h3>
-                <p className="text-base md:text-lg text-stone-100 leading-relaxed max-w-2xl drop-shadow-md font-light">
+                <p className="text-xs md:text-sm text-stone-200 leading-snug line-clamp-3 drop-shadow-md">
                   {slide.description}
                 </p>
               </div>
-              
-              {/* Decorative Corner */}
-              <div className="absolute top-4 right-4 w-16 h-16 border-t-2 border-r-2 border-amber-500/50 rounded-tr-lg" />
             </div>
           </SwiperSlide>
         ))}
