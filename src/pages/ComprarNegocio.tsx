@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Search, Filter, Building2, TrendingUp, Users, CheckCircle, X } from "lucide-react";
+import { Search, Filter, Building2, TrendingUp, Users, CheckCircle, X, ArrowUpDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -31,6 +31,8 @@ const allBusinesses = [
     price: 75000,
     priceDisplay: "75.000 €",
     sector: "Hostelería",
+    profitability: 43,
+    publishedDate: new Date('2024-12-01'),
     isConfidential: false
   },
   {
@@ -41,6 +43,8 @@ const allBusinesses = [
     price: 2400000,
     priceDisplay: "2.400.000 €",
     sector: "Tecnología",
+    profitability: 18,
+    publishedDate: new Date('2025-01-10'),
     isConfidential: false
   },
   {
@@ -51,6 +55,8 @@ const allBusinesses = [
     price: 1084964,
     priceDisplay: "1.084.964 €",
     sector: "Fintech",
+    profitability: 19,
+    publishedDate: new Date('2025-01-15'),
     isConfidential: false
   },
   {
@@ -61,6 +67,8 @@ const allBusinesses = [
     price: 180000,
     priceDisplay: "180.000 €",
     sector: "Hostelería",
+    profitability: 24,
+    publishedDate: new Date('2025-01-20'),
     isConfidential: true
   },
   {
@@ -71,6 +79,8 @@ const allBusinesses = [
     price: 320000,
     priceDisplay: "320.000 €",
     sector: "Comercio",
+    profitability: 15,
+    publishedDate: new Date('2025-01-22'),
     isConfidential: true
   },
   {
@@ -81,6 +91,8 @@ const allBusinesses = [
     price: 450000,
     priceDisplay: "450.000 €",
     sector: "Servicios",
+    profitability: 25,
+    publishedDate: new Date('2025-01-23'),
     isConfidential: true
   },
   {
@@ -91,6 +103,8 @@ const allBusinesses = [
     price: 750000,
     priceDisplay: "750.000 €",
     sector: "Industria",
+    profitability: 23,
+    publishedDate: new Date('2025-01-24'),
     isConfidential: true
   },
   {
@@ -101,6 +115,8 @@ const allBusinesses = [
     price: 514788,
     priceDisplay: "514.788 €",
     sector: "Tecnología",
+    profitability: 27,
+    publishedDate: new Date('2025-01-26'),
     isConfidential: true
   }
 ];
@@ -115,13 +131,23 @@ const priceRanges = [
   { value: "1000000-999999999", label: "Más de 1.000.000 €" },
 ];
 
+const sortOptions = [
+  { value: "recent", label: "Más recientes" },
+  { value: "price-asc", label: "Precio: menor a mayor" },
+  { value: "price-desc", label: "Precio: mayor a menor" },
+  { value: "profit-desc", label: "Rentabilidad: mayor a menor" },
+  { value: "profit-asc", label: "Rentabilidad: menor a mayor" },
+];
+
 const ComprarNegocio = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSector, setSelectedSector] = useState<string>("all");
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>("all");
+  const [sortBy, setSortBy] = useState<string>("recent");
 
-  const filteredBusinesses = useMemo(() => {
-    return allBusinesses.filter((business) => {
+  const filteredAndSortedBusinesses = useMemo(() => {
+    // First filter
+    const filtered = allBusinesses.filter((business) => {
       // Search filter
       const matchesSearch = searchQuery === "" || 
         business.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -140,7 +166,24 @@ const ComprarNegocio = () => {
 
       return matchesSearch && matchesSector && matchesPrice;
     });
-  }, [searchQuery, selectedSector, selectedPriceRange]);
+
+    // Then sort
+    return filtered.sort((a, b) => {
+      switch (sortBy) {
+        case "price-asc":
+          return a.price - b.price;
+        case "price-desc":
+          return b.price - a.price;
+        case "profit-desc":
+          return b.profitability - a.profitability;
+        case "profit-asc":
+          return a.profitability - b.profitability;
+        case "recent":
+        default:
+          return b.publishedDate.getTime() - a.publishedDate.getTime();
+      }
+    });
+  }, [searchQuery, selectedSector, selectedPriceRange, sortBy]);
 
   const clearFilters = () => {
     setSearchQuery("");
@@ -322,20 +365,39 @@ const ComprarNegocio = () => {
       {/* Filtered Business Grid */}
       <section className="py-16 bg-gradient-to-br from-stone-800 to-stone-900">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-white font-serif">
                 {hasActiveFilters ? "Resultados de búsqueda" : "Negocios destacados"}
               </h2>
               <p className="text-stone-400">
-                {filteredBusinesses.length} {filteredBusinesses.length === 1 ? "negocio encontrado" : "negocios encontrados"}
+                {filteredAndSortedBusinesses.length} {filteredAndSortedBusinesses.length === 1 ? "negocio encontrado" : "negocios encontrados"}
               </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <ArrowUpDown className="w-4 h-4 text-stone-400" />
+              <Select value={sortBy} onValueChange={setSortBy}>
+                <SelectTrigger className="w-[200px] bg-stone-700 border-stone-600 text-white">
+                  <SelectValue placeholder="Ordenar por" />
+                </SelectTrigger>
+                <SelectContent className="bg-stone-700 border-stone-600 z-50">
+                  {sortOptions.map((option) => (
+                    <SelectItem 
+                      key={option.value} 
+                      value={option.value}
+                      className="text-white hover:bg-stone-600 focus:bg-stone-600 focus:text-white"
+                    >
+                      {option.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
 
-          {filteredBusinesses.length > 0 ? (
+          {filteredAndSortedBusinesses.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filteredBusinesses.map((business) => (
+              {filteredAndSortedBusinesses.map((business) => (
                 <Link to={`/negocio/${business.id}`} key={business.id}>
                   <div className="relative h-[320px] rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     {/* Background Image */}
