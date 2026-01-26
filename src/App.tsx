@@ -9,6 +9,7 @@ import AvisoLegal from "./pages/AvisoLegal";
 import Privacidad from "./pages/Privacidad";
 import Cookies from "./pages/Cookies";
 import ComprarNegocio from "./pages/ComprarNegocio";
+import NegocioDetalle from "./pages/NegocioDetalle";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/comprar" element={<ComprarNegocio />} />
+          <Route path="/negocio/:id" element={<NegocioDetalle />} />
           <Route path="/aviso-legal" element={<AvisoLegal />} />
           <Route path="/privacidad" element={<Privacidad />} />
           <Route path="/cookies" element={<Cookies />} />
