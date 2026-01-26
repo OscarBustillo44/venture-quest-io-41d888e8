@@ -401,14 +401,14 @@ const businessesData: Record<string, {
     targetEbitda: '400k €',
     percentForSale: '100%',
     isConfidential: true,
-    description: 'Startup tecnològica amb producte SaaS consolidat i clients recurrents. Alta escalabilitat i equip tècnic qualificat.',
+    description: 'Proporcionamos soporte integral para todas sus necesidades de TI y telecomunicaciones: Virtualización, Microsoft 365 Partner, Soporte Técnico, Gestión de Redes, Comunicaciones Empresariales VoIP, Servicios en la Nube, Ciberseguridad, Consultoría de TI, Wifi de Alto Rendimiento, 3CX PBX Gold Partner.',
     highlights: [
-      'Producte SaaS consolidat',
-      'Clients recurrents',
-      'Alta escalabilitat',
-      'Equip tècnic qualificat',
-      'Propietat intel·lectual',
-      'Baix cost operatiu'
+      'Microsoft 365 Partner',
+      '3CX PBX Gold Partner',
+      'Virtualización y Cloud',
+      'Ciberseguridad avanzada',
+      'VoIP y comunicaciones empresariales',
+      'Soporte técnico integral'
     ],
     images: [sectorTecnologia],
     financialData: [
