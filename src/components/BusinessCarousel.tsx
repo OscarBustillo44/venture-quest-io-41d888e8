@@ -8,7 +8,11 @@ import 'swiper/css/pagination';
 import slide4 from '@/assets/carousel/slide-4-fachada.png';
 import slide6 from '@/assets/carousel/slide-6-alpine-security.png';
 import infinitypayLogo from '@/assets/infinitypay/logo.png';
+import sectorHosteleria from '@/assets/generic/sector-hosteleria.jpg';
+import sectorComercio from '@/assets/generic/sector-comercio.jpg';
 import sectorServicios from '@/assets/generic/sector-servicios.jpg';
+import sectorIndustria from '@/assets/generic/sector-industria.jpg';
+import sectorTecnologia from '@/assets/generic/sector-tecnologia.jpg';
 
 const slides = [
   {
@@ -39,12 +43,48 @@ const slides = [
     isConfidential: false
   },
   {
-    id: 'confidencial-001',
+    id: 'confidencial-hosteleria',
+    image: sectorHosteleria,
+    title: "Negoci Confidencial",
+    description: "Sector Hosteleria · Facturación 350k € · EBITDA 85k € · Rentabilidad 24%",
+    price: "180.000 €",
+    sector: "Hostelería",
+    isConfidential: true
+  },
+  {
+    id: 'confidencial-comercio',
+    image: sectorComercio,
+    title: "Negoci Confidencial",
+    description: "Sector Comerç · Facturación 800k € · EBITDA 120k € · Rentabilidad 15%",
+    price: "320.000 €",
+    sector: "Comercio",
+    isConfidential: true
+  },
+  {
+    id: 'confidencial-servicios',
     image: sectorServicios,
     title: "Negoci Confidencial",
     description: "Sector Serveis · Facturación 600k € · EBITDA 150k € · Rentabilidad 25%",
     price: "450.000 €",
     sector: "Servicios",
+    isConfidential: true
+  },
+  {
+    id: 'confidencial-industria',
+    image: sectorIndustria,
+    title: "Negoci Confidencial",
+    description: "Sector Indústria · Facturación 1,2M € · EBITDA 280k € · Rentabilidad 23%",
+    price: "750.000 €",
+    sector: "Industria",
+    isConfidential: true
+  },
+  {
+    id: 'confidencial-tecnologia',
+    image: sectorTecnologia,
+    title: "Negoci Confidencial",
+    description: "Sector Tecnologia · Facturación 450k € · EBITDA 180k € · Rentabilidad 40%",
+    price: "580.000 €",
+    sector: "Tecnología",
     isConfidential: true
   }
 ];
