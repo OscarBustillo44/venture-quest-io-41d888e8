@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { Search, Filter, Building2, TrendingUp, Users, CheckCircle, X, ArrowUpDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import { Link } from "react-router-dom";
 
 import slide4 from '@/assets/carousel/slide-4-fachada.png';
@@ -123,58 +125,54 @@ const allBusinesses = [
 
 const sectors = ["Hostelería", "Comercio", "Servicios", "Industria", "Tecnología", "Fintech"];
 
-const priceRanges = [
-  { value: "all", label: "Todos los precios" },
-  { value: "0-200000", label: "Menos de 200.000 €" },
-  { value: "200000-500000", label: "200.000 € - 500.000 €" },
-  { value: "500000-1000000", label: "500.000 € - 1.000.000 €" },
-  { value: "1000000-999999999", label: "Más de 1.000.000 €" },
-];
-
-const profitabilityOptions = [
-  { value: "all", label: "Cualquier rentabilidad" },
-  { value: "10", label: "+10% mínimo" },
-  { value: "15", label: "+15% mínimo" },
-  { value: "20", label: "+20% mínimo" },
-  { value: "25", label: "+25% mínimo" },
-  { value: "30", label: "+30% mínimo" },
-];
-
-const sortOptions = [
-  { value: "recent", label: "Más recientes" },
-  { value: "price-asc", label: "Precio: menor a mayor" },
-  { value: "price-desc", label: "Precio: mayor a menor" },
-  { value: "profit-desc", label: "Rentabilidad: mayor a menor" },
-  { value: "profit-asc", label: "Rentabilidad: menor a mayor" },
-];
-
 const ComprarNegocio = () => {
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSector, setSelectedSector] = useState<string>("all");
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("recent");
   const [minProfitability, setMinProfitability] = useState<string>("all");
 
+  const priceRanges = [
+    { value: "all", label: t('buy.allPrices') },
+    { value: "0-200000", label: `${t('buy.lessThan')} 200.000 €` },
+    { value: "200000-500000", label: "200.000 € - 500.000 €" },
+    { value: "500000-1000000", label: "500.000 € - 1.000.000 €" },
+    { value: "1000000-999999999", label: `${t('buy.moreThan')} 1.000.000 €` },
+  ];
+
+  const profitabilityOptions = [
+    { value: "all", label: t('buy.anyProfitability') },
+    { value: "10", label: `+10% ${t('buy.minRequired')}` },
+    { value: "15", label: `+15% ${t('buy.minRequired')}` },
+    { value: "20", label: `+20% ${t('buy.minRequired')}` },
+    { value: "25", label: `+25% ${t('buy.minRequired')}` },
+    { value: "30", label: `+30% ${t('buy.minRequired')}` },
+  ];
+
+  const sortOptions = [
+    { value: "recent", label: t('buy.mostRecent') },
+    { value: "price-asc", label: t('buy.priceAsc') },
+    { value: "price-desc", label: t('buy.priceDesc') },
+    { value: "profit-desc", label: t('buy.profitDesc') },
+    { value: "profit-asc", label: t('buy.profitAsc') },
+  ];
+
   const filteredAndSortedBusinesses = useMemo(() => {
-    // First filter
     const filtered = allBusinesses.filter((business) => {
-      // Search filter
       const matchesSearch = searchQuery === "" || 
         business.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         business.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         business.sector.toLowerCase().includes(searchQuery.toLowerCase());
 
-      // Sector filter
       const matchesSector = selectedSector === "all" || business.sector === selectedSector;
 
-      // Price range filter
       let matchesPrice = true;
       if (selectedPriceRange !== "all") {
         const [min, max] = selectedPriceRange.split("-").map(Number);
         matchesPrice = business.price >= min && business.price <= max;
       }
 
-      // Profitability filter
       let matchesProfitability = true;
       if (minProfitability !== "all") {
         matchesProfitability = business.profitability >= Number(minProfitability);
@@ -183,7 +181,6 @@ const ComprarNegocio = () => {
       return matchesSearch && matchesSector && matchesPrice && matchesProfitability;
     });
 
-    // Then sort
     return filtered.sort((a, b) => {
       switch (sortBy) {
         case "price-asc":
@@ -212,22 +209,24 @@ const ComprarNegocio = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <Navbar variant="dark" />
+      
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 bg-gradient-to-br from-stone-50 to-amber-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-6 font-serif">
-              Encuentra negocios reales, no oportunidades vacías
+              {t('buy.title')}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              Descubre empresas operativas con información financiera estructurada
+              {t('buy.subtitle')}
             </p>
           </div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="py-12 bg-white border-b">
+      <section className="py-12 bg-background border-b">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="flex items-start gap-4">
@@ -235,9 +234,9 @@ const ComprarNegocio = () => {
                 <Building2 className="w-6 h-6 text-amber-700" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">Negocios en funcionamiento</h3>
+                <h3 className="font-semibold text-foreground mb-1">{t('buy.operatingBusinesses')}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Todas las empresas listadas están operativas y generando ingresos
+                  {t('buy.operatingDesc')}
                 </p>
               </div>
             </div>
@@ -246,9 +245,9 @@ const ComprarNegocio = () => {
                 <TrendingUp className="w-6 h-6 text-emerald-700" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">Información financiera clara</h3>
+                <h3 className="font-semibold text-foreground mb-1">{t('buy.clearFinancial')}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Datos estructurados: facturación, EBITDA, rentabilidad explicados de forma sencilla
+                  {t('buy.clearFinancialDesc')}
                 </p>
               </div>
             </div>
@@ -257,9 +256,9 @@ const ComprarNegocio = () => {
                 <Users className="w-6 h-6 text-blue-700" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">Enfoque en PYMES</h3>
+                <h3 className="font-semibold text-foreground mb-1">{t('buy.smeFocus')}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Especialización en pequeñas y medianas empresas de la economía real
+                  {t('buy.smeFocusDesc')}
                 </p>
               </div>
             </div>
@@ -272,7 +271,7 @@ const ComprarNegocio = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
-              Buscar negocios
+              {t('buy.searchBusinesses')}
             </h2>
             
             {/* Search Bar */}
@@ -280,8 +279,8 @@ const ComprarNegocio = () => {
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 <Input 
-                  placeholder="Buscar por nombre, sector o descripción..." 
-                  className="pl-10 h-12 bg-white"
+                  placeholder={t('buy.searchPlaceholder')}
+                  className="pl-10 h-12 bg-background"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -293,23 +292,23 @@ const ComprarNegocio = () => {
                   onClick={clearFilters}
                 >
                   <X className="w-4 h-4 mr-2" />
-                  Limpiar filtros
+                  {t('buy.clearFilters')}
                 </Button>
               )}
             </div>
 
             {/* Filters */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-white rounded-xl shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-background rounded-xl shadow-sm">
               <div>
                 <label className="block text-sm font-medium text-muted-foreground mb-2">
-                  Sector
+                  {t('buy.sector')}
                 </label>
                 <Select value={selectedSector} onValueChange={setSelectedSector}>
-                  <SelectTrigger className="bg-white">
-                    <SelectValue placeholder="Todos los sectores" />
+                  <SelectTrigger className="bg-background">
+                    <SelectValue placeholder={t('buy.allSectors')} />
                   </SelectTrigger>
-                  <SelectContent className="bg-white z-50">
-                    <SelectItem value="all">Todos los sectores</SelectItem>
+                  <SelectContent className="bg-background z-50">
+                    <SelectItem value="all">{t('buy.allSectors')}</SelectItem>
                     {sectors.map((sector) => (
                       <SelectItem key={sector} value={sector}>{sector}</SelectItem>
                     ))}
@@ -318,13 +317,13 @@ const ComprarNegocio = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-muted-foreground mb-2">
-                  Rango de precio
+                  {t('buy.priceRange')}
                 </label>
                 <Select value={selectedPriceRange} onValueChange={setSelectedPriceRange}>
-                  <SelectTrigger className="bg-white">
-                    <SelectValue placeholder="Todos los precios" />
+                  <SelectTrigger className="bg-background">
+                    <SelectValue placeholder={t('buy.allPrices')} />
                   </SelectTrigger>
-                  <SelectContent className="bg-white z-50">
+                  <SelectContent className="bg-background z-50">
                     {priceRanges.map((range) => (
                       <SelectItem key={range.value} value={range.value}>{range.label}</SelectItem>
                     ))}
@@ -333,13 +332,13 @@ const ComprarNegocio = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-muted-foreground mb-2">
-                  Rentabilidad mínima
+                  {t('buy.minProfitability')}
                 </label>
                 <Select value={minProfitability} onValueChange={setMinProfitability}>
-                  <SelectTrigger className="bg-white">
-                    <SelectValue placeholder="Cualquier rentabilidad" />
+                  <SelectTrigger className="bg-background">
+                    <SelectValue placeholder={t('buy.anyProfitability')} />
                   </SelectTrigger>
-                  <SelectContent className="bg-white z-50">
+                  <SelectContent className="bg-background z-50">
                     {profitabilityOptions.map((option) => (
                       <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
                     ))}
@@ -353,7 +352,7 @@ const ComprarNegocio = () => {
               <div className="flex flex-wrap gap-2 mt-4">
                 {selectedSector !== "all" && (
                   <Badge variant="secondary" className="px-3 py-1">
-                    Sector: {selectedSector}
+                    {t('buy.sector')}: {selectedSector}
                     <button onClick={() => setSelectedSector("all")} className="ml-2 hover:text-destructive">
                       <X className="w-3 h-3" />
                     </button>
@@ -361,7 +360,7 @@ const ComprarNegocio = () => {
                 )}
                 {selectedPriceRange !== "all" && (
                   <Badge variant="secondary" className="px-3 py-1">
-                    Precio: {priceRanges.find(r => r.value === selectedPriceRange)?.label}
+                    {t('buy.priceRange')}: {priceRanges.find(r => r.value === selectedPriceRange)?.label}
                     <button onClick={() => setSelectedPriceRange("all")} className="ml-2 hover:text-destructive">
                       <X className="w-3 h-3" />
                     </button>
@@ -369,7 +368,7 @@ const ComprarNegocio = () => {
                 )}
                 {minProfitability !== "all" && (
                   <Badge variant="secondary" className="px-3 py-1">
-                    Rentabilidad: {profitabilityOptions.find(r => r.value === minProfitability)?.label}
+                    {t('buy.minProfitability')}: {profitabilityOptions.find(r => r.value === minProfitability)?.label}
                     <button onClick={() => setMinProfitability("all")} className="ml-2 hover:text-destructive">
                       <X className="w-3 h-3" />
                     </button>
@@ -377,7 +376,7 @@ const ComprarNegocio = () => {
                 )}
                 {searchQuery && (
                   <Badge variant="secondary" className="px-3 py-1">
-                    Búsqueda: "{searchQuery}"
+                    "{searchQuery}"
                     <button onClick={() => setSearchQuery("")} className="ml-2 hover:text-destructive">
                       <X className="w-3 h-3" />
                     </button>
@@ -392,8 +391,7 @@ const ComprarNegocio = () => {
                 <CheckCircle className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-stone-700">
-                    <strong>¿Qué es EBITDA?</strong> Es el beneficio antes de intereses, impuestos y amortizaciones. 
-                    Simplificado: cuánto dinero genera el negocio antes de gastos financieros.
+                    <strong>{t('buy.whatIsEbitda')}</strong> {t('buy.ebitdaExplanation')}
                   </p>
                 </div>
               </div>
@@ -408,17 +406,17 @@ const ComprarNegocio = () => {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-white font-serif">
-                {hasActiveFilters ? "Resultados de búsqueda" : "Negocios destacados"}
+                {hasActiveFilters ? t('buy.searchResults') : t('home.featuredBusinesses')}
               </h2>
               <p className="text-stone-400">
-                {filteredAndSortedBusinesses.length} {filteredAndSortedBusinesses.length === 1 ? "negocio encontrado" : "negocios encontrados"}
+                {filteredAndSortedBusinesses.length} {filteredAndSortedBusinesses.length === 1 ? t('buy.businessFound') : t('buy.businessesFound')}
               </p>
             </div>
             <div className="flex items-center gap-2">
               <ArrowUpDown className="w-4 h-4 text-stone-400" />
               <Select value={sortBy} onValueChange={setSortBy}>
                 <SelectTrigger className="w-[200px] bg-stone-700 border-stone-600 text-white">
-                  <SelectValue placeholder="Ordenar por" />
+                  <SelectValue placeholder={t('buy.sortBy')} />
                 </SelectTrigger>
                 <SelectContent className="bg-stone-700 border-stone-600 z-50">
                   {sortOptions.map((option) => (
@@ -454,7 +452,7 @@ const ComprarNegocio = () => {
                     {business.isConfidential && (
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                         <div className="text-white/20 text-4xl md:text-5xl font-bold uppercase tracking-widest transform -rotate-12 select-none">
-                          CONFIDENCIAL
+                          {t('buy.confidential').toUpperCase()}
                         </div>
                       </div>
                     )}
@@ -467,7 +465,7 @@ const ComprarNegocio = () => {
                     {/* Confidential Badge */}
                     {business.isConfidential && (
                       <div className="absolute top-3 left-24 bg-stone-600/90 text-white px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
-                        🔒 Confidencial
+                        🔒 {t('buy.confidential')}
                       </div>
                     )}
                     
@@ -494,10 +492,10 @@ const ComprarNegocio = () => {
               <div className="text-stone-400 mb-4">
                 <Filter className="w-16 h-16 mx-auto opacity-50" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">No se encontraron negocios</h3>
-              <p className="text-stone-400 mb-6">Prueba a ajustar los filtros para ver más resultados</p>
+              <h3 className="text-xl font-semibold text-white mb-2">{t('buy.noBusinessesFound')}</h3>
+              <p className="text-stone-400 mb-6">{t('buy.adjustFilters')}</p>
               <Button onClick={clearFilters} variant="secondary">
-                Limpiar filtros
+                {t('buy.clearFilters')}
               </Button>
             </div>
           )}
@@ -508,13 +506,13 @@ const ComprarNegocio = () => {
       <section className="py-16 bg-amber-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            ¿No encuentras lo que buscas?
+            {t('buy.notFindingTitle')}
           </h2>
           <p className="text-amber-100 mb-8 max-w-2xl mx-auto">
-            Contáctanos y te ayudaremos a encontrar el negocio perfecto para ti
+            {t('buy.notFindingDesc')}
           </p>
-          <Button size="lg" variant="secondary" className="bg-white text-amber-700 hover:bg-amber-50">
-            Contactar
+          <Button size="lg" variant="secondary" className="bg-background text-amber-700 hover:bg-amber-50">
+            {t('buy.contact')}
           </Button>
         </div>
       </section>

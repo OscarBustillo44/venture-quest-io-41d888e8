@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -9,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight, Shield, Target, AlertTriangle, UtensilsCrossed, CreditCard, Info } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, AreaChart, Area, PieChart, Pie, Cell } from 'recharts';
 import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 
 // La Borda images
 import labordaTerrassa from '@/assets/laborda/terrassa.png';
@@ -425,6 +427,7 @@ const businessesData: Record<string, {
 
 const NegocioDetalle = () => {
   const { id } = useParams<{ id: string }>();
+  const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
@@ -441,9 +444,9 @@ const NegocioDetalle = () => {
     return (
       <div className="min-h-screen bg-stone-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-stone-800 mb-4">Negoci no trobat</h1>
+          <h1 className="text-2xl font-bold text-stone-800 mb-4">{t('detail.businessNotFound')}</h1>
           <Link to="/comprar">
-            <Button>Tornar a la llista</Button>
+            <Button>{t('detail.backToList')}</Button>
           </Link>
         </div>
       </div>
@@ -469,25 +472,13 @@ const NegocioDetalle = () => {
 
   return (
     <div className="min-h-screen bg-stone-50">
-      {/* Header */}
-      <header className="bg-stone-800 text-white py-4">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-          <Link to="/" className="text-2xl font-serif font-bold">
-            busco<span className="text-amber-500">business</span>.com
-          </Link>
-          <nav className="hidden md:flex gap-6">
-            <Link to="/comprar" className="hover:text-amber-400 transition-colors">Comprar</Link>
-            <Link to="/" className="hover:text-amber-400 transition-colors">Vendre</Link>
-            <Link to="/" className="hover:text-amber-400 transition-colors">Sobre nosaltres</Link>
-          </nav>
-        </div>
-      </header>
+      <Navbar variant="dark" />
 
       <main className="max-w-7xl mx-auto px-4 py-8">
         {/* Back Button */}
         <Link to="/comprar" className="inline-flex items-center gap-2 text-stone-600 hover:text-stone-800 mb-6 transition-colors">
           <ArrowLeft className="w-4 h-4" />
-          Tornar a la llista de negocis
+          {t('nav.backToList')}
         </Link>
 
         {/* Title Section */}
@@ -503,7 +494,7 @@ const NegocioDetalle = () => {
             </div>
           </div>
           <div className="text-right">
-            <p className="text-sm text-stone-500">Preu de venda</p>
+            <p className="text-sm text-stone-500">{t('detail.salePrice')}</p>
             <p className="text-3xl md:text-4xl font-bold text-amber-600">{business.price}</p>
           </div>
         </div>
@@ -564,12 +555,12 @@ const NegocioDetalle = () => {
             {/* Description */}
             <Card>
               <CardHeader>
-                <CardTitle className="font-serif">Descripció del negoci</CardTitle>
+                <CardTitle className="font-serif">{t('detail.businessDescription')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-stone-600 leading-relaxed">{business.description}</p>
                 
-                <h3 className="font-semibold text-stone-800 mt-6 mb-4">Punts destacats</h3>
+                <h3 className="font-semibold text-stone-800 mt-6 mb-4">{t('detail.keyHighlights')}</h3>
                 <div className="grid md:grid-cols-2 gap-3">
                   {business.highlights.map((highlight, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-stone-600">
@@ -587,7 +578,7 @@ const NegocioDetalle = () => {
                 <CardHeader>
                   <CardTitle className="font-serif flex items-center gap-2">
                     <UtensilsCrossed className="w-5 h-5 text-amber-700" />
-                    Indicadors Clau del Negoci
+                    {t('detail.keyIndicators')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -974,13 +965,13 @@ const NegocioDetalle = () => {
             {/* Key Metrics */}
             <Card className="bg-stone-800 text-white">
               <CardHeader>
-                <CardTitle className="font-serif text-amber-400">Dades clau</CardTitle>
+                <CardTitle className="font-serif text-amber-400">{t('detail.financialSummary')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center justify-between py-3 border-b border-stone-700">
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-amber-400" />
-                    <span className="text-stone-300">Facturació actual</span>
+                    <span className="text-stone-300">{t('detail.revenue')}</span>
                   </div>
                   <span className="font-semibold">{business.revenue}</span>
                 </div>
@@ -988,7 +979,7 @@ const NegocioDetalle = () => {
                   <div className="flex items-center justify-between py-3 border-b border-stone-700">
                     <div className="flex items-center gap-2">
                       <Target className="w-4 h-4 text-amber-400" />
-                      <span className="text-stone-300">Facturació objectiu</span>
+                      <span className="text-stone-300">{t('detail.targetRevenue')}</span>
                     </div>
                     <span className="font-semibold text-green-400">{business.targetRevenue}</span>
                   </div>
@@ -996,7 +987,7 @@ const NegocioDetalle = () => {
                 <div className="flex items-center justify-between py-3 border-b border-stone-700">
                   <div className="flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-amber-400" />
-                    <span className="text-stone-300">EBITDA actual</span>
+                    <span className="text-stone-300">{t('detail.ebitda')}</span>
                   </div>
                   <span className="font-semibold">{business.ebitda}</span>
                 </div>
@@ -1004,7 +995,7 @@ const NegocioDetalle = () => {
                   <div className="flex items-center justify-between py-3 border-b border-stone-700">
                     <div className="flex items-center gap-2">
                       <Target className="w-4 h-4 text-amber-400" />
-                      <span className="text-stone-300">EBITDA objectiu</span>
+                      <span className="text-stone-300">{t('detail.targetEbitda')}</span>
                     </div>
                     <span className="font-semibold text-green-400">{business.targetEbitda}</span>
                   </div>
@@ -1012,7 +1003,7 @@ const NegocioDetalle = () => {
                 <div className="flex items-center justify-between py-3 border-b border-stone-700">
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-amber-400" />
-                    <span className="text-stone-300">Rentabilitat</span>
+                    <span className="text-stone-300">{t('detail.profitability')}</span>
                   </div>
                   <span className="font-semibold text-green-400">{business.profitability}</span>
                 </div>
@@ -1020,7 +1011,7 @@ const NegocioDetalle = () => {
                   <div className="flex items-center justify-between py-3 border-b border-stone-700">
                     <div className="flex items-center gap-2">
                       <AlertTriangle className="w-4 h-4 text-amber-400" />
-                      <span className="text-stone-300">% a la venda</span>
+                      <span className="text-stone-300">{t('detail.percentForSale')}</span>
                     </div>
                     <span className="font-semibold text-amber-300">{business.percentForSale}</span>
                   </div>
@@ -1028,14 +1019,14 @@ const NegocioDetalle = () => {
                 <div className="flex items-center justify-between py-3 border-b border-stone-700">
                   <div className="flex items-center gap-2">
                     <Users className="w-4 h-4 text-amber-400" />
-                    <span className="text-stone-300">Empleats</span>
+                    <span className="text-stone-300">{t('detail.employees')}</span>
                   </div>
                   <span className="font-semibold">{business.employees}</span>
                 </div>
                 <div className="flex items-center justify-between py-3">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-amber-400" />
-                    <span className="text-stone-300">Anys operant</span>
+                    <span className="text-stone-300">{t('detail.yearsOperating')}</span>
                   </div>
                   <span className="font-semibold">{business.yearsOperating}</span>
                 </div>
@@ -1045,9 +1036,9 @@ const NegocioDetalle = () => {
             {/* Contact Form */}
             <Card>
               <CardHeader>
-                <CardTitle className="font-serif">Sol·licitar informació</CardTitle>
+                <CardTitle className="font-serif">{t('detail.contactForm')}</CardTitle>
                 <p className="text-sm text-stone-500">
-                  Omple el formulari i et contactarem en 24h
+                  {t('detail.fillForm')}
                 </p>
               </CardHeader>
               <CardContent>
@@ -1058,51 +1049,48 @@ const NegocioDetalle = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-stone-800 mb-2">Sol·licitud enviada!</h3>
+                    <h3 className="font-semibold text-stone-800 mb-2">{t('detail.messageSent')}</h3>
                     <p className="text-stone-600 text-sm">
-                      Et contactarem aviat per proporcionar-te més informació sobre aquest negoci.
+                      {t('detail.thankYou')}
                     </p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <Label htmlFor="name">Nom complet *</Label>
+                      <Label htmlFor="name">{t('detail.name')} *</Label>
                       <Input
                         id="name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         required
-                        placeholder="El teu nom"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="email">Correu electrònic *</Label>
+                      <Label htmlFor="email">{t('detail.email')} *</Label>
                       <Input
                         id="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
-                        placeholder="email@exemple.com"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="phone">Telèfon</Label>
+                      <Label htmlFor="phone">{t('detail.phone')}</Label>
                       <Input
                         id="phone"
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+376 XXX XXX"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="message">Missatge</Label>
+                      <Label htmlFor="message">{t('detail.message')}</Label>
                       <Textarea
                         id="message"
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="M'agradaria rebre més informació sobre aquest negoci..."
+                        placeholder={t('detail.messagePlaceholder')}
                         rows={4}
                       />
                     </div>
@@ -1111,7 +1099,7 @@ const NegocioDetalle = () => {
                       className="w-full bg-amber-600 hover:bg-amber-700"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? 'Enviant...' : 'Sol·licitar informació'}
+                      {isSubmitting ? t('detail.sending') : t('detail.sendMessage')}
                     </Button>
                   </form>
                 )}
@@ -1144,19 +1132,19 @@ const NegocioDetalle = () => {
               <Info className="w-5 h-5 text-amber-700" />
             </div>
             <div className="space-y-2">
-              <h4 className="font-semibold text-stone-800">Avís important</h4>
+              <h4 className="font-semibold text-stone-800">{t('detail.disclaimer.title')}</h4>
               <ul className="text-sm text-stone-600 space-y-1">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
-                  <span><strong>Indicadors orientatius:</strong> Les dades presentades són estimacions basades en informació facilitada.</span>
+                  <span><strong>{t('detail.disclaimer.indicative')}</strong> {t('detail.disclaimer.indicativeDesc')}</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
-                  <span><strong>Informació estructurada:</strong> Dissenyada per facilitar la presa de decisions.</span>
+                  <span><strong>{t('detail.disclaimer.structured')}</strong> {t('detail.disclaimer.structuredDesc')}</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
-                  <span><strong>No substitueix una due diligence:</strong> Recomanem una anàlisi professional abans de qualsevol decisió d'inversió.</span>
+                  <span><strong>{t('detail.disclaimer.dueDiligence')}</strong> {t('detail.disclaimer.dueDiligenceDesc')}</span>
                 </li>
               </ul>
             </div>
