@@ -11,6 +11,7 @@ import slide3 from '@/assets/carousel/slide-3-facturacion.png';
 import slide4 from '@/assets/carousel/slide-4-fachada.png';
 import slide5 from '@/assets/carousel/slide-5-collage.png';
 import slide6 from '@/assets/carousel/slide-6-alpine-security.png';
+import infinitypayLogo from '@/assets/infinitypay/logo.png';
 
 const slides = [
   {
@@ -28,6 +29,14 @@ const slides = [
     description: "Empresa de Ciberseguretat (Andorra i Espanya) · Facturación 1,3M € · EBITDA 300k € · Rentabilidad 18%",
     price: "2.400.000 €",
     sector: "Tecnología"
+  },
+  {
+    id: 'infinitypay',
+    image: infinitypayLogo,
+    title: "InfinityPay – Mitjans de Pagament",
+    description: "Passarel·la de pagaments, TPVs · Facturación 500k € · EBITDA 200k € · Rentabilidad 19%",
+    price: "1.084.964 €",
+    sector: "Fintech"
   }
 ];
 
