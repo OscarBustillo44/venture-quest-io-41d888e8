@@ -132,5 +132,90 @@
     "years": "ans",
     "employees": "employés",
     "loading": "Chargement..."
+  },
+  "businesses": {
+    "laborda": {
+      "title": "La Borda – Plus ancien restaurant d'Andorre",
+      "description": "Restaurant emblématique avec plus de 45 ans d'histoire. Cuisine traditionnelle andorrane dans une ambiance rustique et accueillante avec cheminée. Clientèle fidèle et consolidée. Possibilité de croissance avec terrasse extérieure.",
+      "carouselDesc": "CA 300.000 € · EBITDA 75.000 € · Rentabilité 43%",
+      "highlights": ["Plus ancien restaurant d'Andorre", "Clientèle fidèle et consolidée", "Équipe souhaitant continuer", "Possibilité terrasse extérieure", "Emplacement privilégié", "Cuisine traditionnelle reconnue"],
+      "kpis": {
+        "history": { "value": "45+", "label": "années d'histoire comme plus ancien restaurant d'Andorre" },
+        "revenue": { "value": "300k", "label": "chiffre d'affaires annuel consolidé en euros" },
+        "profitability": { "value": "43%", "label": "rentabilité opérationnelle sur CA" },
+        "employees": { "value": "8", "label": "employés fidèles souhaitant continuer" }
+      },
+      "portfolio": {
+        "menu": "Menu du jour",
+        "carta": "Carte traditionnelle",
+        "events": "Événements privés",
+        "takeaway": "À emporter"
+      }
+    },
+    "alpine": {
+      "title": "Alpine Security – Entreprise de Cybersécurité",
+      "description": "Entreprise leader en cybersécurité avec des opérations en Andorre et en Espagne. Portfolio de produits/services : 1.3M en Contrats (86% Threat Hunting, 9% Conseil et 5% Cybersécurité Offensive). Alpine a dépassé les prévisions de CA et de portefeuille clients.",
+      "carouselDesc": "Entreprise de Cybersécurité (Andorre et Espagne) · CA 1,3M € · EBITDA 300k € · Rentabilité 18%",
+      "highlights": ["Leader en cybersécurité en Andorre et Espagne", "50K+ endpoints protégés 24x7x365", "500+ incidents résolus avec succès", "Croissance supérieure aux prévisions", "Contrats récurrents consolidés", "Équipe technique avec 20 ans d'expérience"],
+      "kpis": {
+        "endpoints": { "value": "50K+", "label": "endpoints protégés 24x7x365 par nos Services de Threat Hunting" },
+        "incidents": { "value": "500+", "label": "incidents de cybersécurité résolus avec succès" },
+        "malware": { "value": "100+", "label": "analyses exhaustives de malware" },
+        "experience": { "value": "20", "label": "années d'expérience combinée en cybersécurité" }
+      },
+      "portfolio": {
+        "threatHunting": "Threat Hunting",
+        "cycon": "CYCON/DFIR",
+        "offensive": "Offensive"
+      }
+    },
+    "infinitypay": {
+      "title": "InfinityPay – Entreprise de Moyens de Paiement",
+      "description": "Entreprise de moyens de paiement avec passerelle de paiements, terminaux TPE et solutions de sécurité. Avec une récurrence de 99% annuel et un parc de plus de 2000 unités TPE avec 90% des grandes entreprises du pays intégrées.",
+      "carouselDesc": "Passerelle de paiements, TPEs · CA 500k € · EBITDA 200k € · Rentabilité 19%",
+      "highlights": ["99% récurrence annuelle en contrats", "2000+ terminaux TPE installés", "90% des grandes entreprises intégrées", "Passerelle de paiements propre", "Solutions de sécurité avancées", "Potentiel de croissance 6x en CA"],
+      "kpis": {
+        "recurrence": { "value": "99%", "label": "récurrence annuelle en contrats" },
+        "tpvs": { "value": "2000+", "label": "TPEs installés avec 90% des grandes entreprises intégrées" },
+        "profitability": { "value": "19%", "label": "rentabilité opérationnelle sur CA" },
+        "growth": { "value": "6x", "label": "potentiel de croissance en CA objectif" }
+      },
+      "portfolio": {
+        "gateway": "Passerelle de paiements",
+        "terminals": "Terminaux TPE",
+        "security": "Solutions de sécurité",
+        "other": "Autres services"
+      }
+    },
+    "confHosteleria": {
+      "title": "Host260126 Secteur Hôtellerie - [Entreprise Confidentielle]",
+      "description": "Restaurant consolidé avec clientèle fidèle et emplacement privilégié. Cuisine de qualité reconnue dans la zone avec possibilité d'extension de terrasse.",
+      "carouselDesc": "Secteur Hôtellerie · CA 350k € · EBITDA 85k € · Rentabilité 24%",
+      "highlights": ["Clientèle fidèle et consolidée", "Emplacement privilégié", "Cuisine reconnue", "Équipe stable", "Possibilité terrasse", "Licences à jour"]
+    },
+    "confCommerce": {
+      "title": "Com260126 Secteur Commerce - [Entreprise Confidentielle]",
+      "description": "Commerce spécialisé avec marque reconnue et base de clients fidèles. Opérations optimisées et fournisseurs consolidés.",
+      "carouselDesc": "Secteur Commerce · CA 800k € · EBITDA 120k € · Rentabilité 15%",
+      "highlights": ["Marque reconnue", "Base de clients fidèles", "Fournisseurs consolidés", "Opérations optimisées", "Stock évalué inclus", "Local en propriété optionnel"]
+    },
+    "confServices": {
+      "title": "Serv260126 Secteur Services - [Entreprise Confidentielle]",
+      "description": "Entreprise consolidée dans le secteur des services avec un portefeuille de clients fidèles et des contrats récurrents. Emplacement stratégique et équipe formée souhaitant continuer.",
+      "carouselDesc": "Secteur Services · CA 600k € · EBITDA 150k € · Rentabilité 25%",
+      "highlights": ["Portefeuille clients consolidé", "Contrats récurrents", "Équipe formée et stable", "Emplacement stratégique", "Potentiel de croissance significatif", "Processus documentés"]
+    },
+    "confIndustry": {
+      "title": "Ind260126 Secteur Industrie - [Entreprise Confidentielle]",
+      "description": "Entreprise industrielle consolidée avec machines modernes et processus automatisés. Contrats à long terme avec clients institutionnels.",
+      "carouselDesc": "Secteur Industrie · CA 1,2M € · EBITDA 280k € · Rentabilité 23%",
+      "highlights": ["Machines modernes", "Processus automatisés", "Clients institutionnels", "Contrats à long terme", "Entrepôt en propriété optionnel", "Certifications qualité"]
+    },
+    "confTechnology": {
+      "title": "Tech260126 Secteur Technologie - [Entreprise Confidentielle]",
+      "description": "Nous fournissons un support intégral pour tous vos besoins IT et télécommunications : Virtualisation, Microsoft 365 Partner, Support Technique, Gestion de Réseaux, Communications d'Entreprise VoIP, Services Cloud, Cybersécurité, Conseil IT, Wifi Haute Performance, 3CX PBX Gold Partner.",
+      "carouselDesc": "Secteur Technologie · CA 600k € · EBITDA 100k € · Rentabilité 27%",
+      "highlights": ["Microsoft 365 Partner", "3CX PBX Gold Partner", "Virtualisation et Cloud", "Cybersécurité avancée", "VoIP et communications d'entreprise", "Support technique intégral"]
+    }
   }
 }

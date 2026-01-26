@@ -11,419 +11,22 @@ import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2,
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, AreaChart, Area, PieChart, Pie, Cell } from 'recharts';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-
-// La Borda images
-import labordaTerrassa from '@/assets/laborda/terrassa.png';
-import labordaFacturacio from '@/assets/laborda/facturacio.png';
-import labordaProducte from '@/assets/laborda/producte.png';
-import labordaCollage from '@/assets/laborda/collage.png';
-import labordaInterior from '@/assets/laborda/interior.png';
-import labordaFachada from '@/assets/laborda/fachada.png';
-
-// Alpine Security images
-import alpineLogo from '@/assets/alpine/logo-main.png';
-import alpineEbitda from '@/assets/alpine/chart-ebitda.png';
-import alpineRevenue from '@/assets/alpine/chart-revenue.png';
-import alpineClients from '@/assets/alpine/chart-clients.png';
-import alpinePortfolio from '@/assets/alpine/chart-portfolio.png';
-import alpineKpiExperience from '@/assets/alpine/kpi-experience.png';
-import alpineKpiMalware from '@/assets/alpine/kpi-malware.png';
-import alpineKpiIncidents from '@/assets/alpine/kpi-incidents.png';
-import alpineOverview from '@/assets/alpine/slide-overview.png';
-
-// InfinityPay images
-import infinitypayLogo from '@/assets/infinitypay/logo.png';
-import infinitypayPassarella1 from '@/assets/infinitypay/passarella-1.png';
-import infinitypayPassarella2 from '@/assets/infinitypay/passarella-2.png';
-import infinitypaySeguretat from '@/assets/infinitypay/seguretat.png';
-
-// Generic sector images for anonymous businesses
-import sectorHosteleria from '@/assets/generic/sector-hosteleria.jpg';
-import sectorComercio from '@/assets/generic/sector-comercio.jpg';
-import sectorServicios from '@/assets/generic/sector-servicios.jpg';
-import sectorIndustria from '@/assets/generic/sector-industria.jpg';
-import sectorTecnologia from '@/assets/generic/sector-tecnologia.jpg';
-
-// La Borda specific data
-const labordaKPIs = [
-  { value: '45+', label: 'anys d\'història com a restaurant més antic d\'Andorra' },
-  { value: '300k', label: 'facturació anual consolidada en euros' },
-  { value: '43%', label: 'rentabilitat operativa sobre facturació' },
-  { value: '8', label: 'empleats fidels que desitgen continuar' },
-];
-
-const labordaRevenueData = [
-  { year: '2020', revenue: 220 },
-  { year: '2021', revenue: 250 },
-  { year: '2022', revenue: 280 },
-  { year: '2023', revenue: 290 },
-  { year: '2024', revenue: 300 },
-];
-
-const labordaEbitdaData = [
-  { year: '2020', ebitda: 45 },
-  { year: '2021', ebitda: 55 },
-  { year: '2022', ebitda: 65 },
-  { year: '2023', ebitda: 70 },
-  { year: '2024', ebitda: 75 },
-];
-
-const labordaProjectionData = [
-  { year: '2025', revenue: 320, ebitda: 85 },
-  { year: '2026', revenue: 350, ebitda: 100 },
-  { year: '2027', revenue: 380, ebitda: 115 },
-];
-
-const labordaPortfolioData = [
-  { name: 'Menú del dia', value: 45, amount: '135k', color: '#8B4513' },
-  { name: 'Carta tradicional', value: 35, amount: '105k', color: '#D2691E' },
-  { name: 'Events privats', value: 15, amount: '45k', color: '#CD853F' },
-  { name: 'Take-away', value: 5, amount: '15k', color: '#DEB887' },
-];
-
-// Alpine Security specific data
-const alpineKPIs = [
-  { value: '50K+', label: 'endpoints protegidos 24x7x365 por nuestros Servicios de Threat Hunting' },
-  { value: '500+', label: 'incidentes de ciberseguridad satisfactoriamente resueltos' },
-  { value: '100+', label: 'análisis exhaustivos de malware' },
-  { value: '20', label: 'años de experiencia combinada en ciberseguridad' },
-];
-
-const alpineRevenueData = [
-  { year: '2025', revenue: 1148 },
-  { year: '2026', revenue: 2150 },
-  { year: '2027', revenue: 2674 },
-  { year: '2028', revenue: 3196 },
-  { year: '2029', revenue: 3840 },
-];
-
-const alpineEbitdaData = [
-  { year: '2025', ebitda: 226 },
-  { year: '2026', ebitda: 529 },
-  { year: '2027', ebitda: 685 },
-  { year: '2028', ebitda: 943 },
-  { year: '2029', ebitda: 1243 },
-];
-
-const alpineClientsData = [
-  { year: '2025', th: 0, cycon: 0, offensive: 0, total: 0 },
-  { year: '2026', th: 854, cycon: 100, offensive: 50, total: 854 },
-  { year: '2027', th: 1332, cycon: 150, offensive: 75, total: 1332 },
-  { year: '2028', th: 1847, cycon: 200, offensive: 100, total: 1847 },
-  { year: '2029', th: 2401, cycon: 250, offensive: 125, total: 2401 },
-];
-
-const alpinePortfolioData = [
-  { name: 'Threat Hunting', value: 86, amount: '1.104k', color: '#2d6a2d' },
-  { name: 'CYCON/DFIR', value: 9, amount: '113k', color: '#4a90d9' },
-  { name: 'Offensive', value: 5, amount: '60k', color: '#90b4ce' },
-];
-
-// InfinityPay specific data
-const infinitypayKPIs = [
-  { value: '99%', label: 'recurrència anual en contractes' },
-  { value: '2000+', label: 'TPVs instal·lats amb el 90% de grans empreses integrades' },
-  { value: '19%', label: 'rentabilitat operativa sobre facturació' },
-  { value: '6x', label: 'potencial de creixement en facturació objectiu' },
-];
-
-const infinitypayRevenueEbitdaData = [
-  { year: '2023', ventas: 230, ebitda: 78 },
-  { year: '2024', ventas: 300, ebitda: 154 },
-  { year: '2025e', ventas: 310, ebitda: 169 },
-  { year: '2026e', ventas: 350, ebitda: 183 },
-  { year: '2027e', ventas: 400, ebitda: 210 },
-  { year: '2028e', ventas: 440, ebitda: 231 },
-  { year: '2029e', ventas: 470, ebitda: 243 },
-];
-
-const infinitypayPortfolioData = [
-  { name: 'Passarel·la pagaments', value: 40, amount: '200k', color: '#1e4d7b' },
-  { name: 'Terminals TPV', value: 35, amount: '175k', color: '#4a90d9' },
-  { name: 'Solucions seguretat', value: 15, amount: '75k', color: '#6ba3d9' },
-  { name: 'Altres serveis', value: 10, amount: '50k', color: '#90b4ce' },
-];
-
-// Mock data for businesses
-const businessesData: Record<string, {
-  id: string;
-  title: string;
-  sector: string;
-  location: string;
-  coordinates?: { lat: number; lng: number };
-  price: string;
-  revenue: string;
-  ebitda: string;
-  profitability: string;
-  employees: string;
-  yearsOperating: string;
-  description: string;
-  isConfidential?: boolean;
-  highlights: string[];
-  images: string[];
-  financialData: { year: string; revenue: number; ebitda: number }[];
-  targetRevenue?: string;
-  targetEbitda?: string;
-  percentForSale?: string;
-}> = {
-  'la-borda': {
-    id: 'la-borda',
-    title: 'La Borda – Restaurant més antic d\'Andorra',
-    sector: 'Hostelería',
-    location: 'La Massana, Andorra',
-    coordinates: { lat: 42.545013, lng: 1.515326 },
-    price: '75.000 €',
-    revenue: '300.000 €',
-    ebitda: '75.000 €',
-    profitability: '43%',
-    employees: '8',
-    yearsOperating: '45+',
-    description: 'Restaurant emblemàtic amb més de 45 anys d\'història. Cuina tradicional andorrana en un ambient rústic i acollidor amb xemeneia. Clientela fidel i consolidada. Possibilitat de creixement amb terrassa exterior.',
-    highlights: [
-      'Restaurant més antic d\'Andorra',
-      'Clientela fidel i consolidada',
-      'Equip que desitja continuar',
-      'Possibilitat terrassa exterior',
-      'Ubicació privilegiada',
-      'Cuina tradicional reconeguda'
-    ],
-    images: [labordaFachada, labordaInterior, labordaProducte, labordaTerrassa, labordaCollage, labordaFacturacio],
-    financialData: [
-      { year: '2020', revenue: 220, ebitda: 45 },
-      { year: '2021', revenue: 250, ebitda: 55 },
-      { year: '2022', revenue: 280, ebitda: 65 },
-      { year: '2023', revenue: 290, ebitda: 70 },
-      { year: '2024', revenue: 300, ebitda: 75 },
-    ]
-  },
-  'alpine-security': {
-    id: 'alpine-security',
-    title: 'Alpine Security – Empresa de Ciberseguretat',
-    sector: 'Tecnología',
-    location: 'Andorra i Espanya',
-    price: '2.400.000 €',
-    revenue: '1.300.000 €',
-    ebitda: '300.000 €',
-    profitability: '18%',
-    employees: '15',
-    yearsOperating: '8',
-    targetRevenue: '>3 Mio €',
-    targetEbitda: '700k - 1.3 Mio €',
-    percentForSale: '23,4%',
-    description: 'Empresa líder en ciberseguretat amb operacions a Andorra i Espanya. Portfolio de productes/serveis: 1.3Mio en Contractes (86% Threat Hunting, 9% Consultoria i 5% Offensive ciberseguretat). Alpine ha superat les previsions de facturació i cartera de clients.',
-    highlights: [
-      'Líder en ciberseguretat a Andorra i Espanya',
-      '50K+ endpoints protegits 24x7x365',
-      '500+ incidents resolts satisfactòriament',
-      'Creixement superior a previsions',
-      'Contractes recurrents consolidats',
-      'Equip tècnic amb 20 anys experiència'
-    ],
-    images: [alpineLogo, alpineOverview, alpineRevenue, alpineEbitda, alpineClients, alpinePortfolio, alpineKpiExperience, alpineKpiMalware, alpineKpiIncidents],
-    financialData: [
-      { year: '2020', revenue: 800, ebitda: 120 },
-      { year: '2021', revenue: 950, ebitda: 180 },
-      { year: '2022', revenue: 1100, ebitda: 220 },
-      { year: '2023', revenue: 1200, ebitda: 260 },
-      { year: '2024', revenue: 1300, ebitda: 300 },
-    ]
-  },
-  'infinitypay': {
-    id: 'infinitypay',
-    title: 'InfinityPay – Empresa de Mitjans de Pagament',
-    sector: 'Fintech',
-    location: 'Andorra',
-    price: '1.084.964 €',
-    revenue: '500.000 €',
-    ebitda: '200.000 €',
-    profitability: '19%',
-    employees: '12',
-    yearsOperating: '5',
-    targetRevenue: '>3 Mio €',
-    targetEbitda: '1 Mio €',
-    percentForSale: '100%',
-    description: 'Empresa de mitjans de pagament amb passarel·la de pagaments, terminals TPV i solucions de seguretat. Amb una recurrència del 99% anual i un parc de més de 2000 unitats TPV amb el 90% de les grans empreses del país integrades.',
-    highlights: [
-      '99% recurrència anual en contractes',
-      '2000+ terminals TPV instal·lats',
-      '90% de grans empreses integrades',
-      'Passarel·la de pagaments pròpia',
-      'Solucions de seguretat avançades',
-      'Potencial de creixement 6x en facturació'
-    ],
-    images: [infinitypayLogo, infinitypayPassarella1, infinitypayPassarella2, infinitypaySeguretat],
-    financialData: [
-      { year: '2023', revenue: 230, ebitda: 78 },
-      { year: '2024', revenue: 300, ebitda: 154 },
-      { year: '2025', revenue: 310, ebitda: 169 },
-    ]
-  },
-  'confidencial-hosteleria': {
-    id: 'confidencial-hosteleria',
-    title: 'Host260126 Sector Hosteleria - [Negoci Confidencial]',
-    sector: 'Hostelería',
-    location: 'Andorra',
-    price: '180.000 €',
-    revenue: '350.000 €',
-    ebitda: '85.000 €',
-    profitability: '24%',
-    employees: '6',
-    yearsOperating: '15',
-    targetRevenue: '>500k €',
-    targetEbitda: '150k €',
-    percentForSale: '100%',
-    isConfidential: true,
-    description: 'Restaurant consolidat amb clientela fidel i ubicació privilegiada. Cuina de qualitat reconeguda a la zona amb possibilitat d\'ampliació de terrassa.',
-    highlights: [
-      'Clientela fidel i consolidada',
-      'Ubicació privilegiada',
-      'Cuina reconeguda',
-      'Equip estable',
-      'Possibilitat terrassa',
-      'Llicències al dia'
-    ],
-    images: [sectorHosteleria],
-    financialData: [
-      { year: '2020', revenue: 280, ebitda: 55 },
-      { year: '2021', revenue: 300, ebitda: 65 },
-      { year: '2022', revenue: 320, ebitda: 72 },
-      { year: '2023', revenue: 340, ebitda: 80 },
-      { year: '2024', revenue: 350, ebitda: 85 },
-    ]
-  },
-  'confidencial-comercio': {
-    id: 'confidencial-comercio',
-    title: 'Com260126 Sector Comerç - [Negoci Confidencial]',
-    sector: 'Comercio',
-    location: 'Andorra',
-    price: '320.000 €',
-    revenue: '800.000 €',
-    ebitda: '120.000 €',
-    profitability: '15%',
-    employees: '8',
-    yearsOperating: '20',
-    targetRevenue: '>1.2 Mio €',
-    targetEbitda: '200k €',
-    percentForSale: '100%',
-    isConfidential: true,
-    description: 'Comerç especialitzat amb marca reconeguda i base de clients fidels. Operacions optimitzades i proveïdors consolidats.',
-    highlights: [
-      'Marca reconeguda',
-      'Base de clients fidels',
-      'Proveïdors consolidats',
-      'Operacions optimitzades',
-      'Stock valorat inclòs',
-      'Local en propietat opcional'
-    ],
-    images: [sectorComercio],
-    financialData: [
-      { year: '2020', revenue: 650, ebitda: 85 },
-      { year: '2021', revenue: 700, ebitda: 95 },
-      { year: '2022', revenue: 740, ebitda: 105 },
-      { year: '2023', revenue: 770, ebitda: 112 },
-      { year: '2024', revenue: 800, ebitda: 120 },
-    ]
-  },
-  'confidencial-servicios': {
-    id: 'confidencial-servicios',
-    title: 'Serv260126 Sector Serveis - [Negoci Confidencial]',
-    sector: 'Servicios',
-    location: 'Andorra',
-    price: '450.000 €',
-    revenue: '600.000 €',
-    ebitda: '150.000 €',
-    profitability: '25%',
-    employees: '10',
-    yearsOperating: '12',
-    targetRevenue: '>1 Mio €',
-    targetEbitda: '300k €',
-    percentForSale: '100%',
-    isConfidential: true,
-    description: 'Empresa consolidada en el sector serveis amb una cartera de clients fidels i contractes recurrents. Ubicació estratègica i equip format que desitja continuar.',
-    highlights: [
-      'Cartera de clients consolidada',
-      'Contractes recurrents',
-      'Equip format i estable',
-      'Ubicació estratègica',
-      'Potencial de creixement significatiu',
-      'Processos documentats'
-    ],
-    images: [sectorServicios],
-    financialData: [
-      { year: '2020', revenue: 400, ebitda: 80 },
-      { year: '2021', revenue: 450, ebitda: 100 },
-      { year: '2022', revenue: 520, ebitda: 120 },
-      { year: '2023', revenue: 560, ebitda: 135 },
-      { year: '2024', revenue: 600, ebitda: 150 },
-    ]
-  },
-  'confidencial-industria': {
-    id: 'confidencial-industria',
-    title: 'Ind260126 Sector Indústria - [Negoci Confidencial]',
-    sector: 'Industria',
-    location: 'Andorra',
-    price: '750.000 €',
-    revenue: '1.200.000 €',
-    ebitda: '280.000 €',
-    profitability: '23%',
-    employees: '18',
-    yearsOperating: '25',
-    targetRevenue: '>2 Mio €',
-    targetEbitda: '500k €',
-    percentForSale: '100%',
-    isConfidential: true,
-    description: 'Empresa industrial consolidada amb maquinària moderna i processos automatitzats. Contractes a llarg termini amb clients institucionals.',
-    highlights: [
-      'Maquinària moderna',
-      'Processos automatitzats',
-      'Clients institucionals',
-      'Contractes a llarg termini',
-      'Nau en propietat opcional',
-      'Certificacions de qualitat'
-    ],
-    images: [sectorIndustria],
-    financialData: [
-      { year: '2020', revenue: 950, ebitda: 200 },
-      { year: '2021', revenue: 1000, ebitda: 220 },
-      { year: '2022', revenue: 1080, ebitda: 245 },
-      { year: '2023', revenue: 1150, ebitda: 265 },
-      { year: '2024', revenue: 1200, ebitda: 280 },
-    ]
-  },
-  'confidencial-tecnologia': {
-    id: 'confidencial-tecnologia',
-    title: 'Tech260126 Sector Tecnologia - [Negoci Confidencial]',
-    sector: 'Tecnología',
-    location: 'Andorra',
-    price: '514.788 €',
-    revenue: '600.000 €',
-    ebitda: '100.000 €',
-    profitability: '27%',
-    employees: '4',
-    yearsOperating: '9',
-    targetRevenue: '>1,5 Mio €',
-    targetEbitda: '500k €',
-    percentForSale: '75%',
-    isConfidential: true,
-    description: 'Proporcionamos soporte integral para todas sus necesidades de TI y telecomunicaciones: Virtualización, Microsoft 365 Partner, Soporte Técnico, Gestión de Redes, Comunicaciones Empresariales VoIP, Servicios en la Nube, Ciberseguridad, Consultoría de TI, Wifi de Alto Rendimiento, 3CX PBX Gold Partner.',
-    highlights: [
-      'Microsoft 365 Partner',
-      '3CX PBX Gold Partner',
-      'Virtualización y Cloud',
-      'Ciberseguridad avanzada',
-      'VoIP y comunicaciones empresariales',
-      'Soporte técnico integral'
-    ],
-    images: [sectorTecnologia],
-    financialData: [
-      { year: '2020', revenue: 350, ebitda: 55 },
-      { year: '2021', revenue: 420, ebitda: 70 },
-      { year: '2022', revenue: 480, ebitda: 80 },
-      { year: '2023', revenue: 550, ebitda: 90 },
-      { year: '2024', revenue: 600, ebitda: 100 },
-    ]
-  }
-};
+import {
+  businessesData,
+  labordaKPIs,
+  labordaRevenueData,
+  labordaEbitdaData,
+  labordaProjectionData,
+  labordaPortfolioData,
+  alpineKPIs,
+  alpineRevenueData,
+  alpineEbitdaData,
+  alpineClientsData,
+  alpinePortfolioData,
+  infinitypayKPIs,
+  infinitypayRevenueEbitdaData,
+  infinitypayPortfolioData,
+} from '@/data/businesses';
 
 const NegocioDetalle = () => {
   const { id } = useParams<{ id: string }>();
@@ -464,11 +67,13 @@ const NegocioDetalle = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
     setIsSubmitting(false);
     setSubmitted(true);
   };
+
+  // Get translated highlights array
+  const highlights = t(business.highlightsKey, { returnObjects: true }) as string[];
 
   return (
     <div className="min-h-screen bg-stone-50">
@@ -484,9 +89,9 @@ const NegocioDetalle = () => {
         {/* Title Section */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
           <div>
-            <Badge className="bg-amber-600 text-white mb-2">{business.sector}</Badge>
+            <Badge className="bg-amber-600 text-white mb-2">{t(business.sectorKey)}</Badge>
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-2">
-              {business.title}
+              {t(business.titleKey)}
             </h1>
             <div className="flex items-center gap-2 text-stone-600">
               <MapPin className="w-4 h-4" />
@@ -507,7 +112,7 @@ const NegocioDetalle = () => {
               <div className="relative">
                 <img
                   src={business.images[currentImageIndex]}
-                  alt={`${business.title} - Imatge ${currentImageIndex + 1}`}
+                  alt={`${t(business.titleKey)} - ${currentImageIndex + 1}`}
                   className="w-full h-[400px] md:h-[500px] object-cover"
                 />
                 
@@ -528,13 +133,11 @@ const NegocioDetalle = () => {
                   </>
                 )}
 
-                {/* Image Counter */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
                   {currentImageIndex + 1} / {business.images.length}
                 </div>
               </div>
 
-              {/* Thumbnails */}
               {business.images.length > 1 && (
                 <div className="flex gap-2 p-4 bg-stone-100">
                   {business.images.map((img, idx) => (
@@ -558,11 +161,11 @@ const NegocioDetalle = () => {
                 <CardTitle className="font-serif">{t('detail.businessDescription')}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-stone-600 leading-relaxed">{business.description}</p>
+                <p className="text-stone-600 leading-relaxed">{t(business.descriptionKey)}</p>
                 
                 <h3 className="font-semibold text-stone-800 mt-6 mb-4">{t('detail.keyHighlights')}</h3>
                 <div className="grid md:grid-cols-2 gap-3">
-                  {business.highlights.map((highlight, idx) => (
+                  {Array.isArray(highlights) && highlights.map((highlight, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-stone-600">
                       <div className="w-2 h-2 bg-amber-500 rounded-full" />
                       {highlight}
@@ -585,8 +188,8 @@ const NegocioDetalle = () => {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {labordaKPIs.map((kpi, idx) => (
                       <div key={idx} className="bg-white rounded-lg p-6 shadow-sm border border-amber-200 text-center">
-                        <div className="text-4xl font-bold text-amber-700 mb-3">{kpi.value}</div>
-                        <p className="text-sm text-stone-600 leading-tight">{kpi.label}</p>
+                        <div className="text-4xl font-bold text-amber-700 mb-3">{t(kpi.valueKey)}</div>
+                        <p className="text-sm text-stone-600 leading-tight">{t(kpi.labelKey)}</p>
                       </div>
                     ))}
                   </div>
@@ -600,15 +203,15 @@ const NegocioDetalle = () => {
                 <CardHeader>
                   <CardTitle className="font-serif flex items-center gap-2">
                     <Shield className="w-5 h-5 text-blue-700" />
-                    Indicadors Clau de Rendiment
+                    {t('detail.keyIndicators')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {alpineKPIs.map((kpi, idx) => (
                       <div key={idx} className="bg-white rounded-lg p-6 shadow-sm border border-stone-200 text-center">
-                        <div className="text-4xl font-bold text-stone-500 mb-3">{kpi.value}</div>
-                        <p className="text-sm text-stone-600 leading-tight">{kpi.label}</p>
+                        <div className="text-4xl font-bold text-stone-500 mb-3">{t(kpi.valueKey)}</div>
+                        <p className="text-sm text-stone-600 leading-tight">{t(kpi.labelKey)}</p>
                       </div>
                     ))}
                   </div>
@@ -622,16 +225,13 @@ const NegocioDetalle = () => {
                 <CardHeader>
                   <CardTitle className="font-serif flex items-center gap-2">
                     <TrendingUp className="w-5 h-5 text-amber-600" />
-                    Evolució i Projeccions Financeres
+                    {t('detail.revenueEvolution')}
                   </CardTitle>
-                  <p className="text-sm text-stone-500 mt-1">
-                    Restaurant amb facturació estable i potencial de creixement amb terrassa exterior
-                  </p>
                 </CardHeader>
                 <CardContent className="space-y-8">
                   {/* Revenue Evolution */}
                   <div>
-                    <h4 className="text-sm font-medium text-stone-600 mb-4">Facturació Anual (milers €)</h4>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.revenue')} (k€)</h4>
                     <ResponsiveContainer width="100%" height={280}>
                       <AreaChart data={labordaRevenueData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
@@ -639,7 +239,7 @@ const NegocioDetalle = () => {
                         <YAxis tick={{ fill: '#78716c' }} domain={[0, 400]} />
                         <Tooltip 
                           contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
-                          formatter={(value: number) => [`${value}k €`, 'Facturació']}
+                          formatter={(value: number) => [`${value}k €`, t('detail.revenue')]}
                         />
                         <Area 
                           type="monotone" 
@@ -650,14 +250,11 @@ const NegocioDetalle = () => {
                         />
                       </AreaChart>
                     </ResponsiveContainer>
-                    <p className="text-center text-sm text-stone-600 mt-2 font-medium">
-                      Creixement estable any rere any amb clientela fidel
-                    </p>
                   </div>
 
                   {/* EBITDA Evolution */}
                   <div>
-                    <h4 className="text-sm font-medium text-stone-600 mb-4">EBITDA Anual (milers €)</h4>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.ebitda')} (k€)</h4>
                     <ResponsiveContainer width="100%" height={280}>
                       <BarChart data={labordaEbitdaData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
@@ -670,14 +267,11 @@ const NegocioDetalle = () => {
                         <Bar dataKey="ebitda" fill="#92400e" radius={[4, 4, 0, 0]} label={{ position: 'top', fill: '#92400e', fontSize: 12 }} />
                       </BarChart>
                     </ResponsiveContainer>
-                    <p className="text-center text-sm text-stone-600 mt-2">
-                      Rentabilitat del 43% sobre facturació
-                    </p>
                   </div>
 
                   {/* Revenue vs EBITDA Projection */}
                   <div>
-                    <h4 className="text-sm font-medium text-stone-600 mb-4">Projeccions amb Terrassa Exterior (milers €)</h4>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.revenueProjection')} (k€)</h4>
                     <ResponsiveContainer width="100%" height={280}>
                       <BarChart data={labordaProjectionData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
@@ -687,23 +281,20 @@ const NegocioDetalle = () => {
                           contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
                         />
                         <Legend />
-                        <Bar dataKey="revenue" name="Facturació" fill="#d97706" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="revenue" name={t('detail.revenue')} fill="#d97706" radius={[4, 4, 0, 0]} />
                         <Bar dataKey="ebitda" name="EBITDA" fill="#92400e" radius={[4, 4, 0, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
-                    <p className="text-center text-sm text-stone-600 mt-2">
-                      Potencial de creixement del 25% amb habilitació de terrassa exterior
-                    </p>
                   </div>
 
                   {/* Portfolio Distribution */}
                   <div>
-                    <h4 className="text-sm font-medium text-stone-600 mb-4">Distribució de la Facturació per Servei</h4>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.portfolioDistribution')}</h4>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                       <ResponsiveContainer width={300} height={250}>
                         <PieChart>
                           <Pie
-                            data={labordaPortfolioData}
+                            data={labordaPortfolioData.map(item => ({ ...item, name: t(item.nameKey) }))}
                             cx="50%"
                             cy="50%"
                             outerRadius={100}
@@ -718,11 +309,9 @@ const NegocioDetalle = () => {
                         </PieChart>
                       </ResponsiveContainer>
                       <div className="space-y-2 text-sm text-stone-600">
-                        <p>• <strong>300k € en Facturació Total</strong></p>
-                        <p>• 45% Menú del dia (135k €)</p>
-                        <p>• 35% Carta tradicional (105k €)</p>
-                        <p>• 15% Events privats (45k €)</p>
-                        <p>• 5% Take-away (15k €)</p>
+                        {labordaPortfolioData.map((item, idx) => (
+                          <p key={idx}>• {item.value}% {t(item.nameKey)} ({item.amount} €)</p>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -736,16 +325,13 @@ const NegocioDetalle = () => {
                 <CardHeader>
                   <CardTitle className="font-serif flex items-center gap-2">
                     <TrendingUp className="w-5 h-5 text-amber-600" />
-                    Projeccions Financeres (2025-2029)
+                    {t('detail.revenueProjection')} (2025-2029)
                   </CardTitle>
-                  <p className="text-sm text-stone-500 mt-1">
-                    Alpine ha superat les previsions de facturació i cartera de clients
-                  </p>
                 </CardHeader>
                 <CardContent className="space-y-8">
                   {/* Revenue Projection */}
                   <div>
-                    <h4 className="text-sm font-medium text-stone-600 mb-4">Facturació Prevista (milers €)</h4>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.revenue')} (k€)</h4>
                     <ResponsiveContainer width="100%" height={280}>
                       <AreaChart data={alpineRevenueData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
@@ -753,7 +339,7 @@ const NegocioDetalle = () => {
                         <YAxis tick={{ fill: '#78716c' }} domain={[0, 4500]} />
                         <Tooltip 
                           contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
-                          formatter={(value: number) => [`${value}k €`, 'Prestació de serveis']}
+                          formatter={(value: number) => [`${value}k €`, t('detail.revenue')]}
                         />
                         <Area 
                           type="monotone" 
@@ -764,14 +350,11 @@ const NegocioDetalle = () => {
                         />
                       </AreaChart>
                     </ResponsiveContainer>
-                    <p className="text-center text-sm text-stone-600 mt-2 font-medium">
-                      Producte, servei i clientela creats i fidels
-                    </p>
                   </div>
 
                   {/* EBITDA Projection */}
                   <div>
-                    <h4 className="text-sm font-medium text-stone-600 mb-4">EBITDA Previst (milers €)</h4>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.ebitda')} (k€)</h4>
                     <ResponsiveContainer width="100%" height={280}>
                       <BarChart data={alpineEbitdaData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
@@ -784,14 +367,11 @@ const NegocioDetalle = () => {
                         <Bar dataKey="ebitda" fill="#1e4d5c" radius={[4, 4, 0, 0]} label={{ position: 'top', fill: '#1e4d5c', fontSize: 12 }} />
                       </BarChart>
                     </ResponsiveContainer>
-                    <p className="text-center text-sm text-stone-600 mt-2">
-                      EBITDA actual 300k · EBITDA Objectiu 700k-1.3Mio · Actualment a la venda el 23,4%
-                    </p>
                   </div>
 
                   {/* New Clients Projection */}
                   <div>
-                    <h4 className="text-sm font-medium text-stone-600 mb-4">Increment en facturació de clients nous (milers €)</h4>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.clientEvolution')} (k€)</h4>
                     <ResponsiveContainer width="100%" height={280}>
                       <BarChart data={alpineClientsData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
@@ -807,19 +387,16 @@ const NegocioDetalle = () => {
                         <Line type="monotone" dataKey="total" stroke="#1e3a5f" strokeWidth={2} name="Total" />
                       </BarChart>
                     </ResponsiveContainer>
-                    <p className="text-center text-sm text-stone-600 mt-2">
-                      Previsions d'incorporació de nova cartera de clients amb creixements superiors
-                    </p>
                   </div>
 
                   {/* Portfolio Distribution */}
                   <div>
-                    <h4 className="text-sm font-medium text-stone-600 mb-4">Portfolio de Productes/Serveis Actual</h4>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.portfolioDistribution')}</h4>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                       <ResponsiveContainer width={300} height={250}>
                         <PieChart>
                           <Pie
-                            data={alpinePortfolioData}
+                            data={alpinePortfolioData.map(item => ({ ...item, name: t(item.nameKey) }))}
                             cx="50%"
                             cy="50%"
                             outerRadius={100}
@@ -834,10 +411,9 @@ const NegocioDetalle = () => {
                         </PieChart>
                       </ResponsiveContainer>
                       <div className="space-y-2 text-sm text-stone-600">
-                        <p>• <strong>1.3Mio en Contractes</strong></p>
-                        <p>• 86% Threat Hunting (1.104k €)</p>
-                        <p>• 9% Consultoria CYCON/DFIR (113k €)</p>
-                        <p>• 5% Offensive Ciberseguretat (60k €)</p>
+                        {alpinePortfolioData.map((item, idx) => (
+                          <p key={idx}>• {item.value}% {t(item.nameKey)} ({item.amount} €)</p>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -851,15 +427,15 @@ const NegocioDetalle = () => {
                 <CardHeader>
                   <CardTitle className="font-serif flex items-center gap-2">
                     <CreditCard className="w-5 h-5 text-blue-700" />
-                    Indicadors Clau del Negoci
+                    {t('detail.keyIndicators')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {infinitypayKPIs.map((kpi, idx) => (
                       <div key={idx} className="bg-white rounded-lg p-6 shadow-sm border border-blue-200 text-center">
-                        <div className="text-4xl font-bold text-blue-700 mb-3">{kpi.value}</div>
-                        <p className="text-sm text-stone-600 leading-tight">{kpi.label}</p>
+                        <div className="text-4xl font-bold text-blue-700 mb-3">{t(kpi.valueKey)}</div>
+                        <p className="text-sm text-stone-600 leading-tight">{t(kpi.labelKey)}</p>
                       </div>
                     ))}
                   </div>
@@ -873,16 +449,13 @@ const NegocioDetalle = () => {
                 <CardHeader>
                   <CardTitle className="font-serif flex items-center gap-2">
                     <TrendingUp className="w-5 h-5 text-blue-600" />
-                    Projeccions Financeres (2023-2029)
+                    {t('detail.revenueProjection')} (2023-2029)
                   </CardTitle>
-                  <p className="text-sm text-stone-500 mt-1">
-                    Amb una recurrència del 99% anual i un parc de més de 2000 TPVs integrats
-                  </p>
                 </CardHeader>
                 <CardContent className="space-y-8">
                   {/* Revenue vs EBITDA Projection */}
                   <div>
-                    <h4 className="text-sm font-medium text-stone-600 mb-4">Vendes vs EBITDA (milers €)</h4>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.revenue')} vs EBITDA (k€)</h4>
                     <ResponsiveContainer width="100%" height={320}>
                       <BarChart data={infinitypayRevenueEbitdaData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
@@ -890,31 +463,28 @@ const NegocioDetalle = () => {
                         <YAxis tick={{ fill: '#78716c' }} domain={[0, 500]} />
                         <Tooltip 
                           contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
-                          formatter={(value: number, name: string) => [`${value}k €`, name === 'ventas' ? 'Vendes' : 'EBITDA']}
+                          formatter={(value: number, name: string) => [`${value}k €`, name === 'ventas' ? t('detail.revenue') : 'EBITDA']}
                         />
-                        <Legend formatter={(value) => value === 'ventas' ? 'Vendes' : 'EBITDA'} />
+                        <Legend formatter={(value) => value === 'ventas' ? t('detail.revenue') : 'EBITDA'} />
                         <Bar dataKey="ventas" name="ventas" fill="#1e4d7b" radius={[4, 4, 0, 0]} label={{ position: 'top', fill: '#1e4d7b', fontSize: 10 }} />
                         <Bar dataKey="ebitda" name="ebitda" fill="#d97706" radius={[4, 4, 0, 0]} label={{ position: 'top', fill: '#d97706', fontSize: 10 }} />
                       </BarChart>
                     </ResponsiveContainer>
-                    <p className="text-center text-sm text-stone-600 mt-2 font-medium">
-                      Creixement sostingut amb alt potencial d'escalabilitat
-                    </p>
                   </div>
 
                   {/* Portfolio Distribution */}
                   <div>
-                    <h4 className="text-sm font-medium text-stone-600 mb-4">Distribució de la Facturació per Servei</h4>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.portfolioDistribution')}</h4>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                       <ResponsiveContainer width={300} height={250}>
                         <PieChart>
                           <Pie
-                            data={infinitypayPortfolioData}
+                            data={infinitypayPortfolioData.map(item => ({ ...item, name: t(item.nameKey) }))}
                             cx="50%"
                             cy="50%"
                             outerRadius={100}
                             dataKey="value"
-                            label={({ name, value }) => `${value}%`}
+                            label={({ value }) => `${value}%`}
                           >
                             {infinitypayPortfolioData.map((entry, index) => (
                               <Cell key={`cell-${index}`} fill={entry.color} />
@@ -924,33 +494,31 @@ const NegocioDetalle = () => {
                         </PieChart>
                       </ResponsiveContainer>
                       <div className="space-y-2 text-sm text-stone-600">
-                        <p>• <strong>500k € en Facturació Actual</strong></p>
-                        <p>• 40% Passarel·la pagaments (200k €)</p>
-                        <p>• 35% Terminals TPV (175k €)</p>
-                        <p>• 15% Solucions seguretat (75k €)</p>
-                        <p>• 10% Altres serveis (50k €)</p>
+                        {infinitypayPortfolioData.map((item, idx) => (
+                          <p key={idx}>• {item.value}% {t(item.nameKey)} ({item.amount} €)</p>
+                        ))}
                       </div>
                     </div>
                   </div>
 
                   {/* Growth Targets */}
                   <div className="bg-gradient-to-r from-blue-50 to-slate-100 rounded-lg p-6">
-                    <h4 className="text-sm font-medium text-stone-700 mb-4">Objectius de Creixement</h4>
+                    <h4 className="text-sm font-medium text-stone-700 mb-4">{t('detail.targetRevenue')}</h4>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="text-center">
-                        <p className="text-xs text-stone-500 mb-1">Facturació Actual</p>
+                        <p className="text-xs text-stone-500 mb-1">{t('detail.revenue')}</p>
                         <p className="text-2xl font-bold text-stone-700">0,5 Mio €</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-stone-500 mb-1">Facturació Objectiu</p>
+                        <p className="text-xs text-stone-500 mb-1">{t('detail.targetRevenue')}</p>
                         <p className="text-2xl font-bold text-green-600">&gt;3 Mio €</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-stone-500 mb-1">EBITDA Actual</p>
+                        <p className="text-xs text-stone-500 mb-1">{t('detail.ebitda')}</p>
                         <p className="text-2xl font-bold text-stone-700">0,2 Mio €</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-stone-500 mb-1">EBITDA Objectiu</p>
+                        <p className="text-xs text-stone-500 mb-1">{t('detail.targetEbitda')}</p>
                         <p className="text-2xl font-bold text-green-600">1 Mio €</p>
                       </div>
                     </div>
@@ -1109,7 +677,7 @@ const NegocioDetalle = () => {
             {/* Quick Contact */}
             <Card className="bg-amber-50 border-amber-200">
               <CardContent className="py-6">
-                <h3 className="font-semibold text-stone-800 mb-4">Contacte directe</h3>
+                <h3 className="font-semibold text-stone-800 mb-4">{t('footer.contact')}</h3>
                 <div className="space-y-3">
                   <a href="tel:+376123456" className="flex items-center gap-3 text-stone-600 hover:text-amber-600 transition-colors">
                     <Phone className="w-5 h-5" />
