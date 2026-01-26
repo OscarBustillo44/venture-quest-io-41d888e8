@@ -6,16 +6,65 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend } from 'recharts';
+import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight, Shield, Target, AlertTriangle } from 'lucide-react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, AreaChart, Area, PieChart, Pie, Cell } from 'recharts';
 import Footer from '@/components/Footer';
 
+// La Borda images
 import slide1 from '@/assets/carousel/slide-1-producto.png';
 import slide2 from '@/assets/carousel/slide-2-interior.png';
 import slide3 from '@/assets/carousel/slide-3-facturacion.png';
 import slide4 from '@/assets/carousel/slide-4-fachada.png';
 import slide5 from '@/assets/carousel/slide-5-collage.png';
-import slide6 from '@/assets/carousel/slide-6-alpine-security.png';
+
+// Alpine Security images
+import alpineLogo from '@/assets/alpine/logo-main.png';
+import alpineEbitda from '@/assets/alpine/chart-ebitda.png';
+import alpineRevenue from '@/assets/alpine/chart-revenue.png';
+import alpineClients from '@/assets/alpine/chart-clients.png';
+import alpinePortfolio from '@/assets/alpine/chart-portfolio.png';
+import alpineKpiExperience from '@/assets/alpine/kpi-experience.png';
+import alpineKpiMalware from '@/assets/alpine/kpi-malware.png';
+import alpineKpiIncidents from '@/assets/alpine/kpi-incidents.png';
+import alpineOverview from '@/assets/alpine/slide-overview.png';
+
+// Alpine Security specific data
+const alpineKPIs = [
+  { value: '50K+', label: 'endpoints protegidos 24x7x365 por nuestros Servicios de Threat Hunting' },
+  { value: '500+', label: 'incidentes de ciberseguridad satisfactoriamente resueltos' },
+  { value: '100+', label: 'análisis exhaustivos de malware' },
+  { value: '20', label: 'años de experiencia combinada en ciberseguridad' },
+];
+
+const alpineRevenueData = [
+  { year: '2025', revenue: 1148 },
+  { year: '2026', revenue: 2150 },
+  { year: '2027', revenue: 2674 },
+  { year: '2028', revenue: 3196 },
+  { year: '2029', revenue: 3840 },
+];
+
+const alpineEbitdaData = [
+  { year: '2025', ebitda: 226 },
+  { year: '2026', ebitda: 529 },
+  { year: '2027', ebitda: 685 },
+  { year: '2028', ebitda: 943 },
+  { year: '2029', ebitda: 1243 },
+];
+
+const alpineClientsData = [
+  { year: '2025', th: 0, cycon: 0, offensive: 0, total: 0 },
+  { year: '2026', th: 854, cycon: 100, offensive: 50, total: 854 },
+  { year: '2027', th: 1332, cycon: 150, offensive: 75, total: 1332 },
+  { year: '2028', th: 1847, cycon: 200, offensive: 100, total: 1847 },
+  { year: '2029', th: 2401, cycon: 250, offensive: 125, total: 2401 },
+];
+
+const alpinePortfolioData = [
+  { name: 'Threat Hunting', value: 86, amount: '1.104k', color: '#2d6a2d' },
+  { name: 'CYCON/DFIR', value: 9, amount: '113k', color: '#4a90d9' },
+  { name: 'Offensive', value: 5, amount: '60k', color: '#90b4ce' },
+];
 
 // Mock data for businesses
 const businessesData: Record<string, {
@@ -33,6 +82,9 @@ const businessesData: Record<string, {
   highlights: string[];
   images: string[];
   financialData: { year: string; revenue: number; ebitda: number }[];
+  targetRevenue?: string;
+  targetEbitda?: string;
+  percentForSale?: string;
 }> = {
   'la-borda': {
     id: 'la-borda',
@@ -67,23 +119,26 @@ const businessesData: Record<string, {
     id: 'alpine-security',
     title: 'Alpine Security – Empresa de Ciberseguretat',
     sector: 'Tecnología',
-    location: 'Andorra la Vella, Andorra + España',
+    location: 'Andorra i Espanya',
     price: '2.400.000 €',
     revenue: '1.300.000 €',
     ebitda: '300.000 €',
     profitability: '18%',
     employees: '15',
     yearsOperating: '8',
-    description: 'Empresa líder en ciberseguretat amb operacions a Andorra i Espanya. Serveis de consultoria, auditoria i protecció digital per a empreses. Cartera de clients diversificada i contractes recurrents.',
+    targetRevenue: '>3 Mio €',
+    targetEbitda: '700k - 1.3 Mio €',
+    percentForSale: '23,4%',
+    description: 'Empresa líder en ciberseguretat amb operacions a Andorra i Espanya. Portfolio de productes/serveis: 1.3Mio en Contractes (86% Threat Hunting, 9% Consultoria i 5% Offensive ciberseguretat). Alpine ha superat les previsions de facturació i cartera de clients.',
     highlights: [
-      'Líder en ciberseguretat a Andorra',
-      'Operacions internacionals',
-      'Contractes recurrents',
-      'Equip tècnic qualificat',
-      'Alt potencial de creixement',
-      'Certificacions reconegudes'
+      'Líder en ciberseguretat a Andorra i Espanya',
+      '50K+ endpoints protegits 24x7x365',
+      '500+ incidents resolts satisfactòriament',
+      'Creixement superior a previsions',
+      'Contractes recurrents consolidats',
+      'Equip tècnic amb 20 anys experiència'
     ],
-    images: [slide6, slide3],
+    images: [alpineLogo, alpineOverview, alpineRevenue, alpineEbitda, alpineClients, alpinePortfolio, alpineKpiExperience, alpineKpiMalware, alpineKpiIncidents],
     financialData: [
       { year: '2020', revenue: 800, ebitda: 120 },
       { year: '2021', revenue: 950, ebitda: 180 },
@@ -252,75 +307,189 @@ const NegocioDetalle = () => {
               </CardContent>
             </Card>
 
-            {/* Financial Charts */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-serif flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-amber-600" />
-                  Evolució Financera
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Revenue Chart */}
+            {/* Alpine Security KPIs */}
+            {business.id === 'alpine-security' && (
+              <Card className="bg-gradient-to-r from-stone-100 to-stone-50">
+                <CardHeader>
+                  <CardTitle className="font-serif flex items-center gap-2">
+                    <Shield className="w-5 h-5 text-blue-700" />
+                    Indicadors Clau de Rendiment
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {alpineKPIs.map((kpi, idx) => (
+                      <div key={idx} className="bg-white rounded-lg p-6 shadow-sm border border-stone-200 text-center">
+                        <div className="text-4xl font-bold text-stone-500 mb-3">{kpi.value}</div>
+                        <p className="text-sm text-stone-600 leading-tight">{kpi.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Financial Charts - Alpine Security specific */}
+            {business.id === 'alpine-security' ? (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-serif flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-amber-600" />
+                    Projeccions Financeres (2025-2029)
+                  </CardTitle>
+                  <p className="text-sm text-stone-500 mt-1">
+                    Alpine ha superat les previsions de facturació i cartera de clients
+                  </p>
+                </CardHeader>
+                <CardContent className="space-y-8">
+                  {/* Revenue Projection */}
                   <div>
-                    <h4 className="text-sm font-medium text-stone-600 mb-4">Facturació anual (milers €)</h4>
-                    <ResponsiveContainer width="100%" height={250}>
-                      <LineChart data={business.financialData}>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">Facturació Prevista (milers €)</h4>
+                    <ResponsiveContainer width="100%" height={280}>
+                      <AreaChart data={alpineRevenueData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
                         <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
-                        <YAxis tick={{ fill: '#78716c' }} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 4500]} />
                         <Tooltip 
-                          contentStyle={{ 
-                            backgroundColor: '#fafaf9', 
-                            border: '1px solid #d6d3d1',
-                            borderRadius: '8px'
-                          }}
-                          formatter={(value: number) => [`${value}k €`, 'Facturació']}
+                          contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
+                          formatter={(value: number) => [`${value}k €`, 'Prestació de serveis']}
                         />
-                        <Line 
+                        <Area 
                           type="monotone" 
                           dataKey="revenue" 
-                          stroke="#d97706" 
-                          strokeWidth={3}
-                          dot={{ fill: '#d97706', strokeWidth: 2, r: 4 }}
-                          activeDot={{ r: 6 }}
+                          stroke="#2d6a2d" 
+                          fill="#90EE90" 
+                          strokeWidth={2}
                         />
-                      </LineChart>
+                      </AreaChart>
                     </ResponsiveContainer>
+                    <p className="text-center text-sm text-stone-600 mt-2 font-medium">
+                      Producte, servei i clientela creats i fidels
+                    </p>
                   </div>
 
-                  {/* EBITDA Chart */}
+                  {/* EBITDA Projection */}
                   <div>
-                    <h4 className="text-sm font-medium text-stone-600 mb-4">EBITDA anual (milers €)</h4>
-                    <ResponsiveContainer width="100%" height={250}>
-                      <BarChart data={business.financialData}>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">EBITDA Previst (milers €)</h4>
+                    <ResponsiveContainer width="100%" height={280}>
+                      <BarChart data={alpineEbitdaData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
                         <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
-                        <YAxis tick={{ fill: '#78716c' }} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 1400]} />
                         <Tooltip 
-                          contentStyle={{ 
-                            backgroundColor: '#fafaf9', 
-                            border: '1px solid #d6d3d1',
-                            borderRadius: '8px'
-                          }}
+                          contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
                           formatter={(value: number) => [`${value}k €`, 'EBITDA']}
                         />
-                        <Bar 
-                          dataKey="ebitda" 
-                          fill="#78716c" 
-                          radius={[4, 4, 0, 0]}
-                        />
+                        <Bar dataKey="ebitda" fill="#1e4d5c" radius={[4, 4, 0, 0]} label={{ position: 'top', fill: '#1e4d5c', fontSize: 12 }} />
                       </BarChart>
                     </ResponsiveContainer>
+                    <p className="text-center text-sm text-stone-600 mt-2">
+                      EBITDA actual 300k · EBITDA Objectiu 700k-1.3Mio · Actualment a la venda el 23,4%
+                    </p>
                   </div>
-                </div>
 
-                <p className="text-xs text-stone-500 mt-4 text-center">
-                  * Les dades financeres es verifiquen durant el procés de due diligence
-                </p>
-              </CardContent>
-            </Card>
+                  {/* New Clients Projection */}
+                  <div>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">Increment en facturació de clients nous (milers €)</h4>
+                    <ResponsiveContainer width="100%" height={280}>
+                      <BarChart data={alpineClientsData}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
+                        <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 3000]} />
+                        <Tooltip 
+                          contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
+                        />
+                        <Legend />
+                        <Bar dataKey="th" name="TH" stackId="a" fill="#1e4d5c" />
+                        <Bar dataKey="cycon" name="CYCON/DFIR" stackId="a" fill="#b91c1c" />
+                        <Bar dataKey="offensive" name="OFFENSIVE" stackId="a" fill="#84cc16" />
+                        <Line type="monotone" dataKey="total" stroke="#1e3a5f" strokeWidth={2} name="Total" />
+                      </BarChart>
+                    </ResponsiveContainer>
+                    <p className="text-center text-sm text-stone-600 mt-2">
+                      Previsions d'incorporació de nova cartera de clients amb creixements superiors
+                    </p>
+                  </div>
+
+                  {/* Portfolio Distribution */}
+                  <div>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">Portfolio de Productes/Serveis Actual</h4>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                      <ResponsiveContainer width={300} height={250}>
+                        <PieChart>
+                          <Pie
+                            data={alpinePortfolioData}
+                            cx="50%"
+                            cy="50%"
+                            outerRadius={100}
+                            dataKey="value"
+                            label={({ name, value }) => `${name}; ${value}%`}
+                          >
+                            {alpinePortfolioData.map((entry, index) => (
+                              <Cell key={`cell-${index}`} fill={entry.color} />
+                            ))}
+                          </Pie>
+                          <Tooltip formatter={(value: number, name: string) => [`${value}%`, name]} />
+                        </PieChart>
+                      </ResponsiveContainer>
+                      <div className="space-y-2 text-sm text-stone-600">
+                        <p>• <strong>1.3Mio en Contractes</strong></p>
+                        <p>• 86% Threat Hunting (1.104k €)</p>
+                        <p>• 9% Consultoria CYCON/DFIR (113k €)</p>
+                        <p>• 5% Offensive Ciberseguretat (60k €)</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ) : (
+              // Default charts for other businesses
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-serif flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-amber-600" />
+                    Evolució Financera
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h4 className="text-sm font-medium text-stone-600 mb-4">Facturació anual (milers €)</h4>
+                      <ResponsiveContainer width="100%" height={250}>
+                        <LineChart data={business.financialData}>
+                          <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
+                          <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
+                          <YAxis tick={{ fill: '#78716c' }} />
+                          <Tooltip 
+                            contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
+                            formatter={(value: number) => [`${value}k €`, 'Facturació']}
+                          />
+                          <Line type="monotone" dataKey="revenue" stroke="#d97706" strokeWidth={3} dot={{ fill: '#d97706', strokeWidth: 2, r: 4 }} activeDot={{ r: 6 }} />
+                        </LineChart>
+                      </ResponsiveContainer>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium text-stone-600 mb-4">EBITDA anual (milers €)</h4>
+                      <ResponsiveContainer width="100%" height={250}>
+                        <BarChart data={business.financialData}>
+                          <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
+                          <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
+                          <YAxis tick={{ fill: '#78716c' }} />
+                          <Tooltip 
+                            contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
+                            formatter={(value: number) => [`${value}k €`, 'EBITDA']}
+                          />
+                          <Bar dataKey="ebitda" fill="#78716c" radius={[4, 4, 0, 0]} />
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </div>
+                  <p className="text-xs text-stone-500 mt-4 text-center">
+                    * Les dades financeres es verifiquen durant el procés de due diligence
+                  </p>
+                </CardContent>
+              </Card>
+            )}
           </div>
 
           {/* Right Column - Key Metrics & Contact */}
@@ -334,17 +503,35 @@ const NegocioDetalle = () => {
                 <div className="flex items-center justify-between py-3 border-b border-stone-700">
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-amber-400" />
-                    <span className="text-stone-300">Facturació anual</span>
+                    <span className="text-stone-300">Facturació actual</span>
                   </div>
                   <span className="font-semibold">{business.revenue}</span>
                 </div>
+                {business.targetRevenue && (
+                  <div className="flex items-center justify-between py-3 border-b border-stone-700">
+                    <div className="flex items-center gap-2">
+                      <Target className="w-4 h-4 text-amber-400" />
+                      <span className="text-stone-300">Facturació objectiu</span>
+                    </div>
+                    <span className="font-semibold text-green-400">{business.targetRevenue}</span>
+                  </div>
+                )}
                 <div className="flex items-center justify-between py-3 border-b border-stone-700">
                   <div className="flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-amber-400" />
-                    <span className="text-stone-300">EBITDA</span>
+                    <span className="text-stone-300">EBITDA actual</span>
                   </div>
                   <span className="font-semibold">{business.ebitda}</span>
                 </div>
+                {business.targetEbitda && (
+                  <div className="flex items-center justify-between py-3 border-b border-stone-700">
+                    <div className="flex items-center gap-2">
+                      <Target className="w-4 h-4 text-amber-400" />
+                      <span className="text-stone-300">EBITDA objectiu</span>
+                    </div>
+                    <span className="font-semibold text-green-400">{business.targetEbitda}</span>
+                  </div>
+                )}
                 <div className="flex items-center justify-between py-3 border-b border-stone-700">
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-amber-400" />
@@ -352,6 +539,15 @@ const NegocioDetalle = () => {
                   </div>
                   <span className="font-semibold text-green-400">{business.profitability}</span>
                 </div>
+                {business.percentForSale && (
+                  <div className="flex items-center justify-between py-3 border-b border-stone-700">
+                    <div className="flex items-center gap-2">
+                      <AlertTriangle className="w-4 h-4 text-amber-400" />
+                      <span className="text-stone-300">% a la venda</span>
+                    </div>
+                    <span className="font-semibold text-amber-300">{business.percentForSale}</span>
+                  </div>
+                )}
                 <div className="flex items-center justify-between py-3 border-b border-stone-700">
                   <div className="flex items-center gap-2">
                     <Users className="w-4 h-4 text-amber-400" />
