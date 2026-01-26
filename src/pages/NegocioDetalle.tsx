@@ -289,7 +289,7 @@ const businessesData: Record<string, {
   },
   'confidencial-comercio': {
     id: 'confidencial-comercio',
-    title: 'Negoci Confidencial – Sector Comerç',
+    title: 'Com260126 Sector Comerç - [Negoci Confidencial]',
     sector: 'Comercio',
     location: 'Andorra',
     price: '320.000 €',
@@ -322,7 +322,7 @@ const businessesData: Record<string, {
   },
   'confidencial-servicios': {
     id: 'confidencial-servicios',
-    title: 'Negoci Confidencial – Sector Serveis',
+    title: 'Serv260126 Sector Serveis - [Negoci Confidencial]',
     sector: 'Servicios',
     location: 'Andorra',
     price: '450.000 €',
@@ -355,7 +355,7 @@ const businessesData: Record<string, {
   },
   'confidencial-industria': {
     id: 'confidencial-industria',
-    title: 'Negoci Confidencial – Sector Indústria',
+    title: 'Ind260126 Sector Indústria - [Negoci Confidencial]',
     sector: 'Industria',
     location: 'Andorra',
     price: '750.000 €',
