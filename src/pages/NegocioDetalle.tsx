@@ -148,6 +148,7 @@ const businessesData: Record<string, {
   title: string;
   sector: string;
   location: string;
+  coordinates?: { lat: number; lng: number };
   price: string;
   revenue: string;
   ebitda: string;
@@ -167,7 +168,8 @@ const businessesData: Record<string, {
     id: 'la-borda',
     title: 'La Borda – Restaurant més antic d\'Andorra',
     sector: 'Hostelería',
-    location: 'Andorra la Vella, Andorra',
+    location: 'La Massana, Andorra',
+    coordinates: { lat: 42.545013, lng: 1.515326 },
     price: '75.000 €',
     revenue: '300.000 €',
     ebitda: '75.000 €',
