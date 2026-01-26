@@ -54,7 +54,7 @@ const slides = [
   {
     id: 'confidencial-comercio',
     image: sectorComercio,
-    title: "Negoci Confidencial",
+    title: "Com260126 Sector Comerç - [Negoci Confidencial]",
     description: "Sector Comerç · Facturación 800k € · EBITDA 120k € · Rentabilidad 15%",
     price: "320.000 €",
     sector: "Comercio",
@@ -63,7 +63,7 @@ const slides = [
   {
     id: 'confidencial-servicios',
     image: sectorServicios,
-    title: "Negoci Confidencial",
+    title: "Serv260126 Sector Serveis - [Negoci Confidencial]",
     description: "Sector Serveis · Facturación 600k € · EBITDA 150k € · Rentabilidad 25%",
     price: "450.000 €",
     sector: "Servicios",
@@ -72,7 +72,7 @@ const slides = [
   {
     id: 'confidencial-industria',
     image: sectorIndustria,
-    title: "Negoci Confidencial",
+    title: "Ind260126 Sector Indústria - [Negoci Confidencial]",
     description: "Sector Indústria · Facturación 1,2M € · EBITDA 280k € · Rentabilidad 23%",
     price: "750.000 €",
     sector: "Industria",
