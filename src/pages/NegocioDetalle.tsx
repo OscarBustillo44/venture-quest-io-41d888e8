@@ -35,6 +35,13 @@ import infinitypayPassarella1 from '@/assets/infinitypay/passarella-1.png';
 import infinitypayPassarella2 from '@/assets/infinitypay/passarella-2.png';
 import infinitypaySeguretat from '@/assets/infinitypay/seguretat.png';
 
+// Generic sector images for anonymous businesses
+import sectorHosteleria from '@/assets/generic/sector-hosteleria.jpg';
+import sectorComercio from '@/assets/generic/sector-comercio.jpg';
+import sectorServicios from '@/assets/generic/sector-servicios.jpg';
+import sectorIndustria from '@/assets/generic/sector-industria.jpg';
+import sectorTecnologia from '@/assets/generic/sector-tecnologia.jpg';
+
 // La Borda specific data
 const labordaKPIs = [
   { value: '45+', label: 'anys d\'història com a restaurant més antic d\'Andorra' },
@@ -148,6 +155,7 @@ const businessesData: Record<string, {
   employees: string;
   yearsOperating: string;
   description: string;
+  isConfidential?: boolean;
   highlights: string[];
   images: string[];
   financialData: { year: string; revenue: number; ebitda: number }[];
@@ -244,6 +252,39 @@ const businessesData: Record<string, {
       { year: '2023', revenue: 230, ebitda: 78 },
       { year: '2024', revenue: 300, ebitda: 154 },
       { year: '2025', revenue: 310, ebitda: 169 },
+    ]
+  },
+  'confidencial-001': {
+    id: 'confidencial-001',
+    title: 'Negoci Confidencial – Sector Serveis',
+    sector: 'Servicios',
+    location: 'Andorra',
+    price: '450.000 €',
+    revenue: '600.000 €',
+    ebitda: '150.000 €',
+    profitability: '25%',
+    employees: '10',
+    yearsOperating: '12',
+    targetRevenue: '>1 Mio €',
+    targetEbitda: '300k €',
+    percentForSale: '100%',
+    isConfidential: true,
+    description: 'Empresa consolidada en el sector serveis amb una cartera de clients fidels i contractes recurrents. Ubicació estratègica i equip format que desitja continuar.',
+    highlights: [
+      'Cartera de clients consolidada',
+      'Contractes recurrents',
+      'Equip format i estable',
+      'Ubicació estratègica',
+      'Potencial de creixement significatiu',
+      'Processos documentats'
+    ],
+    images: [sectorServicios, sectorHosteleria, sectorComercio, sectorIndustria, sectorTecnologia],
+    financialData: [
+      { year: '2020', revenue: 400, ebitda: 80 },
+      { year: '2021', revenue: 450, ebitda: 100 },
+      { year: '2022', revenue: 520, ebitda: 120 },
+      { year: '2023', revenue: 560, ebitda: 135 },
+      { year: '2024', revenue: 600, ebitda: 150 },
     ]
   }
 };
