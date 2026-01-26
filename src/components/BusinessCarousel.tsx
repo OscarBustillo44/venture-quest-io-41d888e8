@@ -5,13 +5,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import slide1 from '@/assets/carousel/slide-1-producto.png';
-import slide2 from '@/assets/carousel/slide-2-interior.png';
-import slide3 from '@/assets/carousel/slide-3-facturacion.png';
 import slide4 from '@/assets/carousel/slide-4-fachada.png';
-import slide5 from '@/assets/carousel/slide-5-collage.png';
 import slide6 from '@/assets/carousel/slide-6-alpine-security.png';
 import infinitypayLogo from '@/assets/infinitypay/logo.png';
+import sectorServicios from '@/assets/generic/sector-servicios.jpg';
 
 const slides = [
   {
@@ -20,7 +17,8 @@ const slides = [
     title: "La Borda – Restaurant més antic d'Andorra",
     description: "Facturación 300.000 € · EBITDA 75.000 € · Rentabilidad 43%",
     price: "75.000 €",
-    sector: "Hostelería"
+    sector: "Hostelería",
+    isConfidential: false
   },
   {
     id: 'alpine-security',
@@ -28,7 +26,8 @@ const slides = [
     title: "Alpine Security – Ciberseguretat",
     description: "Empresa de Ciberseguretat (Andorra i Espanya) · Facturación 1,3M € · EBITDA 300k € · Rentabilidad 18%",
     price: "2.400.000 €",
-    sector: "Tecnología"
+    sector: "Tecnología",
+    isConfidential: false
   },
   {
     id: 'infinitypay',
@@ -36,7 +35,17 @@ const slides = [
     title: "InfinityPay – Mitjans de Pagament",
     description: "Passarel·la de pagaments, TPVs · Facturación 500k € · EBITDA 200k € · Rentabilidad 19%",
     price: "1.084.964 €",
-    sector: "Fintech"
+    sector: "Fintech",
+    isConfidential: false
+  },
+  {
+    id: 'confidencial-001',
+    image: sectorServicios,
+    title: "Negoci Confidencial",
+    description: "Sector Serveis · Facturación 600k € · EBITDA 150k € · Rentabilidad 25%",
+    price: "450.000 €",
+    sector: "Servicios",
+    isConfidential: true
   }
 ];
 
@@ -84,10 +93,26 @@ const BusinessCarousel = () => {
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/95 via-stone-900/30 to-transparent" />
                 
+                {/* Confidential Watermark */}
+                {slide.isConfidential && (
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="text-white/20 text-4xl md:text-5xl font-bold uppercase tracking-widest transform -rotate-12 select-none">
+                      CONFIDENCIAL
+                    </div>
+                  </div>
+                )}
+                
                 {/* Sector Badge */}
                 <div className="absolute top-3 left-3 bg-stone-800/80 text-white px-2 py-1 rounded text-xs font-medium">
                   {slide.sector}
                 </div>
+                
+                {/* Confidential Badge */}
+                {slide.isConfidential && (
+                  <div className="absolute top-3 left-24 bg-stone-600/90 text-white px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
+                    🔒 Confidencial
+                  </div>
+                )}
                 
                 {/* Price Badge */}
                 <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
