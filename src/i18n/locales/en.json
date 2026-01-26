@@ -132,5 +132,90 @@
     "years": "years",
     "employees": "employees",
     "loading": "Loading..."
+  },
+  "businesses": {
+    "laborda": {
+      "title": "La Borda – Oldest Restaurant in Andorra",
+      "description": "Emblematic restaurant with over 45 years of history. Traditional Andorran cuisine in a rustic and cozy atmosphere with fireplace. Loyal and consolidated clientele. Growth possibility with outdoor terrace.",
+      "carouselDesc": "Revenue €300,000 · EBITDA €75,000 · Profitability 43%",
+      "highlights": ["Oldest restaurant in Andorra", "Loyal and consolidated clientele", "Team wishing to continue", "Outdoor terrace possibility", "Privileged location", "Recognized traditional cuisine"],
+      "kpis": {
+        "history": { "value": "45+", "label": "years of history as the oldest restaurant in Andorra" },
+        "revenue": { "value": "300k", "label": "consolidated annual revenue in euros" },
+        "profitability": { "value": "43%", "label": "operating profitability on revenue" },
+        "employees": { "value": "8", "label": "loyal employees wishing to continue" }
+      },
+      "portfolio": {
+        "menu": "Daily menu",
+        "carta": "Traditional menu",
+        "events": "Private events",
+        "takeaway": "Takeaway"
+      }
+    },
+    "alpine": {
+      "title": "Alpine Security – Cybersecurity Company",
+      "description": "Leading cybersecurity company with operations in Andorra and Spain. Product/service portfolio: 1.3M in Contracts (86% Threat Hunting, 9% Consulting and 5% Offensive Cybersecurity). Alpine has exceeded revenue and client portfolio forecasts.",
+      "carouselDesc": "Cybersecurity Company (Andorra and Spain) · Revenue €1.3M · EBITDA €300k · Profitability 18%",
+      "highlights": ["Leader in cybersecurity in Andorra and Spain", "50K+ endpoints protected 24x7x365", "500+ incidents successfully resolved", "Growth exceeding forecasts", "Consolidated recurring contracts", "Technical team with 20 years of experience"],
+      "kpis": {
+        "endpoints": { "value": "50K+", "label": "endpoints protected 24x7x365 by our Threat Hunting Services" },
+        "incidents": { "value": "500+", "label": "cybersecurity incidents successfully resolved" },
+        "malware": { "value": "100+", "label": "exhaustive malware analyses" },
+        "experience": { "value": "20", "label": "years of combined experience in cybersecurity" }
+      },
+      "portfolio": {
+        "threatHunting": "Threat Hunting",
+        "cycon": "CYCON/DFIR",
+        "offensive": "Offensive"
+      }
+    },
+    "infinitypay": {
+      "title": "InfinityPay – Payment Solutions Company",
+      "description": "Payment solutions company with payment gateway, POS terminals and security solutions. With 99% annual recurrence and a fleet of over 2000 POS units with 90% of the country's large companies integrated.",
+      "carouselDesc": "Payment gateway, POS terminals · Revenue €500k · EBITDA €200k · Profitability 19%",
+      "highlights": ["99% annual contract recurrence", "2000+ POS terminals installed", "90% of large companies integrated", "Own payment gateway", "Advanced security solutions", "6x growth potential in revenue"],
+      "kpis": {
+        "recurrence": { "value": "99%", "label": "annual recurrence in contracts" },
+        "tpvs": { "value": "2000+", "label": "POS terminals installed with 90% of large companies integrated" },
+        "profitability": { "value": "19%", "label": "operating profitability on revenue" },
+        "growth": { "value": "6x", "label": "growth potential in target revenue" }
+      },
+      "portfolio": {
+        "gateway": "Payment gateway",
+        "terminals": "POS terminals",
+        "security": "Security solutions",
+        "other": "Other services"
+      }
+    },
+    "confHosteleria": {
+      "title": "Host260126 Hospitality Sector - [Confidential Business]",
+      "description": "Consolidated restaurant with loyal clientele and privileged location. Quality cuisine recognized in the area with terrace extension possibility.",
+      "carouselDesc": "Hospitality Sector · Revenue €350k · EBITDA €85k · Profitability 24%",
+      "highlights": ["Loyal and consolidated clientele", "Privileged location", "Recognized cuisine", "Stable team", "Terrace possibility", "Licenses up to date"]
+    },
+    "confCommerce": {
+      "title": "Com260126 Commerce Sector - [Confidential Business]",
+      "description": "Specialized commerce with recognized brand and loyal customer base. Optimized operations and consolidated suppliers.",
+      "carouselDesc": "Commerce Sector · Revenue €800k · EBITDA €120k · Profitability 15%",
+      "highlights": ["Recognized brand", "Loyal customer base", "Consolidated suppliers", "Optimized operations", "Valued stock included", "Optional owned premises"]
+    },
+    "confServices": {
+      "title": "Serv260126 Services Sector - [Confidential Business]",
+      "description": "Consolidated company in the services sector with a portfolio of loyal clients and recurring contracts. Strategic location and trained team wishing to continue.",
+      "carouselDesc": "Services Sector · Revenue €600k · EBITDA €150k · Profitability 25%",
+      "highlights": ["Consolidated client portfolio", "Recurring contracts", "Trained and stable team", "Strategic location", "Significant growth potential", "Documented processes"]
+    },
+    "confIndustry": {
+      "title": "Ind260126 Industry Sector - [Confidential Business]",
+      "description": "Consolidated industrial company with modern machinery and automated processes. Long-term contracts with institutional clients.",
+      "carouselDesc": "Industry Sector · Revenue €1.2M · EBITDA €280k · Profitability 23%",
+      "highlights": ["Modern machinery", "Automated processes", "Institutional clients", "Long-term contracts", "Optional owned warehouse", "Quality certifications"]
+    },
+    "confTechnology": {
+      "title": "Tech260126 Technology Sector - [Confidential Business]",
+      "description": "We provide comprehensive support for all your IT and telecommunications needs: Virtualization, Microsoft 365 Partner, Technical Support, Network Management, Business VoIP Communications, Cloud Services, Cybersecurity, IT Consulting, High-Performance Wifi, 3CX PBX Gold Partner.",
+      "carouselDesc": "Technology Sector · Revenue €600k · EBITDA €100k · Profitability 27%",
+      "highlights": ["Microsoft 365 Partner", "3CX PBX Gold Partner", "Virtualization and Cloud", "Advanced cybersecurity", "VoIP and business communications", "Comprehensive technical support"]
+    }
   }
 }

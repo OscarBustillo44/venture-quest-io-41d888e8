@@ -15,115 +15,117 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Link } from "react-router-dom";
 
-import slide4 from '@/assets/carousel/slide-4-fachada.png';
-import slide6 from '@/assets/carousel/slide-6-alpine-security.png';
-import infinitypayLogo from '@/assets/infinitypay/logo.png';
-import sectorHosteleria from '@/assets/generic/sector-hosteleria.jpg';
-import sectorComercio from '@/assets/generic/sector-comercio.jpg';
-import sectorServicios from '@/assets/generic/sector-servicios.jpg';
-import sectorIndustria from '@/assets/generic/sector-industria.jpg';
-import sectorTecnologia from '@/assets/generic/sector-tecnologia.jpg';
+import { carouselSlides } from '@/data/businesses';
 
-const allBusinesses = [
+// Sector keys for translation
+const sectorKeys = [
+  { key: 'sectors.hospitality', value: 'Hostelería' },
+  { key: 'sectors.commerce', value: 'Comercio' },
+  { key: 'sectors.services', value: 'Servicios' },
+  { key: 'sectors.industry', value: 'Industria' },
+  { key: 'sectors.technology', value: 'Tecnología' },
+  { key: 'sectors.fintech', value: 'Fintech' },
+];
+
+// Create business data from carousel slides with additional fields for filtering
+const createBusinessData = () => [
   {
     id: 'la-borda',
-    image: slide4,
-    title: "La Borda – Restaurant més antic d'Andorra",
-    description: "Facturación 300.000 € · EBITDA 75.000 € · Rentabilidad 43%",
+    titleKey: 'businesses.laborda.title',
+    descriptionKey: 'businesses.laborda.carouselDesc',
+    sectorKey: 'sectors.hospitality',
     price: 75000,
     priceDisplay: "75.000 €",
-    sector: "Hostelería",
     profitability: 43,
     publishedDate: new Date('2024-12-01'),
-    isConfidential: false
+    isConfidential: false,
+    image: carouselSlides.find(s => s.id === 'la-borda')?.image || ''
   },
   {
     id: 'alpine-security',
-    image: slide6,
-    title: "Alpine Security – Ciberseguretat",
-    description: "Empresa de Ciberseguretat (Andorra i Espanya) · Facturación 1,3M € · EBITDA 300k €",
+    titleKey: 'businesses.alpine.title',
+    descriptionKey: 'businesses.alpine.carouselDesc',
+    sectorKey: 'sectors.technology',
     price: 2400000,
     priceDisplay: "2.400.000 €",
-    sector: "Tecnología",
     profitability: 18,
     publishedDate: new Date('2025-01-10'),
-    isConfidential: false
+    isConfidential: false,
+    image: carouselSlides.find(s => s.id === 'alpine-security')?.image || ''
   },
   {
     id: 'infinitypay',
-    image: infinitypayLogo,
-    title: "InfinityPay – Mitjans de Pagament",
-    description: "Passarel·la de pagaments, TPVs · Facturación 500k € · EBITDA 200k €",
+    titleKey: 'businesses.infinitypay.title',
+    descriptionKey: 'businesses.infinitypay.carouselDesc',
+    sectorKey: 'sectors.fintech',
     price: 1084964,
     priceDisplay: "1.084.964 €",
-    sector: "Fintech",
     profitability: 19,
     publishedDate: new Date('2025-01-15'),
-    isConfidential: false
+    isConfidential: false,
+    image: carouselSlides.find(s => s.id === 'infinitypay')?.image || ''
   },
   {
     id: 'confidencial-hosteleria',
-    image: sectorHosteleria,
-    title: "Host260126 Sector Hosteleria - [Negoci Confidencial]",
-    description: "Sector Hosteleria · Facturación 350k € · EBITDA 85k € · Rentabilidad 24%",
+    titleKey: 'businesses.confHosteleria.title',
+    descriptionKey: 'businesses.confHosteleria.carouselDesc',
+    sectorKey: 'sectors.hospitality',
     price: 180000,
     priceDisplay: "180.000 €",
-    sector: "Hostelería",
     profitability: 24,
     publishedDate: new Date('2025-01-20'),
-    isConfidential: true
+    isConfidential: true,
+    image: carouselSlides.find(s => s.id === 'confidencial-hosteleria')?.image || ''
   },
   {
     id: 'confidencial-comercio',
-    image: sectorComercio,
-    title: "Com260126 Sector Comerç - [Negoci Confidencial]",
-    description: "Sector Comerç · Facturación 800k € · EBITDA 120k € · Rentabilidad 15%",
+    titleKey: 'businesses.confCommerce.title',
+    descriptionKey: 'businesses.confCommerce.carouselDesc',
+    sectorKey: 'sectors.commerce',
     price: 320000,
     priceDisplay: "320.000 €",
-    sector: "Comercio",
     profitability: 15,
     publishedDate: new Date('2025-01-22'),
-    isConfidential: true
+    isConfidential: true,
+    image: carouselSlides.find(s => s.id === 'confidencial-comercio')?.image || ''
   },
   {
     id: 'confidencial-servicios',
-    image: sectorServicios,
-    title: "Serv260126 Sector Serveis - [Negoci Confidencial]",
-    description: "Sector Serveis · Facturación 600k € · EBITDA 150k € · Rentabilidad 25%",
+    titleKey: 'businesses.confServices.title',
+    descriptionKey: 'businesses.confServices.carouselDesc',
+    sectorKey: 'sectors.services',
     price: 450000,
     priceDisplay: "450.000 €",
-    sector: "Servicios",
     profitability: 25,
     publishedDate: new Date('2025-01-23'),
-    isConfidential: true
+    isConfidential: true,
+    image: carouselSlides.find(s => s.id === 'confidencial-servicios')?.image || ''
   },
   {
     id: 'confidencial-industria',
-    image: sectorIndustria,
-    title: "Ind260126 Sector Indústria - [Negoci Confidencial]",
-    description: "Sector Indústria · Facturación 1,2M € · EBITDA 280k € · Rentabilidad 23%",
+    titleKey: 'businesses.confIndustry.title',
+    descriptionKey: 'businesses.confIndustry.carouselDesc',
+    sectorKey: 'sectors.industry',
     price: 750000,
     priceDisplay: "750.000 €",
-    sector: "Industria",
     profitability: 23,
     publishedDate: new Date('2025-01-24'),
-    isConfidential: true
+    isConfidential: true,
+    image: carouselSlides.find(s => s.id === 'confidencial-industria')?.image || ''
   },
   {
     id: 'confidencial-tecnologia',
-    image: sectorTecnologia,
-    title: "Tech260126 Sector Tecnologia - [Negoci Confidencial]",
-    description: "Sector Tecnologia · Facturación 600k € · EBITDA 100k € · Rentabilidad 27%",
+    titleKey: 'businesses.confTechnology.title',
+    descriptionKey: 'businesses.confTechnology.carouselDesc',
+    sectorKey: 'sectors.technology',
     price: 514788,
     priceDisplay: "514.788 €",
-    sector: "Tecnología",
     profitability: 27,
     publishedDate: new Date('2025-01-26'),
-    isConfidential: true
+    isConfidential: true,
+    image: carouselSlides.find(s => s.id === 'confidencial-tecnologia')?.image || ''
   }
 ];
-
-const sectors = ["Hostelería", "Comercio", "Servicios", "Industria", "Tecnología", "Fintech"];
 
 const ComprarNegocio = () => {
   const { t } = useTranslation();
@@ -132,6 +134,8 @@ const ComprarNegocio = () => {
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("recent");
   const [minProfitability, setMinProfitability] = useState<string>("all");
+
+  const allBusinesses = useMemo(() => createBusinessData(), []);
 
   const priceRanges = [
     { value: "all", label: t('buy.allPrices') },
@@ -160,12 +164,16 @@ const ComprarNegocio = () => {
 
   const filteredAndSortedBusinesses = useMemo(() => {
     const filtered = allBusinesses.filter((business) => {
+      const translatedTitle = t(business.titleKey).toLowerCase();
+      const translatedDesc = t(business.descriptionKey).toLowerCase();
+      const translatedSector = t(business.sectorKey).toLowerCase();
+      
       const matchesSearch = searchQuery === "" || 
-        business.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        business.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        business.sector.toLowerCase().includes(searchQuery.toLowerCase());
+        translatedTitle.includes(searchQuery.toLowerCase()) ||
+        translatedDesc.includes(searchQuery.toLowerCase()) ||
+        translatedSector.includes(searchQuery.toLowerCase());
 
-      const matchesSector = selectedSector === "all" || business.sector === selectedSector;
+      const matchesSector = selectedSector === "all" || business.sectorKey === selectedSector;
 
       let matchesPrice = true;
       if (selectedPriceRange !== "all") {
@@ -196,7 +204,7 @@ const ComprarNegocio = () => {
           return b.publishedDate.getTime() - a.publishedDate.getTime();
       }
     });
-  }, [searchQuery, selectedSector, selectedPriceRange, sortBy, minProfitability]);
+  }, [searchQuery, selectedSector, selectedPriceRange, sortBy, minProfitability, allBusinesses, t]);
 
   const clearFilters = () => {
     setSearchQuery("");
@@ -309,8 +317,8 @@ const ComprarNegocio = () => {
                   </SelectTrigger>
                   <SelectContent className="bg-background z-50">
                     <SelectItem value="all">{t('buy.allSectors')}</SelectItem>
-                    {sectors.map((sector) => (
-                      <SelectItem key={sector} value={sector}>{sector}</SelectItem>
+                    {sectorKeys.map((sector) => (
+                      <SelectItem key={sector.key} value={sector.key}>{t(sector.key)}</SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -352,7 +360,7 @@ const ComprarNegocio = () => {
               <div className="flex flex-wrap gap-2 mt-4">
                 {selectedSector !== "all" && (
                   <Badge variant="secondary" className="px-3 py-1">
-                    {t('buy.sector')}: {selectedSector}
+                    {t('buy.sector')}: {t(selectedSector)}
                     <button onClick={() => setSelectedSector("all")} className="ml-2 hover:text-destructive">
                       <X className="w-3 h-3" />
                     </button>
@@ -441,7 +449,7 @@ const ComprarNegocio = () => {
                     {/* Background Image */}
                     <img
                       src={business.image}
-                      alt={business.title}
+                      alt={t(business.titleKey)}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     
@@ -459,7 +467,7 @@ const ComprarNegocio = () => {
                     
                     {/* Sector Badge */}
                     <div className="absolute top-3 left-3 bg-stone-800/80 text-white px-2 py-1 rounded text-xs font-medium">
-                      {business.sector}
+                      {t(business.sectorKey)}
                     </div>
                     
                     {/* Confidential Badge */}
@@ -477,10 +485,10 @@ const ComprarNegocio = () => {
                     {/* Content */}
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                       <h3 className="font-serif text-lg md:text-xl font-bold mb-1.5 drop-shadow-lg line-clamp-2">
-                        {business.title}
+                        {t(business.titleKey)}
                       </h3>
                       <p className="text-xs md:text-sm text-stone-200 leading-snug line-clamp-3 drop-shadow-md">
-                        {business.description}
+                        {t(business.descriptionKey)}
                       </p>
                     </div>
                   </div>
