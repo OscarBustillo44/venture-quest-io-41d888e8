@@ -81,9 +81,9 @@ const slides = [
   {
     id: 'confidencial-tecnologia',
     image: sectorTecnologia,
-    title: "Negoci Confidencial",
-    description: "Sector Tecnologia · Facturación 450k € · EBITDA 180k € · Rentabilidad 40%",
-    price: "580.000 €",
+    title: "Tech260126 Sector Tecnologia - [Negoci Confidencial]",
+    description: "Sector Tecnologia · Facturación 600k € · EBITDA 100k € · Rentabilidad 27%",
+    price: "514.788 €",
     sector: "Tecnología",
     isConfidential: true
   }
