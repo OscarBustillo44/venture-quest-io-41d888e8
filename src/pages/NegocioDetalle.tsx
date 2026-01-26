@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight, Shield, Target, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight, Shield, Target, AlertTriangle, UtensilsCrossed } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, AreaChart, Area, PieChart, Pie, Cell } from 'recharts';
 import Footer from '@/components/Footer';
 
@@ -28,6 +28,43 @@ import alpineKpiExperience from '@/assets/alpine/kpi-experience.png';
 import alpineKpiMalware from '@/assets/alpine/kpi-malware.png';
 import alpineKpiIncidents from '@/assets/alpine/kpi-incidents.png';
 import alpineOverview from '@/assets/alpine/slide-overview.png';
+
+// La Borda specific data
+const labordaKPIs = [
+  { value: '45+', label: 'anys d\'història com a restaurant més antic d\'Andorra' },
+  { value: '300k', label: 'facturació anual consolidada en euros' },
+  { value: '43%', label: 'rentabilitat operativa sobre facturació' },
+  { value: '8', label: 'empleats fidels que desitgen continuar' },
+];
+
+const labordaRevenueData = [
+  { year: '2020', revenue: 220 },
+  { year: '2021', revenue: 250 },
+  { year: '2022', revenue: 280 },
+  { year: '2023', revenue: 290 },
+  { year: '2024', revenue: 300 },
+];
+
+const labordaEbitdaData = [
+  { year: '2020', ebitda: 45 },
+  { year: '2021', ebitda: 55 },
+  { year: '2022', ebitda: 65 },
+  { year: '2023', ebitda: 70 },
+  { year: '2024', ebitda: 75 },
+];
+
+const labordaProjectionData = [
+  { year: '2025', revenue: 320, ebitda: 85 },
+  { year: '2026', revenue: 350, ebitda: 100 },
+  { year: '2027', revenue: 380, ebitda: 115 },
+];
+
+const labordaPortfolioData = [
+  { name: 'Menú del dia', value: 45, amount: '135k', color: '#8B4513' },
+  { name: 'Carta tradicional', value: 35, amount: '105k', color: '#D2691E' },
+  { name: 'Events privats', value: 15, amount: '45k', color: '#CD853F' },
+  { name: 'Take-away', value: 5, amount: '15k', color: '#DEB887' },
+];
 
 // Alpine Security specific data
 const alpineKPIs = [
@@ -308,6 +345,28 @@ const NegocioDetalle = () => {
               </CardContent>
             </Card>
 
+            {/* La Borda KPIs */}
+            {business.id === 'la-borda' && (
+              <Card className="bg-gradient-to-r from-amber-50 to-orange-50">
+                <CardHeader>
+                  <CardTitle className="font-serif flex items-center gap-2">
+                    <UtensilsCrossed className="w-5 h-5 text-amber-700" />
+                    Indicadors Clau del Negoci
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {labordaKPIs.map((kpi, idx) => (
+                      <div key={idx} className="bg-white rounded-lg p-6 shadow-sm border border-amber-200 text-center">
+                        <div className="text-4xl font-bold text-amber-700 mb-3">{kpi.value}</div>
+                        <p className="text-sm text-stone-600 leading-tight">{kpi.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
             {/* Alpine Security KPIs */}
             {business.id === 'alpine-security' && (
               <Card className="bg-gradient-to-r from-stone-100 to-stone-50">
@@ -330,8 +389,122 @@ const NegocioDetalle = () => {
               </Card>
             )}
 
+            {/* Financial Charts - La Borda specific */}
+            {business.id === 'la-borda' && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-serif flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-amber-600" />
+                    Evolució i Projeccions Financeres
+                  </CardTitle>
+                  <p className="text-sm text-stone-500 mt-1">
+                    Restaurant amb facturació estable i potencial de creixement amb terrassa exterior
+                  </p>
+                </CardHeader>
+                <CardContent className="space-y-8">
+                  {/* Revenue Evolution */}
+                  <div>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">Facturació Anual (milers €)</h4>
+                    <ResponsiveContainer width="100%" height={280}>
+                      <AreaChart data={labordaRevenueData}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
+                        <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 400]} />
+                        <Tooltip 
+                          contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
+                          formatter={(value: number) => [`${value}k €`, 'Facturació']}
+                        />
+                        <Area 
+                          type="monotone" 
+                          dataKey="revenue" 
+                          stroke="#d97706" 
+                          fill="#fcd34d" 
+                          strokeWidth={2}
+                        />
+                      </AreaChart>
+                    </ResponsiveContainer>
+                    <p className="text-center text-sm text-stone-600 mt-2 font-medium">
+                      Creixement estable any rere any amb clientela fidel
+                    </p>
+                  </div>
+
+                  {/* EBITDA Evolution */}
+                  <div>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">EBITDA Anual (milers €)</h4>
+                    <ResponsiveContainer width="100%" height={280}>
+                      <BarChart data={labordaEbitdaData}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
+                        <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 100]} />
+                        <Tooltip 
+                          contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
+                          formatter={(value: number) => [`${value}k €`, 'EBITDA']}
+                        />
+                        <Bar dataKey="ebitda" fill="#92400e" radius={[4, 4, 0, 0]} label={{ position: 'top', fill: '#92400e', fontSize: 12 }} />
+                      </BarChart>
+                    </ResponsiveContainer>
+                    <p className="text-center text-sm text-stone-600 mt-2">
+                      Rentabilitat del 43% sobre facturació
+                    </p>
+                  </div>
+
+                  {/* Revenue vs EBITDA Projection */}
+                  <div>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">Projeccions amb Terrassa Exterior (milers €)</h4>
+                    <ResponsiveContainer width="100%" height={280}>
+                      <BarChart data={labordaProjectionData}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
+                        <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 450]} />
+                        <Tooltip 
+                          contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
+                        />
+                        <Legend />
+                        <Bar dataKey="revenue" name="Facturació" fill="#d97706" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="ebitda" name="EBITDA" fill="#92400e" radius={[4, 4, 0, 0]} />
+                      </BarChart>
+                    </ResponsiveContainer>
+                    <p className="text-center text-sm text-stone-600 mt-2">
+                      Potencial de creixement del 25% amb habilitació de terrassa exterior
+                    </p>
+                  </div>
+
+                  {/* Portfolio Distribution */}
+                  <div>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">Distribució de la Facturació per Servei</h4>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                      <ResponsiveContainer width={300} height={250}>
+                        <PieChart>
+                          <Pie
+                            data={labordaPortfolioData}
+                            cx="50%"
+                            cy="50%"
+                            outerRadius={100}
+                            dataKey="value"
+                            label={({ name, value }) => `${name}; ${value}%`}
+                          >
+                            {labordaPortfolioData.map((entry, index) => (
+                              <Cell key={`cell-${index}`} fill={entry.color} />
+                            ))}
+                          </Pie>
+                          <Tooltip formatter={(value: number, name: string) => [`${value}%`, name]} />
+                        </PieChart>
+                      </ResponsiveContainer>
+                      <div className="space-y-2 text-sm text-stone-600">
+                        <p>• <strong>300k € en Facturació Total</strong></p>
+                        <p>• 45% Menú del dia (135k €)</p>
+                        <p>• 35% Carta tradicional (105k €)</p>
+                        <p>• 15% Events privats (45k €)</p>
+                        <p>• 5% Take-away (15k €)</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
             {/* Financial Charts - Alpine Security specific */}
-            {business.id === 'alpine-security' ? (
+            {business.id === 'alpine-security' && (
               <Card>
                 <CardHeader>
                   <CardTitle className="font-serif flex items-center gap-2">
@@ -441,53 +614,6 @@ const NegocioDetalle = () => {
                       </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            ) : (
-              // Default charts for other businesses
-              <Card>
-                <CardHeader>
-                  <CardTitle className="font-serif flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-amber-600" />
-                    Evolució Financera
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h4 className="text-sm font-medium text-stone-600 mb-4">Facturació anual (milers €)</h4>
-                      <ResponsiveContainer width="100%" height={250}>
-                        <LineChart data={business.financialData}>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
-                          <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
-                          <YAxis tick={{ fill: '#78716c' }} />
-                          <Tooltip 
-                            contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
-                            formatter={(value: number) => [`${value}k €`, 'Facturació']}
-                          />
-                          <Line type="monotone" dataKey="revenue" stroke="#d97706" strokeWidth={3} dot={{ fill: '#d97706', strokeWidth: 2, r: 4 }} activeDot={{ r: 6 }} />
-                        </LineChart>
-                      </ResponsiveContainer>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-medium text-stone-600 mb-4">EBITDA anual (milers €)</h4>
-                      <ResponsiveContainer width="100%" height={250}>
-                        <BarChart data={business.financialData}>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
-                          <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
-                          <YAxis tick={{ fill: '#78716c' }} />
-                          <Tooltip 
-                            contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
-                            formatter={(value: number) => [`${value}k €`, 'EBITDA']}
-                          />
-                          <Bar dataKey="ebitda" fill="#78716c" radius={[4, 4, 0, 0]} />
-                        </BarChart>
-                      </ResponsiveContainer>
-                    </div>
-                  </div>
-                  <p className="text-xs text-stone-500 mt-4 text-center">
-                    * Les dades financeres es verifiquen durant el procés de due diligence
-                  </p>
                 </CardContent>
               </Card>
             )}
