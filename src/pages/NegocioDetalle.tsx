@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight, Shield, Target, AlertTriangle, UtensilsCrossed, CreditCard } from 'lucide-react';
+import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight, Shield, Target, AlertTriangle, UtensilsCrossed, CreditCard, Info } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, AreaChart, Area, PieChart, Pie, Cell } from 'recharts';
 import Footer from '@/components/Footer';
 
@@ -1134,6 +1134,32 @@ const NegocioDetalle = () => {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* Disclaimer Section */}
+        <div className="mt-12 mb-8 p-6 bg-stone-100 rounded-xl border border-stone-200">
+          <div className="flex items-start gap-4">
+            <div className="p-2 bg-amber-100 rounded-full">
+              <Info className="w-5 h-5 text-amber-700" />
+            </div>
+            <div className="space-y-2">
+              <h4 className="font-semibold text-stone-800">Avís important</h4>
+              <ul className="text-sm text-stone-600 space-y-1">
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
+                  <span><strong>Indicadors orientatius:</strong> Les dades presentades són estimacions basades en informació facilitada.</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
+                  <span><strong>Informació estructurada:</strong> Dissenyada per facilitar la presa de decisions.</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
+                  <span><strong>No substitueix una due diligence:</strong> Recomanem una anàlisi professional abans de qualsevol decisió d'inversió.</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </main>
