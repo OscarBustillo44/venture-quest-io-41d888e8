@@ -9,32 +9,50 @@ import slide2 from '@/assets/carousel/slide-2-interior.png';
 import slide3 from '@/assets/carousel/slide-3-facturacion.png';
 import slide4 from '@/assets/carousel/slide-4-fachada.png';
 import slide5 from '@/assets/carousel/slide-5-collage.png';
+import slide6 from '@/assets/carousel/slide-6-alpine-security.png';
 
 const slides = [
   {
     image: slide1,
     title: "Producte de qualitat",
-    description: "Producte, servei i clientela creat i fidelitzat"
+    description: "Producte, servei i clientela creat i fidelitzat",
+    price: "75.000 €",
+    sector: "Hostelería"
   },
   {
     image: slide2,
     title: "Tradició Andorrana",
-    description: "Restaurant Borda amb menjar tradicional d'Andorra"
+    description: "Restaurant Borda amb menjar tradicional d'Andorra",
+    price: "75.000 €",
+    sector: "Hostelería"
   },
   {
     image: slide3,
     title: "Creixement Sostingut",
-    description: "Restaurant en funcionament, amb clientela fidel i un Equip que es desitja continuar al negoci i amb possibilitat de creixement addicional important nomes habilitant terrassa exterior"
+    description: "Restaurant en funcionament, amb clientela fidel i un Equip que es desitja continuar al negoci i amb possibilitat de creixement addicional important nomes habilitant terrassa exterior",
+    price: "75.000 €",
+    sector: "Hostelería"
   },
   {
     image: slide4,
     title: "La Borda – Restaurant més antic d'Andorra",
-    description: "Facturación 300.000 € · EBITDA 75.000 € · Rentabilidad 43% · Preu 75.000 €"
+    description: "Facturación 300.000 € · EBITDA 75.000 € · Rentabilidad 43%",
+    price: "75.000 €",
+    sector: "Hostelería"
   },
   {
     image: slide5,
     title: "La Borda",
-    description: "Restaurant més antiga d'Andorra"
+    description: "Restaurant més antiga d'Andorra",
+    price: "75.000 €",
+    sector: "Hostelería"
+  },
+  {
+    image: slide6,
+    title: "Alpine Security – Ciberseguretat",
+    description: "Empresa de Ciberseguretat (Andorra i Espanya) · Facturación 1,3M € · EBITDA 300k € · Rentabilidad 18%",
+    price: "2.400.000 €",
+    sector: "Tecnología"
   }
 ];
 
@@ -81,9 +99,14 @@ const BusinessCarousel = () => {
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/95 via-stone-900/30 to-transparent" />
               
+              {/* Sector Badge */}
+              <div className="absolute top-3 left-3 bg-stone-800/80 text-white px-2 py-1 rounded text-xs font-medium">
+                {slide.sector}
+              </div>
+              
               {/* Price Badge */}
               <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
-                75.000 €
+                {slide.price}
               </div>
               
               {/* Content */}
