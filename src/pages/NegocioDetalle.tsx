@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight, Shield, Target, AlertTriangle, UtensilsCrossed } from 'lucide-react';
+import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight, Shield, Target, AlertTriangle, UtensilsCrossed, CreditCard } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, AreaChart, Area, PieChart, Pie, Cell } from 'recharts';
 import Footer from '@/components/Footer';
 
@@ -28,6 +28,9 @@ import alpineKpiExperience from '@/assets/alpine/kpi-experience.png';
 import alpineKpiMalware from '@/assets/alpine/kpi-malware.png';
 import alpineKpiIncidents from '@/assets/alpine/kpi-incidents.png';
 import alpineOverview from '@/assets/alpine/slide-overview.png';
+
+// InfinityPay images
+import infinitypayLogo from '@/assets/infinitypay/logo.png';
 
 // La Borda specific data
 const labordaKPIs = [
@@ -102,6 +105,31 @@ const alpinePortfolioData = [
   { name: 'Threat Hunting', value: 86, amount: '1.104k', color: '#2d6a2d' },
   { name: 'CYCON/DFIR', value: 9, amount: '113k', color: '#4a90d9' },
   { name: 'Offensive', value: 5, amount: '60k', color: '#90b4ce' },
+];
+
+// InfinityPay specific data
+const infinitypayKPIs = [
+  { value: '99%', label: 'recurrència anual en contractes' },
+  { value: '2000+', label: 'TPVs instal·lats amb el 90% de grans empreses integrades' },
+  { value: '19%', label: 'rentabilitat operativa sobre facturació' },
+  { value: '6x', label: 'potencial de creixement en facturació objectiu' },
+];
+
+const infinitypayRevenueEbitdaData = [
+  { year: '2023', ventas: 230, ebitda: 78 },
+  { year: '2024', ventas: 300, ebitda: 154 },
+  { year: '2025e', ventas: 310, ebitda: 169 },
+  { year: '2026e', ventas: 350, ebitda: 183 },
+  { year: '2027e', ventas: 400, ebitda: 210 },
+  { year: '2028e', ventas: 440, ebitda: 231 },
+  { year: '2029e', ventas: 470, ebitda: 243 },
+];
+
+const infinitypayPortfolioData = [
+  { name: 'Passarel·la pagaments', value: 40, amount: '200k', color: '#1e4d7b' },
+  { name: 'Terminals TPV', value: 35, amount: '175k', color: '#4a90d9' },
+  { name: 'Solucions seguretat', value: 15, amount: '75k', color: '#6ba3d9' },
+  { name: 'Altres serveis', value: 10, amount: '50k', color: '#90b4ce' },
 ];
 
 // Mock data for businesses
@@ -183,6 +211,36 @@ const businessesData: Record<string, {
       { year: '2022', revenue: 1100, ebitda: 220 },
       { year: '2023', revenue: 1200, ebitda: 260 },
       { year: '2024', revenue: 1300, ebitda: 300 },
+    ]
+  },
+  'infinitypay': {
+    id: 'infinitypay',
+    title: 'InfinityPay – Empresa de Mitjans de Pagament',
+    sector: 'Fintech',
+    location: 'Andorra',
+    price: '1.084.964 €',
+    revenue: '500.000 €',
+    ebitda: '200.000 €',
+    profitability: '19%',
+    employees: '12',
+    yearsOperating: '5',
+    targetRevenue: '>3 Mio €',
+    targetEbitda: '1 Mio €',
+    percentForSale: '100%',
+    description: 'Empresa de mitjans de pagament amb passarel·la de pagaments, terminals TPV i solucions de seguretat. Amb una recurrència del 99% anual i un parc de més de 2000 unitats TPV amb el 90% de les grans empreses del país integrades.',
+    highlights: [
+      '99% recurrència anual en contractes',
+      '2000+ terminals TPV instal·lats',
+      '90% de grans empreses integrades',
+      'Passarel·la de pagaments pròpia',
+      'Solucions de seguretat avançades',
+      'Potencial de creixement 6x en facturació'
+    ],
+    images: [infinitypayLogo],
+    financialData: [
+      { year: '2023', revenue: 230, ebitda: 78 },
+      { year: '2024', revenue: 300, ebitda: 154 },
+      { year: '2025', revenue: 310, ebitda: 169 },
     ]
   }
 };
@@ -611,6 +669,120 @@ const NegocioDetalle = () => {
                         <p>• 86% Threat Hunting (1.104k €)</p>
                         <p>• 9% Consultoria CYCON/DFIR (113k €)</p>
                         <p>• 5% Offensive Ciberseguretat (60k €)</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* InfinityPay KPIs */}
+            {business.id === 'infinitypay' && (
+              <Card className="bg-gradient-to-r from-blue-50 to-slate-50">
+                <CardHeader>
+                  <CardTitle className="font-serif flex items-center gap-2">
+                    <CreditCard className="w-5 h-5 text-blue-700" />
+                    Indicadors Clau del Negoci
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {infinitypayKPIs.map((kpi, idx) => (
+                      <div key={idx} className="bg-white rounded-lg p-6 shadow-sm border border-blue-200 text-center">
+                        <div className="text-4xl font-bold text-blue-700 mb-3">{kpi.value}</div>
+                        <p className="text-sm text-stone-600 leading-tight">{kpi.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Financial Charts - InfinityPay specific */}
+            {business.id === 'infinitypay' && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-serif flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-blue-600" />
+                    Projeccions Financeres (2023-2029)
+                  </CardTitle>
+                  <p className="text-sm text-stone-500 mt-1">
+                    Amb una recurrència del 99% anual i un parc de més de 2000 TPVs integrats
+                  </p>
+                </CardHeader>
+                <CardContent className="space-y-8">
+                  {/* Revenue vs EBITDA Projection */}
+                  <div>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">Vendes vs EBITDA (milers €)</h4>
+                    <ResponsiveContainer width="100%" height={320}>
+                      <BarChart data={infinitypayRevenueEbitdaData}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
+                        <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 500]} />
+                        <Tooltip 
+                          contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
+                          formatter={(value: number, name: string) => [`${value}k €`, name === 'ventas' ? 'Vendes' : 'EBITDA']}
+                        />
+                        <Legend formatter={(value) => value === 'ventas' ? 'Vendes' : 'EBITDA'} />
+                        <Bar dataKey="ventas" name="ventas" fill="#1e4d7b" radius={[4, 4, 0, 0]} label={{ position: 'top', fill: '#1e4d7b', fontSize: 10 }} />
+                        <Bar dataKey="ebitda" name="ebitda" fill="#d97706" radius={[4, 4, 0, 0]} label={{ position: 'top', fill: '#d97706', fontSize: 10 }} />
+                      </BarChart>
+                    </ResponsiveContainer>
+                    <p className="text-center text-sm text-stone-600 mt-2 font-medium">
+                      Creixement sostingut amb alt potencial d'escalabilitat
+                    </p>
+                  </div>
+
+                  {/* Portfolio Distribution */}
+                  <div>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">Distribució de la Facturació per Servei</h4>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                      <ResponsiveContainer width={300} height={250}>
+                        <PieChart>
+                          <Pie
+                            data={infinitypayPortfolioData}
+                            cx="50%"
+                            cy="50%"
+                            outerRadius={100}
+                            dataKey="value"
+                            label={({ name, value }) => `${value}%`}
+                          >
+                            {infinitypayPortfolioData.map((entry, index) => (
+                              <Cell key={`cell-${index}`} fill={entry.color} />
+                            ))}
+                          </Pie>
+                          <Tooltip formatter={(value: number, name: string) => [`${value}%`, name]} />
+                        </PieChart>
+                      </ResponsiveContainer>
+                      <div className="space-y-2 text-sm text-stone-600">
+                        <p>• <strong>500k € en Facturació Actual</strong></p>
+                        <p>• 40% Passarel·la pagaments (200k €)</p>
+                        <p>• 35% Terminals TPV (175k €)</p>
+                        <p>• 15% Solucions seguretat (75k €)</p>
+                        <p>• 10% Altres serveis (50k €)</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Growth Targets */}
+                  <div className="bg-gradient-to-r from-blue-50 to-slate-100 rounded-lg p-6">
+                    <h4 className="text-sm font-medium text-stone-700 mb-4">Objectius de Creixement</h4>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="text-center">
+                        <p className="text-xs text-stone-500 mb-1">Facturació Actual</p>
+                        <p className="text-2xl font-bold text-stone-700">0,5 Mio €</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-xs text-stone-500 mb-1">Facturació Objectiu</p>
+                        <p className="text-2xl font-bold text-green-600">&gt;3 Mio €</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-xs text-stone-500 mb-1">EBITDA Actual</p>
+                        <p className="text-2xl font-bold text-stone-700">0,2 Mio €</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-xs text-stone-500 mb-1">EBITDA Objectiu</p>
+                        <p className="text-2xl font-bold text-green-600">1 Mio €</p>
                       </div>
                     </div>
                   </div>
