@@ -388,7 +388,7 @@ const businessesData: Record<string, {
   },
   'confidencial-tecnologia': {
     id: 'confidencial-tecnologia',
-    title: 'Negoci Confidencial – Sector Tecnologia',
+    title: 'Tech260126 Sector Tecnologia - [Negoci Confidencial]',
     sector: 'Tecnología',
     location: 'Andorra',
     price: '514.788 €',
