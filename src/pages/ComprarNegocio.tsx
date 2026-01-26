@@ -131,6 +131,7 @@ const ComprarNegocio = () => {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSector, setSelectedSector] = useState<string>("all");
+  const [selectedLocation, setSelectedLocation] = useState<string>("all");
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("recent");
   const [minProfitability, setMinProfitability] = useState<string>("all");
@@ -143,6 +144,14 @@ const ComprarNegocio = () => {
     { value: "200000-500000", label: "200.000 € - 500.000 €" },
     { value: "500000-1000000", label: "500.000 € - 1.000.000 €" },
     { value: "1000000-999999999", label: `${t('buy.moreThan')} 1.000.000 €` },
+  ];
+
+  const locationOptions = [
+    { value: "all", label: t('buy.allLocations') },
+    { value: "spain", label: t('buy.locationSpain') },
+    { value: "andorra", label: t('buy.locationAndorra') },
+    { value: "intl-andorra", label: t('buy.locationIntlAndorra') },
+    { value: "intl-spain", label: t('buy.locationIntlSpain') },
   ];
 
   const profitabilityOptions = [
@@ -209,11 +218,12 @@ const ComprarNegocio = () => {
   const clearFilters = () => {
     setSearchQuery("");
     setSelectedSector("all");
+    setSelectedLocation("all");
     setSelectedPriceRange("all");
     setMinProfitability("all");
   };
 
-  const hasActiveFilters = searchQuery !== "" || selectedSector !== "all" || selectedPriceRange !== "all" || minProfitability !== "all";
+  const hasActiveFilters = searchQuery !== "" || selectedSector !== "all" || selectedLocation !== "all" || selectedPriceRange !== "all" || minProfitability !== "all";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -306,7 +316,7 @@ const ComprarNegocio = () => {
             </div>
 
             {/* Filters */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-background rounded-xl shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-6 bg-background rounded-xl shadow-sm">
               <div>
                 <label className="block text-sm font-medium text-muted-foreground mb-2">
                   {t('buy.sector')}
@@ -319,6 +329,21 @@ const ComprarNegocio = () => {
                     <SelectItem value="all">{t('buy.allSectors')}</SelectItem>
                     {sectorKeys.map((sector) => (
                       <SelectItem key={sector.key} value={sector.key}>{t(sector.key)}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
+                  {t('buy.location')}
+                </label>
+                <Select value={selectedLocation} onValueChange={setSelectedLocation}>
+                  <SelectTrigger className="bg-background">
+                    <SelectValue placeholder={t('buy.allLocations')} />
+                  </SelectTrigger>
+                  <SelectContent className="bg-background z-50">
+                    {locationOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -370,6 +395,14 @@ const ComprarNegocio = () => {
                   <Badge variant="secondary" className="px-3 py-1">
                     {t('buy.priceRange')}: {priceRanges.find(r => r.value === selectedPriceRange)?.label}
                     <button onClick={() => setSelectedPriceRange("all")} className="ml-2 hover:text-destructive">
+                      <X className="w-3 h-3" />
+                    </button>
+                  </Badge>
+                )}
+                {selectedLocation !== "all" && (
+                  <Badge variant="secondary" className="px-3 py-1">
+                    {t('buy.location')}: {locationOptions.find(r => r.value === selectedLocation)?.label}
+                    <button onClick={() => setSelectedLocation("all")} className="ml-2 hover:text-destructive">
                       <X className="w-3 h-3" />
                     </button>
                   </Badge>
