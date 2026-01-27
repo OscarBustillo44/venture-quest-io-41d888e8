@@ -149,7 +149,7 @@
         "history": { "value": "45+", "label": "années d'histoire comme plus ancien restaurant d'Andorre" },
         "revenue": { "value": "300k", "label": "chiffre d'affaires annuel consolidé en euros" },
         "profitability": { "value": "43%", "label": "rentabilité opérationnelle sur CA" },
-        "employees": { "value": "8", "label": "employés fidèles souhaitant continuer" }
+        "employees": { "value": "2", "label": "employés fidèles souhaitant continuer" }
       },
       "portfolio": {
         "menu": "Menu du jour",

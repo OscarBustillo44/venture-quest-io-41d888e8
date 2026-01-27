@@ -164,7 +164,7 @@ export const businessesData: Record<string, Business> = {
     revenue: '300.000 €',
     ebitda: '75.000 €',
     profitability: '43%',
-    employees: '8',
+    employees: '2',
     yearsOperating: '45+',
     descriptionKey: 'businesses.laborda.description',
     highlightsKey: 'businesses.laborda.highlights',
