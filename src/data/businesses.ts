@@ -182,7 +182,7 @@ export const businessesData: Record<string, Business> = {
     titleKey: 'businesses.alpine.title',
     sectorKey: 'sectors.technology',
     location: 'Andorra i Espanya',
-    price: '2.400.000 €',
+    price: '1.300.000 €',
     revenue: '1.300.000 €',
     ebitda: '300.000 €',
     profitability: '18%',
@@ -373,7 +373,7 @@ export const carouselSlides = [
     image: alpineLogo,
     titleKey: 'businesses.alpine.title',
     descriptionKey: 'businesses.alpine.carouselDesc',
-    price: '2.400.000 €',
+    price: '1.300.000 €',
     sectorKey: 'sectors.technology',
     isConfidential: false
   },
