@@ -149,7 +149,7 @@
         "history": { "value": "45+", "label": "years of history as the oldest restaurant in Andorra" },
         "revenue": { "value": "300k", "label": "consolidated annual revenue in euros" },
         "profitability": { "value": "43%", "label": "operating profitability on revenue" },
-        "employees": { "value": "8", "label": "loyal employees wishing to continue" }
+        "employees": { "value": "2", "label": "loyal employees wishing to continue" }
       },
       "portfolio": {
         "menu": "Daily menu",
