@@ -540,12 +540,21 @@ const ComprarNegocio = () => {
                 <Link to={`/negocio/${business.id}`} key={business.id}>
                   <div className="rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card">
                     {/* Image Section */}
-                    <div className="relative h-[180px] overflow-hidden">
-                      <img
-                        src={business.image}
-                        alt={t(business.titleKey)}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
+                    <div className="relative h-[180px] overflow-hidden bg-stone-800">
+                      {/* Use object-contain for logos (alpine, infinitypay), object-cover for photos */}
+                      {(business.id === 'alpine-security' || business.id === 'infinitypay') ? (
+                        <img
+                          src={business.image}
+                          alt={t(business.titleKey)}
+                          className="w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <img
+                          src={business.image}
+                          alt={t(business.titleKey)}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                      )}
                       
                       {/* Confidential Watermark */}
                       {business.isConfidential && (
