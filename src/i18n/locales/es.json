@@ -54,7 +54,7 @@
     "noBusinessesFound": "No se encontraron negocios",
     "adjustFilters": "Prueba a ajustar los filtros para ver más resultados",
     "whatIsEbitda": "¿Qué es EBITDA?",
-    "ebitdaExplanation": "Es el beneficio antes de intereses, impuestos y amortizaciones. Simplificado: cuánto dinero genera el negocio antes de gastos financieros.",
+    "ebitdaExplanation": "Es el beneficio antes de intereses, impuestos y amortizaciones. Es una métrica simple para evaluar cuánto genera un negocio con sus operaciones básicas, ignorando factores como deudas o reglas contables.",
     "notFindingTitle": "¿No encuentras lo que buscas?",
     "notFindingDesc": "Contáctanos y te ayudaremos a encontrar el negocio perfecto para ti",
     "contact": "Contactar",
