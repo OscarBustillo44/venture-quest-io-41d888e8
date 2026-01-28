@@ -7,13 +7,64 @@
     "backToList": "Tornar a la llista de negocis"
   },
   "home": {
-    "title": "buscobusiness.com",
-    "subtitle": "El marketplace on empreses reals canvien de mans amb transparència i criteri.",
-    "buyBusiness": "Comprar un negoci",
-    "sellBusiness": "Vendre el meu negoci",
-    "featuredBusinesses": "Negocis destacats",
-    "featuredSubtitle": "Oportunitats verificades amb informació completa",
-    "viewAvailable": "Veure negocis disponibles"
+    "hero": {
+      "headline": "No és un portal d'anuncis. És el lloc on els negocis es preparen i es venen bé.",
+      "subheadline": "Convertim empreses en oportunitats estructurades, comprensibles i invertibles.",
+      "ctaSell": "Vendre el meu negoci",
+      "ctaBuy": "Explorar oportunitats"
+    },
+    "problem": {
+      "title": "El problema",
+      "sellerTitle": "Vendre sense preparar destrueix valor",
+      "sellerDesc": "Publicar un anunci i esperar no és vendre. Sense estructura financera ni preparació, el comprador desconfia i el preu es negocia a la baixa.",
+      "buyerTitle": "Comprar sense estructura augmenta el risc",
+      "buyerDesc": "Interpretar dades incompletes, assumir riscos ocults i prendre decisions sense criteri homogeni és la norma a la majoria de plataformes."
+    },
+    "sellers": {
+      "label": "Per a venedors",
+      "title": "Per a qui vol vendre bé",
+      "point1": "Organitza el teu negoci abans de sortir al mercat",
+      "point2": "Entén què estàs venent realment",
+      "point3": "Presenta l'empresa amb criteris financers clars",
+      "point4": "Maximitza valor i redueix fricció en la negociació",
+      "keyPhrase": "No publiques un anunci. Construeixes una transacció.",
+      "cta": "Preparar el meu negoci",
+      "icon1": "Documentació",
+      "icon2": "Anàlisi",
+      "icon3": "Valoració",
+      "icon4": "Transacció"
+    },
+    "buyers": {
+      "label": "Per a compradors",
+      "title": "Per a qui vol comprar amb criteri",
+      "point1": "Entén el model de negoci",
+      "point2": "Analitza riscos i retorns",
+      "point3": "Compara empreses amb criteris homogenis",
+      "point4": "Pren decisions amb insight financer real",
+      "keyPhrase": "No compres a cegues. Compres amb claredat.",
+      "cta": "Trobar negocis",
+      "feature1": "Model de negoci explicat",
+      "feature2": "Anàlisi de riscos",
+      "feature3": "Criteris comparables"
+    },
+    "difference": {
+      "title": "La nostra diferència",
+      "subtitle": "Buscobusiness combina marketplace curat, anàlisi financer de nivell CFO, preparació d'empreses i acompanyament en decisions.",
+      "pillar1Title": "Marketplace curat",
+      "pillar1Desc": "Només empreses verificades i preparades per a transacció",
+      "pillar2Title": "Anàlisi CFO",
+      "pillar2Desc": "Informació financera estructurada i comparable",
+      "pillar3Title": "Preparació prèvia",
+      "pillar3Desc": "Negocis llestos per a la due diligence",
+      "pillar4Title": "Acompanyament",
+      "pillar4Desc": "Suport en valoració, decisió i finançament",
+      "statement1": "Un negoci no es ven bé perquè es publica.",
+      "statement2": "Es ven bé quan es prepara."
+    },
+    "final": {
+      "statement": "Convertim empreses en oportunitats invertibles.",
+      "subtitle": "Claredat, estructura i execució per a compradors i venedors seriosos."
+    }
   },
   "buy": {
     "title": "Troba negocis reals, no oportunitats buides",
