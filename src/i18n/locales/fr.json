@@ -288,6 +288,56 @@
       "button": "Contacter maintenant"
     }
   },
+  "about": {
+    "hero": {
+      "title": "Nous transformons la complexité en clarté",
+      "subtitle": "Nous faisons le pont entre les entreprises cherchant de nouveaux propriétaires et les décideurs cherchant des opportunités réelles. Avec rigueur financière, préparation structurée et accompagnement expert."
+    },
+    "mission": {
+      "title": "Notre mission",
+      "description": "Transformer la façon dont les entreprises sont achetées et vendues sur le marché des PME. Nous croyons que chaque entreprise mérite une transaction à sa hauteur : préparée, structurée et exécutée avec des critères professionnels.",
+      "quote": "Une entreprise n'est pas bien vendue parce qu'elle est publiée. Elle est bien vendue quand elle est préparée."
+    },
+    "values": {
+      "title": "Nos valeurs",
+      "subtitle": "Les principes qui guident chaque décision et chaque transaction.",
+      "trust": {
+        "title": "Confiance",
+        "description": "La discrétion et la confidentialité sont la base de notre travail. Nous protégeons les intérêts de toutes les parties impliquées."
+      },
+      "clarity": {
+        "title": "Clarté",
+        "description": "Information structurée, analyse rigoureuse et communication transparente. Sans surprises ni ambiguïtés."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Standards de niveau CFO dans chaque analyse. Préparation professionnelle dans chaque transaction."
+      }
+    },
+    "team": {
+      "title": "L'expérience qui fait la différence",
+      "subtitle": "Une équipe multidisciplinaire avec une expérience en M&A, finance d'entreprise et conseil aux entreprises.",
+      "financial": {
+        "title": "Analyse Financière",
+        "description": "Professionnels expérimentés en évaluation d'entreprises, due diligence et structuration d'opérations."
+      },
+      "legal": {
+        "title": "Conseil Juridique",
+        "description": "Réseau de collaborateurs spécialisés en droit commercial, fiscal et contractuel pour les transactions d'entreprises."
+      },
+      "advisory": {
+        "title": "Accompagnement Stratégique",
+        "description": "Orientation experte de la préparation à la clôture, protégeant les intérêts de nos clients."
+      }
+    },
+    "whyUs": {
+      "title": "Pourquoi Buscobusiness",
+      "reason1": "Parce qu'une entreprise mal préparée génère de la méfiance et détruit de la valeur.",
+      "reason2": "Parce qu'acheter sans structure augmente le risque et réduit les opportunités.",
+      "reason3": "Parce que chaque transaction mérite la même rigueur que les grandes opérations de M&A.",
+      "closing": "Nous transformons les entreprises en opportunités investissables."
+    }
+  },
   "common": {
     "years": "ans",
     "employees": "employés",

@@ -288,6 +288,56 @@
       "button": "Contact now"
     }
   },
+  "about": {
+    "hero": {
+      "title": "We turn complexity into clarity",
+      "subtitle": "We bridge the gap between businesses seeking new owners and decision-makers seeking real opportunities. With financial rigor, structured preparation and expert guidance."
+    },
+    "mission": {
+      "title": "Our mission",
+      "description": "To transform how businesses are bought and sold in the SME market. We believe every business deserves a transaction to match: prepared, structured and executed with professional criteria.",
+      "quote": "A business is not sold well because it is published. It is sold well when it is prepared."
+    },
+    "values": {
+      "title": "Our values",
+      "subtitle": "The principles that guide every decision and every transaction.",
+      "trust": {
+        "title": "Trust",
+        "description": "Discretion and confidentiality are the foundation of our work. We protect the interests of all parties involved."
+      },
+      "clarity": {
+        "title": "Clarity",
+        "description": "Structured information, rigorous analysis and transparent communication. No surprises or ambiguities."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "CFO-level standards in every analysis. Professional preparation in every transaction."
+      }
+    },
+    "team": {
+      "title": "Experience that makes the difference",
+      "subtitle": "A multidisciplinary team with experience in M&A, corporate finance and business advisory.",
+      "financial": {
+        "title": "Financial Analysis",
+        "description": "Professionals with experience in business valuation, due diligence and deal structuring."
+      },
+      "legal": {
+        "title": "Legal Advisory",
+        "description": "Network of collaborators specialized in commercial, tax and contract law for business transactions."
+      },
+      "advisory": {
+        "title": "Strategic Guidance",
+        "description": "Expert orientation from preparation to closing, protecting our clients' interests."
+      }
+    },
+    "whyUs": {
+      "title": "Why Buscobusiness",
+      "reason1": "Because a poorly prepared business creates distrust and destroys value.",
+      "reason2": "Because buying without structure increases risk and reduces opportunities.",
+      "reason3": "Because every transaction deserves the same rigor as major M&A operations.",
+      "closing": "We turn companies into investable opportunities."
+    }
+  },
   "common": {
     "years": "years",
     "employees": "employees",
