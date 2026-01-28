@@ -538,56 +538,58 @@ const ComprarNegocio = () => {
               
               {filteredAndSortedBusinesses.map((business) => (
                 <Link to={`/negocio/${business.id}`} key={business.id}>
-                  <div className="relative h-[320px] rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    {/* Background Image */}
-                    <img
-                      src={business.image}
-                      alt={t(business.titleKey)}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/95 via-stone-900/30 to-transparent" />
-                    
-                    {/* Confidential Watermark */}
-                    {business.isConfidential && (
-                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="text-white/20 text-4xl md:text-5xl font-bold uppercase tracking-widest transform -rotate-12 select-none">
-                          {t('buy.confidential').toUpperCase()}
+                  <div className="rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card">
+                    {/* Image Section */}
+                    <div className="relative h-[180px] overflow-hidden">
+                      <img
+                        src={business.image}
+                        alt={t(business.titleKey)}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      
+                      {/* Confidential Watermark */}
+                      {business.isConfidential && (
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                          <div className="text-white/30 text-2xl md:text-3xl font-bold uppercase tracking-widest transform -rotate-12 select-none">
+                            {t('buy.confidential').toUpperCase()}
+                          </div>
                         </div>
+                      )}
+                      
+                      {/* Sector Badge */}
+                      <div className="absolute top-3 left-3 bg-stone-800/90 text-white px-2 py-1 rounded text-xs font-medium">
+                        {t(business.sectorKey)}
                       </div>
-                    )}
-                    
-                    {/* Sector Badge */}
-                    <div className="absolute top-3 left-3 bg-stone-800/80 text-white px-2 py-1 rounded text-xs font-medium">
-                      {t(business.sectorKey)}
-                    </div>
-                    
-                    {/* Confidential Badge */}
-                    {business.isConfidential && (
-                      <div className="absolute top-3 left-24 bg-stone-600/90 text-white px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
-                        🔒 {t('buy.confidential')}
+                      
+                      {/* Confidential Badge */}
+                      {business.isConfidential && (
+                        <div className="absolute top-3 left-[5.5rem] bg-stone-600/90 text-white px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
+                          🔒
+                        </div>
+                      )}
+                      
+                      {/* Price Badge */}
+                      <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
+                        {business.priceDisplay}
                       </div>
-                    )}
-                    
-                    {/* Operation Type Badge */}
-                    <div className={`absolute top-3 right-3 px-3 py-1 rounded-md text-xs font-semibold shadow-lg ${operationBadgeConfig[business.operationType].className}`}>
-                      {t(operationBadgeConfig[business.operationType].labelKey)}
                     </div>
                     
-                    {/* Price Badge */}
-                    <div className="absolute bottom-16 right-3 bg-stone-900/80 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
-                      {business.priceDisplay}
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                      <h3 className="font-serif text-lg md:text-xl font-bold mb-1.5 drop-shadow-lg line-clamp-2">
+                    {/* Title Section */}
+                    <div className="p-3 bg-card">
+                      <h3 className="font-serif text-base font-bold text-foreground line-clamp-2 leading-tight">
                         {t(business.titleKey)}
                       </h3>
-                      <p className="text-xs md:text-sm text-stone-200 leading-snug line-clamp-3 drop-shadow-md">
-                        {t(business.descriptionKey)}
+                    </div>
+                    
+                    {/* Financial Info - Orange Background */}
+                    <div className="bg-amber-600 text-white p-3">
+                      <p className="text-xs leading-relaxed">
+                        Facturación {business.priceDisplay} · EBITDA {Math.round(business.price * 0.25).toLocaleString('es-ES')} € · Rentabilidad {business.profitability}%
                       </p>
+                      {/* Operation Type Badge */}
+                      <div className={`inline-block mt-2 px-2 py-0.5 rounded text-xs font-medium bg-white/20`}>
+                        {t(operationBadgeConfig[business.operationType].labelKey)}
+                      </div>
                     </div>
                   </div>
                 </Link>
