@@ -45,10 +45,11 @@ const BusinessCarousel = () => {
             <Link to={`/negocio/${slide.id}`}>
               <div className="relative h-[280px] md:h-[320px] rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-300">
                 {/* Background Image */}
+                <div className="absolute inset-0 bg-stone-800" />
                 <img
                   src={slide.image}
                   alt={t(slide.titleKey)}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105"
                 />
                 
                 {/* Gradient Overlay */}
