@@ -109,7 +109,15 @@
     "notFindingTitle": "Can't find what you're looking for?",
     "notFindingDesc": "Contact us and we'll help you find the perfect business for you",
     "contact": "Contact",
-    "confidential": "Confidential"
+    "confidential": "Confidential",
+    "operationType": "Operation type",
+    "allOperations": "All operations",
+    "operationBuy": "Buy",
+    "operationSell": "Sell",
+    "operationTransfer": "Transfer",
+    "operationTransferDesc": "License or premises handover",
+    "operationInvest": "Invest",
+    "operationInvestDesc": "Investment or partial acquisition"
   },
   "detail": {
     "businessNotFound": "Business not found",
@@ -344,6 +352,7 @@
     "startButton": "Create listing",
     "addPhoto": "Add photo (optional)",
     "titlePlaceholder": "Business name",
+    "operationPlaceholder": "Operation type",
     "sectorPlaceholder": "Select sector",
     "pricePlaceholder": "Sale price",
     "descriptionPlaceholder": "Brief description...",
