@@ -183,7 +183,110 @@
     "services": "Services",
     "industry": "Industry",
     "technology": "Technology",
-    "fintech": "Fintech"
+    "fintech": "Fintech",
+    "comercio": "Commerce",
+    "hosteleria": "Hospitality",
+    "industria": "Industry",
+    "servicios": "Services",
+    "tecnologia": "Technology"
+  },
+  "sell": {
+    "hero": {
+      "headline": "Selling well is not publishing. It's preparing.",
+      "subheadline": "We help owners structure, value and present their business to maximize value and close successful transactions.",
+      "keyPhrase": "You don't upload a listing. You build a transaction."
+    },
+    "value": {
+      "title": "Why prepare your business before selling",
+      "subtitle": "A poorly prepared business creates distrust, prolongs negotiations and reduces the final price."
+    },
+    "benefits": {
+      "confidentiality": {
+        "title": "Total confidentiality",
+        "description": "Your intention to sell remains discreet. We control who accesses information and when."
+      },
+      "valuation": {
+        "title": "Realistic valuation",
+        "description": "Rigorous financial analysis to determine a defensible market price and maximize value."
+      },
+      "preparation": {
+        "title": "Document preparation",
+        "description": "We organize financial, legal and operational information to accelerate due diligence."
+      }
+    },
+    "process": {
+      "title": "How it works",
+      "subtitle": "A structured process that protects your interests at every stage.",
+      "step1": {
+        "title": "Initial analysis",
+        "description": "We evaluate your business, financial situation and sale objectives."
+      },
+      "step2": {
+        "title": "Preparation",
+        "description": "We structure information and prepare documentation for buyers."
+      },
+      "step3": {
+        "title": "Qualified search",
+        "description": "We identify serious buyers who fit your business."
+      },
+      "step4": {
+        "title": "Successful closing",
+        "description": "Support until signing, protecting your interests."
+      }
+    },
+    "form": {
+      "title": "Start the conversation",
+      "description": "Tell us about your business. A confidential, no-obligation call to understand your situation and explain how we can help.",
+      "promise1": {
+        "title": "100% confidential",
+        "description": "Your information is protected from first contact."
+      },
+      "promise2": {
+        "title": "No obligation",
+        "description": "An initial conversation to get to know each other, no commitments."
+      },
+      "promise3": {
+        "title": "Expert advice",
+        "description": "Guidance from professionals with M&A experience."
+      },
+      "fields": {
+        "name": "Full name",
+        "email": "Email",
+        "phone": "Phone",
+        "companyName": "Company name",
+        "sector": "Sector",
+        "revenue": "Annual revenue",
+        "message": "Message (optional)"
+      },
+      "placeholders": {
+        "name": "Your name",
+        "email": "you@email.com",
+        "phone": "+1 555 000 0000",
+        "companyName": "Your company name",
+        "sector": "Select a sector",
+        "revenue": "Select a range",
+        "message": "Tell us briefly about your business and your goals..."
+      },
+      "sectors": {
+        "other": "Other"
+      },
+      "revenue": {
+        "under500k": "Under €500,000",
+        "500kTo1M": "€500,000 - €1M",
+        "1MTo5M": "€1M - €5M",
+        "5MTo10M": "€5M - €10M",
+        "over10M": "Over €10M"
+      },
+      "submit": "Request confidential information",
+      "privacy": "By submitting you accept our privacy policy. Your information is protected.",
+      "successTitle": "Request sent",
+      "successMessage": "Thank you for your interest. We will contact you within the next 24-48 hours."
+    },
+    "cta": {
+      "title": "Your business deserves a sale to match",
+      "subtitle": "Start with a confidential conversation. No obligation.",
+      "button": "Contact now"
+    }
   },
   "common": {
     "years": "years",

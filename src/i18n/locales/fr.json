@@ -183,7 +183,110 @@
     "services": "Services",
     "industry": "Industrie",
     "technology": "Technologie",
-    "fintech": "Fintech"
+    "fintech": "Fintech",
+    "comercio": "Commerce",
+    "hosteleria": "Hôtellerie-Restauration",
+    "industria": "Industrie",
+    "servicios": "Services",
+    "tecnologia": "Technologie"
+  },
+  "sell": {
+    "hero": {
+      "headline": "Bien vendre, ce n'est pas publier. C'est préparer.",
+      "subheadline": "Nous aidons les propriétaires à structurer, évaluer et présenter leur entreprise pour maximiser sa valeur et conclure des transactions réussies.",
+      "keyPhrase": "Vous ne publiez pas une annonce. Vous construisez une transaction."
+    },
+    "value": {
+      "title": "Pourquoi préparer votre entreprise avant de vendre",
+      "subtitle": "Une entreprise mal préparée génère de la méfiance, prolonge les négociations et réduit le prix final."
+    },
+    "benefits": {
+      "confidentiality": {
+        "title": "Confidentialité totale",
+        "description": "Votre intention de vendre reste discrète. Nous contrôlons qui accède à l'information et quand."
+      },
+      "valuation": {
+        "title": "Évaluation réaliste",
+        "description": "Analyse financière rigoureuse pour déterminer un prix de marché défendable et maximiser la valeur."
+      },
+      "preparation": {
+        "title": "Préparation documentaire",
+        "description": "Nous organisons l'information financière, juridique et opérationnelle pour accélérer la due diligence."
+      }
+    },
+    "process": {
+      "title": "Comment ça marche",
+      "subtitle": "Un processus structuré qui protège vos intérêts à chaque étape.",
+      "step1": {
+        "title": "Analyse initiale",
+        "description": "Nous évaluons votre entreprise, situation financière et objectifs de vente."
+      },
+      "step2": {
+        "title": "Préparation",
+        "description": "Nous structurons l'information et préparons la documentation pour les acheteurs."
+      },
+      "step3": {
+        "title": "Recherche qualifiée",
+        "description": "Nous identifions des acheteurs sérieux qui correspondent à votre entreprise."
+      },
+      "step4": {
+        "title": "Clôture réussie",
+        "description": "Accompagnement jusqu'à la signature, protégeant vos intérêts."
+      }
+    },
+    "form": {
+      "title": "Commencez la conversation",
+      "description": "Parlez-nous de votre entreprise. Un appel confidentiel sans engagement pour comprendre votre situation et vous expliquer comment nous pouvons vous aider.",
+      "promise1": {
+        "title": "100% confidentiel",
+        "description": "Vos informations sont protégées dès le premier contact."
+      },
+      "promise2": {
+        "title": "Sans engagement",
+        "description": "Une conversation initiale pour faire connaissance, sans obligations."
+      },
+      "promise3": {
+        "title": "Conseil expert",
+        "description": "Orientation par des professionnels expérimentés en M&A."
+      },
+      "fields": {
+        "name": "Nom complet",
+        "email": "Email",
+        "phone": "Téléphone",
+        "companyName": "Nom de l'entreprise",
+        "sector": "Secteur",
+        "revenue": "Chiffre d'affaires annuel",
+        "message": "Message (optionnel)"
+      },
+      "placeholders": {
+        "name": "Votre nom",
+        "email": "vous@email.com",
+        "phone": "+33 6 00 00 00 00",
+        "companyName": "Nom de votre entreprise",
+        "sector": "Sélectionnez un secteur",
+        "revenue": "Sélectionnez une fourchette",
+        "message": "Parlez-nous brièvement de votre entreprise et de vos objectifs..."
+      },
+      "sectors": {
+        "other": "Autres"
+      },
+      "revenue": {
+        "under500k": "Moins de 500.000 €",
+        "500kTo1M": "500.000 € - 1M €",
+        "1MTo5M": "1M € - 5M €",
+        "5MTo10M": "5M € - 10M €",
+        "over10M": "Plus de 10M €"
+      },
+      "submit": "Demander des informations confidentielles",
+      "privacy": "En soumettant, vous acceptez notre politique de confidentialité. Vos informations sont protégées.",
+      "successTitle": "Demande envoyée",
+      "successMessage": "Merci pour votre intérêt. Nous vous contacterons dans les 24-48 heures."
+    },
+    "cta": {
+      "title": "Votre entreprise mérite une vente à la hauteur",
+      "subtitle": "Commencez par une conversation confidentielle. Sans engagement.",
+      "button": "Contacter maintenant"
+    }
   },
   "common": {
     "years": "ans",

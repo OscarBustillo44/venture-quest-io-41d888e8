@@ -183,7 +183,110 @@
     "services": "Servicios",
     "industry": "Industria",
     "technology": "Tecnología",
-    "fintech": "Fintech"
+    "fintech": "Fintech",
+    "comercio": "Comercio",
+    "hosteleria": "Hostelería",
+    "industria": "Industria",
+    "servicios": "Servicios",
+    "tecnologia": "Tecnología"
+  },
+  "sell": {
+    "hero": {
+      "headline": "Vender bien no es publicar. Es preparar.",
+      "subheadline": "Ayudamos a propietarios a estructurar, valorar y presentar su negocio para maximizar su valor y cerrar transacciones con éxito.",
+      "keyPhrase": "No subes un anuncio. Construyes una transacción."
+    },
+    "value": {
+      "title": "Por qué preparar tu negocio antes de vender",
+      "subtitle": "Un negocio mal preparado genera desconfianza, prolonga las negociaciones y reduce el precio final."
+    },
+    "benefits": {
+      "confidentiality": {
+        "title": "Confidencialidad total",
+        "description": "Tu intención de venta permanece discreta. Controlamos quién accede a la información y cuándo."
+      },
+      "valuation": {
+        "title": "Valoración realista",
+        "description": "Análisis financiero riguroso para determinar un precio de mercado defendible y maximizar el valor."
+      },
+      "preparation": {
+        "title": "Preparación documental",
+        "description": "Organizamos la información financiera, legal y operativa para acelerar la due diligence."
+      }
+    },
+    "process": {
+      "title": "Cómo funciona",
+      "subtitle": "Un proceso estructurado que protege tus intereses en cada fase.",
+      "step1": {
+        "title": "Análisis inicial",
+        "description": "Evaluamos tu negocio, situación financiera y objetivos de venta."
+      },
+      "step2": {
+        "title": "Preparación",
+        "description": "Estructuramos la información y preparamos la documentación para compradores."
+      },
+      "step3": {
+        "title": "Búsqueda cualificada",
+        "description": "Identificamos compradores serios que encajan con tu negocio."
+      },
+      "step4": {
+        "title": "Cierre exitoso",
+        "description": "Acompañamiento hasta la firma, protegiendo tus intereses."
+      }
+    },
+    "form": {
+      "title": "Inicia la conversación",
+      "description": "Cuéntanos sobre tu negocio. Una llamada confidencial sin compromiso para entender tu situación y explicarte cómo podemos ayudarte.",
+      "promise1": {
+        "title": "100% confidencial",
+        "description": "Tu información está protegida desde el primer contacto."
+      },
+      "promise2": {
+        "title": "Sin compromiso",
+        "description": "Una conversación inicial para conocernos, sin obligaciones."
+      },
+      "promise3": {
+        "title": "Asesoramiento experto",
+        "description": "Orientación de profesionales con experiencia en M&A."
+      },
+      "fields": {
+        "name": "Nombre completo",
+        "email": "Email",
+        "phone": "Teléfono",
+        "companyName": "Nombre de la empresa",
+        "sector": "Sector",
+        "revenue": "Facturación anual",
+        "message": "Mensaje (opcional)"
+      },
+      "placeholders": {
+        "name": "Tu nombre",
+        "email": "tu@email.com",
+        "phone": "+34 600 000 000",
+        "companyName": "Nombre de tu empresa",
+        "sector": "Selecciona un sector",
+        "revenue": "Selecciona un rango",
+        "message": "Cuéntanos brevemente sobre tu negocio y tus objetivos..."
+      },
+      "sectors": {
+        "other": "Otros"
+      },
+      "revenue": {
+        "under500k": "Menos de 500.000 €",
+        "500kTo1M": "500.000 € - 1M €",
+        "1MTo5M": "1M € - 5M €",
+        "5MTo10M": "5M € - 10M €",
+        "over10M": "Más de 10M €"
+      },
+      "submit": "Solicitar información confidencial",
+      "privacy": "Al enviar aceptas nuestra política de privacidad. Tu información está protegida.",
+      "successTitle": "Solicitud enviada",
+      "successMessage": "Gracias por tu interés. Nos pondremos en contacto contigo en las próximas 24-48 horas."
+    },
+    "cta": {
+      "title": "Tu negocio merece una venta a la altura",
+      "subtitle": "Empieza con una conversación confidencial. Sin compromiso.",
+      "button": "Contactar ahora"
+    }
   },
   "common": {
     "years": "años",

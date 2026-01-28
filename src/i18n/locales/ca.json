@@ -183,7 +183,110 @@
     "services": "Serveis",
     "industry": "Indústria",
     "technology": "Tecnologia",
-    "fintech": "Fintech"
+    "fintech": "Fintech",
+    "comercio": "Comerç",
+    "hosteleria": "Hostaleria",
+    "industria": "Indústria",
+    "servicios": "Serveis",
+    "tecnologia": "Tecnologia"
+  },
+  "sell": {
+    "hero": {
+      "headline": "Vendre bé no és publicar. És preparar.",
+      "subheadline": "Ajudem a propietaris a estructurar, valorar i presentar el seu negoci per maximitzar el seu valor i tancar transaccions amb èxit.",
+      "keyPhrase": "No puges un anunci. Construeixes una transacció."
+    },
+    "value": {
+      "title": "Per què preparar el teu negoci abans de vendre",
+      "subtitle": "Un negoci mal preparat genera desconfiança, allarga les negociacions i redueix el preu final."
+    },
+    "benefits": {
+      "confidentiality": {
+        "title": "Confidencialitat total",
+        "description": "La teva intenció de venda roman discreta. Controlem qui accedeix a la informació i quan."
+      },
+      "valuation": {
+        "title": "Valoració realista",
+        "description": "Anàlisi financer rigorós per determinar un preu de mercat defensable i maximitzar el valor."
+      },
+      "preparation": {
+        "title": "Preparació documental",
+        "description": "Organitzem la informació financera, legal i operativa per accelerar la due diligence."
+      }
+    },
+    "process": {
+      "title": "Com funciona",
+      "subtitle": "Un procés estructurat que protegeix els teus interessos en cada fase.",
+      "step1": {
+        "title": "Anàlisi inicial",
+        "description": "Avaluem el teu negoci, situació financera i objectius de venda."
+      },
+      "step2": {
+        "title": "Preparació",
+        "description": "Estructurem la informació i preparem la documentació per a compradors."
+      },
+      "step3": {
+        "title": "Cerca qualificada",
+        "description": "Identifiquem compradors seriosos que encaixen amb el teu negoci."
+      },
+      "step4": {
+        "title": "Tancament exitós",
+        "description": "Acompanyament fins a la signatura, protegint els teus interessos."
+      }
+    },
+    "form": {
+      "title": "Inicia la conversa",
+      "description": "Explica'ns sobre el teu negoci. Una trucada confidencial sense compromís per entendre la teva situació i explicar-te com podem ajudar-te.",
+      "promise1": {
+        "title": "100% confidencial",
+        "description": "La teva informació està protegida des del primer contacte."
+      },
+      "promise2": {
+        "title": "Sense compromís",
+        "description": "Una conversa inicial per conèixer-nos, sense obligacions."
+      },
+      "promise3": {
+        "title": "Assessorament expert",
+        "description": "Orientació de professionals amb experiència en M&A."
+      },
+      "fields": {
+        "name": "Nom complet",
+        "email": "Email",
+        "phone": "Telèfon",
+        "companyName": "Nom de l'empresa",
+        "sector": "Sector",
+        "revenue": "Facturació anual",
+        "message": "Missatge (opcional)"
+      },
+      "placeholders": {
+        "name": "El teu nom",
+        "email": "tu@email.com",
+        "phone": "+34 600 000 000",
+        "companyName": "Nom de la teva empresa",
+        "sector": "Selecciona un sector",
+        "revenue": "Selecciona un rang",
+        "message": "Explica'ns breument sobre el teu negoci i els teus objectius..."
+      },
+      "sectors": {
+        "other": "Altres"
+      },
+      "revenue": {
+        "under500k": "Menys de 500.000 €",
+        "500kTo1M": "500.000 € - 1M €",
+        "1MTo5M": "1M € - 5M €",
+        "5MTo10M": "5M € - 10M €",
+        "over10M": "Més de 10M €"
+      },
+      "submit": "Sol·licitar informació confidencial",
+      "privacy": "En enviar acceptes la nostra política de privacitat. La teva informació està protegida.",
+      "successTitle": "Sol·licitud enviada",
+      "successMessage": "Gràcies pel teu interès. Ens posarem en contacte amb tu en les properes 24-48 hores."
+    },
+    "cta": {
+      "title": "El teu negoci mereix una venda a l'alçada",
+      "subtitle": "Comença amb una conversa confidencial. Sense compromís.",
+      "button": "Contactar ara"
+    }
   },
   "common": {
     "years": "anys",
