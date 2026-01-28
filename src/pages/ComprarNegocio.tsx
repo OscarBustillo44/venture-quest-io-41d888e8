@@ -13,6 +13,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import PublishBusinessCard from "@/components/PublishBusinessCard";
 import { Link } from "react-router-dom";
 
 import { carouselSlides } from '@/data/businesses';
@@ -474,8 +475,13 @@ const ComprarNegocio = () => {
             </div>
           </div>
 
-          {filteredAndSortedBusinesses.length > 0 ? (
+          {filteredAndSortedBusinesses.length > 0 || !hasActiveFilters ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {/* Interactive Publish Card - Always first position when no filters active */}
+              {!hasActiveFilters && (
+                <PublishBusinessCard />
+              )}
+              
               {filteredAndSortedBusinesses.map((business) => (
                 <Link to={`/negocio/${business.id}`} key={business.id}>
                   <div className="relative h-[320px] rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">

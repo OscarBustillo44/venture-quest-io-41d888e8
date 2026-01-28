@@ -338,6 +338,19 @@
       "closing": "Nous transformons les entreprises en opportunités investissables."
     }
   },
+  "publish": {
+    "cardTitle": "Publiez votre entreprise",
+    "cardSubtitle": "Mettez en vente votre société ou vos actifs et atteignez des acheteurs qualifiés",
+    "startButton": "Créer une annonce",
+    "addPhoto": "Ajouter photo (optionnel)",
+    "titlePlaceholder": "Nom de l'entreprise",
+    "sectorPlaceholder": "Sélectionner secteur",
+    "pricePlaceholder": "Prix de vente",
+    "descriptionPlaceholder": "Brève description...",
+    "submit": "Publier l'annonce",
+    "submitting": "Publication...",
+    "fullFormLink": "Besoin de plus d'options? Utilisez le formulaire complet"
+  },
   "common": {
     "years": "ans",
     "employees": "employés",
