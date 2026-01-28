@@ -134,8 +134,17 @@ const ComprarNegocio = () => {
   const [selectedSector, setSelectedSector] = useState<string>("all");
   const [selectedLocation, setSelectedLocation] = useState<string>("all");
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>("all");
+  const [selectedOperationType, setSelectedOperationType] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("recent");
   const [minProfitability, setMinProfitability] = useState<string>("all");
+
+  const operationTypes = [
+    { value: "all", labelKey: 'buy.allOperations' },
+    { value: "comprar", labelKey: 'buy.operationBuy' },
+    { value: "vender", labelKey: 'buy.operationSell' },
+    { value: "traspasar", labelKey: 'buy.operationTransfer' },
+    { value: "participar", labelKey: 'buy.operationInvest' },
+  ];
 
   const allBusinesses = useMemo(() => createBusinessData(), []);
 
@@ -221,10 +230,11 @@ const ComprarNegocio = () => {
     setSelectedSector("all");
     setSelectedLocation("all");
     setSelectedPriceRange("all");
+    setSelectedOperationType("all");
     setMinProfitability("all");
   };
 
-  const hasActiveFilters = searchQuery !== "" || selectedSector !== "all" || selectedLocation !== "all" || selectedPriceRange !== "all" || minProfitability !== "all";
+  const hasActiveFilters = searchQuery !== "" || selectedSector !== "all" || selectedLocation !== "all" || selectedPriceRange !== "all" || selectedOperationType !== "all" || minProfitability !== "all";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -317,7 +327,23 @@ const ComprarNegocio = () => {
             </div>
 
             {/* Filters */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-6 bg-background rounded-xl shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 p-6 bg-background rounded-xl shadow-sm">
+              {/* Operation Type - NEW FILTER */}
+              <div>
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
+                  {t('buy.operationType')}
+                </label>
+                <Select value={selectedOperationType} onValueChange={setSelectedOperationType}>
+                  <SelectTrigger className="bg-background">
+                    <SelectValue placeholder={t('buy.allOperations')} />
+                  </SelectTrigger>
+                  <SelectContent className="bg-background z-50">
+                    {operationTypes.map((op) => (
+                      <SelectItem key={op.value} value={op.value}>{t(op.labelKey)}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
               <div>
                 <label className="block text-sm font-medium text-muted-foreground mb-2">
                   {t('buy.sector')}
@@ -384,6 +410,14 @@ const ComprarNegocio = () => {
             {/* Active filters badges */}
             {hasActiveFilters && (
               <div className="flex flex-wrap gap-2 mt-4">
+                {selectedOperationType !== "all" && (
+                  <Badge variant="secondary" className="px-3 py-1">
+                    {t('buy.operationType')}: {t(operationTypes.find(o => o.value === selectedOperationType)?.labelKey || '')}
+                    <button onClick={() => setSelectedOperationType("all")} className="ml-2 hover:text-destructive">
+                      <X className="w-3 h-3" />
+                    </button>
+                  </Badge>
+                )}
                 {selectedSector !== "all" && (
                   <Badge variant="secondary" className="px-3 py-1">
                     {t('buy.sector')}: {t(selectedSector)}

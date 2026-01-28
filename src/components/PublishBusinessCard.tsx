@@ -22,9 +22,17 @@ const sectorKeys = [
   { key: 'sectors.fintech', value: 'Fintech' },
 ];
 
+const operationTypes = [
+  { key: 'buy.operationBuy', value: 'comprar' },
+  { key: 'buy.operationSell', value: 'vender' },
+  { key: 'buy.operationTransfer', value: 'traspasar' },
+  { key: 'buy.operationInvest', value: 'participar' },
+];
+
 interface PublishBusinessCardProps {
   onSubmit?: (data: {
     title: string;
+    operationType: string;
     sector: string;
     price: string;
     description: string;
@@ -40,6 +48,7 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
+    operationType: '',
     sector: '',
     price: '',
     description: '',
@@ -68,7 +77,7 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
   };
 
   const handleSubmit = async () => {
-    if (!formData.title || !formData.sector || !formData.price) return;
+    if (!formData.title || !formData.operationType || !formData.sector || !formData.price) return;
     
     setIsSubmitting(true);
     
@@ -86,14 +95,14 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
     setIsEditing(false);
     
     // Reset form
-    setFormData({ title: '', sector: '', price: '', description: '' });
+    setFormData({ title: '', operationType: '', sector: '', price: '', description: '' });
     setImageFile(null);
     setImagePreview(null);
   };
 
   const resetForm = () => {
     setIsEditing(false);
-    setFormData({ title: '', sector: '', price: '', description: '' });
+    setFormData({ title: '', operationType: '', sector: '', price: '', description: '' });
     setImageFile(null);
     setImagePreview(null);
   };
@@ -179,6 +188,27 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
           onChange={(e) => setFormData({ ...formData, title: e.target.value })}
           className="h-9 bg-stone-700/50 border-stone-600 text-white placeholder:text-stone-400 text-sm"
         />
+
+        {/* Operation Type */}
+        <Select
+          value={formData.operationType}
+          onValueChange={(value) => setFormData({ ...formData, operationType: value })}
+        >
+          <SelectTrigger className="h-9 bg-stone-700/50 border-stone-600 text-white text-sm">
+            <SelectValue placeholder={t('publish.operationPlaceholder')} />
+          </SelectTrigger>
+          <SelectContent className="bg-stone-700 border-stone-600">
+            {operationTypes.map((op) => (
+              <SelectItem 
+                key={op.value} 
+                value={op.value}
+                className="text-white hover:bg-stone-600 focus:bg-stone-600 focus:text-white"
+              >
+                {t(op.key)}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
 
         {/* Sector */}
         <Select

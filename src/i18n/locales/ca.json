@@ -109,7 +109,15 @@
     "notFindingTitle": "No trobes el que busques?",
     "notFindingDesc": "Contacta'ns i t'ajudarem a trobar el negoci perfecte per a tu",
     "contact": "Contactar",
-    "confidential": "Confidencial"
+    "confidential": "Confidencial",
+    "operationType": "Tipus d'operació",
+    "allOperations": "Totes les operacions",
+    "operationBuy": "Comprar",
+    "operationSell": "Vendre",
+    "operationTransfer": "Traspassar",
+    "operationTransferDesc": "Cedir llicència o local comercial",
+    "operationInvest": "Participar",
+    "operationInvestDesc": "Inversió o compra parcial"
   },
   "detail": {
     "businessNotFound": "Negoci no trobat",
@@ -344,6 +352,7 @@
     "startButton": "Crear anunci",
     "addPhoto": "Afegir foto (opcional)",
     "titlePlaceholder": "Nom del negoci",
+    "operationPlaceholder": "Tipus d'operació",
     "sectorPlaceholder": "Selecciona sector",
     "pricePlaceholder": "Preu de venda",
     "descriptionPlaceholder": "Breu descripció...",

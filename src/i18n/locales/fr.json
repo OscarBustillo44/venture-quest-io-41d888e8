@@ -109,7 +109,15 @@
     "notFindingTitle": "Vous ne trouvez pas ce que vous cherchez ?",
     "notFindingDesc": "Contactez-nous et nous vous aiderons à trouver l'entreprise parfaite pour vous",
     "contact": "Contacter",
-    "confidential": "Confidentiel"
+    "confidential": "Confidentiel",
+    "operationType": "Type d'opération",
+    "allOperations": "Toutes les opérations",
+    "operationBuy": "Acheter",
+    "operationSell": "Vendre",
+    "operationTransfer": "Transférer",
+    "operationTransferDesc": "Cession de licence ou local commercial",
+    "operationInvest": "Investir",
+    "operationInvestDesc": "Investissement ou acquisition partielle"
   },
   "detail": {
     "businessNotFound": "Entreprise non trouvée",
@@ -344,6 +352,7 @@
     "startButton": "Créer une annonce",
     "addPhoto": "Ajouter photo (optionnel)",
     "titlePlaceholder": "Nom de l'entreprise",
+    "operationPlaceholder": "Type d'opération",
     "sectorPlaceholder": "Sélectionner secteur",
     "pricePlaceholder": "Prix de vente",
     "descriptionPlaceholder": "Brève description...",
