@@ -541,8 +541,8 @@ const ComprarNegocio = () => {
                   <div className="rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card">
                     {/* Image Section */}
                     <div className="relative h-[180px] overflow-hidden bg-stone-800">
-                      {/* Use object-contain for logos (alpine, infinitypay), object-cover with center for photos */}
-                      {(business.id === 'alpine-security' || business.id === 'infinitypay') ? (
+                      {/* Use object-contain for logos and featured images (alpine, infinitypay, la-borda) */}
+                      {(business.id === 'alpine-security' || business.id === 'infinitypay' || business.id === 'la-borda') ? (
                         <img
                           src={business.image}
                           alt={t(business.titleKey)}
