@@ -7,13 +7,64 @@
     "backToList": "Volver a la lista de negocios"
   },
   "home": {
-    "title": "buscobusiness.com",
-    "subtitle": "El marketplace donde empresas reales cambian de manos con transparencia y criterio.",
-    "buyBusiness": "Comprar un negocio",
-    "sellBusiness": "Vender mi negocio",
-    "featuredBusinesses": "Negocios destacados",
-    "featuredSubtitle": "Oportunidades verificadas con información completa",
-    "viewAvailable": "Ver negocios disponibles"
+    "hero": {
+      "headline": "No es un portal de anuncios. Es el lugar donde los negocios se preparan y se venden bien.",
+      "subheadline": "Convertimos empresas en oportunidades estructuradas, comprensibles e invertibles.",
+      "ctaSell": "Vender mi negocio",
+      "ctaBuy": "Explorar oportunidades"
+    },
+    "problem": {
+      "title": "El problema",
+      "sellerTitle": "Vender sin preparar destruye valor",
+      "sellerDesc": "Publicar un anuncio y esperar no es vender. Sin estructura financiera ni preparación, el comprador desconfía y el precio se negocia a la baja.",
+      "buyerTitle": "Comprar sin estructura aumenta el riesgo",
+      "buyerDesc": "Interpretar datos incompletos, asumir riesgos ocultos y tomar decisiones sin criterio homogéneo es la norma en la mayoría de plataformas."
+    },
+    "sellers": {
+      "label": "Para vendedores",
+      "title": "Para quienes quieren vender bien",
+      "point1": "Organiza tu negocio antes de salir al mercado",
+      "point2": "Entiende qué estás vendiendo realmente",
+      "point3": "Presenta la empresa con criterios financieros claros",
+      "point4": "Maximiza valor y reduce fricción en la negociación",
+      "keyPhrase": "No publicas un anuncio. Construyes una transacción.",
+      "cta": "Preparar mi negocio",
+      "icon1": "Documentación",
+      "icon2": "Análisis",
+      "icon3": "Valoración",
+      "icon4": "Transacción"
+    },
+    "buyers": {
+      "label": "Para compradores",
+      "title": "Para quienes quieren comprar con criterio",
+      "point1": "Entiende el modelo de negocio",
+      "point2": "Analiza riesgos y retornos",
+      "point3": "Compara empresas con criterios homogéneos",
+      "point4": "Toma decisiones con insight financiero real",
+      "keyPhrase": "No compras a ciegas. Compras con claridad.",
+      "cta": "Encontrar negocios",
+      "feature1": "Modelo de negocio explicado",
+      "feature2": "Análisis de riesgos",
+      "feature3": "Criterios comparables"
+    },
+    "difference": {
+      "title": "Nuestra diferencia",
+      "subtitle": "Buscobusiness combina marketplace curado, análisis financiero de nivel CFO, preparación de empresas y acompañamiento en decisiones.",
+      "pillar1Title": "Marketplace curado",
+      "pillar1Desc": "Solo empresas verificadas y preparadas para transacción",
+      "pillar2Title": "Análisis CFO",
+      "pillar2Desc": "Información financiera estructurada y comparable",
+      "pillar3Title": "Preparación previa",
+      "pillar3Desc": "Negocios listos para la due diligence",
+      "pillar4Title": "Acompañamiento",
+      "pillar4Desc": "Soporte en valoración, decisión y financiación",
+      "statement1": "Un negocio no se vende bien porque se publica.",
+      "statement2": "Se vende bien cuando se prepara."
+    },
+    "final": {
+      "statement": "Convertimos empresas en oportunidades invertibles.",
+      "subtitle": "Claridad, estructura y ejecución para compradores y vendedores serios."
+    }
   },
   "buy": {
     "title": "Encuentra negocios reales, no oportunidades vacías",

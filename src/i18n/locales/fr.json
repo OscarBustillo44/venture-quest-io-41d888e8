@@ -7,13 +7,64 @@
     "backToList": "Retour à la liste des entreprises"
   },
   "home": {
-    "title": "buscobusiness.com",
-    "subtitle": "La marketplace où les entreprises réelles changent de mains avec transparence et critère.",
-    "buyBusiness": "Acheter une entreprise",
-    "sellBusiness": "Vendre mon entreprise",
-    "featuredBusinesses": "Entreprises en vedette",
-    "featuredSubtitle": "Opportunités vérifiées avec informations complètes",
-    "viewAvailable": "Voir les entreprises disponibles"
+    "hero": {
+      "headline": "Pas un portail d'annonces. Un lieu où les entreprises sont préparées et vendues correctement.",
+      "subheadline": "Nous transformons les entreprises en opportunités structurées, compréhensibles et investissables.",
+      "ctaSell": "Vendre mon entreprise",
+      "ctaBuy": "Explorer les opportunités"
+    },
+    "problem": {
+      "title": "Le problème",
+      "sellerTitle": "Vendre sans préparer détruit la valeur",
+      "sellerDesc": "Publier une annonce et attendre n'est pas vendre. Sans structure financière ni préparation, l'acheteur se méfie et le prix se négocie à la baisse.",
+      "buyerTitle": "Acheter sans structure augmente le risque",
+      "buyerDesc": "Interpréter des données incomplètes, assumer des risques cachés et prendre des décisions sans critères homogènes est la norme sur la plupart des plateformes."
+    },
+    "sellers": {
+      "label": "Pour les vendeurs",
+      "title": "Pour ceux qui veulent bien vendre",
+      "point1": "Organisez votre entreprise avant d'aller sur le marché",
+      "point2": "Comprenez ce que vous vendez réellement",
+      "point3": "Présentez l'entreprise avec des critères financiers clairs",
+      "point4": "Maximisez la valeur et réduisez les frictions lors de la négociation",
+      "keyPhrase": "Vous ne publiez pas une annonce. Vous construisez une transaction.",
+      "cta": "Préparer mon entreprise",
+      "icon1": "Documentation",
+      "icon2": "Analyse",
+      "icon3": "Évaluation",
+      "icon4": "Transaction"
+    },
+    "buyers": {
+      "label": "Pour les acheteurs",
+      "title": "Pour ceux qui veulent acheter avec des critères",
+      "point1": "Comprenez le modèle d'affaires",
+      "point2": "Analysez les risques et les rendements",
+      "point3": "Comparez les entreprises avec des critères homogènes",
+      "point4": "Prenez des décisions basées sur une vision financière réelle",
+      "keyPhrase": "Vous n'achetez pas à l'aveugle. Vous achetez avec clarté.",
+      "cta": "Trouver des entreprises",
+      "feature1": "Modèle d'affaires expliqué",
+      "feature2": "Analyse des risques",
+      "feature3": "Critères comparables"
+    },
+    "difference": {
+      "title": "Notre différence",
+      "subtitle": "Buscobusiness combine une marketplace sélective, une analyse financière niveau CFO, la préparation des entreprises et l'accompagnement décisionnel.",
+      "pillar1Title": "Marketplace sélective",
+      "pillar1Desc": "Uniquement des entreprises vérifiées et prêtes pour la transaction",
+      "pillar2Title": "Analyse CFO",
+      "pillar2Desc": "Informations financières structurées et comparables",
+      "pillar3Title": "Préparation préalable",
+      "pillar3Desc": "Entreprises prêtes pour la due diligence",
+      "pillar4Title": "Accompagnement",
+      "pillar4Desc": "Support en évaluation, décision et financement",
+      "statement1": "Une entreprise n'est pas bien vendue parce qu'elle est publiée.",
+      "statement2": "Elle est bien vendue quand elle est préparée."
+    },
+    "final": {
+      "statement": "Nous transformons les entreprises en opportunités investissables.",
+      "subtitle": "Clarté, structure et exécution pour les acheteurs et vendeurs sérieux."
+    }
   },
   "buy": {
     "title": "Trouvez des entreprises réelles, pas des opportunités vides",

@@ -7,13 +7,64 @@
     "backToList": "Back to business list"
   },
   "home": {
-    "title": "buscobusiness.com",
-    "subtitle": "The marketplace where real businesses change hands with transparency and criteria.",
-    "buyBusiness": "Buy a business",
-    "sellBusiness": "Sell my business",
-    "featuredBusinesses": "Featured businesses",
-    "featuredSubtitle": "Verified opportunities with complete information",
-    "viewAvailable": "View available businesses"
+    "hero": {
+      "headline": "Not a listing portal. A place where businesses are prepared and sold properly.",
+      "subheadline": "We turn companies into structured, understandable and investable opportunities.",
+      "ctaSell": "Sell my business",
+      "ctaBuy": "Explore opportunities"
+    },
+    "problem": {
+      "title": "The problem",
+      "sellerTitle": "Selling without preparation destroys value",
+      "sellerDesc": "Publishing a listing and waiting is not selling. Without financial structure or preparation, buyers distrust and prices get negotiated down.",
+      "buyerTitle": "Buying without structure increases risk",
+      "buyerDesc": "Interpreting incomplete data, assuming hidden risks and making decisions without homogeneous criteria is the norm on most platforms."
+    },
+    "sellers": {
+      "label": "For sellers",
+      "title": "For those who want to sell properly",
+      "point1": "Organize your business before going to market",
+      "point2": "Understand what you're really selling",
+      "point3": "Present the company with clear financial criteria",
+      "point4": "Maximize value and reduce friction in negotiation",
+      "keyPhrase": "You don't upload a listing. You build a transaction.",
+      "cta": "Prepare my business",
+      "icon1": "Documentation",
+      "icon2": "Analysis",
+      "icon3": "Valuation",
+      "icon4": "Transaction"
+    },
+    "buyers": {
+      "label": "For buyers",
+      "title": "For those who want to buy with criteria",
+      "point1": "Understand the business model",
+      "point2": "Analyze risks and returns",
+      "point3": "Compare companies using homogeneous criteria",
+      "point4": "Make decisions supported by real financial insight",
+      "keyPhrase": "You don't buy blind. You buy with clarity.",
+      "cta": "Find businesses",
+      "feature1": "Business model explained",
+      "feature2": "Risk analysis",
+      "feature3": "Comparable criteria"
+    },
+    "difference": {
+      "title": "Our difference",
+      "subtitle": "Buscobusiness combines a curated marketplace, CFO-level financial analysis, business preparation and decision-making support.",
+      "pillar1Title": "Curated marketplace",
+      "pillar1Desc": "Only verified businesses prepared for transaction",
+      "pillar2Title": "CFO analysis",
+      "pillar2Desc": "Structured and comparable financial information",
+      "pillar3Title": "Prior preparation",
+      "pillar3Desc": "Businesses ready for due diligence",
+      "pillar4Title": "Guidance",
+      "pillar4Desc": "Support in valuation, decision and financing",
+      "statement1": "A business is not sold well because it is published.",
+      "statement2": "It is sold well when it is prepared."
+    },
+    "final": {
+      "statement": "We turn companies into investable opportunities.",
+      "subtitle": "Clarity, structure and execution for serious buyers and sellers."
+    }
   },
   "buy": {
     "title": "Find real businesses, not empty opportunities",
