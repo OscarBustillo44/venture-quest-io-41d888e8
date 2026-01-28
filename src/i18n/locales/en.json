@@ -117,7 +117,11 @@
     "operationTransfer": "Transfer",
     "operationTransferDesc": "License or premises handover",
     "operationInvest": "Invest",
-    "operationInvestDesc": "Investment or partial acquisition"
+    "operationInvestDesc": "Investment or partial acquisition",
+    "badgeBuy": "Purchase",
+    "badgeSell": "Sale",
+    "badgeTransfer": "Transfer",
+    "badgeInvest": "Investment"
   },
   "detail": {
     "businessNotFound": "Business not found",

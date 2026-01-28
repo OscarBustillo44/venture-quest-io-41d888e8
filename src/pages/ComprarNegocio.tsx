@@ -29,6 +29,16 @@ const sectorKeys = [
 ];
 
 // Create business data from carousel slides with additional fields for filtering
+// Operation type definitions
+export type OperationType = 'comprar' | 'vender' | 'traspasar' | 'participar';
+
+const operationBadgeConfig: Record<OperationType, { labelKey: string; className: string }> = {
+  comprar: { labelKey: 'buy.badgeBuy', className: 'bg-emerald-600 text-white' },
+  vender: { labelKey: 'buy.badgeSell', className: 'bg-blue-600 text-white' },
+  traspasar: { labelKey: 'buy.badgeTransfer', className: 'bg-purple-600 text-white' },
+  participar: { labelKey: 'buy.badgeInvest', className: 'bg-amber-600 text-white' },
+};
+
 const createBusinessData = () => [
   {
     id: 'la-borda',
@@ -40,6 +50,7 @@ const createBusinessData = () => [
     profitability: 43,
     publishedDate: new Date('2024-12-01'),
     isConfidential: false,
+    operationType: 'traspasar' as OperationType,
     image: carouselSlides.find(s => s.id === 'la-borda')?.image || ''
   },
   {
@@ -52,6 +63,7 @@ const createBusinessData = () => [
     profitability: 18,
     publishedDate: new Date('2025-01-10'),
     isConfidential: false,
+    operationType: 'participar' as OperationType,
     image: carouselSlides.find(s => s.id === 'alpine-security')?.image || ''
   },
   {
@@ -64,6 +76,7 @@ const createBusinessData = () => [
     profitability: 19,
     publishedDate: new Date('2025-01-15'),
     isConfidential: false,
+    operationType: 'vender' as OperationType,
     image: carouselSlides.find(s => s.id === 'infinitypay')?.image || ''
   },
   {
@@ -76,6 +89,7 @@ const createBusinessData = () => [
     profitability: 24,
     publishedDate: new Date('2025-01-20'),
     isConfidential: true,
+    operationType: 'traspasar' as OperationType,
     image: carouselSlides.find(s => s.id === 'confidencial-hosteleria')?.image || ''
   },
   {
@@ -88,6 +102,7 @@ const createBusinessData = () => [
     profitability: 15,
     publishedDate: new Date('2025-01-22'),
     isConfidential: true,
+    operationType: 'vender' as OperationType,
     image: carouselSlides.find(s => s.id === 'confidencial-comercio')?.image || ''
   },
   {
@@ -100,6 +115,7 @@ const createBusinessData = () => [
     profitability: 25,
     publishedDate: new Date('2025-01-23'),
     isConfidential: true,
+    operationType: 'vender' as OperationType,
     image: carouselSlides.find(s => s.id === 'confidencial-servicios')?.image || ''
   },
   {
@@ -112,6 +128,7 @@ const createBusinessData = () => [
     profitability: 23,
     publishedDate: new Date('2025-01-24'),
     isConfidential: true,
+    operationType: 'participar' as OperationType,
     image: carouselSlides.find(s => s.id === 'confidencial-industria')?.image || ''
   },
   {
@@ -124,6 +141,7 @@ const createBusinessData = () => [
     profitability: 27,
     publishedDate: new Date('2025-01-26'),
     isConfidential: true,
+    operationType: 'participar' as OperationType,
     image: carouselSlides.find(s => s.id === 'confidencial-tecnologia')?.image || ''
   }
 ];
@@ -205,7 +223,9 @@ const ComprarNegocio = () => {
         matchesProfitability = business.profitability >= Number(minProfitability);
       }
 
-      return matchesSearch && matchesSector && matchesPrice && matchesProfitability;
+      const matchesOperationType = selectedOperationType === "all" || business.operationType === selectedOperationType;
+
+      return matchesSearch && matchesSector && matchesPrice && matchesProfitability && matchesOperationType;
     });
 
     return filtered.sort((a, b) => {
@@ -223,7 +243,7 @@ const ComprarNegocio = () => {
           return b.publishedDate.getTime() - a.publishedDate.getTime();
       }
     });
-  }, [searchQuery, selectedSector, selectedPriceRange, sortBy, minProfitability, allBusinesses, t]);
+  }, [searchQuery, selectedSector, selectedPriceRange, selectedOperationType, sortBy, minProfitability, allBusinesses, t]);
 
   const clearFilters = () => {
     setSearchQuery("");
@@ -550,8 +570,13 @@ const ComprarNegocio = () => {
                       </div>
                     )}
                     
+                    {/* Operation Type Badge */}
+                    <div className={`absolute top-3 right-3 px-3 py-1 rounded-md text-xs font-semibold shadow-lg ${operationBadgeConfig[business.operationType].className}`}>
+                      {t(operationBadgeConfig[business.operationType].labelKey)}
+                    </div>
+                    
                     {/* Price Badge */}
-                    <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
+                    <div className="absolute bottom-16 right-3 bg-stone-900/80 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
                       {business.priceDisplay}
                     </div>
                     
