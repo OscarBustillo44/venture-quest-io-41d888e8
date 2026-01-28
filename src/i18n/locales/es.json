@@ -117,7 +117,11 @@
     "operationTransfer": "Traspasar",
     "operationTransferDesc": "Ceder licencia o local comercial",
     "operationInvest": "Participar",
-    "operationInvestDesc": "Inversión o compra parcial"
+    "operationInvestDesc": "Inversión o compra parcial",
+    "badgeBuy": "Compra",
+    "badgeSell": "Venta",
+    "badgeTransfer": "Traspaso",
+    "badgeInvest": "Inversión"
   },
   "detail": {
     "businessNotFound": "Negocio no encontrado",
