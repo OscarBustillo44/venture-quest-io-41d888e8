@@ -288,6 +288,56 @@
       "button": "Contactar ahora"
     }
   },
+  "about": {
+    "hero": {
+      "title": "Convertimos la complejidad en claridad",
+      "subtitle": "Somos el puente entre empresas que buscan nuevos dueños y decisores que buscan oportunidades reales. Con rigor financiero, preparación estructurada y acompañamiento experto."
+    },
+    "mission": {
+      "title": "Nuestra misión",
+      "description": "Transformar cómo se compran y venden empresas en el mercado de PYMES. Creemos que cada negocio merece una transacción a su altura: preparada, estructurada y ejecutada con criterio profesional.",
+      "quote": "Un negocio no se vende bien porque se publica. Se vende bien cuando se prepara."
+    },
+    "values": {
+      "title": "Nuestros valores",
+      "subtitle": "Los principios que guían cada decisión y cada transacción.",
+      "trust": {
+        "title": "Confianza",
+        "description": "La discreción y la confidencialidad son la base de nuestro trabajo. Protegemos los intereses de todas las partes involucradas."
+      },
+      "clarity": {
+        "title": "Claridad",
+        "description": "Información estructurada, análisis riguroso y comunicación transparente. Sin sorpresas ni ambigüedades."
+      },
+      "excellence": {
+        "title": "Excelencia",
+        "description": "Estándares de nivel CFO en cada análisis. Preparación profesional en cada transacción."
+      }
+    },
+    "team": {
+      "title": "Experiencia que marca la diferencia",
+      "subtitle": "Un equipo multidisciplinar con experiencia en M&A, finanzas corporativas y asesoría empresarial.",
+      "financial": {
+        "title": "Análisis Financiero",
+        "description": "Profesionales con experiencia en valoración de empresas, due diligence y estructuración de operaciones."
+      },
+      "legal": {
+        "title": "Asesoría Legal",
+        "description": "Red de colaboradores especializados en derecho mercantil, fiscal y contractual para transacciones empresariales."
+      },
+      "advisory": {
+        "title": "Acompañamiento Estratégico",
+        "description": "Orientación experta desde la preparación hasta el cierre, protegiendo los intereses de nuestros clientes."
+      }
+    },
+    "whyUs": {
+      "title": "Por qué Buscobusiness",
+      "reason1": "Porque un negocio mal preparado genera desconfianza y destruye valor.",
+      "reason2": "Porque comprar sin estructura aumenta el riesgo y reduce las oportunidades.",
+      "reason3": "Porque cada transacción merece el mismo rigor que las grandes operaciones de M&A.",
+      "closing": "Convertimos empresas en oportunidades invertibles."
+    }
+  },
   "common": {
     "years": "años",
     "employees": "empleados",

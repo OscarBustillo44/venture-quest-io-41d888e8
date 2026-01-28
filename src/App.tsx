@@ -12,6 +12,7 @@ import Cookies from "./pages/Cookies";
 import ComprarNegocio from "./pages/ComprarNegocio";
 import NegocioDetalle from "./pages/NegocioDetalle";
 import Vender from "./pages/Vender";
+import Nosotros from "./pages/Nosotros";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/comprar" element={<ComprarNegocio />} />
           <Route path="/vender" element={<Vender />} />
           <Route path="/negocio/:id" element={<NegocioDetalle />} />
+          <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/aviso-legal" element={<AvisoLegal />} />
           <Route path="/privacidad" element={<Privacidad />} />
           <Route path="/cookies" element={<Cookies />} />

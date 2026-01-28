@@ -288,6 +288,56 @@
       "button": "Contactar ara"
     }
   },
+  "about": {
+    "hero": {
+      "title": "Convertim la complexitat en claredat",
+      "subtitle": "Som el pont entre empreses que busquen nous propietaris i decisors que busquen oportunitats reals. Amb rigor financer, preparació estructurada i acompanyament expert."
+    },
+    "mission": {
+      "title": "La nostra missió",
+      "description": "Transformar com es compren i venen empreses al mercat de PIMES. Creiem que cada negoci mereix una transacció a la seva alçada: preparada, estructurada i executada amb criteri professional.",
+      "quote": "Un negoci no es ven bé perquè es publica. Es ven bé quan es prepara."
+    },
+    "values": {
+      "title": "Els nostres valors",
+      "subtitle": "Els principis que guien cada decisió i cada transacció.",
+      "trust": {
+        "title": "Confiança",
+        "description": "La discreció i la confidencialitat són la base del nostre treball. Protegim els interessos de totes les parts involucrades."
+      },
+      "clarity": {
+        "title": "Claredat",
+        "description": "Informació estructurada, anàlisi rigorós i comunicació transparent. Sense sorpreses ni ambigüitats."
+      },
+      "excellence": {
+        "title": "Excel·lència",
+        "description": "Estàndards de nivell CFO en cada anàlisi. Preparació professional en cada transacció."
+      }
+    },
+    "team": {
+      "title": "Experiència que marca la diferència",
+      "subtitle": "Un equip multidisciplinar amb experiència en M&A, finances corporatives i assessoria empresarial.",
+      "financial": {
+        "title": "Anàlisi Financera",
+        "description": "Professionals amb experiència en valoració d'empreses, due diligence i estructuració d'operacions."
+      },
+      "legal": {
+        "title": "Assessoria Legal",
+        "description": "Xarxa de col·laboradors especialitzats en dret mercantil, fiscal i contractual per a transaccions empresarials."
+      },
+      "advisory": {
+        "title": "Acompanyament Estratègic",
+        "description": "Orientació experta des de la preparació fins al tancament, protegint els interessos dels nostres clients."
+      }
+    },
+    "whyUs": {
+      "title": "Per què Buscobusiness",
+      "reason1": "Perquè un negoci mal preparat genera desconfiança i destrueix valor.",
+      "reason2": "Perquè comprar sense estructura augmenta el risc i redueix les oportunitats.",
+      "reason3": "Perquè cada transacció mereix el mateix rigor que les grans operacions de M&A.",
+      "closing": "Convertim empreses en oportunitats invertibles."
+    }
+  },
   "common": {
     "years": "anys",
     "employees": "empleats",
