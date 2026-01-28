@@ -338,6 +338,19 @@
       "closing": "We turn companies into investable opportunities."
     }
   },
+  "publish": {
+    "cardTitle": "Publish your business",
+    "cardSubtitle": "List your company or assets and reach qualified buyers",
+    "startButton": "Create listing",
+    "addPhoto": "Add photo (optional)",
+    "titlePlaceholder": "Business name",
+    "sectorPlaceholder": "Select sector",
+    "pricePlaceholder": "Sale price",
+    "descriptionPlaceholder": "Brief description...",
+    "submit": "Publish listing",
+    "submitting": "Publishing...",
+    "fullFormLink": "Need more options? Use the complete form"
+  },
   "common": {
     "years": "years",
     "employees": "employees",

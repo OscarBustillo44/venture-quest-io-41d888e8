@@ -338,6 +338,19 @@
       "closing": "Convertim empreses en oportunitats invertibles."
     }
   },
+  "publish": {
+    "cardTitle": "Publica el teu negoci",
+    "cardSubtitle": "Posa a la venda la teva empresa o actius i arriba a compradors qualificats",
+    "startButton": "Crear anunci",
+    "addPhoto": "Afegir foto (opcional)",
+    "titlePlaceholder": "Nom del negoci",
+    "sectorPlaceholder": "Selecciona sector",
+    "pricePlaceholder": "Preu de venda",
+    "descriptionPlaceholder": "Breu descripció...",
+    "submit": "Publicar anunci",
+    "submitting": "Publicant...",
+    "fullFormLink": "Necessites més opcions? Utilitza el formulari complet"
+  },
   "common": {
     "years": "anys",
     "employees": "empleats",

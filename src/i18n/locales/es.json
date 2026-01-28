@@ -338,6 +338,19 @@
       "closing": "Convertimos empresas en oportunidades invertibles."
     }
   },
+  "publish": {
+    "cardTitle": "Publica tu negocio",
+    "cardSubtitle": "Pon a la venta tu empresa o activos y llega a compradores cualificados",
+    "startButton": "Crear anuncio",
+    "addPhoto": "Añadir foto (opcional)",
+    "titlePlaceholder": "Nombre del negocio",
+    "sectorPlaceholder": "Selecciona sector",
+    "pricePlaceholder": "Precio de venta",
+    "descriptionPlaceholder": "Breve descripción...",
+    "submit": "Publicar anuncio",
+    "submitting": "Publicando...",
+    "fullFormLink": "¿Necesitas más opciones? Usa el formulario completo"
+  },
   "common": {
     "years": "años",
     "employees": "empleados",
