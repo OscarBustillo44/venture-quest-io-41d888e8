@@ -161,27 +161,27 @@ export const infinitypayPortfolioData = [
 
 // Confidencial Hostelería projection data
 export const confHosteleriaRevenueData = [
-  { year: 'n+1', revenue: 596 },
-  { year: 'n+2', revenue: 611 },
-  { year: 'n+3', revenue: 626 },
-  { year: 'n+4', revenue: 642 },
-  { year: 'n+5', revenue: 658 },
+  { year: 'n+1', revenue: 595.897 },
+  { year: 'n+2', revenue: 610.794 },
+  { year: 'n+3', revenue: 626.064 },
+  { year: 'n+4', revenue: 641.716 },
+  { year: 'n+5', revenue: 657.759 },
 ];
 
 export const confHosteleriaEbitdaData = [
-  { year: 'n+1', ebitda: 149 },
-  { year: 'n+2', ebitda: 149 },
-  { year: 'n+3', ebitda: 148 },
-  { year: 'n+4', ebitda: 147 },
-  { year: 'n+5', ebitda: 151 },
+  { year: 'n+1', ebitda: 149.290 },
+  { year: 'n+2', ebitda: 149.357 },
+  { year: 'n+3', ebitda: 148.082 },
+  { year: 'n+4', ebitda: 146.651 },
+  { year: 'n+5', ebitda: 150.967 },
 ];
 
 export const confHosteleriaProjectionData = [
-  { year: 'n+1', revenue: 596, ebitda: 149 },
-  { year: 'n+2', revenue: 611, ebitda: 149 },
-  { year: 'n+3', revenue: 626, ebitda: 148 },
-  { year: 'n+4', revenue: 642, ebitda: 147 },
-  { year: 'n+5', revenue: 658, ebitda: 151 },
+  { year: 'n+1', revenue: 595.897, ebitda: 149.290 },
+  { year: 'n+2', revenue: 610.794, ebitda: 149.357 },
+  { year: 'n+3', revenue: 626.064, ebitda: 148.082 },
+  { year: 'n+4', revenue: 641.716, ebitda: 146.651 },
+  { year: 'n+5', revenue: 657.759, ebitda: 150.967 },
 ];
 
 export const confHosteleriaPortfolioData = [
