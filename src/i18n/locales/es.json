@@ -458,7 +458,13 @@
       "title": "Restaurant Centro del País - [Negocio Confidencial]",
       "description": "Restaurante consolidado en el centro del país con rentabilidad operativa excepcional superior al 50%. Facturación superior a 0,5M €, EBITDA de 150k € y sin necesidad de inversión inicial en capex.",
       "carouselDesc": "Sector Hostelería · Facturación >0,5M € · EBITDA 150k € · Rentabilidad >50% · Sin capex inicial",
-      "highlights": ["Facturación superior a 0,5M €", "Rentabilidad operativa excepcional >50%", "EBITDA de 150k €", "No requiere inversión en capex de inicio", "Ubicación céntrica privilegiada", "Alta generación de caja"]
+      "highlights": ["Facturación superior a 0,5M €", "Rentabilidad operativa excepcional >50%", "EBITDA de 150k €", "No requiere inversión en capex de inicio", "Ubicación céntrica privilegiada", "Alta generación de caja"],
+      "portfolio": {
+        "dia": "Servicio mediodía",
+        "noche": "Servicio noche",
+        "events": "Eventos privados",
+        "takeaway": "Para llevar"
+      }
     }
   }
 }
