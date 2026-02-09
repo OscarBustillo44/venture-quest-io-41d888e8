@@ -30,6 +30,11 @@ import sectorServicios from '@/assets/generic/sector-servicios.jpg';
 import sectorIndustria from '@/assets/generic/sector-industria.jpg';
 import sectorTecnologia from '@/assets/generic/sector-tecnologia.jpg';
 import restaurantCentroPlaceholder from '@/assets/generic/restaurant-centro-placeholder.png';
+import confHosteleriaCard from '@/assets/generic/conf-hosteleria-card.jpg';
+import confComercioCard from '@/assets/generic/conf-comercio-card.jpg';
+import confServiciosCard from '@/assets/generic/conf-servicios-card.jpg';
+import confIndustriaCard from '@/assets/generic/conf-industria-card.jpg';
+import confTecnologiaCard from '@/assets/generic/conf-tecnologia-card.jpg';
 
 export interface Business {
   id: string;
@@ -278,7 +283,7 @@ export const businessesData: Record<string, Business> = {
     isConfidential: true,
     descriptionKey: 'businesses.confHosteleria.description',
     highlightsKey: 'businesses.confHosteleria.highlights',
-    images: [sectorHosteleria],
+    images: [confHosteleriaCard],
     financialData: [
       { year: '2020', revenue: 280, ebitda: 55 },
       { year: '2021', revenue: 300, ebitda: 65 },
@@ -304,7 +309,7 @@ export const businessesData: Record<string, Business> = {
     isConfidential: true,
     descriptionKey: 'businesses.confCommerce.description',
     highlightsKey: 'businesses.confCommerce.highlights',
-    images: [sectorComercio],
+    images: [confComercioCard],
     financialData: [
       { year: '2020', revenue: 650, ebitda: 85 },
       { year: '2021', revenue: 700, ebitda: 95 },
@@ -330,7 +335,7 @@ export const businessesData: Record<string, Business> = {
     isConfidential: true,
     descriptionKey: 'businesses.confServices.description',
     highlightsKey: 'businesses.confServices.highlights',
-    images: [sectorServicios],
+    images: [confServiciosCard],
     financialData: [
       { year: '2020', revenue: 400, ebitda: 80 },
       { year: '2021', revenue: 450, ebitda: 100 },
@@ -356,7 +361,7 @@ export const businessesData: Record<string, Business> = {
     isConfidential: true,
     descriptionKey: 'businesses.confIndustry.description',
     highlightsKey: 'businesses.confIndustry.highlights',
-    images: [sectorIndustria],
+    images: [confIndustriaCard],
     financialData: [
       { year: '2020', revenue: 950, ebitda: 200 },
       { year: '2021', revenue: 1000, ebitda: 220 },
@@ -382,7 +387,7 @@ export const businessesData: Record<string, Business> = {
     isConfidential: true,
     descriptionKey: 'businesses.confTechnology.description',
     highlightsKey: 'businesses.confTechnology.highlights',
-    images: [sectorTecnologia],
+    images: [confTecnologiaCard],
     financialData: [
       { year: '2020', revenue: 350, ebitda: 55 },
       { year: '2021', revenue: 420, ebitda: 70 },
@@ -448,7 +453,7 @@ export const carouselSlides = [
   },
   {
     id: 'confidencial-hosteleria',
-    image: sectorHosteleria,
+    image: confHosteleriaCard,
     titleKey: 'businesses.confHosteleria.title',
     descriptionKey: 'businesses.confHosteleria.carouselDesc',
     price: '180.000 €',
@@ -457,7 +462,7 @@ export const carouselSlides = [
   },
   {
     id: 'confidencial-comercio',
-    image: sectorComercio,
+    image: confComercioCard,
     titleKey: 'businesses.confCommerce.title',
     descriptionKey: 'businesses.confCommerce.carouselDesc',
     price: '320.000 €',
@@ -466,7 +471,7 @@ export const carouselSlides = [
   },
   {
     id: 'confidencial-servicios',
-    image: sectorServicios,
+    image: confServiciosCard,
     titleKey: 'businesses.confServices.title',
     descriptionKey: 'businesses.confServices.carouselDesc',
     price: '450.000 €',
@@ -475,7 +480,7 @@ export const carouselSlides = [
   },
   {
     id: 'confidencial-industria',
-    image: sectorIndustria,
+    image: confIndustriaCard,
     titleKey: 'businesses.confIndustry.title',
     descriptionKey: 'businesses.confIndustry.carouselDesc',
     price: '750.000 €',
@@ -484,7 +489,7 @@ export const carouselSlides = [
   },
   {
     id: 'confidencial-tecnologia',
-    image: sectorTecnologia,
+    image: confTecnologiaCard,
     titleKey: 'businesses.confTechnology.title',
     descriptionKey: 'businesses.confTechnology.carouselDesc',
     price: '514.788 €',
