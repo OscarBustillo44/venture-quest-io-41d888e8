@@ -153,7 +153,7 @@ const createBusinessData = () => [
     priceDisplay: "A convenir",
     profitability: 50,
     publishedDate: new Date('2025-02-09'),
-    isConfidential: true,
+    isConfidential: false,
     operationType: 'vender' as OperationType,
     image: carouselSlides.find(s => s.id === 'confidencial-restaurant-centro')?.image || ''
   }

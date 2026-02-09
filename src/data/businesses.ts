@@ -29,6 +29,7 @@ import sectorComercio from '@/assets/generic/sector-comercio.jpg';
 import sectorServicios from '@/assets/generic/sector-servicios.jpg';
 import sectorIndustria from '@/assets/generic/sector-industria.jpg';
 import sectorTecnologia from '@/assets/generic/sector-tecnologia.jpg';
+import restaurantCentroPlaceholder from '@/assets/generic/restaurant-centro-placeholder.jpg';
 
 export interface Business {
   id: string;
@@ -367,10 +368,10 @@ export const businessesData: Record<string, Business> = {
     profitability: '>50%',
     employees: '-',
     yearsOperating: '-',
-    isConfidential: true,
+    isConfidential: false,
     descriptionKey: 'businesses.confRestaurantCentro.description',
     highlightsKey: 'businesses.confRestaurantCentro.highlights',
-    images: [sectorHosteleria],
+    images: [restaurantCentroPlaceholder],
     financialData: [
       { year: '2020', revenue: 380, ebitda: 140 },
       { year: '2021', revenue: 410, ebitda: 150 },
@@ -457,11 +458,11 @@ export const carouselSlides = [
   },
   {
     id: 'confidencial-restaurant-centro',
-    image: sectorHosteleria,
+    image: restaurantCentroPlaceholder,
     titleKey: 'businesses.confRestaurantCentro.title',
     descriptionKey: 'businesses.confRestaurantCentro.carouselDesc',
     price: 'A convenir',
     sectorKey: 'sectors.hospitality',
-    isConfidential: true
+    isConfidential: false
   }
 ];
