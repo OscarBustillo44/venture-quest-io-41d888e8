@@ -555,7 +555,7 @@ const ComprarNegocio = () => {
                     {/* Image Section */}
                     <div className="relative h-[180px] overflow-hidden bg-stone-800">
                       {/* Use object-contain for logos and featured images (alpine, infinitypay, la-borda) */}
-                      {(business.id === 'alpine-security' || business.id === 'infinitypay' || business.id === 'la-borda') ? (
+                      {(business.id === 'alpine-security' || business.id === 'infinitypay' || business.id === 'la-borda' || business.id === 'confidencial-restaurant-centro') ? (
                         <img
                           src={business.image}
                           alt={t(business.titleKey)}
