@@ -458,7 +458,13 @@
       "title": "Restaurant Centro del País - [Entreprise Confidentielle]",
       "description": "Restaurant consolidé au centre du pays avec une rentabilité opérationnelle exceptionnelle supérieure à 50%. CA supérieur à 0,5M €, EBITDA de 150k € et sans besoin d'investissement initial en capex.",
       "carouselDesc": "Secteur Hôtellerie · CA >0,5M € · EBITDA 150k € · Rentabilité >50% · Sans capex initial",
-      "highlights": ["CA supérieur à 0,5M €", "Rentabilité opérationnelle exceptionnelle >50%", "EBITDA de 150k €", "Aucun investissement en capex initial requis", "Emplacement central privilégié", "Forte génération de trésorerie"]
+      "highlights": ["CA supérieur à 0,5M €", "Rentabilité opérationnelle exceptionnelle >50%", "EBITDA de 150k €", "Aucun investissement en capex initial requis", "Emplacement central privilégié", "Forte génération de trésorerie"],
+      "portfolio": {
+        "dia": "Service midi",
+        "noche": "Service soir",
+        "events": "Événements privés",
+        "takeaway": "À emporter"
+      }
     }
   }
 }

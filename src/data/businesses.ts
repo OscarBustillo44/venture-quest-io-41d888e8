@@ -181,6 +181,13 @@ export const restaurantCentroProjectionData = [
   { year: 'n+5', revenue: 658, ebitda: 151 },
 ];
 
+export const restaurantCentroPortfolioData = [
+  { nameKey: 'businesses.confRestaurantCentro.portfolio.dia', value: 55, amount: '35€/pp', color: '#8B4513' },
+  { nameKey: 'businesses.confRestaurantCentro.portfolio.noche', value: 30, amount: '48€/pp', color: '#D2691E' },
+  { nameKey: 'businesses.confRestaurantCentro.portfolio.events', value: 10, amount: '50k', color: '#CD853F' },
+  { nameKey: 'businesses.confRestaurantCentro.portfolio.takeaway', value: 5, amount: '15k', color: '#DEB887' },
+];
+
 // Mock data for businesses
 export const businessesData: Record<string, Business> = {
   'la-borda': {
