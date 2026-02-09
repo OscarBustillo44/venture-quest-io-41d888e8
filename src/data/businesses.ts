@@ -159,6 +159,31 @@ export const infinitypayPortfolioData = [
   { nameKey: 'businesses.infinitypay.portfolio.other', value: 10, amount: '50k', color: '#90b4ce' },
 ];
 
+// Confidencial Hostelería projection data
+export const confHosteleriaRevenueData = [
+  { year: 'n+1', revenue: 596 },
+  { year: 'n+2', revenue: 611 },
+  { year: 'n+3', revenue: 626 },
+  { year: 'n+4', revenue: 642 },
+  { year: 'n+5', revenue: 658 },
+];
+
+export const confHosteleriaEbitdaData = [
+  { year: 'n+1', ebitda: 149 },
+  { year: 'n+2', ebitda: 149 },
+  { year: 'n+3', ebitda: 148 },
+  { year: 'n+4', ebitda: 147 },
+  { year: 'n+5', ebitda: 151 },
+];
+
+export const confHosteleriaProjectionData = [
+  { year: 'n+1', revenue: 596, ebitda: 149 },
+  { year: 'n+2', revenue: 611, ebitda: 149 },
+  { year: 'n+3', revenue: 626, ebitda: 148 },
+  { year: 'n+4', revenue: 642, ebitda: 147 },
+  { year: 'n+5', revenue: 658, ebitda: 151 },
+];
+
 // Restaurant Centro del País specific data
 export const restaurantCentroRevenueData = [
   { year: 'n0', revenue: 580 },
