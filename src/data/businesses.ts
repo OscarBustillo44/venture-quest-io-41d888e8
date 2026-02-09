@@ -355,6 +355,29 @@ export const businessesData: Record<string, Business> = {
       { year: '2023', revenue: 550, ebitda: 90 },
       { year: '2024', revenue: 600, ebitda: 100 },
     ]
+  },
+  'confidencial-restaurant-centro': {
+    id: 'confidencial-restaurant-centro',
+    titleKey: 'businesses.confRestaurantCentro.title',
+    sectorKey: 'sectors.hospitality',
+    location: 'Andorra',
+    price: 'A convenir',
+    revenue: '>500.000 €',
+    ebitda: '150.000 €',
+    profitability: '>50%',
+    employees: '-',
+    yearsOperating: '-',
+    isConfidential: true,
+    descriptionKey: 'businesses.confRestaurantCentro.description',
+    highlightsKey: 'businesses.confRestaurantCentro.highlights',
+    images: [sectorHosteleria],
+    financialData: [
+      { year: '2020', revenue: 380, ebitda: 140 },
+      { year: '2021', revenue: 410, ebitda: 150 },
+      { year: '2022', revenue: 450, ebitda: 160 },
+      { year: '2023', revenue: 480, ebitda: 148 },
+      { year: '2024', revenue: 500, ebitda: 150 },
+    ]
   }
 };
 
@@ -430,6 +453,15 @@ export const carouselSlides = [
     descriptionKey: 'businesses.confTechnology.carouselDesc',
     price: '514.788 €',
     sectorKey: 'sectors.technology',
+    isConfidential: true
+  },
+  {
+    id: 'confidencial-restaurant-centro',
+    image: sectorHosteleria,
+    titleKey: 'businesses.confRestaurantCentro.title',
+    descriptionKey: 'businesses.confRestaurantCentro.carouselDesc',
+    price: 'A convenir',
+    sectorKey: 'sectors.hospitality',
     isConfidential: true
   }
 ];

@@ -453,6 +453,12 @@
       "description": "Proporcionamos soporte integral para todas sus necesidades de TI y telecomunicaciones: Virtualización, Microsoft 365 Partner, Soporte Técnico, Gestión de Redes, Comunicaciones Empresariales VoIP, Servicios en la Nube, Ciberseguridad, Consultoría de TI, Wifi de Alto Rendimiento, 3CX PBX Gold Partner.",
       "carouselDesc": "Sector Tecnología · Facturación 600k € · EBITDA 100k € · Rentabilidad 27%",
       "highlights": ["Microsoft 365 Partner", "3CX PBX Gold Partner", "Virtualización y Cloud", "Ciberseguridad avanzada", "VoIP y comunicaciones empresariales", "Soporte técnico integral"]
+    },
+    "confRestaurantCentro": {
+      "title": "Restaurant Centro del País - [Negocio Confidencial]",
+      "description": "Restaurante consolidado en el centro del país con alta rentabilidad operativa. Negocio con facturación superior a medio millón de euros y márgenes excepcionales superiores al 50%.",
+      "carouselDesc": "Sector Hostelería · Facturación >0,5M € · EBITDA 150k € · Rentabilidad >50%",
+      "highlights": ["Facturación superior a 0,5M €", "Rentabilidad operativa excepcional >50%", "EBITDA de 150k €", "Ubicación céntrica privilegiada", "Negocio consolidado", "Alta generación de caja"]
     }
   }
 }
