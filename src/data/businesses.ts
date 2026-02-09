@@ -84,8 +84,8 @@ export const labordaProjectionData = [
 ];
 
 export const labordaPortfolioData = [
-  { nameKey: 'businesses.laborda.portfolio.menu', value: 45, amount: '135k', color: '#8B4513' },
-  { nameKey: 'businesses.laborda.portfolio.carta', value: 35, amount: '105k', color: '#D2691E' },
+  { nameKey: 'businesses.laborda.portfolio.menu', value: 45, amount: '37€/pp', color: '#8B4513' },
+  { nameKey: 'businesses.laborda.portfolio.carta', value: 35, amount: '48€/pp', color: '#D2691E' },
   { nameKey: 'businesses.laborda.portfolio.events', value: 15, amount: '45k', color: '#CD853F' },
   { nameKey: 'businesses.laborda.portfolio.takeaway', value: 5, amount: '15k', color: '#DEB887' },
 ];
