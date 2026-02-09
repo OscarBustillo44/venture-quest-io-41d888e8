@@ -430,8 +430,10 @@
       "carouselDesc": "Hospitality Sector · Revenue €350k · EBITDA €85k · Profitability 24%",
       "highlights": ["Loyal and consolidated clientele", "Privileged location", "Recognized cuisine", "Stable team", "Terrace possibility", "Licenses up to date"],
       "portfolio": {
-        "migdia": "Half-day Ticket",
-        "nit": "Evening Ticket"
+        "menu": "Daily menu",
+        "carta": "Traditional menu",
+        "eventos": "Private events",
+        "llevar": "Takeaway"
       }
     },
     "confCommerce": {
