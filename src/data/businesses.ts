@@ -396,7 +396,7 @@ export const businessesData: Record<string, Business> = {
     titleKey: 'businesses.confRestaurantCentro.title',
     sectorKey: 'sectors.hospitality',
     location: 'Andorra',
-    price: 'A convenir',
+    price: '150.000 €',
     revenue: '>500.000 €',
     ebitda: '150.000 €',
     profitability: '>50%',
@@ -496,7 +496,7 @@ export const carouselSlides = [
     image: restaurantCentroPlaceholder,
     titleKey: 'businesses.confRestaurantCentro.title',
     descriptionKey: 'businesses.confRestaurantCentro.carouselDesc',
-    price: 'A convenir',
+    price: '150.000 €',
     sectorKey: 'sectors.hospitality',
     isConfidential: false
   }
