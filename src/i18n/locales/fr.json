@@ -430,8 +430,10 @@
       "carouselDesc": "Secteur Hôtellerie · CA 350k € · EBITDA 85k € · Rentabilité 24%",
       "highlights": ["Clientèle fidèle et consolidée", "Emplacement privilégié", "Cuisine reconnue", "Équipe stable", "Possibilité terrasse", "Licences à jour"],
       "portfolio": {
-        "migdia": "Ticket 1/2 Midi",
-        "nit": "Ticket 1/2 Soir"
+        "menu": "Menu du jour",
+        "carta": "Carte traditionnelle",
+        "eventos": "Événements privés",
+        "llevar": "À emporter"
       }
     },
     "confCommerce": {

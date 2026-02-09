@@ -430,8 +430,10 @@
       "carouselDesc": "Sector Hostelería · Facturación 350k € · EBITDA 85k € · Rentabilidad 24%",
       "highlights": ["Clientela fiel y consolidada", "Ubicación privilegiada", "Cocina reconocida", "Equipo estable", "Posibilidad de terraza", "Licencias al día"],
       "portfolio": {
-        "migdia": "Ticket 1/2 Mig dia",
-        "nit": "Ticket 1/2 Nit"
+        "menu": "Menú del día",
+        "carta": "Carta tradicional",
+        "eventos": "Eventos privados",
+        "llevar": "Para llevar"
       }
     },
     "confCommerce": {

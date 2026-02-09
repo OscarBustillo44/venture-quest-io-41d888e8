@@ -185,8 +185,10 @@ export const confHosteleriaProjectionData = [
 ];
 
 export const confHosteleriaPortfolioData = [
-  { nameKey: 'businesses.confHosteleria.portfolio.migdia', value: 55, amount: '35€/pp', color: '#8B4513' },
-  { nameKey: 'businesses.confHosteleria.portfolio.nit', value: 45, amount: '48€/pp', color: '#D2691E' },
+  { nameKey: 'businesses.confHosteleria.portfolio.menu', value: 45, amount: '37€/pp', color: '#8B4513' },
+  { nameKey: 'businesses.confHosteleria.portfolio.carta', value: 35, amount: '48€/pp', color: '#D2691E' },
+  { nameKey: 'businesses.confHosteleria.portfolio.eventos', value: 15, amount: '45k', color: '#CD853F' },
+  { nameKey: 'businesses.confHosteleria.portfolio.llevar', value: 5, amount: '15k', color: '#DEB887' },
 ];
 
 // Restaurant Centro del País specific data

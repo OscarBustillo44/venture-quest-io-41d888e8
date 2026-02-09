@@ -430,8 +430,10 @@
       "carouselDesc": "Sector Hostaleria · Facturació 350k € · EBITDA 85k € · Rendibilitat 24%",
       "highlights": ["Clientela fidel i consolidada", "Ubicació privilegiada", "Cuina reconeguda", "Equip estable", "Possibilitat terrassa", "Llicències al dia"],
       "portfolio": {
-        "migdia": "Ticket 1/2 Mig dia",
-        "nit": "Ticket 1/2 Nit"
+        "menu": "Menú del dia",
+        "carta": "Carta tradicional",
+        "eventos": "Esdeveniments privats",
+        "llevar": "Per emportar"
       }
     },
     "confCommerce": {
