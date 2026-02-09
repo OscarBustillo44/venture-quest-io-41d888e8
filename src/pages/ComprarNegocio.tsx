@@ -554,20 +554,11 @@ const ComprarNegocio = () => {
                   <div className="rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card">
                     {/* Image Section */}
                     <div className="relative h-[180px] overflow-hidden bg-stone-800">
-                      {/* Use object-contain for logos and featured images (alpine, infinitypay, la-borda) */}
-                      {(business.id === 'alpine-security' || business.id === 'infinitypay' || business.id === 'la-borda' || business.id === 'confidencial-restaurant-centro') ? (
-                        <img
-                          src={business.image}
-                          alt={t(business.titleKey)}
-                          className="w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105"
-                        />
-                      ) : (
-                        <img
-                          src={business.image}
-                          alt={t(business.titleKey)}
-                          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                        />
-                      )}
+                      <img
+                        src={business.image}
+                        alt={t(business.titleKey)}
+                        className="w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105"
+                      />
                       
                       {/* Confidential Watermark */}
                       {business.isConfidential && (
