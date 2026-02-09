@@ -456,9 +456,9 @@
     },
     "confRestaurantCentro": {
       "title": "Restaurant Centro del País - [Entreprise Confidentielle]",
-      "description": "Restaurant consolidé au centre du pays avec une rentabilité opérationnelle exceptionnelle. Entreprise avec un chiffre d'affaires supérieur à un demi-million d'euros et des marges supérieures à 50%.",
-      "carouselDesc": "Secteur Hôtellerie · CA >0,5M € · EBITDA 150k € · Rentabilité >50%",
-      "highlights": ["CA supérieur à 0,5M €", "Rentabilité opérationnelle exceptionnelle >50%", "EBITDA de 150k €", "Emplacement central privilégié", "Entreprise consolidée", "Forte génération de trésorerie"]
+      "description": "Restaurant consolidé au centre du pays avec une rentabilité opérationnelle exceptionnelle supérieure à 50%. CA supérieur à 0,5M €, EBITDA de 150k € et sans besoin d'investissement initial en capex.",
+      "carouselDesc": "Secteur Hôtellerie · CA >0,5M € · EBITDA 150k € · Rentabilité >50% · Sans capex initial",
+      "highlights": ["CA supérieur à 0,5M €", "Rentabilité opérationnelle exceptionnelle >50%", "EBITDA de 150k €", "Aucun investissement en capex initial requis", "Emplacement central privilégié", "Forte génération de trésorerie"]
     }
   }
 }

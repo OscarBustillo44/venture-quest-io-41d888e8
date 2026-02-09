@@ -456,9 +456,9 @@
     },
     "confRestaurantCentro": {
       "title": "Restaurant Centro del País - [Confidential Business]",
-      "description": "Consolidated restaurant in the center of the country with exceptional operating profitability. Business with revenue exceeding half a million euros and margins above 50%.",
-      "carouselDesc": "Hospitality Sector · Revenue >€0.5M · EBITDA €150k · Profitability >50%",
-      "highlights": ["Revenue exceeding €0.5M", "Exceptional operating profitability >50%", "EBITDA of €150k", "Privileged central location", "Consolidated business", "High cash generation"]
+      "description": "Consolidated restaurant in the center of the country with exceptional operating profitability above 50%. Revenue exceeding €0.5M, EBITDA of €150k and no initial capex investment required.",
+      "carouselDesc": "Hospitality Sector · Revenue >€0.5M · EBITDA €150k · Profitability >50% · No initial capex",
+      "highlights": ["Revenue exceeding €0.5M", "Exceptional operating profitability >50%", "EBITDA of €150k", "No initial capex investment required", "Privileged central location", "High cash generation"]
     }
   }
 }
