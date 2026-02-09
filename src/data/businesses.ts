@@ -401,7 +401,7 @@ export const businessesData: Record<string, Business> = {
     ebitda: '150.000 €',
     profitability: '>50%',
     employees: '6',
-    yearsOperating: '7',
+    yearsOperating: '14',
     isConfidential: false,
     descriptionKey: 'businesses.confRestaurantCentro.description',
     highlightsKey: 'businesses.confRestaurantCentro.highlights',
