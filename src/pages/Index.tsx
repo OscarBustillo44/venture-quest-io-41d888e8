@@ -77,7 +77,7 @@ const Index = () => {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-stone-500 text-white hover:bg-stone-800 px-8 py-6 text-base">
+              <Button asChild size="lg" variant="outline" className="border-stone-500 text-white bg-stone-800 hover:bg-stone-700 px-8 py-6 text-base">
                 <Link to="/comprar">
                   {t('home.hero.ctaBuy')}
                 </Link>
@@ -512,7 +512,7 @@ const Index = () => {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-stone-500 text-white hover:bg-stone-800 px-8 py-6 text-base">
+              <Button asChild size="lg" variant="outline" className="border-stone-500 text-white bg-stone-800 hover:bg-stone-700 px-8 py-6 text-base">
                 <Link to="/comprar">
                   {t('home.hero.ctaBuy')}
                 </Link>
