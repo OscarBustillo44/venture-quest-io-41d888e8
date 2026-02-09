@@ -55,26 +55,10 @@ const BusinessCarousel = () => {
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/95 via-stone-900/30 to-transparent" />
                 
-                {/* Confidential Watermark */}
-                {slide.isConfidential && (
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="text-white/20 text-4xl md:text-5xl font-bold uppercase tracking-widest transform -rotate-12 select-none">
-                      {t('buy.confidential').toUpperCase()}
-                    </div>
-                  </div>
-                )}
-                
                 {/* Sector Badge */}
                 <div className="absolute top-3 left-3 bg-stone-800/80 text-white px-2 py-1 rounded text-xs font-medium">
                   {t(slide.sectorKey)}
                 </div>
-                
-                {/* Confidential Badge */}
-                {slide.isConfidential && (
-                  <div className="absolute top-3 left-24 bg-stone-600/90 text-white px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
-                    🔒 {t('buy.confidential')}
-                  </div>
-                )}
                 
                 {/* Price Badge */}
                 <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
