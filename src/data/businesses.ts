@@ -29,7 +29,7 @@ import sectorComercio from '@/assets/generic/sector-comercio.jpg';
 import sectorServicios from '@/assets/generic/sector-servicios.jpg';
 import sectorIndustria from '@/assets/generic/sector-industria.jpg';
 import sectorTecnologia from '@/assets/generic/sector-tecnologia.jpg';
-import restaurantCentroPlaceholder from '@/assets/generic/restaurant-centro-placeholder.jpg';
+import restaurantCentroPlaceholder from '@/assets/generic/restaurant-centro-placeholder.png';
 
 export interface Business {
   id: string;
