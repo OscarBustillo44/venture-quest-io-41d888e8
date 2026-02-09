@@ -143,6 +143,19 @@ const createBusinessData = () => [
     isConfidential: true,
     operationType: 'participar' as OperationType,
     image: carouselSlides.find(s => s.id === 'confidencial-tecnologia')?.image || ''
+  },
+  {
+    id: 'confidencial-restaurant-centro',
+    titleKey: 'businesses.confRestaurantCentro.title',
+    descriptionKey: 'businesses.confRestaurantCentro.carouselDesc',
+    sectorKey: 'sectors.hospitality',
+    price: 500000,
+    priceDisplay: "A convenir",
+    profitability: 50,
+    publishedDate: new Date('2025-02-09'),
+    isConfidential: true,
+    operationType: 'vender' as OperationType,
+    image: carouselSlides.find(s => s.id === 'confidencial-restaurant-centro')?.image || ''
   }
 ];
 
