@@ -378,8 +378,8 @@
       "highlights": ["Le Restaurant Borda le plus ancien d'Andorre (1790)", "Clientèle fidèle et consolidée", "Équipe souhaitant continuer", "Possibilité terrasse extérieure", "Emplacement privilégié", "Cuisine traditionnelle reconnue"],
       "kpis": {
         "history": { "value": "45+", "label": "années d'histoire comme plus ancien restaurant d'Andorre" },
-        "revenue": { "value": "300k", "label": "chiffre d'affaires annuel consolidé en euros" },
-        "profitability": { "value": "43%", "label": "rentabilité opérationnelle sur CA" },
+        "revenue": { "value": "241k", "label": "chiffre d'affaires annuel consolidé en euros" },
+        "profitability": { "value": "41,5%", "label": "rentabilité opérationnelle sur CA" },
         "employees": { "value": "2", "label": "employés fidèles souhaitant continuer" }
       },
       "portfolio": {

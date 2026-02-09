@@ -378,8 +378,8 @@
       "highlights": ["The oldest Borda Restaurant in Andorra (1790)", "Loyal and consolidated clientele", "Team wishing to continue", "Outdoor terrace possibility", "Privileged location", "Recognized traditional cuisine"],
       "kpis": {
         "history": { "value": "45+", "label": "years of history as the oldest restaurant in Andorra" },
-        "revenue": { "value": "300k", "label": "consolidated annual revenue in euros" },
-        "profitability": { "value": "43%", "label": "operating profitability on revenue" },
+        "revenue": { "value": "241k", "label": "consolidated annual revenue in euros" },
+        "profitability": { "value": "41.5%", "label": "operating profitability on revenue" },
         "employees": { "value": "2", "label": "loyal employees wishing to continue" }
       },
       "portfolio": {
