@@ -560,26 +560,11 @@ const ComprarNegocio = () => {
                         className="w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105"
                       />
                       
-                      {/* Confidential Watermark */}
-                      {business.isConfidential && (
-                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                          <div className="text-white/30 text-2xl md:text-3xl font-bold uppercase tracking-widest transform -rotate-12 select-none">
-                            {t('buy.confidential').toUpperCase()}
-                          </div>
-                        </div>
-                      )}
                       
                       {/* Sector Badge */}
                       <div className="absolute top-3 left-3 bg-stone-800/90 text-white px-2 py-1 rounded text-xs font-medium">
                         {t(business.sectorKey)}
                       </div>
-                      
-                      {/* Confidential Badge */}
-                      {business.isConfidential && (
-                        <div className="absolute top-3 left-[5.5rem] bg-stone-600/90 text-white px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
-                          🔒
-                        </div>
-                      )}
                       
                       {/* Price Badge */}
                       <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
