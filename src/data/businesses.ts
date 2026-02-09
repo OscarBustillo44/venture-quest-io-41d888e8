@@ -373,11 +373,12 @@ export const businessesData: Record<string, Business> = {
     highlightsKey: 'businesses.confRestaurantCentro.highlights',
     images: [restaurantCentroPlaceholder],
     financialData: [
-      { year: '2020', revenue: 380, ebitda: 140 },
-      { year: '2021', revenue: 410, ebitda: 150 },
-      { year: '2022', revenue: 450, ebitda: 160 },
-      { year: '2023', revenue: 480, ebitda: 148 },
-      { year: '2024', revenue: 500, ebitda: 150 },
+      { year: 'n0', revenue: 580, ebitda: 148 },
+      { year: 'n+1', revenue: 596, ebitda: 149 },
+      { year: 'n+2', revenue: 611, ebitda: 149 },
+      { year: 'n+3', revenue: 626, ebitda: 148 },
+      { year: 'n+4', revenue: 642, ebitda: 147 },
+      { year: 'n+5', revenue: 658, ebitda: 151 },
     ]
   }
 };
