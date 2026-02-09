@@ -428,7 +428,11 @@
       "title": "Host260126 Sector Hostelería - [Negocio Confidencial]",
       "description": "Restaurante consolidado con clientela fiel y ubicación privilegiada. Cocina de calidad reconocida en la zona con posibilidad de ampliación de terraza.",
       "carouselDesc": "Sector Hostelería · Facturación 350k € · EBITDA 85k € · Rentabilidad 24%",
-      "highlights": ["Clientela fiel y consolidada", "Ubicación privilegiada", "Cocina reconocida", "Equipo estable", "Posibilidad de terraza", "Licencias al día"]
+      "highlights": ["Clientela fiel y consolidada", "Ubicación privilegiada", "Cocina reconocida", "Equipo estable", "Posibilidad de terraza", "Licencias al día"],
+      "portfolio": {
+        "migdia": "Ticket 1/2 Mig dia",
+        "nit": "Ticket 1/2 Nit"
+      }
     },
     "confCommerce": {
       "title": "Com260126 Sector Comercio - [Negocio Confidencial]",

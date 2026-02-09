@@ -428,7 +428,11 @@
       "title": "Host260126 Secteur Hôtellerie - [Entreprise Confidentielle]",
       "description": "Restaurant consolidé avec clientèle fidèle et emplacement privilégié. Cuisine de qualité reconnue dans la zone avec possibilité d'extension de terrasse.",
       "carouselDesc": "Secteur Hôtellerie · CA 350k € · EBITDA 85k € · Rentabilité 24%",
-      "highlights": ["Clientèle fidèle et consolidée", "Emplacement privilégié", "Cuisine reconnue", "Équipe stable", "Possibilité terrasse", "Licences à jour"]
+      "highlights": ["Clientèle fidèle et consolidée", "Emplacement privilégié", "Cuisine reconnue", "Équipe stable", "Possibilité terrasse", "Licences à jour"],
+      "portfolio": {
+        "migdia": "Ticket 1/2 Midi",
+        "nit": "Ticket 1/2 Soir"
+      }
     },
     "confCommerce": {
       "title": "Com260126 Secteur Commerce - [Entreprise Confidentielle]",

@@ -29,6 +29,7 @@ import {
   confHosteleriaRevenueData,
   confHosteleriaEbitdaData,
   confHosteleriaProjectionData,
+  confHosteleriaPortfolioData,
   restaurantCentroRevenueData,
   restaurantCentroEbitdaData,
   restaurantCentroProjectionData,
@@ -600,6 +601,40 @@ const NegocioDetalle = () => {
                         <Bar dataKey="ebitda" name="EBITDA" fill="#92400e" radius={[4, 4, 0, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
+                  </div>
+
+                  {/* Portfolio Distribution - Ticket */}
+                  <div>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.portfolioDistribution')}</h4>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                      <ResponsiveContainer width={300} height={250}>
+                        <PieChart>
+                          <Pie
+                            data={confHosteleriaPortfolioData.map(item => ({ ...item, name: t(item.nameKey) }))}
+                            cx="50%"
+                            cy="50%"
+                            outerRadius={100}
+                            dataKey="value"
+                            label={({ name, value }) => `${name}; ${value}%`}
+                          >
+                            {confHosteleriaPortfolioData.map((entry, index) => (
+                              <Cell key={`cell-${index}`} fill={entry.color} />
+                            ))}
+                          </Pie>
+                          <Tooltip formatter={(value: number, name: string) => [`${value}%`, name]} />
+                        </PieChart>
+                      </ResponsiveContainer>
+                      <div className="space-y-3">
+                        {confHosteleriaPortfolioData.map((item, index) => (
+                          <div key={index} className="flex items-center gap-3">
+                            <div className="w-4 h-4 rounded-full" style={{ backgroundColor: item.color }} />
+                            <span className="text-sm text-stone-700">
+                              {item.value}% {t(item.nameKey)} ({item.amount})
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
