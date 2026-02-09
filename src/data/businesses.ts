@@ -30,7 +30,7 @@ import sectorServicios from '@/assets/generic/sector-servicios.jpg';
 import sectorIndustria from '@/assets/generic/sector-industria.jpg';
 import sectorTecnologia from '@/assets/generic/sector-tecnologia.jpg';
 import restaurantCentroPlaceholder from '@/assets/generic/restaurant-centro-placeholder.png';
-import confHosteleriaCard from '@/assets/generic/conf-hosteleria-card.jpg';
+import confHosteleriaCard from '@/assets/generic/conf-hosteleria-card.png';
 import confComercioCard from '@/assets/generic/conf-comercio-card.jpg';
 import confServiciosCard from '@/assets/generic/conf-servicios-card.jpg';
 import confIndustriaCard from '@/assets/generic/conf-industria-card.jpg';
