@@ -26,6 +26,9 @@ import {
   infinitypayKPIs,
   infinitypayRevenueEbitdaData,
   infinitypayPortfolioData,
+  confHosteleriaRevenueData,
+  confHosteleriaEbitdaData,
+  confHosteleriaProjectionData,
   restaurantCentroRevenueData,
   restaurantCentroEbitdaData,
   restaurantCentroProjectionData,
@@ -526,6 +529,77 @@ const NegocioDetalle = () => {
                         <p className="text-2xl font-bold text-green-600">1 Mio €</p>
                       </div>
                     </div>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Financial Charts - Confidencial Hostelería */}
+            {business.id === 'confidencial-hosteleria' && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-serif flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-amber-600" />
+                    {t('detail.revenueProjection')} (n+1 → n+5)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-8">
+                  {/* Revenue Evolution */}
+                  <div>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.revenue')} (k€)</h4>
+                    <ResponsiveContainer width="100%" height={280}>
+                      <AreaChart data={confHosteleriaRevenueData}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
+                        <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 800]} />
+                        <Tooltip 
+                          contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
+                          formatter={(value: number) => [`${value}k €`, t('detail.revenue')]}
+                        />
+                        <Area 
+                          type="monotone" 
+                          dataKey="revenue" 
+                          stroke="#d97706" 
+                          fill="#fcd34d" 
+                          strokeWidth={2}
+                        />
+                      </AreaChart>
+                    </ResponsiveContainer>
+                  </div>
+
+                  {/* EBITDA Evolution */}
+                  <div>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.ebitda')} (k€)</h4>
+                    <ResponsiveContainer width="100%" height={280}>
+                      <BarChart data={confHosteleriaEbitdaData}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
+                        <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 200]} />
+                        <Tooltip 
+                          contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
+                          formatter={(value: number) => [`${value}k €`, 'EBITDA']}
+                        />
+                        <Bar dataKey="ebitda" fill="#92400e" radius={[4, 4, 0, 0]} label={{ position: 'top', fill: '#92400e', fontSize: 12 }} />
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+
+                  {/* Revenue vs EBITDA Projection */}
+                  <div>
+                    <h4 className="text-sm font-medium text-stone-600 mb-4">{t('detail.revenueProjection')} (k€)</h4>
+                    <ResponsiveContainer width="100%" height={280}>
+                      <BarChart data={confHosteleriaProjectionData}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
+                        <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 800]} />
+                        <Tooltip 
+                          contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
+                        />
+                        <Legend />
+                        <Bar dataKey="revenue" name={t('detail.revenue')} fill="#d97706" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="ebitda" name="EBITDA" fill="#92400e" radius={[4, 4, 0, 0]} />
+                      </BarChart>
+                    </ResponsiveContainer>
                   </div>
                 </CardContent>
               </Card>
