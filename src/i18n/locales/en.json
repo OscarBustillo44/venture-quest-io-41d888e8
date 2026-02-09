@@ -453,6 +453,12 @@
       "description": "We provide comprehensive support for all your IT and telecommunications needs: Virtualization, Microsoft 365 Partner, Technical Support, Network Management, Business VoIP Communications, Cloud Services, Cybersecurity, IT Consulting, High-Performance Wifi, 3CX PBX Gold Partner.",
       "carouselDesc": "Technology Sector · Revenue €600k · EBITDA €100k · Profitability 27%",
       "highlights": ["Microsoft 365 Partner", "3CX PBX Gold Partner", "Virtualization and Cloud", "Advanced cybersecurity", "VoIP and business communications", "Comprehensive technical support"]
+    },
+    "confRestaurantCentro": {
+      "title": "Restaurant Centro del País - [Confidential Business]",
+      "description": "Consolidated restaurant in the center of the country with exceptional operating profitability. Business with revenue exceeding half a million euros and margins above 50%.",
+      "carouselDesc": "Hospitality Sector · Revenue >€0.5M · EBITDA €150k · Profitability >50%",
+      "highlights": ["Revenue exceeding €0.5M", "Exceptional operating profitability >50%", "EBITDA of €150k", "Privileged central location", "Consolidated business", "High cash generation"]
     }
   }
 }
