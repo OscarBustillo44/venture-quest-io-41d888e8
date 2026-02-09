@@ -456,9 +456,9 @@
     },
     "confRestaurantCentro": {
       "title": "Restaurant Centro del País - [Negoci Confidencial]",
-      "description": "Restaurant consolidat al centre del país amb alta rendibilitat operativa. Negoci amb facturació superior a mig milió d'euros i marges excepcionals superiors al 50%.",
-      "carouselDesc": "Sector Hostaleria · Facturació >0,5M € · EBITDA 150k € · Rendibilitat >50%",
-      "highlights": ["Facturació superior a 0,5M €", "Rendibilitat operativa excepcional >50%", "EBITDA de 150k €", "Ubicació cèntrica privilegiada", "Negoci consolidat", "Alta generació de caixa"]
+      "description": "Restaurant consolidat al centre del país amb rendibilitat operativa excepcional superior al 50%. Facturació superior a 0,5M €, EBITDA de 150k € i sense necessitat d'inversió inicial en capex.",
+      "carouselDesc": "Sector Hostaleria · Facturació >0,5M € · EBITDA 150k € · Rendibilitat >50% · Sense capex inicial",
+      "highlights": ["Facturació superior a 0,5M €", "Rendibilitat operativa excepcional >50%", "EBITDA de 150k €", "No requereix inversió en capex d'inici", "Ubicació cèntrica privilegiada", "Alta generació de caixa"]
     }
   }
 }
