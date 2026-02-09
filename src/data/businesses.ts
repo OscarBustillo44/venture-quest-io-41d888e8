@@ -184,6 +184,11 @@ export const confHosteleriaProjectionData = [
   { year: 'n+5', revenue: 658, ebitda: 151 },
 ];
 
+export const confHosteleriaPortfolioData = [
+  { nameKey: 'businesses.confHosteleria.portfolio.migdia', value: 55, amount: '35€/pp', color: '#8B4513' },
+  { nameKey: 'businesses.confHosteleria.portfolio.nit', value: 45, amount: '48€/pp', color: '#D2691E' },
+];
+
 // Restaurant Centro del País specific data
 export const restaurantCentroRevenueData = [
   { year: 'n0', revenue: 580 },
