@@ -61,25 +61,26 @@ export const labordaKPIs = [
 ];
 
 export const labordaRevenueData = [
-  { year: '2020', revenue: 220 },
-  { year: '2021', revenue: 250 },
-  { year: '2022', revenue: 280 },
-  { year: '2023', revenue: 290 },
-  { year: '2024', revenue: 300 },
+  { year: 'n0', revenue: 242 },
+  { year: 'n+1', revenue: 248 },
+  { year: 'n+2', revenue: 254 },
+  { year: 'n+3', revenue: 261 },
+  { year: 'n+4', revenue: 267 },
 ];
 
 export const labordaEbitdaData = [
-  { year: '2020', ebitda: 45 },
-  { year: '2021', ebitda: 55 },
-  { year: '2022', ebitda: 65 },
-  { year: '2023', ebitda: 70 },
-  { year: '2024', ebitda: 75 },
+  { year: 'n0', ebitda: 100 },
+  { year: 'n+1', ebitda: 101 },
+  { year: 'n+2', ebitda: 102 },
+  { year: 'n+3', ebitda: 102 },
+  { year: 'n+4', ebitda: 104 },
 ];
 
 export const labordaProjectionData = [
-  { year: '2025', revenue: 320, ebitda: 85 },
-  { year: '2026', revenue: 350, ebitda: 100 },
-  { year: '2027', revenue: 380, ebitda: 115 },
+  { year: 'n+1', revenue: 248, ebitda: 101 },
+  { year: 'n+2', revenue: 254, ebitda: 102 },
+  { year: 'n+3', revenue: 261, ebitda: 102 },
+  { year: 'n+4', revenue: 267, ebitda: 104 },
 ];
 
 export const labordaPortfolioData = [
@@ -161,20 +162,20 @@ export const businessesData: Record<string, Business> = {
     location: 'La Massana, Andorra',
     coordinates: { lat: 42.545013, lng: 1.515326 },
     price: '75.000 €',
-    revenue: '240.000 €',
-    ebitda: '75.000 €',
-    profitability: '31%',
+    revenue: '241.956 €',
+    ebitda: '100.386 €',
+    profitability: '41%',
     employees: '2',
     yearsOperating: '45+',
     descriptionKey: 'businesses.laborda.description',
     highlightsKey: 'businesses.laborda.highlights',
     images: [labordaFachada, labordaInterior, labordaProducte, labordaTerrassa, labordaCollage, labordaFacturacio],
     financialData: [
-      { year: '2020', revenue: 220, ebitda: 45 },
-      { year: '2021', revenue: 250, ebitda: 55 },
-      { year: '2022', revenue: 280, ebitda: 65 },
-      { year: '2023', revenue: 290, ebitda: 70 },
-      { year: '2024', revenue: 300, ebitda: 75 },
+      { year: 'n0', revenue: 242, ebitda: 100 },
+      { year: 'n+1', revenue: 248, ebitda: 101 },
+      { year: 'n+2', revenue: 254, ebitda: 102 },
+      { year: 'n+3', revenue: 261, ebitda: 102 },
+      { year: 'n+4', revenue: 267, ebitda: 104 },
     ]
   },
   'alpine-security': {
