@@ -167,6 +167,12 @@
       "dueDiligenceDesc": "Recomanem una anàlisi professional abans de qualsevol decisió d'inversió."
     }
   },
+  "forms": {
+    "privacyConsent": {
+      "text": "He llegit i accepto la",
+      "link": "Política de Privacitat"
+    }
+  },
   "footer": {
     "tagline": "El marketplace on empreses reals canvien de mans amb transparència i criteri.",
     "navigation": "Navegació",

@@ -167,6 +167,12 @@
       "dueDiligenceDesc": "Nous recommandons une analyse professionnelle avant toute décision d'investissement."
     }
   },
+  "forms": {
+    "privacyConsent": {
+      "text": "J'ai lu et j'accepte la",
+      "link": "Politique de Confidentialité"
+    }
+  },
   "footer": {
     "tagline": "La marketplace où les entreprises réelles changent de mains avec transparence et critère.",
     "navigation": "Navigation",

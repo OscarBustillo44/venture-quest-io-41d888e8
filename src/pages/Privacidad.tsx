@@ -60,10 +60,31 @@ const Privacidad = () => {
             "Portabilidad de los datos.",
             "Retirar su consentimiento en cualquier momento."
           ],
-          extra: "Para ejercer estos derechos, contacte con nosotros en: info@buscobusiness.com"
+          extra: "Para ejercer estos derechos, contacte con nosotros en: info@buscobusiness.com o al teléfono +376 337 670."
         },
         {
-          title: "8. Seguridad",
+          title: "8. Formularios de contacto y captación de leads",
+          content: "Cuando usted completa un formulario de interés en un negocio publicado o un formulario de venta, recopilamos los datos proporcionados (nombre, email, teléfono, empresa, sector, facturación y mensaje) con la finalidad exclusiva de:",
+          list: [
+            "Gestionar su solicitud de información sobre un negocio concreto.",
+            "Facilitar la comunicación entre compradores y vendedores interesados.",
+            "Evaluar la idoneidad de una operación de compraventa.",
+            "Enviar comunicaciones relacionadas con el proceso de transacción."
+          ],
+          extra: "Sus datos no serán compartidos con terceros ajenos a la transacción sin su consentimiento previo."
+        },
+        {
+          title: "9. Compartición de datos entre las partes",
+          content: "En el contexto de una transacción, sus datos de contacto podrán ser compartidos con la otra parte (comprador o vendedor) únicamente cuando ambas partes hayan manifestado interés mutuo y siempre bajo las siguientes condiciones:",
+          list: [
+            "Solo se comparten los datos estrictamente necesarios para la negociación.",
+            "Ambas partes han aceptado previamente esta política de privacidad.",
+            "La compartición se realiza de forma segura y confidencial.",
+            "Puede solicitar la eliminación de sus datos en cualquier momento."
+          ]
+        },
+        {
+          title: "10. Seguridad",
           content: "Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos personales contra acceso no autorizado, pérdida o destrucción."
         }
       ]
@@ -119,10 +140,31 @@ const Privacidad = () => {
             "Portabilitat de les dades.",
             "Retirar el seu consentiment en qualsevol moment."
           ],
-          extra: "Per exercir aquests drets, contacti amb nosaltres a: info@buscobusiness.com"
+          extra: "Per exercir aquests drets, contacti amb nosaltres a: info@buscobusiness.com o al telèfon +376 337 670."
         },
         {
-          title: "8. Seguretat",
+          title: "8. Formularis de contacte i captació de leads",
+          content: "Quan vostè completa un formulari d'interès en un negoci publicat o un formulari de venda, recopilem les dades proporcionades (nom, email, telèfon, empresa, sector, facturació i missatge) amb la finalitat exclusiva de:",
+          list: [
+            "Gestionar la seva sol·licitud d'informació sobre un negoci concret.",
+            "Facilitar la comunicació entre compradors i venedors interessats.",
+            "Avaluar la idoneïtat d'una operació de compravenda.",
+            "Enviar comunicacions relacionades amb el procés de transacció."
+          ],
+          extra: "Les seves dades no seran compartides amb tercers aliens a la transacció sense el seu consentiment previ."
+        },
+        {
+          title: "9. Compartició de dades entre les parts",
+          content: "En el context d'una transacció, les seves dades de contacte podran ser compartides amb l'altra part (comprador o venedor) únicament quan ambdues parts hagin manifestat interès mutu i sempre sota les següents condicions:",
+          list: [
+            "Només es comparteixen les dades estrictament necessàries per a la negociació.",
+            "Ambdues parts han acceptat prèviament aquesta política de privacitat.",
+            "La compartició es realitza de forma segura i confidencial.",
+            "Pot sol·licitar l'eliminació de les seves dades en qualsevol moment."
+          ]
+        },
+        {
+          title: "10. Seguretat",
           content: "Implementem mesures tècniques i organitzatives apropiades per protegir les seves dades personals contra accés no autoritzat, pèrdua o destrucció."
         }
       ]
@@ -178,10 +220,31 @@ const Privacidad = () => {
             "La portabilité des données.",
             "Retirer votre consentement à tout moment."
           ],
-          extra: "Pour exercer ces droits, contactez-nous à : info@buscobusiness.com"
+          extra: "Pour exercer ces droits, contactez-nous à : info@buscobusiness.com ou au téléphone +376 337 670."
         },
         {
-          title: "8. Sécurité",
+          title: "8. Formulaires de contact et captation de leads",
+          content: "Lorsque vous remplissez un formulaire d'intérêt pour une entreprise publiée ou un formulaire de vente, nous collectons les données fournies (nom, email, téléphone, entreprise, secteur, chiffre d'affaires et message) dans le but exclusif de :",
+          list: [
+            "Gérer votre demande d'information sur une entreprise spécifique.",
+            "Faciliter la communication entre acheteurs et vendeurs intéressés.",
+            "Évaluer la pertinence d'une opération d'achat-vente.",
+            "Envoyer des communications liées au processus de transaction."
+          ],
+          extra: "Vos données ne seront pas partagées avec des tiers étrangers à la transaction sans votre consentement préalable."
+        },
+        {
+          title: "9. Partage de données entre les parties",
+          content: "Dans le cadre d'une transaction, vos coordonnées pourront être partagées avec l'autre partie (acheteur ou vendeur) uniquement lorsque les deux parties auront manifesté un intérêt mutuel et toujours dans les conditions suivantes :",
+          list: [
+            "Seules les données strictement nécessaires à la négociation sont partagées.",
+            "Les deux parties ont préalablement accepté cette politique de confidentialité.",
+            "Le partage se fait de manière sécurisée et confidentielle.",
+            "Vous pouvez demander la suppression de vos données à tout moment."
+          ]
+        },
+        {
+          title: "10. Sécurité",
           content: "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès non autorisé, perte ou destruction."
         }
       ]
@@ -237,10 +300,31 @@ const Privacidad = () => {
             "Data portability.",
             "Withdraw your consent at any time."
           ],
-          extra: "To exercise these rights, contact us at: info@buscobusiness.com"
+          extra: "To exercise these rights, contact us at: info@buscobusiness.com or by phone at +376 337 670."
         },
         {
-          title: "8. Security",
+          title: "8. Contact forms and lead capture",
+          content: "When you complete an interest form for a published business or a seller form, we collect the data provided (name, email, phone, company, sector, revenue and message) for the exclusive purpose of:",
+          list: [
+            "Managing your information request about a specific business.",
+            "Facilitating communication between interested buyers and sellers.",
+            "Evaluating the suitability of a purchase-sale operation.",
+            "Sending communications related to the transaction process."
+          ],
+          extra: "Your data will not be shared with third parties outside the transaction without your prior consent."
+        },
+        {
+          title: "9. Data sharing between parties",
+          content: "In the context of a transaction, your contact data may be shared with the other party (buyer or seller) only when both parties have expressed mutual interest and always under the following conditions:",
+          list: [
+            "Only data strictly necessary for negotiation is shared.",
+            "Both parties have previously accepted this privacy policy.",
+            "Sharing is done securely and confidentially.",
+            "You may request the deletion of your data at any time."
+          ]
+        },
+        {
+          title: "10. Security",
           content: "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, loss or destruction."
         }
       ]

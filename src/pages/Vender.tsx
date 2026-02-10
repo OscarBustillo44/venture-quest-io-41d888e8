@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Building2, Shield, TrendingUp, Users, FileText, Target, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -35,6 +36,7 @@ const contactSchema = z.object({
   sector: z.string().min(1, { message: "Selecciona un sector" }),
   revenue: z.string().min(1, { message: "Selecciona un rango de facturación" }),
   message: z.string().trim().max(1000).optional(),
+  privacyAccepted: z.literal(true, { errorMap: () => ({ message: "Debes aceptar la política de privacidad" }) }),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -53,6 +55,7 @@ const Vender = () => {
       sector: '',
       revenue: '',
       message: '',
+      privacyAccepted: false as unknown as true,
     },
   });
 
@@ -367,16 +370,36 @@ const Vender = () => {
                       )}
                     />
 
+                    <FormField
+                      control={form.control}
+                      name="privacyAccepted"
+                      render={({ field }) => (
+                        <FormItem className="flex items-start gap-2 space-y-0">
+                          <FormControl>
+                            <input
+                              type="checkbox"
+                              checked={field.value === true}
+                              onChange={(e) => field.onChange(e.target.checked ? true : false)}
+                              className="mt-1 accent-amber-600"
+                            />
+                          </FormControl>
+                          <FormLabel className="text-xs text-stone-500 font-normal leading-relaxed cursor-pointer">
+                            {t('forms.privacyConsent.text')}{' '}
+                            <Link to="/privacidad" className="underline text-amber-600 hover:text-amber-700" target="_blank">
+                              {t('forms.privacyConsent.link')}
+                            </Link>
+                          </FormLabel>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
                     <Button 
                       type="submit" 
                       className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-6"
                     >
                       {t('sell.form.submit')}
                     </Button>
-
-                    <p className="text-xs text-stone-500 text-center">
-                      {t('sell.form.privacy')}
-                    </p>
                   </form>
                 </Form>
               </CardContent>
