@@ -44,7 +44,8 @@ const NegocioDetalle = () => {
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    privacyAccepted: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -880,10 +881,26 @@ const NegocioDetalle = () => {
                         rows={4}
                       />
                     </div>
+                    <div className="flex items-start gap-2">
+                      <input
+                        type="checkbox"
+                        id="privacy"
+                        checked={formData.privacyAccepted}
+                        onChange={(e) => setFormData({ ...formData, privacyAccepted: e.target.checked })}
+                        className="mt-1 accent-amber-600"
+                        required
+                      />
+                      <Label htmlFor="privacy" className="text-xs text-stone-500 font-normal leading-relaxed cursor-pointer">
+                        {t('forms.privacyConsent.text')}{' '}
+                        <Link to="/privacidad" className="underline text-amber-600 hover:text-amber-700" target="_blank">
+                          {t('forms.privacyConsent.link')}
+                        </Link>
+                      </Label>
+                    </div>
                     <Button 
                       type="submit" 
                       className="w-full bg-amber-600 hover:bg-amber-700"
-                      disabled={isSubmitting}
+                      disabled={isSubmitting || !formData.privacyAccepted}
                     >
                       {isSubmitting ? t('detail.sending') : t('detail.sendMessage')}
                     </Button>
