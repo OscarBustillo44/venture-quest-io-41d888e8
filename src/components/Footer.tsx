@@ -80,6 +80,14 @@ const Footer = () => {
                   info@buscobusiness.com
                 </a>
               </p>
+              <p className="text-primary-foreground/80">
+                <a 
+                  href="tel:+376337670" 
+                  className="hover:text-primary-foreground transition-colors"
+                >
+                  +376 337 670
+                </a>
+              </p>
             </div>
           </div>
         </div>
