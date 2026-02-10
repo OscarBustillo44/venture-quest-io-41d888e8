@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Target, Shield, TrendingUp, Users, Building2, Briefcase } from 'lucide-react';
+import { Target, Shield, TrendingUp, Users, Building2, Briefcase, Mail, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -266,6 +266,55 @@ const Nosotros = () => {
             <p className="text-2xl md:text-3xl font-serif text-amber-400 italic">
               "{t('about.whyUs.closing')}"
             </p>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 md:py-24 bg-stone-50 overflow-hidden">
+        <motion.div 
+          className="max-w-4xl mx-auto px-4 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <motion.h2 
+            className="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-4"
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
+            {t('about.contact.title')}
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-stone-600 mb-10"
+            variants={fadeInUp}
+            transition={{ duration: 0.5 }}
+          >
+            {t('about.contact.subtitle')}
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row items-center justify-center gap-8"
+            variants={staggerContainer}
+          >
+            <motion.a 
+              href="tel:+376337670" 
+              className="flex items-center gap-3 text-lg text-stone-700 hover:text-amber-600 transition-colors"
+              variants={fadeInUp}
+              whileHover={{ scale: 1.05 }}
+            >
+              <Phone className="w-6 h-6" />
+              +376 337 670
+            </motion.a>
+            <motion.a 
+              href="mailto:info@buscobusiness.com" 
+              className="flex items-center gap-3 text-lg text-stone-700 hover:text-amber-600 transition-colors"
+              variants={fadeInUp}
+              whileHover={{ scale: 1.05 }}
+            >
+              <Mail className="w-6 h-6" />
+              info@buscobusiness.com
+            </motion.a>
           </motion.div>
         </motion.div>
       </section>
