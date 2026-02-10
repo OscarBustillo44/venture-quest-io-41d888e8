@@ -897,9 +897,9 @@ const NegocioDetalle = () => {
               <CardContent className="py-6">
                 <h3 className="font-semibold text-stone-800 mb-4">{t('footer.contact')}</h3>
                 <div className="space-y-3">
-                  <a href="tel:+376123456" className="flex items-center gap-3 text-stone-600 hover:text-amber-600 transition-colors">
+                  <a href="tel:+376337670" className="flex items-center gap-3 text-stone-600 hover:text-amber-600 transition-colors">
                     <Phone className="w-5 h-5" />
-                    +376 123 456
+                    +376 337 670
                   </a>
                   <a href="mailto:info@buscobusiness.com" className="flex items-center gap-3 text-stone-600 hover:text-amber-600 transition-colors">
                     <Mail className="w-5 h-5" />
