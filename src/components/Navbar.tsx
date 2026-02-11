@@ -27,7 +27,7 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 text-2xl font-serif font-bold">
           <img src={bbLogo} alt="buscobusiness" className="h-10" />
-          busco<span className="text-amber-500">business</span><span>.com</span>
+          <span>busco<span className="text-amber-500">business</span>.com</span>
         </Link>
         
         {/* Desktop Navigation */}
