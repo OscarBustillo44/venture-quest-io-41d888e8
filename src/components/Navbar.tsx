@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Menu } from 'lucide-react';
+import icfoLogo from '@/assets/generic/icfobusiness-logo.png';
 import LanguageSelector from './LanguageSelector';
 import { Button } from '@/components/ui/button';
 import {
@@ -24,7 +25,8 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
   return (
     <header className={`${bgClass} ${textClass} py-4`}>
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-serif font-bold">
+        <Link to="/" className="flex items-center gap-3 text-2xl font-serif font-bold">
+          <img src={icfoLogo} alt="iCFObusiness" className="h-8" />
           busco<span className="text-amber-500">business</span>.com
         </Link>
         
