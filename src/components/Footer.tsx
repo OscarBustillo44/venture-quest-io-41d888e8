@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Separator } from "@/components/ui/separator";
+import bbLogoInverted from "@/assets/generic/buscobusiness-logo-inverted.png";
 
 
 const Footer = () => {
@@ -14,7 +15,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <h3 className="text-xl font-bold mb-4">buscobusiness.com</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={bbLogoInverted} alt="buscobusiness" className="h-10" />
+              <h3 className="text-xl font-bold">buscobusiness.com</h3>
+            </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               {t('footer.tagline')}
             </p>
