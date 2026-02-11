@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Separator } from "@/components/ui/separator";
-import empresaFamiliarLogo from "@/assets/generic/empresa-familiar-andorrana.png";
+
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -93,11 +93,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Membre de */}
-        <div className="flex items-center gap-3 mb-8">
-          <span className="text-xs text-primary-foreground/60 uppercase tracking-wider">Membre de:</span>
-          <img src={empresaFamiliarLogo} alt="Empresa Familiar Andorrana" className="h-12 rounded bg-white/90 p-1" />
-        </div>
 
         <Separator className="bg-primary-foreground/20 mb-8" />
 
