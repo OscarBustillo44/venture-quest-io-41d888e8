@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Building2, Shield, TrendingUp, Users, FileText, Target, CheckCircle2 } from 'lucide-react';
+import { Building2, Shield, TrendingUp, Users, FileText, Target, CheckCircle2, BarChart3, Search, LineChart, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -166,6 +166,54 @@ const Vender = () => {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pre-Market Valuation Section */}
+      <section className="py-16 md:py-24 bg-stone-900 text-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+              {t('sell.valuation.title')}
+            </h2>
+            <p className="text-lg text-stone-300 max-w-2xl mx-auto leading-relaxed">
+              {t('sell.valuation.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {[
+              { icon: BarChart3, key: 'block1' },
+              { icon: Search, key: 'block2' },
+              { icon: LineChart, key: 'block3' },
+              { icon: Award, key: 'block4' },
+            ].map(({ icon: Icon, key }) => (
+              <div key={key} className="bg-stone-800 border border-stone-700 rounded-xl p-6 text-center">
+                <Icon className="w-8 h-8 text-amber-500 mx-auto mb-4" />
+                <h3 className="text-sm font-bold text-white leading-snug">
+                  {t(`sell.valuation.${key}`)}
+                </h3>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-stone-400 text-sm mb-10 max-w-2xl mx-auto italic">
+            {t('sell.valuation.poweredBy')}
+          </p>
+
+          <div className="text-center">
+            <a href="https://icfobusiness.com/pre-market-valuation">
+              <Button
+                size="lg"
+                className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-10 py-6 text-base"
+              >
+                {t('sell.valuation.cta')}
+              </Button>
+            </a>
+            <p className="text-xs text-stone-500 mt-4 max-w-md mx-auto">
+              {t('sell.valuation.legalNote')}
+            </p>
           </div>
         </div>
       </section>
