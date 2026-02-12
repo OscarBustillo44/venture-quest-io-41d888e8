@@ -98,6 +98,17 @@ const Footer = () => {
         </div>
 
 
+        {/* Partner Cross-Link */}
+        <div className="flex items-center justify-center gap-2 mb-8 py-4">
+          <span className="text-sm text-primary-foreground/70">{t('footer.partnerLabel')}</span>
+          <a
+            href="https://icfobusiness.com?utm_source=buscobusiness&utm_medium=footer&utm_campaign=cross-link"
+            className="text-sm font-semibold text-primary-foreground hover:text-primary-foreground/90 transition-colors underline underline-offset-2"
+          >
+            iCFObusiness
+          </a>
+        </div>
+
         <Separator className="bg-primary-foreground/20 mb-8" />
 
         {/* Disclaimer */}
