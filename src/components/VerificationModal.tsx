@@ -15,6 +15,13 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
@@ -22,8 +29,10 @@ import { useToast } from '@/hooks/use-toast';
 
 const verificationSchema = z.object({
   fullName: z.string().trim().min(2, { message: 'verification.errors.nameMin' }).max(100, { message: 'verification.errors.nameMax' }),
+  phone: z.string().trim().min(6, { message: 'verification.errors.phoneMin' }).max(20, { message: 'verification.errors.phoneMax' }),
   email: z.string().trim().email({ message: 'verification.errors.emailInvalid' }).max(255, { message: 'verification.errors.emailMax' }),
   idDocument: z.string().trim().min(5, { message: 'verification.errors.idMin' }).max(30, { message: 'verification.errors.idMax' }),
+  country: z.string().trim().min(1, { message: 'verification.errors.countryRequired' }),
   acceptConfidentiality: z.literal(true, { errorMap: () => ({ message: 'verification.errors.confidentialityRequired' }) }),
   acceptCommission: z.literal(true, { errorMap: () => ({ message: 'verification.errors.commissionRequired' }) }),
 });
@@ -37,6 +46,18 @@ interface VerificationModalProps {
   businessSlug: string;
 }
 
+const COUNTRIES = [
+  { value: 'AD', labelKey: 'verification.countries.AD' },
+  { value: 'ES', labelKey: 'verification.countries.ES' },
+  { value: 'FR', labelKey: 'verification.countries.FR' },
+  { value: 'PT', labelKey: 'verification.countries.PT' },
+  { value: 'DE', labelKey: 'verification.countries.DE' },
+  { value: 'IT', labelKey: 'verification.countries.IT' },
+  { value: 'GB', labelKey: 'verification.countries.GB' },
+  { value: 'US', labelKey: 'verification.countries.US' },
+  { value: 'OTHER', labelKey: 'verification.countries.OTHER' },
+];
+
 const VerificationModal = ({ open, onOpenChange, onVerified, businessSlug }: VerificationModalProps) => {
   const { t } = useTranslation();
   const { user } = useAuth();
@@ -48,8 +69,10 @@ const VerificationModal = ({ open, onOpenChange, onVerified, businessSlug }: Ver
     resolver: zodResolver(verificationSchema),
     defaultValues: {
       fullName: '',
+      phone: '',
       email: user?.email || '',
       idDocument: '',
+      country: '',
       acceptConfidentiality: undefined,
       acceptCommission: undefined,
     },
@@ -64,26 +87,47 @@ const VerificationModal = ({ open, onOpenChange, onVerified, businessSlug }: Ver
 
     setIsSubmitting(true);
 
-    const { error } = await supabase.from('business_verifications').insert({
-      user_id: user.id,
-      business_slug: businessSlug,
-      full_name: data.fullName,
-      email: data.email,
-      id_document: data.idDocument,
-      accepted_confidentiality: data.acceptConfidentiality,
-      accepted_commission: data.acceptCommission,
-    });
+    const { data: sessionData } = await supabase.auth.getSession();
+    const accessToken = sessionData?.session?.access_token;
 
+    const response = await fetch(
+      `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/verify-business-access`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${accessToken}`,
+          apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+        },
+        body: JSON.stringify({
+          businessSlug,
+          fullName: data.fullName,
+          email: data.email,
+          phone: data.phone,
+          idDocument: data.idDocument,
+          country: data.country,
+          acceptConfidentiality: data.acceptConfidentiality,
+          acceptCommission: data.acceptCommission,
+        }),
+      }
+    );
+
+    const result = await response.json();
     setIsSubmitting(false);
 
-    if (error) {
+    if (!response.ok) {
       toast({
         title: t('auth.error'),
-        description: error.message,
+        description: result.error || 'Verification failed',
         variant: 'destructive',
       });
       return;
     }
+
+    toast({
+      title: t('verification.successTitle'),
+      description: `${t('verification.successMessage')} (Token: ${result.tokenId?.slice(0, 8)}...)`,
+    });
 
     onVerified();
     onOpenChange(false);
@@ -150,7 +194,8 @@ const VerificationModal = ({ open, onOpenChange, onVerified, businessSlug }: Ver
         </DialogHeader>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 mt-2">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mt-2">
+            {/* Full Name */}
             <FormField
               control={form.control}
               name="fullName"
@@ -165,6 +210,22 @@ const VerificationModal = ({ open, onOpenChange, onVerified, businessSlug }: Ver
               )}
             />
 
+            {/* Phone */}
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel>{t('verification.phone')} *</FormLabel>
+                  <FormControl>
+                    <Input type="tel" placeholder={t('verification.phonePlaceholder')} {...field} />
+                  </FormControl>
+                  <FormMessage>{fieldState.error && t(fieldState.error.message || '')}</FormMessage>
+                </FormItem>
+              )}
+            />
+
+            {/* Email */}
             <FormField
               control={form.control}
               name="email"
@@ -179,6 +240,7 @@ const VerificationModal = ({ open, onOpenChange, onVerified, businessSlug }: Ver
               )}
             />
 
+            {/* ID Document */}
             <FormField
               control={form.control}
               name="idDocument"
@@ -193,6 +255,33 @@ const VerificationModal = ({ open, onOpenChange, onVerified, businessSlug }: Ver
               )}
             />
 
+            {/* Country */}
+            <FormField
+              control={form.control}
+              name="country"
+              render={({ field, fieldState }) => (
+                <FormItem>
+                  <FormLabel>{t('verification.country')} *</FormLabel>
+                  <Select onValueChange={field.onChange} value={field.value}>
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder={t('verification.countryPlaceholder')} />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {COUNTRIES.map((c) => (
+                        <SelectItem key={c.value} value={c.value}>
+                          {t(c.labelKey)}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormMessage>{fieldState.error && t(fieldState.error.message || '')}</FormMessage>
+                </FormItem>
+              )}
+            />
+
+            {/* Terms Section */}
             <div className="space-y-4 pt-2 border-t border-stone-200">
               <p className="text-xs font-medium text-stone-500 uppercase tracking-wide pt-2">
                 {t('verification.termsSection')}
@@ -245,6 +334,7 @@ const VerificationModal = ({ open, onOpenChange, onVerified, businessSlug }: Ver
               />
             </div>
 
+            {/* Submit Button */}
             <Button
               type="submit"
               className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 text-base font-semibold"

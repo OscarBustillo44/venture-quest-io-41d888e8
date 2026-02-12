@@ -19,34 +19,49 @@ export type Database = {
           accepted_commission: boolean
           accepted_confidentiality: boolean
           business_slug: string
+          country: string
           created_at: string
           email: string
           full_name: string
           id: string
           id_document: string
+          ip_address: string | null
+          phone: string
+          token_id: string
           user_id: string
+          verified_at: string
         }
         Insert: {
           accepted_commission?: boolean
           accepted_confidentiality?: boolean
           business_slug: string
+          country: string
           created_at?: string
           email: string
           full_name: string
           id?: string
           id_document: string
+          ip_address?: string | null
+          phone: string
+          token_id?: string
           user_id: string
+          verified_at?: string
         }
         Update: {
           accepted_commission?: boolean
           accepted_confidentiality?: boolean
           business_slug?: string
+          country?: string
           created_at?: string
           email?: string
           full_name?: string
           id?: string
           id_document?: string
+          ip_address?: string | null
+          phone?: string
+          token_id?: string
           user_id?: string
+          verified_at?: string
         }
         Relationships: []
       }
