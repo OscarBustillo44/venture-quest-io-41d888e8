@@ -396,6 +396,26 @@
     "employees": "empleados",
     "loading": "Cargando..."
   },
+  "auth": {
+    "loginTitle": "Iniciar sesión",
+    "loginDescription": "Accede a tu cuenta para ver información detallada de los negocios",
+    "signupTitle": "Crear cuenta",
+    "signupDescription": "Regístrate para acceder a información exclusiva de negocios",
+    "email": "Email",
+    "emailPlaceholder": "tu@email.com",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Mínimo 6 caracteres",
+    "login": "Iniciar sesión",
+    "signup": "Crear cuenta",
+    "noAccount": "¿No tienes cuenta? Regístrate",
+    "hasAccount": "¿Ya tienes cuenta? Inicia sesión",
+    "error": "Error",
+    "signupSuccess": "Cuenta creada",
+    "checkEmail": "Revisa tu correo electrónico para confirmar tu cuenta",
+    "loginRequired": "Inicia sesión para continuar",
+    "loginRequiredDesc": "Necesitas una cuenta para verificar tu identidad y acceder a la información completa del negocio.",
+    "logout": "Cerrar sesión"
+  },
   "businesses": {
     "laborda": {
       "title": "La Borda – Restaurant más antiguo de Andorra",

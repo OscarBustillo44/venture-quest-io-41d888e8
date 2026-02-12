@@ -396,6 +396,26 @@
     "employees": "employees",
     "loading": "Loading..."
   },
+  "auth": {
+    "loginTitle": "Sign in",
+    "loginDescription": "Access your account to view detailed business information",
+    "signupTitle": "Create account",
+    "signupDescription": "Register to access exclusive business information",
+    "email": "Email",
+    "emailPlaceholder": "you@email.com",
+    "password": "Password",
+    "passwordPlaceholder": "Minimum 6 characters",
+    "login": "Sign in",
+    "signup": "Create account",
+    "noAccount": "Don't have an account? Sign up",
+    "hasAccount": "Already have an account? Sign in",
+    "error": "Error",
+    "signupSuccess": "Account created",
+    "checkEmail": "Check your email to confirm your account",
+    "loginRequired": "Sign in to continue",
+    "loginRequiredDesc": "You need an account to verify your identity and access full business information.",
+    "logout": "Sign out"
+  },
   "businesses": {
     "laborda": {
       "title": "La Borda – Oldest Restaurant in Andorra",

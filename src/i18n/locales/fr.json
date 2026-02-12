@@ -396,6 +396,26 @@
     "employees": "employés",
     "loading": "Chargement..."
   },
+  "auth": {
+    "loginTitle": "Se connecter",
+    "loginDescription": "Accédez à votre compte pour voir les informations détaillées des entreprises",
+    "signupTitle": "Créer un compte",
+    "signupDescription": "Inscrivez-vous pour accéder aux informations exclusives des entreprises",
+    "email": "E-mail",
+    "emailPlaceholder": "vous@email.com",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Minimum 6 caractères",
+    "login": "Se connecter",
+    "signup": "Créer un compte",
+    "noAccount": "Pas de compte ? Inscrivez-vous",
+    "hasAccount": "Déjà un compte ? Connectez-vous",
+    "error": "Erreur",
+    "signupSuccess": "Compte créé",
+    "checkEmail": "Vérifiez votre e-mail pour confirmer votre compte",
+    "loginRequired": "Connectez-vous pour continuer",
+    "loginRequiredDesc": "Vous avez besoin d'un compte pour vérifier votre identité et accéder aux informations complètes de l'entreprise.",
+    "logout": "Se déconnecter"
+  },
   "businesses": {
     "laborda": {
       "title": "La Borda – Plus ancien restaurant d'Andorre",

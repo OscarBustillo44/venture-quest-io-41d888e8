@@ -1,6 +1,8 @@
 import { useParams, Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useAuth } from '@/hooks/useAuth';
+import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -41,6 +43,7 @@ import {
 const NegocioDetalle = () => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
+  const { user } = useAuth();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [verificationOpen, setVerificationOpen] = useState(false);
@@ -53,6 +56,21 @@ const NegocioDetalle = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  // Check if user already verified this business
+  useEffect(() => {
+    if (!user || !id) return;
+    const checkAccess = async () => {
+      const { data } = await supabase
+        .from('business_verifications')
+        .select('id')
+        .eq('user_id', user.id)
+        .eq('business_slug', id)
+        .maybeSingle();
+      if (data) setIsUnlocked(true);
+    };
+    checkAccess();
+  }, [user, id]);
 
   const business = id ? businessesData[id] : null;
 
@@ -985,6 +1003,7 @@ const NegocioDetalle = () => {
         open={verificationOpen}
         onOpenChange={setVerificationOpen}
         onVerified={() => setIsUnlocked(true)}
+        businessSlug={id || ''}
       />
       <Footer />
     </div>
