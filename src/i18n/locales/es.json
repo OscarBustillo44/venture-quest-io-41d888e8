@@ -165,6 +165,22 @@
       "structuredDesc": "Diseñada para facilitar la toma de decisiones.",
       "dueDiligence": "No sustituye una due diligence:",
       "dueDiligenceDesc": "Recomendamos un análisis profesional antes de cualquier decisión de inversión."
+    },
+    "gated": {
+      "title": "Información restringida",
+      "message": "Para acceder a la identidad completa del negocio y la información detallada, por favor verifique su identidad y acepte nuestros términos de confidencialidad y comisión.",
+      "cta": "Verificar identidad y acceder",
+      "terms": "Requiere aceptación de términos de confidencialidad y comisión",
+      "anonymousTitle": "Oportunidad en {{sector}}",
+      "hiddenLocation": "Ubicación confidencial",
+      "hidden": {
+        "companyName": "Nombre de la empresa",
+        "brand": "Marca comercial",
+        "exactLocation": "Ubicación exacta",
+        "website": "Sitio web",
+        "ownerIdentity": "Identidad del propietario",
+        "legalEntity": "Datos de la entidad legal"
+      }
     }
   },
   "forms": {

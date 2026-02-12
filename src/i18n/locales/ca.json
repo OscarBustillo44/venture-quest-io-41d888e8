@@ -165,6 +165,22 @@
       "structuredDesc": "Dissenyada per facilitar la presa de decisions.",
       "dueDiligence": "No substitueix una due diligence:",
       "dueDiligenceDesc": "Recomanem una anàlisi professional abans de qualsevol decisió d'inversió."
+    },
+    "gated": {
+      "title": "Informació restringida",
+      "message": "Per accedir a la identitat completa del negoci i la informació detallada, si us plau verifiqueu la vostra identitat i accepteu els nostres termes de confidencialitat i comissió.",
+      "cta": "Verificar identitat i accedir",
+      "terms": "Requereix acceptació dels termes de confidencialitat i comissió",
+      "anonymousTitle": "Oportunitat en {{sector}}",
+      "hiddenLocation": "Ubicació confidencial",
+      "hidden": {
+        "companyName": "Nom de l'empresa",
+        "brand": "Marca comercial",
+        "exactLocation": "Ubicació exacta",
+        "website": "Lloc web",
+        "ownerIdentity": "Identitat del propietari",
+        "legalEntity": "Dades de l'entitat legal"
+      }
     }
   },
   "forms": {

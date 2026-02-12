@@ -7,10 +7,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight, Shield, Target, AlertTriangle, UtensilsCrossed, CreditCard, Info } from 'lucide-react';
+import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight, Shield, Target, AlertTriangle, UtensilsCrossed, CreditCard, Info, Lock } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, AreaChart, Area, PieChart, Pie, Cell } from 'recharts';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import GatedAccessBanner from '@/components/GatedAccessBanner';
 import {
   businessesData,
   labordaKPIs,
@@ -40,6 +41,7 @@ const NegocioDetalle = () => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isUnlocked, setIsUnlocked] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -100,11 +102,20 @@ const NegocioDetalle = () => {
           <div>
             <Badge className="bg-amber-600 text-white mb-2">{t(business.sectorKey)}</Badge>
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-2">
-              {t(business.titleKey)}
+              {isUnlocked ? t(business.titleKey) : t('detail.gated.anonymousTitle', { sector: t(business.sectorKey) })}
             </h1>
             <div className="flex items-center gap-2 text-stone-600">
-              <MapPin className="w-4 h-4" />
-              {business.location}
+              {isUnlocked ? (
+                <>
+                  <MapPin className="w-4 h-4" />
+                  {business.location}
+                </>
+              ) : (
+                <>
+                  <Lock className="w-4 h-4 text-stone-400" />
+                  <span className="text-stone-400 italic">{t('detail.gated.hiddenLocation')}</span>
+                </>
+              )}
             </div>
           </div>
           <div className="text-right">
@@ -117,15 +128,21 @@ const NegocioDetalle = () => {
           {/* Left Column - Gallery & Details */}
           <div className="lg:col-span-2 space-y-8">
             {/* Image Gallery */}
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden relative">
+              {!isUnlocked && (
+                <div className="absolute inset-0 z-10 bg-stone-800/60 backdrop-blur-md flex flex-col items-center justify-center text-white p-6">
+                  <Lock className="w-10 h-10 text-amber-400 mb-3" />
+                  <p className="text-sm text-stone-200 text-center">{t('detail.gated.hiddenLocation')}</p>
+                </div>
+              )}
               <div className="relative">
                 <img
                   src={business.images[currentImageIndex]}
-                  alt={`${t(business.titleKey)} - ${currentImageIndex + 1}`}
+                  alt={`${isUnlocked ? t(business.titleKey) : t('detail.gated.anonymousTitle', { sector: t(business.sectorKey) })} - ${currentImageIndex + 1}`}
                   className="w-full h-[400px] md:h-[500px] object-cover"
                 />
                 
-                {business.images.length > 1 && (
+                {business.images.length > 1 && isUnlocked && (
                   <>
                     <button
                       onClick={prevImage}
@@ -142,12 +159,14 @@ const NegocioDetalle = () => {
                   </>
                 )}
 
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                  {currentImageIndex + 1} / {business.images.length}
-                </div>
+                {isUnlocked && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                    {currentImageIndex + 1} / {business.images.length}
+                  </div>
+                )}
               </div>
 
-              {business.images.length > 1 && (
+              {business.images.length > 1 && isUnlocked && (
                 <div className="flex gap-2 p-4 bg-stone-100">
                   {business.images.map((img, idx) => (
                     <button
@@ -183,6 +202,11 @@ const NegocioDetalle = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Gated Access Banner */}
+            {!isUnlocked && (
+              <GatedAccessBanner />
+            )}
 
             {/* La Borda KPIs */}
             {business.id === 'la-borda' && (
