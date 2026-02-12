@@ -3,7 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
-const GatedAccessBanner = () => {
+interface GatedAccessBannerProps {
+  onRequestAccess: () => void;
+}
+
+const GatedAccessBanner = ({ onRequestAccess }: GatedAccessBannerProps) => {
   const { t } = useTranslation();
 
   return (
@@ -41,7 +45,10 @@ const GatedAccessBanner = () => {
           </div>
 
           {/* CTA Button */}
-          <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 text-base font-semibold mt-2">
+          <Button
+            onClick={onRequestAccess}
+            className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 text-base font-semibold mt-2"
+          >
             {t('detail.gated.cta')}
           </Button>
 

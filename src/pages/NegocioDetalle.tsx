@@ -12,6 +12,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import GatedAccessBanner from '@/components/GatedAccessBanner';
+import VerificationModal from '@/components/VerificationModal';
 import {
   businessesData,
   labordaKPIs,
@@ -42,6 +43,7 @@ const NegocioDetalle = () => {
   const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isUnlocked, setIsUnlocked] = useState(false);
+  const [verificationOpen, setVerificationOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -205,7 +207,7 @@ const NegocioDetalle = () => {
 
             {/* Gated Access Banner */}
             {!isUnlocked && (
-              <GatedAccessBanner />
+              <GatedAccessBanner onRequestAccess={() => setVerificationOpen(true)} />
             )}
 
             {/* La Borda KPIs */}
@@ -979,6 +981,11 @@ const NegocioDetalle = () => {
         </div>
       </main>
 
+      <VerificationModal
+        open={verificationOpen}
+        onOpenChange={setVerificationOpen}
+        onVerified={() => setIsUnlocked(true)}
+      />
       <Footer />
     </div>
   );
