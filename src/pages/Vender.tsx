@@ -131,6 +131,45 @@ const Vender = () => {
         </div>
       </section>
 
+      {/* Differentiator Section */}
+      <section className="py-16 md:py-20 bg-white border-b border-stone-200">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left: What we are NOT */}
+            <div className="space-y-6">
+              <div className="inline-block px-3 py-1 bg-stone-100 text-stone-500 text-xs font-bold uppercase tracking-widest rounded-full">
+                {t('sell.differentiator.notLabel')}
+              </div>
+              <ul className="space-y-4">
+                {(['point1', 'point2', 'point3'] as const).map((key) => (
+                  <li key={key} className="flex items-start gap-3 text-stone-400">
+                    <span className="mt-1 w-5 h-5 rounded-full border-2 border-stone-300 flex items-center justify-center flex-shrink-0">
+                      <span className="block w-2 h-0.5 bg-stone-300 rotate-45" />
+                    </span>
+                    <span className="text-base leading-relaxed">{t(`sell.differentiator.not.${key}`)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right: What we ARE */}
+            <div className="space-y-6">
+              <div className="inline-block px-3 py-1 bg-amber-100 text-amber-700 text-xs font-bold uppercase tracking-widest rounded-full">
+                {t('sell.differentiator.yesLabel')}
+              </div>
+              <ul className="space-y-4">
+                {(['point1', 'point2', 'point3'] as const).map((key) => (
+                  <li key={key} className="flex items-start gap-3 text-stone-800">
+                    <CheckCircle2 className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-base leading-relaxed font-medium">{t(`sell.differentiator.yes.${key}`)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Value Proposition */}
       <section className="py-16 md:py-20 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4">
