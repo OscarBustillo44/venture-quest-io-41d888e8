@@ -229,9 +229,23 @@
   },
   "sell": {
     "hero": {
-      "headline": "Bien vendre, ce n'est pas publier. C'est préparer.",
-      "subheadline": "Nous aidons les propriétaires à structurer, évaluer et présenter leur entreprise pour maximiser sa valeur et conclure des transactions réussies.",
+      "headline": "Vendre une entreprise, ce n'est pas publier une annonce. C'est structurer une transaction.",
+      "subheadline": "Avant de publier votre entreprise, nous réalisons un processus professionnel d'évaluation financière et de structuration pour maximiser votre valeur et attirer des acheteurs sérieux.",
       "keyPhrase": "Vous ne publiez pas une annonce. Vous construisez une transaction."
+    },
+    "differentiator": {
+      "notLabel": "Nous ne sommes pas",
+      "yesLabel": "Nous sommes",
+      "not": {
+        "point1": "Un portail de petites annonces où n'importe qui publie sans filtre",
+        "point2": "Une plateforme qui liste des entreprises sans vérification ni préparation",
+        "point3": "Un répertoire générique sans critère financier ni accompagnement"
+      },
+      "yes": {
+        "point1": "Un marketplace curé avec évaluation financière professionnelle",
+        "point2": "Un processus de préparation qui maximise la valeur avant publication",
+        "point3": "Une équipe qui structure la transaction du début à la fin"
+      }
     },
     "value": {
       "title": "Pourquoi préparer votre entreprise avant de vendre",

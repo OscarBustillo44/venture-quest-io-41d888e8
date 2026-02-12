@@ -229,9 +229,23 @@
   },
   "sell": {
     "hero": {
-      "headline": "Vendre bé no és publicar. És preparar.",
-      "subheadline": "Ajudem a propietaris a estructurar, valorar i presentar el seu negoci per maximitzar el seu valor i tancar transaccions amb èxit.",
+      "headline": "Vendre un negoci no és publicar un anunci. És estructurar una transacció.",
+      "subheadline": "Abans de publicar la teva empresa, realitzem un procés professional de valoració financera i estructuració del negoci per maximitzar el teu valor i atreure compradors seriosos.",
       "keyPhrase": "No puges un anunci. Construeixes una transacció."
+    },
+    "differentiator": {
+      "notLabel": "No som",
+      "yesLabel": "Som",
+      "not": {
+        "point1": "Un portal d'anuncis classificats on qualsevol publica sense filtre",
+        "point2": "Una plataforma que llista negocis sense verificar ni preparar",
+        "point3": "Un directori genèric sense criteri financer ni acompanyament"
+      },
+      "yes": {
+        "point1": "Un marketplace curat amb valoració financera professional",
+        "point2": "Un procés de preparació que maximitza el valor abans de publicar",
+        "point3": "Un equip que estructura la transacció de principi a fi"
+      }
     },
     "value": {
       "title": "Per què preparar el teu negoci abans de vendre",

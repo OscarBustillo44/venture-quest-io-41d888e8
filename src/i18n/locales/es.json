@@ -229,9 +229,23 @@
   },
   "sell": {
     "hero": {
-      "headline": "Vender bien no es publicar. Es preparar.",
-      "subheadline": "Ayudamos a propietarios a estructurar, valorar y presentar su negocio para maximizar su valor y cerrar transacciones con éxito.",
+      "headline": "Vender un negocio no es publicar un anuncio. Es estructurar una transacción.",
+      "subheadline": "Antes de publicar tu empresa, realizamos un proceso profesional de valoración financiera y estructuración del negocio para maximizar tu valor y atraer compradores serios.",
       "keyPhrase": "No subes un anuncio. Construyes una transacción."
+    },
+    "differentiator": {
+      "notLabel": "No somos",
+      "yesLabel": "Somos",
+      "not": {
+        "point1": "Un portal de anuncios clasificados donde cualquiera publica sin filtro",
+        "point2": "Una plataforma que lista negocios sin verificar ni preparar",
+        "point3": "Un directorio genérico sin criterio financiero ni acompañamiento"
+      },
+      "yes": {
+        "point1": "Un marketplace curado con valoración financiera profesional",
+        "point2": "Un proceso de preparación que maximiza el valor antes de publicar",
+        "point3": "Un equipo que estructura la transacción de principio a fin"
+      }
     },
     "value": {
       "title": "Por qué preparar tu negocio antes de vender",

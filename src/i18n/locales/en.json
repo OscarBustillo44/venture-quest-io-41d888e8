@@ -229,9 +229,23 @@
   },
   "sell": {
     "hero": {
-      "headline": "Selling well is not publishing. It's preparing.",
-      "subheadline": "We help owners structure, value and present their business to maximize value and close successful transactions.",
+      "headline": "Selling a business is not posting an ad. It's structuring a transaction.",
+      "subheadline": "Before publishing your company, we perform a professional financial valuation and business structuring process to maximize your value and attract serious buyers.",
       "keyPhrase": "You don't upload a listing. You build a transaction."
+    },
+    "differentiator": {
+      "notLabel": "We are not",
+      "yesLabel": "We are",
+      "not": {
+        "point1": "A classifieds portal where anyone publishes without filtering",
+        "point2": "A platform that lists businesses without verification or preparation",
+        "point3": "A generic directory without financial criteria or guidance"
+      },
+      "yes": {
+        "point1": "A curated marketplace with professional financial valuation",
+        "point2": "A preparation process that maximizes value before publication",
+        "point3": "A team that structures the transaction from start to finish"
+      }
     },
     "value": {
       "title": "Why prepare your business before selling",
