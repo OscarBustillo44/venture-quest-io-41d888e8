@@ -538,6 +538,7 @@
     "submit": "Verificar i accedir",
     "verifying": "Verificant...",
     "disclaimer": "La teva informació s'utilitzarà únicament per verificar la teva identitat i gestionar l'accés a les dades del negoci. Consulta la nostra Política de Privacitat.",
+    "legalNotice": "En desbloquejar la identitat d'aquest negoci, vostè celebra un acord legalment vinculant de confidencialitat i traçabilitat sota la jurisdicció del Principat d'Andorra.",
     "successTitle": "Verificació completada",
     "successMessage": "Accés concedit. Ja pots veure tota la informació del negoci.",
     "countries": {

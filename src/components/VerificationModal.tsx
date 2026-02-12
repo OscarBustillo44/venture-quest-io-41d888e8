@@ -356,6 +356,12 @@ const VerificationModal = ({ open, onOpenChange, onVerified, businessSlug }: Ver
             <p className="text-xs text-stone-400 text-center leading-relaxed">
               {t('verification.disclaimer')}
             </p>
+
+            <div className="mt-3 p-3 bg-stone-50 border border-stone-200 rounded-md">
+              <p className="text-[11px] text-stone-500 text-center leading-relaxed italic">
+                {t('verification.legalNotice')}
+              </p>
+            </div>
           </form>
         </Form>
       </DialogContent>

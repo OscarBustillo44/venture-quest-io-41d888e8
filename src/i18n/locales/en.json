@@ -538,6 +538,7 @@
     "submit": "Verify and access",
     "verifying": "Verifying...",
     "disclaimer": "Your information will only be used to verify your identity and manage access to business data. See our Privacy Policy.",
+    "legalNotice": "By unlocking this business identity, you enter into a legally binding confidentiality and traceability agreement under the jurisdiction of the Principality of Andorra.",
     "successTitle": "Verification complete",
     "successMessage": "Access granted. You can now view all business information.",
     "countries": {

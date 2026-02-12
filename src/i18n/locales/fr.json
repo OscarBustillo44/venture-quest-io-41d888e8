@@ -538,6 +538,7 @@
     "submit": "Vérifier et accéder",
     "verifying": "Vérification...",
     "disclaimer": "Vos informations seront utilisées uniquement pour vérifier votre identité et gérer l'accès aux données de l'entreprise. Consultez notre Politique de Confidentialité.",
+    "legalNotice": "En déverrouillant l'identité de cette entreprise, vous concluez un accord juridiquement contraignant de confidentialité et de traçabilité sous la juridiction de la Principauté d'Andorre.",
     "successTitle": "Vérification terminée",
     "successMessage": "Accès accordé. Vous pouvez maintenant voir toutes les informations de l'entreprise.",
     "countries": {
