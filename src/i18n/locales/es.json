@@ -498,5 +498,31 @@
         "takeaway": "Para llevar"
       }
     }
+  },
+  "verification": {
+    "title": "Verificación de identidad",
+    "description": "Para acceder a la información completa del negocio, necesitamos verificar tu identidad. Tus datos se tratarán de forma confidencial.",
+    "fullName": "Nombre completo",
+    "fullNamePlaceholder": "Nombre y apellidos",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@email.com",
+    "idDocument": "DNI / Pasaporte",
+    "idDocumentPlaceholder": "Número de documento de identidad",
+    "termsSection": "Términos obligatorios",
+    "confidentialityTerms": "Acepto el acuerdo de confidencialidad: me comprometo a no divulgar la información proporcionada sobre el negocio a terceros sin autorización previa.",
+    "commissionTerms": "Acepto los términos de comisión: entiendo y acepto la estructura de comisiones aplicable en caso de que la transacción se formalice.",
+    "submit": "Verificar y acceder",
+    "verifying": "Verificando...",
+    "disclaimer": "Tu información será utilizada únicamente para verificar tu identidad y gestionar el acceso a los datos del negocio. Consulta nuestra Política de Privacidad.",
+    "errors": {
+      "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "nameMax": "El nombre no puede superar los 100 caracteres",
+      "emailInvalid": "Introduce un correo electrónico válido",
+      "emailMax": "El email no puede superar los 255 caracteres",
+      "idMin": "El documento debe tener al menos 5 caracteres",
+      "idMax": "El documento no puede superar los 30 caracteres",
+      "confidentialityRequired": "Debes aceptar el acuerdo de confidencialidad",
+      "commissionRequired": "Debes aceptar los términos de comisión"
+    }
   }
 }

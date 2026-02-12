@@ -498,5 +498,31 @@
         "takeaway": "Per emportar"
       }
     }
+  },
+  "verification": {
+    "title": "Verificació d'identitat",
+    "description": "Per accedir a la informació completa del negoci, necessitem verificar la teva identitat. Les teves dades es tractaran de forma confidencial.",
+    "fullName": "Nom complet",
+    "fullNamePlaceholder": "Nom i cognoms",
+    "email": "Correu electrònic",
+    "emailPlaceholder": "tu@email.com",
+    "idDocument": "DNI / Passaport",
+    "idDocumentPlaceholder": "Número de document d'identitat",
+    "termsSection": "Termes obligatoris",
+    "confidentialityTerms": "Accepto l'acord de confidencialitat: em comprometo a no divulgar la informació proporcionada sobre el negoci a tercers sense autorització prèvia.",
+    "commissionTerms": "Accepto els termes de comissió: entenc i accepto l'estructura de comissions aplicable en cas que la transacció es formalitzi.",
+    "submit": "Verificar i accedir",
+    "verifying": "Verificant...",
+    "disclaimer": "La teva informació s'utilitzarà únicament per verificar la teva identitat i gestionar l'accés a les dades del negoci. Consulta la nostra Política de Privacitat.",
+    "errors": {
+      "nameMin": "El nom ha de tenir almenys 2 caràcters",
+      "nameMax": "El nom no pot superar els 100 caràcters",
+      "emailInvalid": "Introdueix un correu electrònic vàlid",
+      "emailMax": "El correu no pot superar els 255 caràcters",
+      "idMin": "El document ha de tenir almenys 5 caràcters",
+      "idMax": "El document no pot superar els 30 caràcters",
+      "confidentialityRequired": "Has d'acceptar l'acord de confidencialitat",
+      "commissionRequired": "Has d'acceptar els termes de comissió"
+    }
   }
 }
