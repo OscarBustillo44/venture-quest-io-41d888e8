@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { Lock, Shield, FileCheck } from 'lucide-react';
 import {
   Dialog,
@@ -13,9 +14,11 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { useAuth } from '@/hooks/useAuth';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 const verificationSchema = z.object({
   fullName: z.string().trim().min(2, { message: 'verification.errors.nameMin' }).max(100, { message: 'verification.errors.nameMax' }),
@@ -31,17 +34,21 @@ interface VerificationModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onVerified: () => void;
+  businessSlug: string;
 }
 
-const VerificationModal = ({ open, onOpenChange, onVerified }: VerificationModalProps) => {
+const VerificationModal = ({ open, onOpenChange, onVerified, businessSlug }: VerificationModalProps) => {
   const { t } = useTranslation();
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<VerificationFormData>({
     resolver: zodResolver(verificationSchema),
     defaultValues: {
       fullName: '',
-      email: '',
+      email: user?.email || '',
       idDocument: '',
       acceptConfidentiality: undefined,
       acceptCommission: undefined,
@@ -49,14 +56,76 @@ const VerificationModal = ({ open, onOpenChange, onVerified }: VerificationModal
   });
 
   const onSubmit = async (data: VerificationFormData) => {
+    if (!user) {
+      onOpenChange(false);
+      navigate('/auth');
+      return;
+    }
+
     setIsSubmitting(true);
-    // Simulate verification process
-    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    const { error } = await supabase.from('business_verifications').insert({
+      user_id: user.id,
+      business_slug: businessSlug,
+      full_name: data.fullName,
+      email: data.email,
+      id_document: data.idDocument,
+      accepted_confidentiality: data.acceptConfidentiality,
+      accepted_commission: data.acceptCommission,
+    });
+
     setIsSubmitting(false);
+
+    if (error) {
+      toast({
+        title: t('auth.error'),
+        description: error.message,
+        variant: 'destructive',
+      });
+      return;
+    }
+
     onVerified();
     onOpenChange(false);
     form.reset();
   };
+
+  // If not logged in, show login prompt
+  if (!user) {
+    return (
+      <Dialog open={open} onOpenChange={onOpenChange}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader className="text-center sm:text-center">
+            <div className="flex justify-center mb-3">
+              <div className="w-14 h-14 bg-stone-800 rounded-full flex items-center justify-center">
+                <Shield className="w-6 h-6 text-amber-400" />
+              </div>
+            </div>
+            <DialogTitle className="font-serif text-xl">
+              {t('auth.loginRequired')}
+            </DialogTitle>
+            <DialogDescription className="text-sm leading-relaxed">
+              {t('auth.loginRequiredDesc')}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col gap-3 mt-4">
+            <Button
+              onClick={() => { onOpenChange(false); navigate('/auth'); }}
+              className="w-full bg-amber-600 hover:bg-amber-700 text-white"
+            >
+              {t('auth.login')}
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => { onOpenChange(false); navigate('/auth'); }}
+            >
+              {t('auth.signup')}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+    );
+  }
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -82,7 +151,6 @@ const VerificationModal = ({ open, onOpenChange, onVerified }: VerificationModal
 
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 mt-2">
-            {/* Full Name */}
             <FormField
               control={form.control}
               name="fullName"
@@ -90,17 +158,13 @@ const VerificationModal = ({ open, onOpenChange, onVerified }: VerificationModal
                 <FormItem>
                   <FormLabel>{t('verification.fullName')} *</FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder={t('verification.fullNamePlaceholder')}
-                      {...field}
-                    />
+                    <Input placeholder={t('verification.fullNamePlaceholder')} {...field} />
                   </FormControl>
                   <FormMessage>{fieldState.error && t(fieldState.error.message || '')}</FormMessage>
                 </FormItem>
               )}
             />
 
-            {/* Email */}
             <FormField
               control={form.control}
               name="email"
@@ -108,18 +172,13 @@ const VerificationModal = ({ open, onOpenChange, onVerified }: VerificationModal
                 <FormItem>
                   <FormLabel>{t('verification.email')} *</FormLabel>
                   <FormControl>
-                    <Input
-                      type="email"
-                      placeholder={t('verification.emailPlaceholder')}
-                      {...field}
-                    />
+                    <Input type="email" placeholder={t('verification.emailPlaceholder')} {...field} />
                   </FormControl>
                   <FormMessage>{fieldState.error && t(fieldState.error.message || '')}</FormMessage>
                 </FormItem>
               )}
             />
 
-            {/* ID Document */}
             <FormField
               control={form.control}
               name="idDocument"
@@ -127,23 +186,18 @@ const VerificationModal = ({ open, onOpenChange, onVerified }: VerificationModal
                 <FormItem>
                   <FormLabel>{t('verification.idDocument')} *</FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder={t('verification.idDocumentPlaceholder')}
-                      {...field}
-                    />
+                    <Input placeholder={t('verification.idDocumentPlaceholder')} {...field} />
                   </FormControl>
                   <FormMessage>{fieldState.error && t(fieldState.error.message || '')}</FormMessage>
                 </FormItem>
               )}
             />
 
-            {/* Terms Section */}
             <div className="space-y-4 pt-2 border-t border-stone-200">
               <p className="text-xs font-medium text-stone-500 uppercase tracking-wide pt-2">
                 {t('verification.termsSection')}
               </p>
 
-              {/* Confidentiality Terms */}
               <FormField
                 control={form.control}
                 name="acceptConfidentiality"
@@ -167,7 +221,6 @@ const VerificationModal = ({ open, onOpenChange, onVerified }: VerificationModal
                 )}
               />
 
-              {/* Commission Terms */}
               <FormField
                 control={form.control}
                 name="acceptCommission"
@@ -192,7 +245,6 @@ const VerificationModal = ({ open, onOpenChange, onVerified }: VerificationModal
               />
             </div>
 
-            {/* Submit Button */}
             <Button
               type="submit"
               className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 text-base font-semibold"

@@ -14,13 +14,75 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      business_verifications: {
+        Row: {
+          accepted_commission: boolean
+          accepted_confidentiality: boolean
+          business_slug: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          id_document: string
+          user_id: string
+        }
+        Insert: {
+          accepted_commission?: boolean
+          accepted_confidentiality?: boolean
+          business_slug: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          id_document: string
+          user_id: string
+        }
+        Update: {
+          accepted_commission?: boolean
+          accepted_confidentiality?: boolean
+          business_slug?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          id_document?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_business_access: { Args: { slug: string }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
