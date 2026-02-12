@@ -538,6 +538,7 @@
     "submit": "Verificar y acceder",
     "verifying": "Verificando...",
     "disclaimer": "Tu información será utilizada únicamente para verificar tu identidad y gestionar el acceso a los datos del negocio. Consulta nuestra Política de Privacidad.",
+    "legalNotice": "Al desbloquear la identidad de este negocio, usted celebra un acuerdo legalmente vinculante de confidencialidad y trazabilidad bajo la jurisdicción del Principado de Andorra.",
     "successTitle": "Verificación completada",
     "successMessage": "Acceso concedido. Ya puedes ver toda la información del negocio.",
     "countries": {
