@@ -228,6 +228,16 @@ const NegocioDetalle = () => {
               <GatedAccessBanner onRequestAccess={() => setVerificationOpen(true)} />
             )}
 
+            {/* Post-Unlock Warning Banner */}
+            {isUnlocked && (
+              <div className="flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                <AlertTriangle className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-amber-800 leading-relaxed">
+                  {t('detail.postUnlockWarning')}
+                </p>
+              </div>
+            )}
+
             {/* La Borda KPIs */}
             {business.id === 'la-borda' && (
               <Card className="bg-gradient-to-r from-amber-50 to-orange-50">
