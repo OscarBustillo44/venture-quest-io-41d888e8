@@ -165,6 +165,22 @@
       "structuredDesc": "Designed to facilitate decision-making.",
       "dueDiligence": "Does not replace due diligence:",
       "dueDiligenceDesc": "We recommend professional analysis before any investment decision."
+    },
+    "gated": {
+      "title": "Restricted information",
+      "message": "To access full business identity and detailed information, please verify your identity and accept our confidentiality and commission terms.",
+      "cta": "Verify identity and access",
+      "terms": "Requires acceptance of confidentiality and commission terms",
+      "anonymousTitle": "Opportunity in {{sector}}",
+      "hiddenLocation": "Confidential location",
+      "hidden": {
+        "companyName": "Company name",
+        "brand": "Brand",
+        "exactLocation": "Exact location",
+        "website": "Website",
+        "ownerIdentity": "Owner identity",
+        "legalEntity": "Legal entity data"
+      }
     }
   },
   "forms": {
