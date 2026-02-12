@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Search, Filter, Building2, TrendingUp, Users, CheckCircle, X, ArrowUpDown } from "lucide-react";
+import { Search, Filter, Building2, TrendingUp, Users, CheckCircle, X, ArrowUpDown, Lock } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -569,6 +569,12 @@ const ComprarNegocio = () => {
                       {/* Price Badge */}
                       <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
                         {business.priceDisplay}
+                      </div>
+
+                      {/* Lock indicator */}
+                      <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-stone-900/70 text-stone-300 px-2 py-1 rounded text-[10px]">
+                        <Lock className="w-3 h-3" />
+                        {t('buy.confidential')}
                       </div>
                     </div>
                     
