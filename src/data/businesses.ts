@@ -456,7 +456,7 @@ export const businessesData: Record<string, Business> = {
     percentForSale: '100%',
     descriptionKey: 'businesses.infinitypay.description',
     highlightsKey: 'businesses.infinitypay.highlights',
-    images: [infinitypayLogo, infinitypayPassarella1, infinitypayPassarella2, infinitypaySeguretat],
+    images: [],
     financialData: [
       { year: '2023', revenue: 234, ebitda: 88 },
       { year: '2024', revenue: 297, ebitda: 154 },
