@@ -20,6 +20,7 @@ const sectorKeys = [
   { key: 'sectors.industry', value: 'Industria' },
   { key: 'sectors.technology', value: 'Tecnología' },
   { key: 'sectors.fintech', value: 'Fintech' },
+  { key: 'publish.other', value: 'Otros' },
 ];
 
 const operationTypes = [
@@ -27,6 +28,7 @@ const operationTypes = [
   { key: 'buy.operationSell', value: 'vender' },
   { key: 'buy.operationTransfer', value: 'traspasar' },
   { key: 'buy.operationInvest', value: 'participar' },
+  { key: 'publish.other', value: 'otros' },
 ];
 
 interface PublishBusinessCardProps {
