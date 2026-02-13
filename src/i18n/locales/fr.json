@@ -112,6 +112,8 @@
     "contact": "Contacter",
     "confidential": "Confidentiel",
     "confidentialLocation": "Emplacement confidentiel",
+    "labordaMiniDesc": "Restaurant Borda emblématique d'Andorre, avec cuisine traditionnelle andorrane, dans une ambiance rustique et chaleureuse avec cheminée. Clientèle fidèle et consolidée, avec possibilité de croissance grâce à une terrasse extérieure inexploitée.",
+    "labordaMiniHighlights": ["Restaurant Borda reconnu avec histoire en Andorre", "Clientèle fidèle et consolidée", "Équipe souhaitant continuer", "Possibilité terrasse extérieure", "Emplacement privilégié", "Cuisine traditionnelle reconnue"],
     "operationType": "Type d'opération",
     "allOperations": "Toutes les opérations",
     "operationBuy": "Acheter",

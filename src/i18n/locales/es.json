@@ -112,6 +112,8 @@
     "contact": "Contactar",
     "confidential": "Confidencial",
     "confidentialLocation": "Ubicación confidencial",
+    "labordaMiniDesc": "Restaurante Borda emblemático de Andorra, con cocina tradicional andorrana, en ambiente rústico y acogedor con chimenea. Clientela fiel y consolidada, y posibilidad de crecimiento con terraza exterior pendiente de explotar.",
+    "labordaMiniHighlights": ["Restaurant Borda reconocido y con historia en Andorra", "Clientela fiel y consolidada", "Equipo que desea continuar", "Posibilidad terraza exterior", "Ubicación privilegiada", "Cocina tradicional reconocida"],
     "operationType": "Tipo de operación",
     "allOperations": "Todas las operaciones",
     "operationBuy": "Comprar",
