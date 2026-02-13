@@ -982,7 +982,7 @@ const NegocioDetalle = () => {
                   <div className="flex items-center justify-between py-3 border-b border-stone-700">
                     <div className="flex items-center gap-2">
                       <Target className="w-4 h-4 text-amber-400" />
-                      <span className="text-stone-300">{t('detail.targetRevenue')}</span>
+                      <span className="text-amber-400">{t('detail.targetRevenue')}</span>
                     </div>
                     <span className="font-semibold text-amber-400">{business.targetRevenue}</span>
                   </div>
@@ -998,7 +998,7 @@ const NegocioDetalle = () => {
                   <div className="flex items-center justify-between py-3 border-b border-stone-700">
                     <div className="flex items-center gap-2">
                       <Target className="w-4 h-4 text-amber-400" />
-                      <span className="text-stone-300">{t('detail.targetEbitda')}</span>
+                      <span className="text-amber-400">{t('detail.targetEbitda')}</span>
                     </div>
                     <span className="font-semibold text-amber-400">{business.targetEbitda}</span>
                   </div>
@@ -1014,7 +1014,7 @@ const NegocioDetalle = () => {
                   <div className="flex items-center justify-between py-3 border-b border-stone-700">
                     <div className="flex items-center gap-2">
                       <Target className="w-4 h-4 text-amber-400" />
-                      <span className="text-stone-300">{t('detail.targetProfitability')}</span>
+                      <span className="text-amber-400">{t('detail.targetProfitability')}</span>
                     </div>
                     <span className="font-semibold text-amber-400">{'>66%'}</span>
                   </div>
