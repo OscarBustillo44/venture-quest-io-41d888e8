@@ -184,6 +184,17 @@
       "tesoreria": "Tresoreria",
       "pnPassiuTotal": "PN + Passiu Total"
     },
+    "valuation": {
+      "title": "Valoració del Negoci (DCF)",
+      "valorFluxos": "Valor actual fluxos de caixa positius",
+      "valorResidual": "Valor residual de l'últim flux de caixa",
+      "totalValoracio": "TOTAL VALORACIÓ DEL NEGOCI",
+      "deutaExterna": "Deute extern",
+      "recursosNoAfectes": "Recursos no afectes o ociosos",
+      "totalFondsPropis": "TOTAL VALORACIÓ DELS FONS PROPIS",
+      "evEbitdaMultiple": "EV/EBITDA"
+    },
+    "targetCompanyValue": "Objectiu valor empresa",
     "revenue": "Facturació",
     "ebitda": "EBITDA",
     "profitability": "Rendibilitat",

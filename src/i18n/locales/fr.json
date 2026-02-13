@@ -184,6 +184,17 @@
       "tesoreria": "Trésorerie",
       "pnPassiuTotal": "CP + Total Passif"
     },
+    "valuation": {
+      "title": "Évaluation de l'Entreprise (DCF)",
+      "valorFluxos": "Valeur actuelle des flux de trésorerie positifs",
+      "valorResidual": "Valeur résiduelle du dernier flux de trésorerie",
+      "totalValoracio": "ÉVALUATION TOTALE DE L'ENTREPRISE",
+      "deutaExterna": "Dette externe",
+      "recursosNoAfectes": "Ressources non affectées ou oisives",
+      "totalFondsPropis": "ÉVALUATION TOTALE DES FONDS PROPRES",
+      "evEbitdaMultiple": "EV/EBITDA"
+    },
+    "targetCompanyValue": "Objectif valeur entreprise",
     "revenue": "Chiffre d'affaires",
     "ebitda": "EBITDA",
     "profitability": "Rentabilité",

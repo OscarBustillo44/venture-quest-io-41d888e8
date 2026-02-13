@@ -116,6 +116,16 @@ export const labordaBalanceData = [
   { concept: 'pnPassiuTotal', n0: -71379, n1: -56449, n2: -45102, n3: -31904, n4: -16946 },
 ];
 
+export const labordaValuationData = [
+  { concept: 'valorFluxos', value: 243357 },
+  { concept: 'valorResidual', value: 314894 },
+  { concept: 'totalValoracio', value: 558251, isHighlight: true },
+  { concept: 'deutaExterna', value: -68379, isNegative: true },
+  { concept: 'recursosNoAfectes', value: 0 },
+  { concept: 'totalFondsPropis', value: 489872, isHighlight: true },
+  { concept: 'evEbitdaMultiple', value: 6.45, isRatio: true },
+];
+
 
 export const labordaPortfolioData = [
   { nameKey: 'businesses.laborda.portfolio.menu', value: 45, amount: '37€/pp', color: '#8B4513' },
