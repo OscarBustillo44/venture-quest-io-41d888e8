@@ -558,21 +558,29 @@ const ComprarNegocio = () => {
                       <img
                         src={business.image}
                         alt={t(business.titleKey)}
-                        className="w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105"
+                        className={`w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105 ${business.id === 'la-borda' ? 'blur-md scale-110' : ''}`}
                       />
                       
+                      {/* Confidential overlay for La Borda */}
+                      {business.id === 'la-borda' && (
+                        <div className="absolute inset-0 bg-stone-900/40 flex flex-col items-center justify-center">
+                          <Lock className="w-8 h-8 text-amber-500 mb-2" />
+                          <span className="text-stone-200 text-sm font-medium">{t('buy.confidentialLocation')}</span>
+                        </div>
+                      )}
+                      
                       {/* Sector Badge */}
-                      <div className="absolute top-3 left-3 bg-stone-800/90 text-white px-2 py-1 rounded text-xs font-medium">
+                      <div className="absolute top-3 left-3 bg-stone-800/90 text-white px-2 py-1 rounded text-xs font-medium z-10">
                         {t(business.sectorKey)}
                       </div>
                       
                       {/* Price Badge */}
-                      <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
+                      <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg z-10">
                         {business.priceDisplay}
                       </div>
 
                       {/* Lock indicator */}
-                      <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-stone-900/70 text-stone-300 px-2 py-1 rounded text-[10px]">
+                      <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-stone-900/70 text-stone-300 px-2 py-1 rounded text-[10px] z-10">
                         <Lock className="w-3 h-3" />
                         {t('buy.confidential')}
                       </div>
