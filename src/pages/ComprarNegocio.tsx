@@ -118,6 +118,7 @@ const createBusinessData = () => [
     priceDisplay: "320.000 €",
     profitability: 6,
     financialDisplay: "Facturación 110k € · Obj. Fact. >250k € · EBITDA 35k € · Obj. EBITDA >150k € · Rentabilidad 6%",
+    publishedDate: new Date('2025-01-22'),
     isConfidential: true,
     operationType: 'vender' as OperationType,
     image: carouselSlides.find(s => s.id === 'confidencial-comercio')?.image || '',
