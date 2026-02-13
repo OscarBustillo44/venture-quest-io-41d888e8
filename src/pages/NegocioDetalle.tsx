@@ -128,7 +128,7 @@ const NegocioDetalle = () => {
           <div>
             <Badge className="bg-amber-600 text-white mb-2">{t(business.sectorKey)}</Badge>
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-2">
-              {isUnlocked ? t(business.titleKey) : t('detail.gated.anonymousTitle', { sector: t(business.sectorKey) })}
+              {isUnlocked || business.isConfidential ? t(business.titleKey) : t('detail.gated.anonymousTitle', { sector: t(business.sectorKey) })}
             </h1>
             <div className="flex items-center gap-2 text-stone-600">
               {isUnlocked ? (
