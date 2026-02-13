@@ -114,6 +114,8 @@
     "confidentialLocation": "Emplacement confidentiel",
     "labordaMiniDesc": "Restaurant Borda emblématique d'Andorre, avec cuisine traditionnelle andorrane, dans une ambiance rustique et chaleureuse avec cheminée. Clientèle fidèle et consolidée, avec possibilité de croissance grâce à une terrasse extérieure inexploitée.",
     "labordaMiniHighlights": ["Restaurant Borda reconnu avec histoire en Andorre", "Clientèle fidèle et consolidée", "Équipe souhaitant continuer", "Possibilité terrasse extérieure", "Emplacement privilégié", "Cuisine traditionnelle reconnue"],
+    "restCentroMiniDesc": "Restaurant consolidé et reconnu, avec une clientèle fidèle et un emplacement imbattable près de l'Av. Meritxell, avec une capacité et une marge d'amélioration vers des rentabilités très intéressantes.",
+    "restCentroMiniHighlights": ["Clientèle fidèle et consolidée", "Emplacement privilégié", "Cuisine reconnue", "Terrasse inexploitée avec un grand potentiel"],
     "operationType": "Type d'opération",
     "allOperations": "Toutes les opérations",
     "operationBuy": "Acheter",

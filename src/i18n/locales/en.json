@@ -114,6 +114,8 @@
     "confidentialLocation": "Confidential location",
     "labordaMiniDesc": "Iconic Andorran Borda restaurant with traditional Andorran cuisine in a rustic and cozy atmosphere with fireplace. Loyal and consolidated clientele, with growth potential through an unexploited outdoor terrace.",
     "labordaMiniHighlights": ["Renowned Borda restaurant with history in Andorra", "Loyal and consolidated clientele", "Team willing to continue", "Outdoor terrace potential", "Privileged location", "Renowned traditional cuisine"],
+    "restCentroMiniDesc": "Consolidated and well-recognized restaurant with loyal clientele and unbeatable location near Av. Meritxell, with capacity and room for improvement towards very attractive profitability levels.",
+    "restCentroMiniHighlights": ["Loyal and consolidated clientele", "Privileged location", "Recognized cuisine", "Unexploited terrace with great potential"],
     "operationType": "Operation type",
     "allOperations": "All operations",
     "operationBuy": "Buy",
