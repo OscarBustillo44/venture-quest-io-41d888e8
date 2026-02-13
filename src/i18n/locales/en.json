@@ -192,7 +192,13 @@
       "ebit": "EBIT",
       "ebt": "EBT (Earnings Before Tax)",
       "is": "Corporate Tax",
-      "netProfit": "Net Profit"
+      "netProfit": "Net Profit",
+      "prestacioServeis": "Service Revenue",
+      "consumExplotacio": "Operating Costs",
+      "comissionsCanal": "Channel Commissions",
+      "altresDespeses": "Other Operating Expenses",
+      "resultatFinancer": "Financial Result",
+      "resultat": "Net Result"
     },
     "balance": {
       "title": "Projected Balance Sheet",

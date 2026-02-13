@@ -192,7 +192,13 @@
       "ebit": "EBIT",
       "ebt": "EBT (Résultat avant impôts)",
       "is": "Impôt sur les sociétés",
-      "netProfit": "Résultat Net"
+      "netProfit": "Résultat Net",
+      "prestacioServeis": "Prestation de services",
+      "consumExplotacio": "Consommation d'exploitation",
+      "comissionsCanal": "Commissions Canal",
+      "altresDespeses": "Autres charges d'exploitation",
+      "resultatFinancer": "Résultat financier",
+      "resultat": "Résultat"
     },
     "balance": {
       "title": "Bilan Prévisionnel",

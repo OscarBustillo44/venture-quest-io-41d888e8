@@ -192,7 +192,13 @@
       "ebit": "EBIT",
       "ebt": "EBT (Benefici abans d'impostos)",
       "is": "Impost de Societats",
-      "netProfit": "Benefici Net"
+      "netProfit": "Benefici Net",
+      "prestacioServeis": "Prestació de serveis",
+      "consumExplotacio": "Consum d'explotació",
+      "comissionsCanal": "Comissions Canal",
+      "altresDespeses": "Altres despeses d'explotació",
+      "resultatFinancer": "Resultat financer",
+      "resultat": "Resultat"
     },
     "balance": {
       "title": "Balanç Patrimonial Projectat",

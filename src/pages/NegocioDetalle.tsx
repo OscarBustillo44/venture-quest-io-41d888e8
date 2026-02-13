@@ -30,6 +30,7 @@ import {
   alpineEbitdaData,
   alpineClientsData,
   alpinePortfolioData,
+  alpinePnLData,
   infinitypayKPIs,
   infinitypayRevenueEbitdaData,
   infinitypayPortfolioData,
@@ -687,7 +688,67 @@ const NegocioDetalle = () => {
               </Card>
             )}
 
-            {/* InfinityPay KPIs */}
+            {/* Economic Summary - Alpine Security */}
+            {business.id === 'alpine-security' && (
+              <Card className="border-2 border-stone-300 bg-gradient-to-br from-stone-50 to-stone-100/30">
+                <CardHeader>
+                  <CardTitle className="font-serif flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-stone-700" />
+                    {t('detail.economicSummary.title')}
+                  </CardTitle>
+                  <p className="text-sm text-stone-500">{t('detail.economicSummary.subtitle')}</p>
+                </CardHeader>
+                <CardContent>
+                  {/* P&L Table */}
+                  <h4 className="text-sm font-semibold text-stone-700 mb-3 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-stone-600" />
+                    {t('detail.pnl.title')}
+                  </h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b-2 border-stone-300 bg-stone-100">
+                          <th className="text-left py-2 px-3 font-semibold text-stone-700">{"(000's €)"}</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2025</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2026</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2027</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-teal-50">2028</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-teal-50">2029</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-100">
+                        {alpinePnLData.map((row) => {
+                          const isHighlight = ['ebitda', 'ebit', 'ebt', 'netProfit', 'margeBrut', 'margeComercial'].includes(row.concept);
+                          const fmt = (v: number) => v === 0 ? '-' : v < 0 ? `(${Math.abs(v).toLocaleString('es-ES')})` : v.toLocaleString('es-ES');
+                          const years = ['y2025', 'y2026', 'y2027', 'y2028', 'y2029'] as const;
+                          return (
+                            <tr key={row.concept} className={isHighlight ? 'bg-stone-100/70 font-semibold' : 'hover:bg-stone-50'}>
+                              <td className={`py-2 px-3 ${isHighlight ? 'text-stone-800 font-bold' : 'text-stone-600'}`}>
+                                {t(`detail.pnl.${row.concept}`)}
+                              </td>
+                              {years.map((year, idx) => {
+                                const val = (row as any)[year] as number;
+                                const isProjected = idx >= 3;
+                                return (
+                                  <td key={year} className={`py-2 px-3 text-right ${val < 0 ? 'text-red-600' : ''} ${isProjected ? 'bg-teal-50/40' : ''} ${isHighlight ? 'font-bold' : ''}`}>
+                                    {fmt(val)}
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <p className="text-xs text-stone-400 mt-4 italic leading-relaxed">
+                    {t('detail.economicSummary.note')}
+                  </p>
+                </CardContent>
+              </Card>
+            )}
+
             {business.id === 'infinitypay' && (
               <Card className="bg-gradient-to-r from-blue-50 to-slate-50">
                 <CardHeader>
