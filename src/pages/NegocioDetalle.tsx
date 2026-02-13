@@ -9,7 +9,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight, Shield, Target, AlertTriangle, UtensilsCrossed, CreditCard, Info, Lock } from 'lucide-react';
+import { ArrowLeft, MapPin, Users, Calendar, TrendingUp, Phone, Mail, Building2, ChevronLeft, ChevronRight, Shield, Target, AlertTriangle, UtensilsCrossed, CreditCard, Info, Lock, FileText } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, AreaChart, Area, PieChart, Pie, Cell } from 'recharts';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
@@ -263,7 +263,84 @@ const NegocioDetalle = () => {
               </Card>
             )}
 
-            {/* Alpine Security KPIs */}
+            {/* Economic Summary - La Borda */}
+            {business.id === 'la-borda' && (
+              <Card className="border-2 border-amber-200 bg-gradient-to-br from-stone-50 to-amber-50/30">
+                <CardHeader>
+                  <CardTitle className="font-serif flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-amber-700" />
+                    {t('detail.economicSummary.title')}
+                  </CardTitle>
+                  <p className="text-sm text-stone-500">{t('detail.economicSummary.subtitle')}</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b-2 border-amber-300">
+                          <th className="text-left py-3 px-4 font-semibold text-stone-700">{t('detail.economicSummary.concept')}</th>
+                          <th className="text-right py-3 px-4 font-semibold text-stone-700">{t('detail.economicSummary.value')}</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-200">
+                        <tr className="hover:bg-amber-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.annualRevenue')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">241.956 €</td>
+                        </tr>
+                        <tr className="hover:bg-amber-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.operatingProfit')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">100.386 €</td>
+                        </tr>
+                        <tr className="hover:bg-amber-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.profitMargin')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-amber-700">41,5%</td>
+                        </tr>
+                        <tr className="hover:bg-amber-50/50 bg-amber-50/30">
+                          <td className="py-3 px-4 text-stone-600 font-medium">{t('detail.economicSummary.askingPrice')}</td>
+                          <td className="py-3 px-4 text-right font-bold text-amber-700 text-base">75.000 €</td>
+                        </tr>
+                        <tr className="hover:bg-amber-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.priceRevenueRatio')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">0,31x</td>
+                        </tr>
+                        <tr className="hover:bg-amber-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.priceEbitdaMultiple')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">0,75x</td>
+                        </tr>
+                        <tr className="hover:bg-amber-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.employeesCount')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">2</td>
+                        </tr>
+                        <tr className="hover:bg-amber-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.businessAge')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">+45 años (est. 1790)</td>
+                        </tr>
+                        <tr className="hover:bg-amber-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.location')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">La Massana, Andorra</td>
+                        </tr>
+                        <tr className="hover:bg-amber-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.revenueBreakdown')}</td>
+                          <td className="py-3 px-4 text-right text-stone-700 text-xs leading-relaxed">
+                            45% Menú (37€/pp) · 35% Carta (48€/pp)<br />
+                            15% Eventos (45k) · 5% Take-away (15k)
+                          </td>
+                        </tr>
+                        <tr className="hover:bg-amber-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.projectedGrowth')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">267k € / 104k € EBITDA</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="text-xs text-stone-400 mt-4 italic leading-relaxed">
+                    {t('detail.economicSummary.note')}
+                  </p>
+                </CardContent>
+              </Card>
+            )}
+
+
             {business.id === 'alpine-security' && (
               <Card className="bg-gradient-to-r from-stone-100 to-stone-50">
                 <CardHeader>
