@@ -213,6 +213,40 @@ export const infinitypayPortfolioData = [
   { nameKey: 'businesses.infinitypay.portfolio.other', value: 10, amount: '50k', color: '#90b4ce' },
 ];
 
+// InfinityPay P&L data (000's €) - ZINGS, SL
+export const infinitypayPnLData = [
+  { concept: 'ventaNeta', y2023: 234, y2024: 297, y2025: 306, y2026: 352, y2027: 404, y2028: 445, y2029: 467, growth: [null, '26,7%', '3,0%', '15,0%', '15,0%', '10,0%', '5,0%'] },
+  { concept: 'margeBrut', y2023: 234, y2024: 297, y2025: 306, y2026: 352, y2027: 404, y2028: 445, y2029: 467, pct: '100,0%' },
+  { concept: 'ebitda', y2023: 88, y2024: 154, y2025: 159, y2026: 183, y2027: 210, y2028: 231, y2029: 243, pct: '52,0%' },
+  { concept: 'amortitzacions', y2023: -29, y2024: -22, y2025: -23, y2026: -24, y2027: -25, y2028: -26, y2029: -28 },
+  { concept: 'ebit', y2023: 59, y2024: 133, y2025: 136, y2026: 159, y2027: 185, y2028: 205, y2029: 215 },
+  { concept: 'ebt', y2023: 59, y2024: 133, y2025: 136, y2026: 159, y2027: 185, y2028: 205, y2029: 215 },
+  { concept: 'is', y2023: -6, y2024: 0, y2025: -14, y2026: -16, y2027: -19, y2028: -21, y2029: -22 },
+  { concept: 'netProfit', y2023: 53, y2024: 133, y2025: 123, y2026: 143, y2027: 167, y2028: 185, y2029: 194 },
+];
+
+// InfinityPay Balance Sheet data (000's €)
+export const infinitypayBalanceData = [
+  { concept: 'actiuFixe', y2023: 27, y2024: 6, y2025: 0, y2026: 0, y2027: 0, y2028: 0, y2029: 0 },
+  { concept: 'actiuCirculant', y2023: 268, y2024: 370, y2025: 449, y2026: 563, y2027: 705, y2028: 877, y2029: 1064 },
+  { concept: 'actiuTotal', y2023: 295, y2024: 376, y2025: 449, y2026: 563, y2027: 705, y2028: 877, y2029: 1064 },
+  { concept: 'fondsPropis', y2023: 126, y2024: 229, y2025: 351, y2026: 494, y2027: 661, y2028: 846, y2029: 1040 },
+  { concept: 'passiuNoCurrent', y2023: 107, y2024: 137, y2025: 87, y2026: 57, y2027: 31, y2028: 17, y2029: 9 },
+  { concept: 'passiuCirculant', y2023: 63, y2024: 10, y2025: 10, y2026: 12, y2027: 13, y2028: 14, y2029: 14 },
+  { concept: 'pnPassiuTotal', y2023: 295, y2024: 376, y2025: 449, y2026: 563, y2027: 705, y2028: 877, y2029: 1064 },
+];
+
+// InfinityPay DCF Valuation data (000's €)
+export const infinitypayValuationData = [
+  { concept: 'valorFluxos', value: 646 },
+  { concept: 'valorResidual', value: 1819 },
+  { concept: 'totalValoracio', value: 2465, isHighlight: true },
+  { concept: 'deutaFinanceraNeta', value: 313 },
+  { concept: 'totalFondsPropis', value: 2778, isHighlight: true },
+  { concept: 'percentControl', value: 10.00, isRatio: true },
+  { concept: 'equityValueStake', value: 278, isHighlight: true, label: 'Valor de las participaciones (Equity Value), 41,97%' },
+];
+
 // Confidencial Hostelería projection data
 export const confHosteleriaRevenueData = [
   { year: 'n+1', revenue: 599 },

@@ -207,17 +207,24 @@
       "actiuTotal": "Actiu Total",
       "patrimoniNet": "Patrimoni Net",
       "tesoreria": "Tresoreria",
-      "pnPassiuTotal": "PN + Passiu Total"
+      "pnPassiuTotal": "PN + Passiu Total",
+      "actiuCirculant": "Actiu Circulant",
+      "fondsPropis": "Fons Propis",
+      "passiuNoCurrent": "Passiu no corrent",
+      "passiuCirculant": "Passiu Circulant"
     },
     "valuation": {
       "title": "Valoració del Negoci (DCF)",
-      "valorFluxos": "Valor actual fluxos de caixa positius",
-      "valorResidual": "Valor residual de l'últim flux de caixa",
-      "totalValoracio": "TOTAL VALORACIÓ DEL NEGOCI",
+      "valorFluxos": "Total valor actual dels fluxos de caixa",
+      "valorResidual": "Valor actual del flux de caixa final (valor residual)",
+      "totalValoracio": "Valor del negoci (Enterprise Value)",
       "deutaExterna": "Deute extern",
+      "deutaFinanceraNeta": "Deute financer net (DFN)",
       "recursosNoAfectes": "Recursos no afectes o ociosos",
-      "totalFondsPropis": "TOTAL VALORACIÓ DELS FONS PROPIS",
-      "evEbitdaMultiple": "EV/EBITDA"
+      "totalFondsPropis": "Valor de les participacions (Equity Value), 100%",
+      "evEbitdaMultiple": "EV/EBITDA",
+      "percentControl": "% control",
+      "equityValueStake": "Valor de les participacions (Equity Value), 41,97%"
     },
     "targetCompanyValue": "Objectiu valor empresa",
     "revenue": "Facturació",
