@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Plus, Upload, X, ImageIcon, Send, Loader2 } from 'lucide-react';
+import { Plus, Upload, X, ImageIcon, Send, Loader2, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -42,11 +42,13 @@ interface PublishBusinessCardProps {
   }) => void;
 }
 
+type CardState = 'idle' | 'editing' | 'submitted';
+
 const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
   const { t } = useTranslation();
   const fileInputRef = useRef<HTMLInputElement>(null);
   
-  const [isEditing, setIsEditing] = useState(false);
+  const [cardState, setCardState] = useState<CardState>('idle');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
@@ -83,7 +85,6 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
     
     setIsSubmitting(true);
     
-    // Simulate submission delay
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     if (onSubmit) {
@@ -94,26 +95,113 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
     }
     
     setIsSubmitting(false);
-    setIsEditing(false);
-    
-    // Reset form
-    setFormData({ title: '', operationType: '', sector: '', price: '', description: '' });
-    setImageFile(null);
-    setImagePreview(null);
+    setCardState('submitted');
   };
 
   const resetForm = () => {
-    setIsEditing(false);
+    setCardState('idle');
     setFormData({ title: '', operationType: '', sector: '', price: '', description: '' });
     setImageFile(null);
     setImagePreview(null);
   };
 
+  const startNew = () => {
+    setFormData({ title: '', operationType: '', sector: '', price: '', description: '' });
+    setImageFile(null);
+    setImagePreview(null);
+    setCardState('editing');
+  };
+
+  // Submitted state - Success with CTAs
+  if (cardState === 'submitted') {
+    return (
+      <div className="relative min-h-[320px] h-full rounded-xl overflow-hidden shadow-md bg-gradient-to-br from-stone-800 to-stone-900 border border-amber-500/30">
+        <button
+          onClick={resetForm}
+          className="absolute top-2 right-2 z-10 p-1.5 rounded-full bg-stone-700/80 hover:bg-stone-600 text-stone-300 hover:text-white transition-colors"
+        >
+          <X className="w-4 h-4" />
+        </button>
+
+        <div className="h-full overflow-y-auto p-4 flex flex-col">
+          {/* Success header */}
+          <div className="text-center mb-3">
+            <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-2">
+              <CheckCircle2 className="w-5 h-5 text-green-400" />
+            </div>
+            <h3 className="font-serif text-base font-bold text-white">
+              {t('publish.successTitle')}
+            </h3>
+            <p className="text-xs text-stone-400 mt-1 leading-relaxed">
+              {t('publish.successMessage')}
+            </p>
+          </div>
+
+          {/* CTA 1: Qué ofrecemos */}
+          <Link
+            to="/que-ofrecemos"
+            className="block rounded-lg border border-stone-600 hover:border-amber-500/50 bg-stone-700/30 hover:bg-stone-700/50 p-3 mb-2 transition-all group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-md bg-amber-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Sparkles className="w-4 h-4 text-amber-400" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-sm font-bold text-white group-hover:text-amber-400 transition-colors flex items-center gap-1">
+                  {t('publish.discoverServices')}
+                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </h4>
+                <p className="text-xs text-stone-400 mt-0.5 leading-relaxed">
+                  {t('publish.discoverServicesDesc')}
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          {/* CTA 2: Valoración profesional */}
+          <a
+            href="https://icfobusiness.com/pre-market-valuation?utm_source=buscobusiness&utm_medium=publish-card&utm_campaign=pre-market-valuation"
+            className="block rounded-lg border border-amber-500/30 hover:border-amber-500/60 bg-amber-600/10 hover:bg-amber-600/20 p-3 mb-3 transition-all group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-md bg-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Send className="w-4 h-4 text-amber-400" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-sm font-bold text-amber-400 group-hover:text-amber-300 transition-colors flex items-center gap-1">
+                  {t('publish.startValuation')}
+                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </h4>
+                <p className="text-xs text-stone-400 mt-0.5 leading-relaxed">
+                  {t('publish.startValuationDesc')}
+                </p>
+                <div className="flex items-center gap-2 mt-1.5">
+                  <span className="text-xs font-bold text-white">{t('publish.valuationPrice')}</span>
+                  <span className="text-xs text-green-400 font-medium">
+                    {t('publish.valuationPromo')}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          {/* Publish another */}
+          <button
+            onClick={startNew}
+            className="mt-auto text-center text-xs text-stone-500 hover:text-amber-400 transition-colors"
+          >
+            {t('publish.publishAnother')}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   // Initial state - Invitation card
-  if (!isEditing) {
+  if (cardState === 'idle') {
     return (
       <div 
-        onClick={() => setIsEditing(true)}
+        onClick={() => setCardState('editing')}
         className="relative min-h-[320px] h-full rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-dashed border-amber-400/50 bg-gradient-to-br from-stone-800 to-stone-900 group"
       >
         <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
@@ -131,7 +219,6 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
           </div>
         </div>
         
-        {/* Decorative corner elements */}
         <div className="absolute top-3 left-3 w-6 h-6 border-l-2 border-t-2 border-amber-400/30" />
         <div className="absolute top-3 right-3 w-6 h-6 border-r-2 border-t-2 border-amber-400/30" />
         <div className="absolute bottom-3 left-3 w-6 h-6 border-l-2 border-b-2 border-amber-400/30" />
@@ -143,7 +230,6 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
   // Editing state - Interactive form
   return (
     <div className="relative min-h-[320px] h-full rounded-xl overflow-hidden shadow-md bg-gradient-to-br from-stone-800 to-stone-900 border border-amber-500/30">
-      {/* Close button */}
       <button
         onClick={resetForm}
         className="absolute top-2 right-2 z-10 p-1.5 rounded-full bg-stone-700/80 hover:bg-stone-600 text-stone-300 hover:text-white transition-colors"
@@ -156,11 +242,7 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
         <div className="relative">
           {imagePreview ? (
             <div className="relative h-24 rounded-lg overflow-hidden">
-              <img
-                src={imagePreview}
-                alt="Preview"
-                className="w-full h-full object-cover"
-              />
+              <img src={imagePreview} alt="Preview" className="w-full h-full object-cover" />
               <button
                 onClick={removeImage}
                 className="absolute top-1 right-1 p-1 rounded-full bg-red-500/80 hover:bg-red-500 text-white transition-colors"
@@ -183,7 +265,6 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
           )}
         </div>
 
-        {/* Title */}
         <Input
           placeholder={t('publish.titlePlaceholder')}
           value={formData.title}
@@ -191,7 +272,6 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
           className="h-9 bg-stone-700/50 border-stone-600 text-white placeholder:text-stone-400 text-sm"
         />
 
-        {/* Operation Type */}
         <Select
           value={formData.operationType}
           onValueChange={(value) => setFormData({ ...formData, operationType: value })}
@@ -201,18 +281,13 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
           </SelectTrigger>
           <SelectContent className="bg-stone-700 border-stone-600">
             {operationTypes.map((op) => (
-              <SelectItem 
-                key={op.value} 
-                value={op.value}
-                className="text-white hover:bg-stone-600 focus:bg-stone-600 focus:text-white"
-              >
+              <SelectItem key={op.value} value={op.value} className="text-white hover:bg-stone-600 focus:bg-stone-600 focus:text-white">
                 {t(op.key)}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
 
-        {/* Sector */}
         <Select
           value={formData.sector}
           onValueChange={(value) => setFormData({ ...formData, sector: value })}
@@ -222,18 +297,13 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
           </SelectTrigger>
           <SelectContent className="bg-stone-700 border-stone-600">
             {sectorKeys.map((sector) => (
-              <SelectItem 
-                key={sector.key} 
-                value={sector.key}
-                className="text-white hover:bg-stone-600 focus:bg-stone-600 focus:text-white"
-              >
+              <SelectItem key={sector.key} value={sector.key} className="text-white hover:bg-stone-600 focus:bg-stone-600 focus:text-white">
                 {t(sector.key)}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
 
-        {/* Price */}
         <div className="relative">
           <Input
             placeholder={t('publish.pricePlaceholder')}
@@ -244,7 +314,6 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
           <span className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 text-sm">€</span>
         </div>
 
-        {/* Description */}
         <Textarea
           placeholder={t('publish.descriptionPlaceholder')}
           value={formData.description}
@@ -253,7 +322,6 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
           rows={2}
         />
 
-        {/* Submit button */}
         <Button
           onClick={handleSubmit}
           disabled={!formData.title || !formData.sector || !formData.price || isSubmitting}
@@ -272,7 +340,6 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
           )}
         </Button>
 
-        {/* Link to full form */}
         <Link 
           to="/vender"
           className="block text-center text-xs text-amber-400 hover:text-amber-300 transition-colors"
