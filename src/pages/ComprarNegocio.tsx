@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Search, Filter, Building2, TrendingUp, Users, CheckCircle, X, ArrowUpDown, Lock } from "lucide-react";
+import { Search, Filter, Building2, TrendingUp, Users, CheckCircle, X, ArrowUpDown, Lock, Target, Calendar, AlertTriangle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,7 +16,7 @@ import Navbar from "@/components/Navbar";
 import PublishBusinessCard from "@/components/PublishBusinessCard";
 import { Link } from "react-router-dom";
 
-import { carouselSlides } from '@/data/businesses';
+import { carouselSlides, businessesData } from '@/data/businesses';
 
 // Sector keys for translation
 const sectorKeys = [
@@ -543,61 +543,204 @@ const ComprarNegocio = () => {
           </div>
 
           {filteredAndSortedBusinesses.length > 0 || !hasActiveFilters ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {/* Interactive Publish Card - Always first position when no filters active */}
-              {!hasActiveFilters && (
-                <PublishBusinessCard />
-              )}
-              
-              {filteredAndSortedBusinesses.map((business) => (
-                <Link to={`/negocio/${business.id}`} key={business.id}>
-                  <div className="rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card">
-                    {/* Image Section */}
-                    <div className="relative h-[180px] overflow-hidden bg-stone-800">
-                      <img
-                        src={business.image}
-                        alt={t(business.titleKey)}
-                        className="w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105"
-                      />
-                      
-                      
-                      {/* Sector Badge */}
-                      <div className="absolute top-3 left-3 bg-stone-800/90 text-white px-2 py-1 rounded text-xs font-medium">
-                        {t(business.sectorKey)}
+            <div className="space-y-6">
+              {/* La Borda Featured Card - Full width */}
+              {filteredAndSortedBusinesses.some(b => b.id === 'la-borda') && (() => {
+                const laborda = filteredAndSortedBusinesses.find(b => b.id === 'la-borda')!;
+                const labordaData = businessesData['la-borda'];
+                return (
+                  <Link to={`/negocio/${laborda.id}`}>
+                    <div className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-stone-800">
+                      <div className="grid grid-cols-1 lg:grid-cols-3">
+                        {/* Left: Blurred image + description + highlights */}
+                        <div className="lg:col-span-2 flex flex-col">
+                          {/* Blurred Image */}
+                          <div className="relative h-[250px] md:h-[300px] overflow-hidden">
+                            <img
+                              src={laborda.image}
+                              alt={t(laborda.titleKey)}
+                              className="w-full h-full object-cover filter blur-md scale-110"
+                            />
+                            <div className="absolute inset-0 bg-stone-900/40 flex flex-col items-center justify-center">
+                              <Lock className="w-8 h-8 text-amber-400 mb-2" />
+                              <span className="text-amber-400 text-sm font-medium">{t('detail.gated.hiddenLocation')}</span>
+                            </div>
+                            {/* Sector Badge */}
+                            <div className="absolute top-3 left-3 bg-stone-800/90 text-white px-2 py-1 rounded text-xs font-medium">
+                              {t(laborda.sectorKey)}
+                            </div>
+                            {/* Price Badge */}
+                            <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
+                              {laborda.priceDisplay}
+                            </div>
+                          </div>
+                          
+                          {/* Description + Highlights */}
+                          <div className="p-6 flex-1">
+                            <h3 className="font-serif text-xl font-bold text-white mb-3">
+                              {t(laborda.titleKey)}
+                            </h3>
+                            <h4 className="text-amber-400 text-sm font-semibold mb-2">{t('detail.businessDescription')}</h4>
+                            <p className="text-stone-300 text-sm leading-relaxed mb-4">
+                              {t('businesses.laborda.description')}
+                            </p>
+                            <h4 className="text-amber-400 text-sm font-semibold mb-2">{t('detail.keyHighlights')}</h4>
+                            <ul className="space-y-1.5">
+                              {(t('businesses.laborda.highlights', { returnObjects: true }) as string[]).map((highlight, idx) => (
+                                <li key={idx} className="flex items-start gap-2 text-stone-300 text-sm">
+                                  <CheckCircle className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                                  {highlight}
+                                </li>
+                              ))}
+                            </ul>
+                            {/* Operation Type Badge */}
+                            <div className="mt-4">
+                              <div className="inline-block px-3 py-1 rounded text-xs font-medium bg-amber-600/20 text-amber-400 border border-amber-600/30">
+                                {t(operationBadgeConfig[laborda.operationType].labelKey)}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Right: Financial Summary */}
+                        <div className="bg-stone-900 p-6">
+                          <h4 className="font-serif text-lg font-bold text-amber-400 mb-4">{t('detail.financialSummary')}</h4>
+                          <div className="space-y-0">
+                            <div className="flex items-center justify-between py-2.5 border-b border-stone-700">
+                              <div className="flex items-center gap-2">
+                                <TrendingUp className="w-3.5 h-3.5 text-amber-400" />
+                                <span className="text-stone-300 text-sm">{t('detail.revenue')}</span>
+                              </div>
+                              <span className="font-semibold text-white text-sm">{labordaData.revenue}</span>
+                            </div>
+                            <div className="flex items-center justify-between py-2.5 border-b border-stone-700">
+                              <div className="flex items-center gap-2">
+                                <Target className="w-3.5 h-3.5 text-amber-400" />
+                                <span className="text-amber-400 text-sm">{t('detail.targetRevenue')}</span>
+                              </div>
+                              <span className="font-semibold text-amber-400 text-sm">{labordaData.targetRevenue}</span>
+                            </div>
+                            <div className="flex items-center justify-between py-2.5 border-b border-stone-700">
+                              <div className="flex items-center gap-2">
+                                <Building2 className="w-3.5 h-3.5 text-amber-400" />
+                                <span className="text-stone-300 text-sm">{t('detail.ebitda')}</span>
+                              </div>
+                              <span className="font-semibold text-white text-sm">{labordaData.ebitda}</span>
+                            </div>
+                            <div className="flex items-center justify-between py-2.5 border-b border-stone-700">
+                              <div className="flex items-center gap-2">
+                                <Target className="w-3.5 h-3.5 text-amber-400" />
+                                <span className="text-amber-400 text-sm">{t('detail.targetEbitda')}</span>
+                              </div>
+                              <span className="font-semibold text-amber-400 text-sm">{labordaData.targetEbitda}</span>
+                            </div>
+                            <div className="flex items-center justify-between py-2.5 border-b border-stone-700">
+                              <div className="flex items-center gap-2">
+                                <TrendingUp className="w-3.5 h-3.5 text-amber-400" />
+                                <span className="text-stone-300 text-sm">{t('detail.profitability')}</span>
+                              </div>
+                              <span className="font-semibold text-amber-400 text-sm">{labordaData.profitability}</span>
+                            </div>
+                            <div className="flex items-center justify-between py-2.5 border-b border-stone-700">
+                              <div className="flex items-center gap-2">
+                                <Target className="w-3.5 h-3.5 text-amber-400" />
+                                <span className="text-amber-400 text-sm">{t('detail.targetProfitability')}</span>
+                              </div>
+                              <span className="font-semibold text-amber-400 text-sm">{'>66%'}</span>
+                            </div>
+                            <div className="flex items-center justify-between py-2.5 border-b border-stone-700">
+                              <div className="flex items-center gap-2">
+                                <Target className="w-3.5 h-3.5 text-amber-400" />
+                                <span className="text-amber-400 text-sm">{t('detail.targetCompanyValue')}</span>
+                              </div>
+                              <span className="font-semibold text-amber-400 text-sm">{'489k €'}</span>
+                            </div>
+                            <div className="flex items-center justify-between py-2.5 border-b border-stone-700">
+                              <div className="flex items-center gap-2">
+                                <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
+                                <span className="text-stone-300 text-sm">{t('detail.percentForSale')}</span>
+                              </div>
+                              <span className="font-semibold text-amber-300 text-sm">{labordaData.percentForSale}</span>
+                            </div>
+                            <div className="flex items-center justify-between py-2.5 border-b border-stone-700">
+                              <div className="flex items-center gap-2">
+                                <Users className="w-3.5 h-3.5 text-amber-400" />
+                                <span className="text-stone-300 text-sm">{t('detail.employees')}</span>
+                              </div>
+                              <span className="font-semibold text-white text-sm">{labordaData.employees}</span>
+                            </div>
+                            <div className="flex items-center justify-between py-2.5">
+                              <div className="flex items-center gap-2">
+                                <Calendar className="w-3.5 h-3.5 text-amber-400" />
+                                <span className="text-stone-300 text-sm">{t('detail.yearsOperating')}</span>
+                              </div>
+                              <span className="font-semibold text-white text-sm">{labordaData.yearsOperating}</span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      
-                      {/* Price Badge */}
-                      <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
-                        {business.priceDisplay}
-                      </div>
+                    </div>
+                  </Link>
+                );
+              })()}
 
-                      {/* Lock indicator */}
-                      <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-stone-900/70 text-stone-300 px-2 py-1 rounded text-[10px]">
-                        <Lock className="w-3 h-3" />
-                        {t('buy.confidential')}
+              {/* Regular cards grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {/* Interactive Publish Card - Always first position when no filters active */}
+                {!hasActiveFilters && (
+                  <PublishBusinessCard />
+                )}
+                
+                {filteredAndSortedBusinesses.filter(b => b.id !== 'la-borda').map((business) => (
+                  <Link to={`/negocio/${business.id}`} key={business.id}>
+                    <div className="rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card">
+                      {/* Image Section */}
+                      <div className="relative h-[180px] overflow-hidden bg-stone-800">
+                        <img
+                          src={business.image}
+                          alt={t(business.titleKey)}
+                          className="w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105"
+                        />
+                        
+                        
+                        {/* Sector Badge */}
+                        <div className="absolute top-3 left-3 bg-stone-800/90 text-white px-2 py-1 rounded text-xs font-medium">
+                          {t(business.sectorKey)}
+                        </div>
+                        
+                        {/* Price Badge */}
+                        <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
+                          {business.priceDisplay}
+                        </div>
+
+                        {/* Lock indicator */}
+                        <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-stone-900/70 text-stone-300 px-2 py-1 rounded text-[10px]">
+                          <Lock className="w-3 h-3" />
+                          {t('buy.confidential')}
+                        </div>
+                      </div>
+                      
+                      {/* Title Section */}
+                      <div className="p-3 bg-card">
+                        <h3 className="font-serif text-base font-bold text-foreground line-clamp-2 leading-tight">
+                          {t(business.titleKey)}
+                        </h3>
+                      </div>
+                      
+                      {/* Financial Info - Orange Background */}
+                      <div className="bg-amber-600 text-white p-3">
+                        <p className="text-xs leading-relaxed">
+                          Facturación {business.priceDisplay} · EBITDA {Math.round(business.price * 0.25).toLocaleString('es-ES')} € · Rentabilidad {business.profitability}%
+                        </p>
+                        {/* Operation Type Badge */}
+                        <div className={`inline-block mt-2 px-2 py-0.5 rounded text-xs font-medium bg-white/20`}>
+                          {t(operationBadgeConfig[business.operationType].labelKey)}
+                        </div>
                       </div>
                     </div>
-                    
-                    {/* Title Section */}
-                    <div className="p-3 bg-card">
-                      <h3 className="font-serif text-base font-bold text-foreground line-clamp-2 leading-tight">
-                        {t(business.titleKey)}
-                      </h3>
-                    </div>
-                    
-                    {/* Financial Info - Orange Background */}
-                    <div className="bg-amber-600 text-white p-3">
-                      <p className="text-xs leading-relaxed">
-                        Facturación {business.priceDisplay} · EBITDA {Math.round(business.price * 0.25).toLocaleString('es-ES')} € · Rentabilidad {business.profitability}%
-                      </p>
-                      {/* Operation Type Badge */}
-                      <div className={`inline-block mt-2 px-2 py-0.5 rounded text-xs font-medium bg-white/20`}>
-                        {t(operationBadgeConfig[business.operationType].labelKey)}
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                ))}
+              </div>
             </div>
           ) : (
             <div className="text-center py-16">
