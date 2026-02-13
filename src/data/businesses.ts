@@ -18,10 +18,12 @@ import alpineKpiIncidents from '@/assets/alpine/kpi-incidents.png';
 import alpineOverview from '@/assets/alpine/slide-overview.png';
 
 // InfinityPay images
-import infinitypayLogo from '@/assets/infinitypay/logo.png';
-import infinitypayPassarella1 from '@/assets/infinitypay/passarella-1.png';
-import infinitypayPassarella2 from '@/assets/infinitypay/passarella-2.png';
-import infinitypaySeguretat from '@/assets/infinitypay/seguretat.png';
+import infinitypayServeis from '@/assets/infinitypay/web-serveis.png';
+import infinitypayPresencials from '@/assets/infinitypay/web-presencials.png';
+import infinitypaySeguretat from '@/assets/infinitypay/web-seguretat.png';
+import infinitypayContacte from '@/assets/infinitypay/web-contacte.png';
+import infinitypayOnline from '@/assets/infinitypay/web-online.png';
+import infinitypayAdreca from '@/assets/infinitypay/web-adreca.png';
 
 // Generic sector images for anonymous businesses
 import sectorHosteleria from '@/assets/generic/sector-hosteleria.jpg';
@@ -456,7 +458,7 @@ export const businessesData: Record<string, Business> = {
     percentForSale: '100%',
     descriptionKey: 'businesses.infinitypay.description',
     highlightsKey: 'businesses.infinitypay.highlights',
-    images: [],
+    images: [infinitypayServeis, infinitypayPresencials, infinitypaySeguretat, infinitypayContacte, infinitypayOnline, infinitypayAdreca],
     financialData: [
       { year: '2023', revenue: 234, ebitda: 88 },
       { year: '2024', revenue: 297, ebitda: 154 },
@@ -643,7 +645,7 @@ export const carouselSlides = [
   },
   {
     id: 'infinitypay',
-    image: infinitypayLogo,
+    image: infinitypayServeis,
     titleKey: 'businesses.infinitypay.title',
     descriptionKey: 'businesses.infinitypay.carouselDesc',
     price: '1.084.964 €',
