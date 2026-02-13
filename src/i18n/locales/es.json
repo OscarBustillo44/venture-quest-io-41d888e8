@@ -537,7 +537,16 @@
     "submit": "Publicar anuncio",
     "submitting": "Publicando...",
     "fullFormLink": "¿Necesitas más opciones? Usa el formulario completo",
-    "other": "Otros"
+    "other": "Otros",
+    "successTitle": "¡Anuncio registrado!",
+    "successMessage": "Tu negocio ha sido registrado. Para maximizar su valor y atraer compradores serios, te recomendamos:",
+    "discoverServices": "Descubre qué ofrecemos",
+    "discoverServicesDesc": "Conoce cómo preparamos tu negocio para la venta",
+    "startValuation": "Iniciar valoración profesional",
+    "startValuationDesc": "Análisis iCFO: normalización, proyecciones y valoración",
+    "valuationPrice": "750 € + IVA",
+    "valuationPromo": "500 € antes del 1/04/2026",
+    "publishAnother": "Publicar otro negocio"
   },
   "common": {
     "years": "años",

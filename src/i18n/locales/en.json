@@ -537,7 +537,16 @@
     "submit": "Publish listing",
     "submitting": "Publishing...",
     "fullFormLink": "Need more options? Use the complete form",
-    "other": "Other"
+    "other": "Other",
+    "successTitle": "Listing registered!",
+    "successMessage": "Your business has been registered. To maximise its value and attract serious buyers, we recommend:",
+    "discoverServices": "Discover what we offer",
+    "discoverServicesDesc": "Learn how we prepare your business for sale",
+    "startValuation": "Start professional valuation",
+    "startValuationDesc": "iCFO Analysis: normalisation, projections and valuation",
+    "valuationPrice": "€750 + VAT",
+    "valuationPromo": "€500 before 01/04/2026",
+    "publishAnother": "Publish another business"
   },
   "common": {
     "years": "years",
