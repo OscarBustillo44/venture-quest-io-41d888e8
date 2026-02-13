@@ -171,6 +171,19 @@
       "ebit": "EBIT",
       "netProfit": "Net Profit"
     },
+    "balance": {
+      "title": "Projected Balance Sheet",
+      "actiuFixe": "Net fixed assets",
+      "existencies": "Inventory",
+      "deutors": "Receivables",
+      "proveidors": "Suppliers",
+      "creditors": "Creditors",
+      "nof": "Net Working Capital (NWC)",
+      "actiuTotal": "Total Assets",
+      "patrimoniNet": "Equity",
+      "tesoreria": "Cash",
+      "pnPassiuTotal": "Equity + Total Liabilities"
+    },
     "revenue": "Revenue",
     "ebitda": "EBITDA",
     "profitability": "Profitability",

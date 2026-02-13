@@ -171,6 +171,19 @@
       "ebit": "EBIT",
       "netProfit": "Résultat Net"
     },
+    "balance": {
+      "title": "Bilan Prévisionnel",
+      "actiuFixe": "Immobilisations nettes",
+      "existencies": "Stocks",
+      "deutors": "Créances clients",
+      "proveidors": "Fournisseurs",
+      "creditors": "Créditeurs",
+      "nof": "Besoin en Fonds de Roulement (BFR)",
+      "actiuTotal": "Total Actif",
+      "patrimoniNet": "Capitaux Propres",
+      "tesoreria": "Trésorerie",
+      "pnPassiuTotal": "CP + Total Passif"
+    },
     "revenue": "Chiffre d'affaires",
     "ebitda": "EBITDA",
     "profitability": "Rentabilité",
