@@ -157,6 +157,20 @@
       "projectedGrowth": "Projected growth (n+4)",
       "note": "Data based on the most recent closed financial year (n0). Projections prepared by iCFObusiness under conservative growth assumptions."
     },
+    "pnl": {
+      "title": "Projected Profit & Loss",
+      "ventaNeta": "Net Sales",
+      "cogs": "Cost of Goods Sold",
+      "margeBrut": "Gross Margin",
+      "margeComercial": "Commercial Margin",
+      "personal": "Personnel",
+      "opex": "Operating Expenses",
+      "lloguer": "Rent",
+      "ebitda": "EBITDA",
+      "amortitzacions": "Depreciation",
+      "ebit": "EBIT",
+      "netProfit": "Net Profit"
+    },
     "revenue": "Revenue",
     "ebitda": "EBITDA",
     "profitability": "Profitability",

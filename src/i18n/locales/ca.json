@@ -157,6 +157,20 @@
       "projectedGrowth": "Creixement projectat (n+4)",
       "note": "Dades basades en l'exercici tancat més recent (n0). Les projeccions han estat elaborades per iCFObusiness sota criteris de creixement conservador."
     },
+    "pnl": {
+      "title": "Compte de Resultats Projectat",
+      "ventaNeta": "Venda Neta",
+      "cogs": "Cost de vendes",
+      "margeBrut": "Marge Brut",
+      "margeComercial": "Marge Comercial",
+      "personal": "Personal",
+      "opex": "Despeses operatives",
+      "lloguer": "Lloguer",
+      "ebitda": "EBITDA",
+      "amortitzacions": "Amortitzacions",
+      "ebit": "EBIT",
+      "netProfit": "Benefici Net"
+    },
     "revenue": "Facturació",
     "ebitda": "EBITDA",
     "profitability": "Rendibilitat",

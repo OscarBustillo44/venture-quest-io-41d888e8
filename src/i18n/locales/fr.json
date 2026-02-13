@@ -157,6 +157,20 @@
       "projectedGrowth": "Croissance projetée (n+4)",
       "note": "Données basées sur le dernier exercice clos (n0). Les projections ont été élaborées par iCFObusiness selon des critères de croissance conservateurs."
     },
+    "pnl": {
+      "title": "Compte de Résultat Prévisionnel",
+      "ventaNeta": "Ventes Nettes",
+      "cogs": "Coût des ventes",
+      "margeBrut": "Marge Brute",
+      "margeComercial": "Marge Commerciale",
+      "personal": "Personnel",
+      "opex": "Charges d'exploitation",
+      "lloguer": "Loyer",
+      "ebitda": "EBITDA",
+      "amortitzacions": "Amortissements",
+      "ebit": "EBIT",
+      "netProfit": "Résultat Net"
+    },
     "revenue": "Chiffre d'affaires",
     "ebitda": "EBITDA",
     "profitability": "Rentabilité",

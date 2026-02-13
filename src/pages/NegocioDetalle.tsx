@@ -22,6 +22,7 @@ import {
   labordaEbitdaData,
   labordaProjectionData,
   labordaPortfolioData,
+  labordaPnLData,
   alpineKPIs,
   alpineRevenueData,
   alpineEbitdaData,
@@ -274,7 +275,8 @@ const NegocioDetalle = () => {
                   <p className="text-sm text-stone-500">{t('detail.economicSummary.subtitle')}</p>
                 </CardHeader>
                 <CardContent>
-                  <div className="overflow-x-auto">
+                  {/* Key metrics summary */}
+                  <div className="overflow-x-auto mb-8">
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="border-b-2 border-amber-300">
@@ -285,15 +287,19 @@ const NegocioDetalle = () => {
                       <tbody className="divide-y divide-stone-200">
                         <tr className="hover:bg-amber-50/50">
                           <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.annualRevenue')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">241.956 €</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">217.760 €</td>
                         </tr>
                         <tr className="hover:bg-amber-50/50">
                           <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.operatingProfit')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">100.386 €</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">83.449 €</td>
                         </tr>
                         <tr className="hover:bg-amber-50/50">
                           <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.profitMargin')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-amber-700">41,5%</td>
+                          <td className="py-3 px-4 text-right font-semibold text-amber-700">38,3%</td>
+                        </tr>
+                        <tr className="hover:bg-amber-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.pnl.netProfit')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">71.778 €</td>
                         </tr>
                         <tr className="hover:bg-amber-50/50 bg-amber-50/30">
                           <td className="py-3 px-4 text-stone-600 font-medium">{t('detail.economicSummary.askingPrice')}</td>
@@ -301,11 +307,15 @@ const NegocioDetalle = () => {
                         </tr>
                         <tr className="hover:bg-amber-50/50">
                           <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.priceRevenueRatio')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">0,31x</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">0,34x</td>
                         </tr>
                         <tr className="hover:bg-amber-50/50">
                           <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.priceEbitdaMultiple')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">0,75x</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">0,90x</td>
+                        </tr>
+                        <tr className="hover:bg-amber-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.pnl.margeComercial')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">70,0%</td>
                         </tr>
                         <tr className="hover:bg-amber-50/50">
                           <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.employeesCount')}</td>
@@ -320,19 +330,52 @@ const NegocioDetalle = () => {
                           <td className="py-3 px-4 text-right font-semibold text-stone-800">La Massana, Andorra</td>
                         </tr>
                         <tr className="hover:bg-amber-50/50">
-                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.revenueBreakdown')}</td>
-                          <td className="py-3 px-4 text-right text-stone-700 text-xs leading-relaxed">
-                            45% Menú (37€/pp) · 35% Carta (48€/pp)<br />
-                            15% Eventos (45k) · 5% Take-away (15k)
-                          </td>
-                        </tr>
-                        <tr className="hover:bg-amber-50/50">
                           <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.projectedGrowth')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">267k € / 104k € EBITDA</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">240k € / 86k € EBITDA</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
+
+                  {/* Full P&L Table */}
+                  <h4 className="text-sm font-semibold text-stone-700 mb-3 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-amber-600" />
+                    {t('detail.pnl.title')}
+                  </h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b-2 border-stone-300 bg-stone-100">
+                          <th className="text-left py-2 px-3 font-semibold text-stone-700">{'(€)'}</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">n0</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">n+1</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">n+2</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">n+3</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">n+4</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-100">
+                        {labordaPnLData.map((row) => {
+                          const isHighlight = ['ebitda', 'ebit', 'netProfit', 'margeBrut'].includes(row.concept);
+                          const fmt = (v: number) => v.toLocaleString('es-ES');
+                          return (
+                            <tr key={row.concept} className={isHighlight ? 'bg-amber-50/50 font-semibold' : 'hover:bg-stone-50'}>
+                              <td className={`py-2 px-3 ${isHighlight ? 'text-stone-800' : 'text-stone-600'}`}>
+                                {t(`detail.pnl.${row.concept}`)}
+                                {row.pct && <span className="text-stone-400 ml-1">({row.pct})</span>}
+                              </td>
+                              <td className={`py-2 px-3 text-right ${row.n0 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n0)}</td>
+                              <td className={`py-2 px-3 text-right ${row.n1 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n1)}</td>
+                              <td className={`py-2 px-3 text-right ${row.n2 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n2)}</td>
+                              <td className={`py-2 px-3 text-right ${row.n3 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n3)}</td>
+                              <td className={`py-2 px-3 text-right ${row.n4 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n4)}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+
                   <p className="text-xs text-stone-400 mt-4 italic leading-relaxed">
                     {t('detail.economicSummary.note')}
                   </p>
