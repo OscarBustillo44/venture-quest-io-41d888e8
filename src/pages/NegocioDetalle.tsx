@@ -131,10 +131,10 @@ const NegocioDetalle = () => {
           <div>
             <Badge className="bg-amber-600 text-white mb-2">{t(business.sectorKey)}</Badge>
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-2">
-              {isUnlocked || business.isConfidential ? t(business.titleKey) : t('detail.gated.anonymousTitle', { sector: t(business.sectorKey) })}
+              {isUnlocked || !business.isConfidential ? t(business.titleKey) : t('detail.gated.anonymousTitle', { sector: t(business.sectorKey) })}
             </h1>
             <div className="flex items-center gap-2 text-stone-600">
-              {isUnlocked ? (
+              {isUnlocked || !business.isConfidential ? (
                 <>
                   <MapPin className="w-4 h-4" />
                   {business.location}
@@ -158,7 +158,7 @@ const NegocioDetalle = () => {
           <div className="lg:col-span-2 space-y-8">
             {/* Image Gallery */}
             <Card className="overflow-hidden relative">
-              {!isUnlocked && (
+              {!isUnlocked && business.isConfidential && (
                 <div className="absolute inset-0 z-10 bg-stone-800/60 backdrop-blur-md flex flex-col items-center justify-center text-white p-6">
                   <Lock className="w-10 h-10 text-amber-400 mb-3" />
                   <p className="text-sm text-stone-200 text-center">{t('detail.gated.hiddenLocation')}</p>
@@ -167,11 +167,11 @@ const NegocioDetalle = () => {
               <div className="relative">
                 <img
                   src={business.images[currentImageIndex]}
-                  alt={`${isUnlocked ? t(business.titleKey) : t('detail.gated.anonymousTitle', { sector: t(business.sectorKey) })} - ${currentImageIndex + 1}`}
+                  alt={`${isUnlocked || !business.isConfidential ? t(business.titleKey) : t('detail.gated.anonymousTitle', { sector: t(business.sectorKey) })} - ${currentImageIndex + 1}`}
                   className="w-full h-[400px] md:h-[500px] object-cover"
                 />
                 
-                {business.images.length > 1 && isUnlocked && (
+                {business.images.length > 1 && (isUnlocked || !business.isConfidential) && (
                   <>
                     <button
                       onClick={prevImage}
@@ -188,14 +188,14 @@ const NegocioDetalle = () => {
                   </>
                 )}
 
-                {isUnlocked && (
+                {(isUnlocked || !business.isConfidential) && (
                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
                     {currentImageIndex + 1} / {business.images.length}
                   </div>
                 )}
               </div>
 
-              {business.images.length > 1 && isUnlocked && (
+              {business.images.length > 1 && (isUnlocked || !business.isConfidential) && (
                 <div className="flex gap-2 p-4 bg-stone-100">
                   {business.images.map((img, idx) => (
                     <button
@@ -233,12 +233,12 @@ const NegocioDetalle = () => {
             </Card>
 
             {/* Gated Access Banner */}
-            {!isUnlocked && (
+            {!isUnlocked && business.isConfidential && (
               <GatedAccessBanner onRequestAccess={() => setVerificationOpen(true)} />
             )}
 
             {/* Post-Unlock Warning Banner */}
-            {isUnlocked && (
+            {isUnlocked && business.isConfidential && (
               <div className="flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 rounded-lg">
                 <AlertTriangle className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
                 <p className="text-sm text-amber-800 leading-relaxed">
