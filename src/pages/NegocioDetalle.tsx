@@ -847,6 +847,14 @@ const NegocioDetalle = () => {
                           <td className="py-3 px-4 text-right font-semibold text-stone-800">Andorra</td>
                         </tr>
                         <tr className="hover:bg-blue-50/50">
+                          <td className="py-3 px-4 text-amber-400 font-medium">{t('detail.targetRevenue')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-amber-400">&gt;500k €</td>
+                        </tr>
+                        <tr className="hover:bg-blue-50/50">
+                          <td className="py-3 px-4 text-amber-400 font-medium">{t('detail.targetEbitda')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-amber-400">&gt;250k €</td>
+                        </tr>
+                        <tr className="hover:bg-blue-50/50">
                           <td className="py-3 px-4 text-amber-400 font-medium">{t('detail.economicSummary.projectedGrowth')}</td>
                           <td className="py-3 px-4 text-right font-semibold text-amber-400">467k € / 243k € EBITDA</td>
                         </tr>
