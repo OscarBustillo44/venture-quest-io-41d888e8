@@ -198,7 +198,15 @@
       "comissionsCanal": "Comisiones Canal",
       "altresDespeses": "Otros gastos de explotación",
       "resultatFinancer": "Resultado financiero",
-      "resultat": "Resultado"
+      "resultat": "Resultado",
+      "ingresos": "Ingresos",
+      "ebitMargen": "EBIT (Margen 5,0%)",
+      "impuestos": "(-) Impuestos (10%)",
+      "beneficioNeto": "Beneficio Neto",
+      "amortizacion": "(+) Amortización",
+      "capex": "(-) CAPEX",
+      "variacionNOF": "(-) Variación NOF",
+      "freeCashFlow": "Free Cash Flow"
     },
     "balance": {
       "title": "Balance Patrimonial Proyectado",

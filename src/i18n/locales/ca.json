@@ -198,7 +198,15 @@
       "comissionsCanal": "Comissions Canal",
       "altresDespeses": "Altres despeses d'explotació",
       "resultatFinancer": "Resultat financer",
-      "resultat": "Resultat"
+      "resultat": "Resultat",
+      "ingresos": "Ingressos",
+      "ebitMargen": "EBIT (Marge 5,0%)",
+      "impuestos": "(-) Impostos (10%)",
+      "beneficioNeto": "Benefici Net",
+      "amortizacion": "(+) Amortització",
+      "capex": "(-) CAPEX",
+      "variacionNOF": "(-) Variació NOF",
+      "freeCashFlow": "Free Cash Flow"
     },
     "balance": {
       "title": "Balanç Patrimonial Projectat",

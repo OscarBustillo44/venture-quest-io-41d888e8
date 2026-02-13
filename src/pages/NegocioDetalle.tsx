@@ -53,6 +53,7 @@ import {
   restaurantCentroPnLData,
   restaurantCentroBalanceData,
   restaurantCentroValuationData,
+  confServiciosDCFData,
 } from '@/data/businesses';
 
 const NegocioDetalle = () => {
@@ -1601,6 +1602,66 @@ const NegocioDetalle = () => {
                               <td className={`py-2 px-3 text-right ${row.isNegative ? 'text-red-600' : ''} ${row.isHighlight ? 'text-stone-800' : ''}`}>
                                 {row.isNegative ? `(${fmt(Math.abs(row.value))})` : row.isRatio ? `${fmt(row.value)}x` : fmt(row.value)}
                               </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <p className="text-xs text-stone-400 mt-4 italic leading-relaxed">
+                    {t('detail.economicSummary.note')}
+                  </p>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Economic Summary - Confidencial Servicios (DCF) */}
+            {business.id === 'confidencial-servicios' && (
+              <Card className="border-2 border-amber-200 bg-gradient-to-br from-stone-50 to-amber-50/30">
+                <CardHeader>
+                  <CardTitle className="font-serif flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-amber-700" />
+                    {t('detail.economicSummary.title')}
+                  </CardTitle>
+                  <p className="text-sm text-stone-500">{t('detail.economicSummary.subtitle')}</p>
+                </CardHeader>
+                <CardContent>
+                  <h4 className="text-sm font-semibold text-stone-700 mb-3 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-amber-600" />
+                    {t('detail.valuation.title')}
+                  </h4>
+                  <div className="overflow-x-auto mb-8">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b-2 border-stone-300 bg-stone-100">
+                          <th className="text-left py-2 px-3 font-semibold text-stone-700">{t('detail.economicSummary.concept')}</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2024 (Base)</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2025</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2026</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2027</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2028</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2029</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-100">
+                        {confServiciosDCFData.map((row) => {
+                          const isHighlight = ['beneficioNeto', 'freeCashFlow', 'ingresos'].includes(row.concept);
+                          const fmt = (v: number) => v < 0 ? `(${Math.abs(v).toLocaleString('es-ES')})` : v.toLocaleString('es-ES');
+                          const years = ['y2024', 'y2025', 'y2026', 'y2027', 'y2028', 'y2029'] as const;
+                          return (
+                            <tr key={row.concept} className={isHighlight ? 'bg-amber-50/50 font-semibold' : 'hover:bg-stone-50'}>
+                              <td className={`py-2 px-3 ${isHighlight ? 'text-stone-800' : 'text-stone-600'}`}>
+                                {t(`detail.pnl.${row.concept}`)}
+                              </td>
+                              {years.map((year, idx) => {
+                                const val = (row as any)[year] as number;
+                                return (
+                                  <td key={year} className={`py-2 px-3 text-right ${val < 0 ? 'text-red-600' : ''} ${idx >= 1 ? 'bg-amber-50/20' : ''}`}>
+                                    {fmt(val)}
+                                  </td>
+                                );
+                              })}
                             </tr>
                           );
                         })}
