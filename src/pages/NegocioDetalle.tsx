@@ -765,7 +765,11 @@ const NegocioDetalle = () => {
                         </tr>
                         <tr className="hover:bg-stone-50">
                           <td className="py-3 px-4 text-amber-600">{t('detail.targetEbitda')}</td>
-                          <td className="py-3 px-4 text-right font-bold text-amber-400">700k - 1,3 Mio €</td>
+                          <td className="py-3 px-4 text-right font-bold text-amber-400">1,3 Mio €</td>
+                        </tr>
+                        <tr className="hover:bg-stone-50">
+                          <td className="py-3 px-4 text-amber-600">{t('detail.profitability')}</td>
+                          <td className="py-3 px-4 text-right font-bold text-amber-400">&gt;30%</td>
                         </tr>
                       </tbody>
                     </table>

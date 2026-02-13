@@ -485,7 +485,7 @@ export const businessesData: Record<string, Business> = {
     employees: '15',
     yearsOperating: '2',
     targetRevenue: '>3 Mio €',
-    targetEbitda: '700k - 1.3 Mio €',
+    targetEbitda: '1,3 Mio €',
     percentForSale: '23,4%',
     descriptionKey: 'businesses.alpine.description',
     highlightsKey: 'businesses.alpine.highlights',
