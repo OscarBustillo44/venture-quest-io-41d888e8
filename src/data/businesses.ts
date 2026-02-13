@@ -446,7 +446,27 @@ export const restaurantCentroValuationData = [
   { concept: 'evEbitdaMultiple', value: 3.87, isRatio: true },
 ];
 
-// Confidencial Servicios DCF data (€)
+// Confidencial Comercio (Real Estate) DCF data (€)
+export const confComercioDCFData = [
+  { concept: 'ingresosAlquiler', y2024: 110622, y2025: 121684, y2026: 133853, y2027: 147238, y2028: 161962, y2029: 178158 },
+  { concept: 'ebitMargen32', y2024: 35511, y2025: 39063, y2026: 42969, y2027: 47266, y2028: 51992, y2029: 57192 },
+  { concept: 'impuestos', y2024: -3551, y2025: -3906, y2026: -4297, y2027: -4727, y2028: -5199, y2029: -5719 },
+  { concept: 'beneficioNeto', y2024: 31960, y2025: 35156, y2026: 38672, y2027: 42539, y2028: 46793, y2029: 51472 },
+  { concept: 'amortizacion', y2024: 32986, y2025: 32986, y2026: 32986, y2027: 32986, y2028: 32986, y2029: 32986 },
+  { concept: 'capex', y2024: -5000, y2025: -5000, y2026: -5000, y2027: -5000, y2028: -5000, y2029: -5000 },
+  { concept: 'variacionNOF', y2024: -2000, y2025: -2000, y2026: -2000, y2027: -2000, y2028: -2000, y2029: -2000 },
+  { concept: 'freeCashFlow', y2024: 57946, y2025: 61142, y2026: 64658, y2027: 68525, y2028: 72779, y2029: 77458 },
+];
+
+// Confidencial Comercio (Real Estate) Valuation data (€)
+export const confComercioValuationData = [
+  { concept: 'valorFluxos', value: 223762, label: 'Suma VP Flujos Operativos (2025-2029)' },
+  { concept: 'valorResidual', value: 613370, label: '(+) VP Valor Terminal' },
+  { concept: 'totalValoracio', value: 837132, isHighlight: true, label: 'EV (Enterprise Value)' },
+  { concept: 'deutaExterna', value: 0, label: '(-) Deuda Neta' },
+  { concept: 'totalFondsPropis', value: 837132, isHighlight: true, isOrange: true, label: 'EV (Equity Value)' },
+];
+
 export const confServiciosDCFData = [
   { concept: 'ingresos', y2024: 1233375, y2025: 1356713, y2026: 1492384, y2027: 1641622, y2028: 1805785, y2029: 1986363 },
   { concept: 'ebitMargen', y2024: 61184, y2025: 67302, y2026: 74033, y2027: 81436, y2028: 89580, y2029: 98538 },
