@@ -594,6 +594,7 @@
     },
     "alpine": {
       "title": "Alpine Security – Entreprise de Cybersécurité",
+      "gridTitle": "Entreprise de Cybersécurité",
       "description": "Entreprise leader en cybersécurité avec des opérations en Andorre et en Espagne. Portfolio de produits/services : 1.3M en Contrats (86% Threat Hunting, 9% Conseil et 5% Cybersécurité Offensive). Alpine a dépassé les prévisions de CA et de portefeuille clients.",
       "carouselDesc": "Entreprise de Cybersécurité (Andorre et Espagne) · CA 1,3M € · EBITDA 300k € · Rentabilité 18%",
       "highlights": ["Leader en cybersécurité en Andorre et Espagne", "50K+ endpoints protégés 24x7x365", "500+ incidents résolus avec succès", "Croissance supérieure aux prévisions", "Contrats récurrents consolidés", "Équipe technique avec 20 ans d'expérience"],

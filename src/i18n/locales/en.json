@@ -594,6 +594,7 @@
     },
     "alpine": {
       "title": "Alpine Security – Cybersecurity Company",
+      "gridTitle": "Cybersecurity Company",
       "description": "Leading cybersecurity company with operations in Andorra and Spain. Product/service portfolio: 1.3M in Contracts (86% Threat Hunting, 9% Consulting and 5% Offensive Cybersecurity). Alpine has exceeded revenue and client portfolio forecasts.",
       "carouselDesc": "Cybersecurity Company (Andorra and Spain) · Revenue €1.3M · EBITDA €300k · Profitability 18%",
       "highlights": ["Leader in cybersecurity in Andorra and Spain", "50K+ endpoints protected 24x7x365", "500+ incidents successfully resolved", "Growth exceeding forecasts", "Consolidated recurring contracts", "Technical team with 20 years of experience"],

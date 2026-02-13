@@ -61,6 +61,7 @@ const createBusinessData = () => [
   {
     id: 'alpine-security',
     titleKey: 'businesses.alpine.title',
+    gridTitleKey: 'businesses.alpine.gridTitle',
     descriptionKey: 'businesses.alpine.carouselDesc',
     sectorKey: 'sectors.technology',
     price: 2400000,
@@ -553,7 +554,7 @@ const ComprarNegocio = () => {
                     {/* Title Section */}
                     <div className="p-3 bg-card flex-1 flex flex-col">
                       <h3 className="font-serif text-base font-bold text-foreground line-clamp-2 leading-tight">
-                        {t(business.titleKey)}
+                        {t(business.gridTitleKey || business.titleKey)}
                       </h3>
                       {/* Mini description & highlights */}
                       <div className="mt-2 space-y-1.5">
