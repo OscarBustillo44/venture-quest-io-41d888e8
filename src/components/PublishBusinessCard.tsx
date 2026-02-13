@@ -112,7 +112,7 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
     return (
       <div 
         onClick={() => setIsEditing(true)}
-        className="relative h-[320px] rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-dashed border-amber-400/50 bg-gradient-to-br from-stone-800 to-stone-900 group"
+        className="relative min-h-[320px] h-full rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-dashed border-amber-400/50 bg-gradient-to-br from-stone-800 to-stone-900 group"
       >
         <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
           <div className="w-16 h-16 rounded-full bg-amber-500/20 flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
@@ -140,7 +140,7 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
 
   // Editing state - Interactive form
   return (
-    <div className="relative h-[320px] rounded-xl overflow-hidden shadow-md bg-gradient-to-br from-stone-800 to-stone-900 border border-amber-500/30">
+    <div className="relative min-h-[320px] h-full rounded-xl overflow-hidden shadow-md bg-gradient-to-br from-stone-800 to-stone-900 border border-amber-500/30">
       {/* Close button */}
       <button
         onClick={resetForm}
