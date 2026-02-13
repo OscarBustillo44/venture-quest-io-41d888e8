@@ -48,7 +48,7 @@ const createBusinessData = () => [
     price: 75000,
     priceDisplay: "75.000 €",
     profitability: 33,
-    financialDisplay: "Facturación Actual 240k · EBITDA 84k · Rentabilidad >38%",
+    financialDisplay: "Facturación 217.760 € · Obj. Fact. >260k € · EBITDA 83.449 € · Obj. EBITDA >120k € · Rentabilidad 38,3% · Obj. Rent. >66% · Obj. Valor Empresa 489k €",
     publishedDate: new Date('2024-12-01'),
     isConfidential: false,
     operationType: 'traspasar' as OperationType,
