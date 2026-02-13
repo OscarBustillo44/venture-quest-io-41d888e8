@@ -208,27 +208,27 @@ export const infinitypayPortfolioData = [
 
 // Confidencial Hostelería projection data
 export const confHosteleriaRevenueData = [
-  { year: 'n+1', revenue: 595.897 },
-  { year: 'n+2', revenue: 610.794 },
-  { year: 'n+3', revenue: 626.064 },
-  { year: 'n+4', revenue: 641.716 },
-  { year: 'n+5', revenue: 657.759 },
+  { year: 'n+1', revenue: 599 },
+  { year: 'n+2', revenue: 659 },
+  { year: 'n+3', revenue: 725 },
+  { year: 'n+4', revenue: 798 },
+  { year: 'n+5', revenue: 878 },
 ];
 
 export const confHosteleriaEbitdaData = [
-  { year: 'n+1', ebitda: 149.290 },
-  { year: 'n+2', ebitda: 149.357 },
-  { year: 'n+3', ebitda: 148.082 },
-  { year: 'n+4', ebitda: 146.651 },
-  { year: 'n+5', ebitda: 150.967 },
+  { year: 'n+1', ebitda: 122 },
+  { year: 'n+2', ebitda: 146 },
+  { year: 'n+3', ebitda: 172 },
+  { year: 'n+4', ebitda: 200 },
+  { year: 'n+5', ebitda: 237 },
 ];
 
 export const confHosteleriaProjectionData = [
-  { year: 'n+1', revenue: 595.897, ebitda: 149.290 },
-  { year: 'n+2', revenue: 610.794, ebitda: 149.357 },
-  { year: 'n+3', revenue: 626.064, ebitda: 148.082 },
-  { year: 'n+4', revenue: 641.716, ebitda: 146.651 },
-  { year: 'n+5', revenue: 657.759, ebitda: 150.967 },
+  { year: 'n+1', revenue: 599, ebitda: 122 },
+  { year: 'n+2', revenue: 659, ebitda: 146 },
+  { year: 'n+3', revenue: 725, ebitda: 172 },
+  { year: 'n+4', revenue: 798, ebitda: 200 },
+  { year: 'n+5', revenue: 878, ebitda: 237 },
 ];
 
 export const confHosteleriaPortfolioData = [
@@ -236,6 +236,41 @@ export const confHosteleriaPortfolioData = [
   { nameKey: 'businesses.confHosteleria.portfolio.carta', value: 35, amount: '48€/pp', color: '#D2691E' },
   { nameKey: 'businesses.confHosteleria.portfolio.eventos', value: 15, amount: '45k', color: '#CD853F' },
   { nameKey: 'businesses.confHosteleria.portfolio.llevar', value: 5, amount: '15k', color: '#DEB887' },
+];
+
+export const confHosteleriaPnLData = [
+  { concept: 'ventaNeta', n1: 599400, n2: 659340, n3: 725274, n4: 797801, n5: 877582 },
+  { concept: 'margeComercial', n1: 389610, n2: 428571, n3: 471428, n4: 518571, n5: 570428, pct: '65,0%' },
+  { concept: 'margeBrut', n1: 389610, n2: 428571, n3: 471428, n4: 518571, n5: 570428, pct: '65,0%' },
+  { concept: 'ebitda', n1: 121772, n2: 146463, n3: 172189, n4: 200329, n5: 236990, pct: '27,0%' },
+  { concept: 'amortitzacions', n1: -33000, n2: -33000, n3: -34603, n4: -36017, n5: -37337 },
+  { concept: 'ebit', n1: 88772, n2: 113463, n3: 137586, n4: 164312, n5: 199653, pct: '22,8%' },
+  { concept: 'ebt', n1: 88772, n2: 113463, n3: 137586, n4: 164312, n5: 199653, pct: '22,8%' },
+  { concept: 'is', n1: -8877, n2: -11346, n3: -13759, n4: -16431, n5: -19965 },
+  { concept: 'netProfit', n1: 79895, n2: 102117, n3: 123827, n4: 147881, n5: 179687, pct: '20,5%' },
+];
+
+export const confHosteleriaBalanceData = [
+  { concept: 'actiuFixe', n1: 142000, n2: 117500, n3: 90397, n4: 61380, n5: 30543 },
+  { concept: 'existencies', n1: 9813, n2: 10794, n3: 11873, n4: 13061, n5: 14367 },
+  { concept: 'deutors', n1: 3633, n2: 3997, n3: 4396, n4: 4836, n5: 5319 },
+  { concept: 'proveidors', n1: -53389, n2: -58728, n3: -64600, n4: -71060, n5: -78166 },
+  { concept: 'creditors', n1: -11309, n2: -12440, n3: -13684, n4: -15052, n5: -16557 },
+  { concept: 'nof', n1: -64186, n2: -70604, n3: -77665, n4: -85431, n5: -93975 },
+  { concept: 'actiuTotal', n1: 77814, n2: 46896, n3: 12732, n4: -24051, n5: -63432 },
+  { concept: 'patrimoniNet', n1: -3000, n2: -3000, n3: -3000, n4: -3000, n5: -3000 },
+  { concept: 'tesoreria', n1: -74814, n2: -43896, n3: -9732, n4: 27051, n5: 66432 },
+  { concept: 'pnPassiuTotal', n1: -77814, n2: -46896, n3: -12732, n4: 24051, n5: 63432 },
+];
+
+export const confHosteleriaValuationData = [
+  { concept: 'valorFluxos', value: 477751 },
+  { concept: 'valorResidual', value: 439403 },
+  { concept: 'totalValoracio', value: 917154, isHighlight: true },
+  { concept: 'deutaExterna', value: -74814, isNegative: true },
+  { concept: 'recursosNoAfectes', value: 66432 },
+  { concept: 'totalFondsPropis', value: 908771, isHighlight: true },
+  { concept: 'evEbitdaMultiple', value: 3.87, isRatio: true },
 ];
 
 // Restaurant Centro del País specific data
