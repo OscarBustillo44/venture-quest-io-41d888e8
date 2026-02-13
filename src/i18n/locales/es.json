@@ -114,6 +114,8 @@
     "confidentialLocation": "Ubicación confidencial",
     "labordaMiniDesc": "Restaurante Borda emblemático de Andorra, con cocina tradicional andorrana, en ambiente rústico y acogedor con chimenea. Clientela fiel y consolidada, y posibilidad de crecimiento con terraza exterior pendiente de explotar.",
     "labordaMiniHighlights": ["Restaurant Borda reconocido y con historia en Andorra", "Clientela fiel y consolidada", "Equipo que desea continuar", "Posibilidad terraza exterior", "Ubicación privilegiada", "Cocina tradicional reconocida"],
+    "restCentroMiniDesc": "Restaurante consolidado y reconocido, con clientela fiel y ubicación inmejorable cerca de Av. Meritxell, y con capacidad y recorrido de mejora hasta rentabilidades muy interesantes.",
+    "restCentroMiniHighlights": ["Clientela fiel y consolidada", "Ubicación privilegiada", "Cocina reconocida", "Terraza hasta ahora no explotada con grandes posibilidades"],
     "operationType": "Tipo de operación",
     "allOperations": "Todas las operaciones",
     "operationBuy": "Comprar",
