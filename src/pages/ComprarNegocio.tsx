@@ -611,6 +611,18 @@ const ComprarNegocio = () => {
         </div>
       </section>
 
+      {/* EBITDA explanation */}
+      <section className="py-6 bg-stone-100 border-t border-stone-200">
+        <div className="container mx-auto px-4">
+          <div className="flex items-start gap-3 max-w-3xl mx-auto">
+            <CheckCircle className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+            <p className="text-sm text-muted-foreground">
+              <strong>{t('buy.whatIsEbitda')}</strong> {t('buy.ebitdaExplanation')}
+            </p>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
