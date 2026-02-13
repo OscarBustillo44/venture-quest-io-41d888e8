@@ -282,29 +282,27 @@ export const confHosteleriaValuationData = [
 
 // Restaurant Centro del País specific data
 export const restaurantCentroRevenueData = [
-  { year: 'n0', revenue: 580 },
-  { year: 'n+1', revenue: 596 },
-  { year: 'n+2', revenue: 611 },
-  { year: 'n+3', revenue: 626 },
-  { year: 'n+4', revenue: 642 },
-  { year: 'n+5', revenue: 658 },
+  { year: 'n+1', revenue: 599 },
+  { year: 'n+2', revenue: 659 },
+  { year: 'n+3', revenue: 725 },
+  { year: 'n+4', revenue: 798 },
+  { year: 'n+5', revenue: 878 },
 ];
 
 export const restaurantCentroEbitdaData = [
-  { year: 'n0', ebitda: 148 },
-  { year: 'n+1', ebitda: 149 },
-  { year: 'n+2', ebitda: 149 },
-  { year: 'n+3', ebitda: 148 },
-  { year: 'n+4', ebitda: 147 },
-  { year: 'n+5', ebitda: 151 },
+  { year: 'n+1', ebitda: 122 },
+  { year: 'n+2', ebitda: 146 },
+  { year: 'n+3', ebitda: 172 },
+  { year: 'n+4', ebitda: 200 },
+  { year: 'n+5', ebitda: 237 },
 ];
 
 export const restaurantCentroProjectionData = [
-  { year: 'n+1', revenue: 596, ebitda: 149 },
-  { year: 'n+2', revenue: 611, ebitda: 149 },
-  { year: 'n+3', revenue: 626, ebitda: 148 },
-  { year: 'n+4', revenue: 642, ebitda: 147 },
-  { year: 'n+5', revenue: 658, ebitda: 151 },
+  { year: 'n+1', revenue: 599, ebitda: 122 },
+  { year: 'n+2', revenue: 659, ebitda: 146 },
+  { year: 'n+3', revenue: 725, ebitda: 172 },
+  { year: 'n+4', revenue: 798, ebitda: 200 },
+  { year: 'n+5', revenue: 878, ebitda: 237 },
 ];
 
 export const restaurantCentroPortfolioData = [
@@ -580,12 +578,11 @@ export const businessesData: Record<string, Business> = {
     highlightsKey: 'businesses.confRestaurantCentro.highlights',
     images: [restCentroTerraza1, restCentroTerraza2, restCentroInteriorBarra, restCentroComedor1, restCentroComedor2, restCentroCocina1, restCentroCocina2],
     financialData: [
-      { year: 'n0', revenue: 580, ebitda: 148 },
-      { year: 'n+1', revenue: 596, ebitda: 149 },
-      { year: 'n+2', revenue: 611, ebitda: 149 },
-      { year: 'n+3', revenue: 626, ebitda: 148 },
-      { year: 'n+4', revenue: 642, ebitda: 147 },
-      { year: 'n+5', revenue: 658, ebitda: 151 },
+      { year: 'n+1', revenue: 599, ebitda: 122 },
+      { year: 'n+2', revenue: 659, ebitda: 146 },
+      { year: 'n+3', revenue: 725, ebitda: 172 },
+      { year: 'n+4', revenue: 798, ebitda: 200 },
+      { year: 'n+5', revenue: 878, ebitda: 237 },
     ]
   }
 };

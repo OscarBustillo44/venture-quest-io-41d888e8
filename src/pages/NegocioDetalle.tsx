@@ -1038,7 +1038,7 @@ const NegocioDetalle = () => {
                       <AreaChart data={restaurantCentroRevenueData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
                         <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
-                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 800]} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 1000]} />
                         <Tooltip 
                           contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
                           formatter={(value: number) => [`${value}k €`, t('detail.revenue')]}
@@ -1061,7 +1061,7 @@ const NegocioDetalle = () => {
                       <BarChart data={restaurantCentroEbitdaData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
                         <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
-                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 200]} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 260]} />
                         <Tooltip 
                           contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
                           formatter={(value: number) => [`${value}k €`, 'EBITDA']}
@@ -1078,7 +1078,7 @@ const NegocioDetalle = () => {
                       <BarChart data={restaurantCentroProjectionData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
                         <XAxis dataKey="year" tick={{ fill: '#78716c' }} />
-                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 800]} />
+                        <YAxis tick={{ fill: '#78716c' }} domain={[0, 1000]} />
                         <Tooltip 
                           contentStyle={{ backgroundColor: '#fafaf9', border: '1px solid #d6d3d1', borderRadius: '8px' }}
                         />
