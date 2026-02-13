@@ -54,6 +54,7 @@ import {
   restaurantCentroBalanceData,
   restaurantCentroValuationData,
   confServiciosDCFData,
+  confServiciosValuationData,
 } from '@/data/businesses';
 
 const NegocioDetalle = () => {
@@ -1662,6 +1663,36 @@ const NegocioDetalle = () => {
                                   </td>
                                 );
                               })}
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                  {/* Valuation Table */}
+                  <h4 className="text-sm font-semibold text-stone-700 mb-3 mt-8 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-amber-600" />
+                    {t('detail.valuation.title')}
+                  </h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b-2 border-stone-300 bg-stone-100">
+                          <th className="text-left py-2 px-3 font-semibold text-stone-700">{t('detail.economicSummary.concept')}</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">(€)</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-100">
+                        {confServiciosValuationData.map((row) => {
+                          const fmt = (v: number) => v < 0 ? `(${Math.abs(v).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })})` : v.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                          return (
+                            <tr key={row.concept} className={row.isHighlight ? (row.isOrange ? 'bg-orange-100 font-bold' : 'bg-amber-50/50 font-bold') : 'hover:bg-stone-50'}>
+                              <td className={`py-2 px-3 ${row.isHighlight ? 'text-stone-800' : 'text-stone-600'}`}>
+                                {row.label}
+                              </td>
+                              <td className={`py-2 px-3 text-right ${row.isNegative ? 'text-red-600' : ''} ${row.isOrange ? 'text-orange-700 font-bold' : ''} ${row.isHighlight && !row.isOrange ? 'text-stone-800' : ''}`}>
+                                {row.isNegative ? fmt(row.value) : fmt(row.value)}
+                              </td>
                             </tr>
                           );
                         })}
