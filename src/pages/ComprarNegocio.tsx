@@ -579,8 +579,8 @@ const ComprarNegocio = () => {
               )}
               
               {filteredAndSortedBusinesses.map((business) => (
-                <Link to={`/negocio/${business.id}`} key={business.id}>
-                  <div className="rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card">
+                <Link to={`/negocio/${business.id}`} key={business.id} className="flex">
+                  <div className="rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card flex flex-col h-full">
                     {/* Image Section */}
                     <div className="relative h-[180px] overflow-hidden bg-stone-800">
                       <img
@@ -618,7 +618,7 @@ const ComprarNegocio = () => {
                     </div>
                     
                     {/* Title Section */}
-                    <div className="p-3 bg-card">
+                    <div className="p-3 bg-card flex-1 flex flex-col">
                       <h3 className="font-serif text-base font-bold text-foreground line-clamp-2 leading-tight">
                         {t(business.titleKey)}
                       </h3>
@@ -639,7 +639,7 @@ const ComprarNegocio = () => {
                     </div>
                     
                     {/* Financial Info - Orange Background */}
-                    <div className="bg-amber-600 text-white p-3">
+                    <div className="bg-amber-600 text-white p-3 mt-auto">
                       <p className="text-xs leading-relaxed">
                         {business.financialDisplay || `Facturación ${business.priceDisplay} · EBITDA ${Math.round(business.price * 0.25).toLocaleString('es-ES')} € · Rentabilidad ${business.profitability}%`}
                       </p>
