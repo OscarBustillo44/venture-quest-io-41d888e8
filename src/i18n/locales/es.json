@@ -594,6 +594,7 @@
     },
     "alpine": {
       "title": "Alpine Security – Empresa de Ciberseguridad",
+      "gridTitle": "Empresa de Ciberseguridad",
       "description": "Empresa líder en ciberseguridad con operaciones en Andorra y España. Portfolio de productos/servicios: 1.3Mio en Contratos (86% Threat Hunting, 9% Consultoría y 5% Ciberseguridad Ofensiva). Alpine ha superado las previsiones de facturación y cartera de clientes.",
       "carouselDesc": "Empresa de Ciberseguridad (Andorra y España) · Facturación 1,3M € · EBITDA 300k € · Rentabilidad 18%",
       "highlights": ["Líder en ciberseguridad en Andorra y España", "50K+ endpoints protegidos 24x7x365", "500+ incidentes resueltos satisfactoriamente", "Crecimiento superior a previsiones", "Contratos recurrentes consolidados", "Equipo técnico con 20 años de experiencia"],
