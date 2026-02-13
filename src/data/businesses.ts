@@ -67,26 +67,40 @@ export const labordaKPIs = [
 ];
 
 export const labordaRevenueData = [
-  { year: 'n0', revenue: 242 },
-  { year: 'n+1', revenue: 248 },
-  { year: 'n+2', revenue: 254 },
-  { year: 'n+3', revenue: 261 },
-  { year: 'n+4', revenue: 267 },
+  { year: 'n0', revenue: 218 },
+  { year: 'n+1', revenue: 223 },
+  { year: 'n+2', revenue: 229 },
+  { year: 'n+3', revenue: 235 },
+  { year: 'n+4', revenue: 240 },
 ];
 
 export const labordaEbitdaData = [
-  { year: 'n0', ebitda: 100 },
-  { year: 'n+1', ebitda: 101 },
-  { year: 'n+2', ebitda: 102 },
-  { year: 'n+3', ebitda: 102 },
-  { year: 'n+4', ebitda: 104 },
+  { year: 'n0', ebitda: 83 },
+  { year: 'n+1', ebitda: 84 },
+  { year: 'n+2', ebitda: 84 },
+  { year: 'n+3', ebitda: 85 },
+  { year: 'n+4', ebitda: 86 },
 ];
 
 export const labordaProjectionData = [
-  { year: 'n+1', revenue: 248, ebitda: 101 },
-  { year: 'n+2', revenue: 254, ebitda: 102 },
-  { year: 'n+3', revenue: 261, ebitda: 102 },
-  { year: 'n+4', revenue: 267, ebitda: 104 },
+  { year: 'n0', revenue: 218, ebitda: 83 },
+  { year: 'n+1', revenue: 223, ebitda: 84 },
+  { year: 'n+2', revenue: 229, ebitda: 84 },
+  { year: 'n+3', revenue: 235, ebitda: 85 },
+  { year: 'n+4', revenue: 240, ebitda: 86 },
+];
+
+export const labordaPnLData = [
+  { concept: 'ventaNeta', n0: 217760, n1: 223204, n2: 228785, n3: 234504, n4: 240367 },
+  { concept: 'cogs', n0: -65328, n1: -66961, n2: -68635, n3: -70351, n4: -72110 },
+  { concept: 'margeBrut', n0: 152432, n1: 156243, n2: 160149, n3: 164153, n4: 168257, pct: '70,0%' },
+  { concept: 'personal', n0: -58800, n1: -60270, n2: -61777, n3: -63321, n4: -63321 },
+  { concept: 'opex', n0: -238, n1: -467, n2: -708, n3: -960, n4: -1224 },
+  { concept: 'lloguer', n0: -9600, n1: -10956, n2: -12374, n3: -13856, n4: -15404 },
+  { concept: 'ebitda', n0: 83449, n1: 84196, n2: 84471, n3: 84706, n4: 86484, pct: '38,3%' },
+  { concept: 'amortitzacions', n0: -17000, n1: -17000, n2: -18521, n3: -19863, n4: -21116 },
+  { concept: 'ebit', n0: 66449, n1: 67196, n2: 65950, n3: 64843, n4: 65368, pct: '30,5%' },
+  { concept: 'netProfit', n0: 71778, n1: 73102, n2: 72254, n3: 71328, n4: 71905, pct: '33,0%' },
 ];
 
 export const labordaPortfolioData = [
@@ -234,20 +248,20 @@ export const businessesData: Record<string, Business> = {
     location: 'La Massana, Andorra',
     coordinates: { lat: 42.545013, lng: 1.515326 },
     price: '75.000 €',
-    revenue: '241.956 €',
-    ebitda: '100.386 €',
-    profitability: '41%',
+    revenue: '217.760 €',
+    ebitda: '83.449 €',
+    profitability: '38,3%',
     employees: '2',
     yearsOperating: '45+',
     descriptionKey: 'businesses.laborda.description',
     highlightsKey: 'businesses.laborda.highlights',
     images: [labordaFachada, labordaInterior, labordaProducte, labordaTerrassa, labordaCollage, labordaFacturacio],
     financialData: [
-      { year: 'n0', revenue: 242, ebitda: 100 },
-      { year: 'n+1', revenue: 248, ebitda: 101 },
-      { year: 'n+2', revenue: 254, ebitda: 102 },
-      { year: 'n+3', revenue: 261, ebitda: 102 },
-      { year: 'n+4', revenue: 267, ebitda: 104 },
+      { year: 'n0', revenue: 218, ebitda: 83 },
+      { year: 'n+1', revenue: 223, ebitda: 84 },
+      { year: 'n+2', revenue: 229, ebitda: 84 },
+      { year: 'n+3', revenue: 235, ebitda: 85 },
+      { year: 'n+4', revenue: 240, ebitda: 86 },
     ]
   },
   'alpine-security': {
