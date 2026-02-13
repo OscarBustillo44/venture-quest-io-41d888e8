@@ -171,6 +171,19 @@
       "ebit": "EBIT",
       "netProfit": "Benefici Net"
     },
+    "balance": {
+      "title": "Balanç Patrimonial Projectat",
+      "actiuFixe": "Actiu fix net",
+      "existencies": "Existències",
+      "deutors": "Deutors",
+      "proveidors": "Proveïdors",
+      "creditors": "Creditors",
+      "nof": "Necessitats Operatives de Fons (NOF)",
+      "actiuTotal": "Actiu Total",
+      "patrimoniNet": "Patrimoni Net",
+      "tesoreria": "Tresoreria",
+      "pnPassiuTotal": "PN + Passiu Total"
+    },
     "revenue": "Facturació",
     "ebitda": "EBITDA",
     "profitability": "Rendibilitat",

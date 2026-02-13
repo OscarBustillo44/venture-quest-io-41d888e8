@@ -103,6 +103,20 @@ export const labordaPnLData = [
   { concept: 'netProfit', n0: 71778, n1: 73102, n2: 72254, n3: 71328, n4: 71905, pct: '33,0%' },
 ];
 
+export const labordaBalanceData = [
+  { concept: 'actiuFixe', n0: 78000, n1: 69500, n2: 58479, n3: 45616, n4: 31000 },
+  { concept: 'existencies', n0: 3056, n1: 3132, n2: 3210, n3: 3291, n4: 3373 },
+  { concept: 'deutors', n0: 1320, n1: 1353, n2: 1387, n3: 1421, n4: 1457 },
+  { concept: 'proveidors', n0: -8313, n1: -8520, n2: -8733, n3: -8952, n4: -9176 },
+  { concept: 'creditors', n0: -4109, n1: -4211, n2: -4317, n3: -4424, n4: -4535 },
+  { concept: 'nof', n0: -12732, n1: -13051, n2: -13377, n3: -13711, n4: -14054 },
+  { concept: 'actiuTotal', n0: 65268, n1: 56449, n2: 45102, n3: 31904, n4: 16946 },
+  { concept: 'patrimoniNet', n0: -3000, n1: -3000, n2: -3000, n3: -3000, n4: -3000 },
+  { concept: 'tesoreria', n0: -68379, n1: -53449, n2: -42102, n3: -28904, n4: -13946 },
+  { concept: 'pnPassiuTotal', n0: -71379, n1: -56449, n2: -45102, n3: -31904, n4: -16946 },
+];
+
+
 export const labordaPortfolioData = [
   { nameKey: 'businesses.laborda.portfolio.menu', value: 45, amount: '37€/pp', color: '#8B4513' },
   { nameKey: 'businesses.laborda.portfolio.carta', value: 35, amount: '48€/pp', color: '#D2691E' },

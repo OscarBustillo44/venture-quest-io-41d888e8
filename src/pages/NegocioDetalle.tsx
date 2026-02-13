@@ -23,6 +23,7 @@ import {
   labordaProjectionData,
   labordaPortfolioData,
   labordaPnLData,
+  labordaBalanceData,
   alpineKPIs,
   alpineRevenueData,
   alpineEbitdaData,
@@ -363,6 +364,44 @@ const NegocioDetalle = () => {
                               <td className={`py-2 px-3 ${isHighlight ? 'text-stone-800' : 'text-stone-600'}`}>
                                 {t(`detail.pnl.${row.concept}`)}
                                 {row.pct && <span className="text-stone-400 ml-1">({row.pct})</span>}
+                              </td>
+                              <td className={`py-2 px-3 text-right ${row.n0 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n0)}</td>
+                              <td className={`py-2 px-3 text-right ${row.n1 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n1)}</td>
+                              <td className={`py-2 px-3 text-right ${row.n2 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n2)}</td>
+                              <td className={`py-2 px-3 text-right ${row.n3 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n3)}</td>
+                              <td className={`py-2 px-3 text-right ${row.n4 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n4)}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Balance Sheet Table */}
+                  <h4 className="text-sm font-semibold text-stone-700 mb-3 mt-8 flex items-center gap-2">
+                    <Building2 className="w-4 h-4 text-amber-600" />
+                    {t('detail.balance.title')}
+                  </h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b-2 border-stone-300 bg-stone-100">
+                          <th className="text-left py-2 px-3 font-semibold text-stone-700">{'(€)'}</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">n0</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">n+1</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">n+2</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">n+3</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">n+4</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-100">
+                        {labordaBalanceData.map((row) => {
+                          const isHighlight = ['actiuTotal', 'nof', 'pnPassiuTotal'].includes(row.concept);
+                          const fmt = (v: number) => v.toLocaleString('es-ES');
+                          return (
+                            <tr key={row.concept} className={isHighlight ? 'bg-amber-50/50 font-semibold' : 'hover:bg-stone-50'}>
+                              <td className={`py-2 px-3 ${isHighlight ? 'text-stone-800' : 'text-stone-600'}`}>
+                                {t(`detail.balance.${row.concept}`)}
                               </td>
                               <td className={`py-2 px-3 text-right ${row.n0 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n0)}</td>
                               <td className={`py-2 px-3 text-right ${row.n1 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n1)}</td>

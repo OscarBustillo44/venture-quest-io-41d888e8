@@ -171,6 +171,19 @@
       "ebit": "EBIT",
       "netProfit": "Beneficio Neto"
     },
+    "balance": {
+      "title": "Balance Patrimonial Proyectado",
+      "actiuFixe": "Activo fijo neto",
+      "existencies": "Existencias",
+      "deutors": "Deudores",
+      "proveidors": "Proveedores",
+      "creditors": "Acreedores",
+      "nof": "Necesidades Operativas de Fondos (NOF)",
+      "actiuTotal": "Activo Total",
+      "patrimoniNet": "Patrimonio Neto",
+      "tesoreria": "Tesorería",
+      "pnPassiuTotal": "PN + Pasivo Total"
+    },
     "revenue": "Facturación",
     "ebitda": "EBITDA",
     "profitability": "Rentabilidad",
