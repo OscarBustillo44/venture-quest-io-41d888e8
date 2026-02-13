@@ -52,7 +52,9 @@ const createBusinessData = () => [
     publishedDate: new Date('2024-12-01'),
     isConfidential: false,
     operationType: 'traspasar' as OperationType,
-    image: carouselSlides.find(s => s.id === 'la-borda')?.image || ''
+    image: carouselSlides.find(s => s.id === 'la-borda')?.image || '',
+    miniDescKey: 'buy.labordaMiniDesc',
+    miniHighlightsKey: 'buy.labordaMiniHighlights',
   },
   {
     id: 'alpine-security',
@@ -65,7 +67,9 @@ const createBusinessData = () => [
     publishedDate: new Date('2025-01-10'),
     isConfidential: false,
     operationType: 'participar' as OperationType,
-    image: carouselSlides.find(s => s.id === 'alpine-security')?.image || ''
+    image: carouselSlides.find(s => s.id === 'alpine-security')?.image || '',
+    miniDescKey: 'buy.alpineMiniDesc',
+    miniHighlightsKey: 'buy.alpineMiniHighlights',
   },
   {
     id: 'infinitypay',
@@ -78,7 +82,9 @@ const createBusinessData = () => [
     publishedDate: new Date('2025-01-15'),
     isConfidential: false,
     operationType: 'vender' as OperationType,
-    image: carouselSlides.find(s => s.id === 'infinitypay')?.image || ''
+    image: carouselSlides.find(s => s.id === 'infinitypay')?.image || '',
+    miniDescKey: 'buy.infinitypayMiniDesc',
+    miniHighlightsKey: 'buy.infinitypayMiniHighlights',
   },
   {
     id: 'confidencial-hosteleria',
@@ -91,7 +97,9 @@ const createBusinessData = () => [
     publishedDate: new Date('2025-01-20'),
     isConfidential: true,
     operationType: 'traspasar' as OperationType,
-    image: carouselSlides.find(s => s.id === 'confidencial-hosteleria')?.image || ''
+    image: carouselSlides.find(s => s.id === 'confidencial-hosteleria')?.image || '',
+    miniDescKey: 'buy.confHostMiniDesc',
+    miniHighlightsKey: 'buy.confHostMiniHighlights',
   },
   {
     id: 'confidencial-comercio',
@@ -104,7 +112,9 @@ const createBusinessData = () => [
     publishedDate: new Date('2025-01-22'),
     isConfidential: true,
     operationType: 'vender' as OperationType,
-    image: carouselSlides.find(s => s.id === 'confidencial-comercio')?.image || ''
+    image: carouselSlides.find(s => s.id === 'confidencial-comercio')?.image || '',
+    miniDescKey: 'buy.confComMiniDesc',
+    miniHighlightsKey: 'buy.confComMiniHighlights',
   },
   {
     id: 'confidencial-servicios',
@@ -117,7 +127,9 @@ const createBusinessData = () => [
     publishedDate: new Date('2025-01-23'),
     isConfidential: true,
     operationType: 'vender' as OperationType,
-    image: carouselSlides.find(s => s.id === 'confidencial-servicios')?.image || ''
+    image: carouselSlides.find(s => s.id === 'confidencial-servicios')?.image || '',
+    miniDescKey: 'buy.confServMiniDesc',
+    miniHighlightsKey: 'buy.confServMiniHighlights',
   },
   {
     id: 'confidencial-industria',
@@ -130,7 +142,9 @@ const createBusinessData = () => [
     publishedDate: new Date('2025-01-24'),
     isConfidential: true,
     operationType: 'participar' as OperationType,
-    image: carouselSlides.find(s => s.id === 'confidencial-industria')?.image || ''
+    image: carouselSlides.find(s => s.id === 'confidencial-industria')?.image || '',
+    miniDescKey: 'buy.confIndMiniDesc',
+    miniHighlightsKey: 'buy.confIndMiniHighlights',
   },
   {
     id: 'confidencial-tecnologia',
@@ -143,7 +157,9 @@ const createBusinessData = () => [
     publishedDate: new Date('2025-01-26'),
     isConfidential: true,
     operationType: 'participar' as OperationType,
-    image: carouselSlides.find(s => s.id === 'confidencial-tecnologia')?.image || ''
+    image: carouselSlides.find(s => s.id === 'confidencial-tecnologia')?.image || '',
+    miniDescKey: 'buy.confTechMiniDesc',
+    miniHighlightsKey: 'buy.confTechMiniHighlights',
   },
   {
     id: 'confidencial-restaurant-centro',
@@ -156,7 +172,9 @@ const createBusinessData = () => [
     publishedDate: new Date('2025-02-09'),
     isConfidential: false,
     operationType: 'vender' as OperationType,
-    image: carouselSlides.find(s => s.id === 'confidencial-restaurant-centro')?.image || ''
+    image: carouselSlides.find(s => s.id === 'confidencial-restaurant-centro')?.image || '',
+    miniDescKey: 'buy.restCentroMiniDesc',
+    miniHighlightsKey: 'buy.restCentroMiniHighlights',
   }
 ];
 
@@ -558,16 +576,14 @@ const ComprarNegocio = () => {
                       <img
                         src={business.image}
                         alt={t(business.titleKey)}
-                        className={`w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105 ${['la-borda', 'confidencial-restaurant-centro'].includes(business.id) ? 'blur-md scale-110' : ''}`}
+                        className="w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105 blur-md scale-110"
                       />
                       
                       {/* Confidential overlay */}
-                      {['la-borda', 'confidencial-restaurant-centro'].includes(business.id) && (
-                        <div className="absolute inset-0 bg-stone-900/40 flex flex-col items-center justify-center">
-                          <Lock className="w-8 h-8 text-amber-500 mb-2" />
-                          <span className="text-stone-200 text-sm font-medium">{t('buy.confidentialLocation')}</span>
-                        </div>
-                      )}
+                      <div className="absolute inset-0 bg-stone-900/40 flex flex-col items-center justify-center">
+                        <Lock className="w-8 h-8 text-amber-500 mb-2" />
+                        <span className="text-stone-200 text-sm font-medium">{t('buy.confidentialLocation')}</span>
+                      </div>
                       
                       {/* Sector Badge */}
                       <div className="absolute top-3 left-3 bg-stone-800/90 text-white px-2 py-1 rounded text-xs font-medium z-10">
@@ -592,21 +608,19 @@ const ComprarNegocio = () => {
                         {t(business.titleKey)}
                       </h3>
                       {/* Mini description & highlights */}
-                      {['la-borda', 'confidencial-restaurant-centro'].includes(business.id) && (
-                        <div className="mt-2 space-y-1.5">
-                          <p className="text-[11px] text-muted-foreground leading-snug">
-                            {t(`buy.${business.id === 'la-borda' ? 'laborda' : 'restCentro'}MiniDesc`)}
-                          </p>
-                          <ul className="text-[10px] text-muted-foreground space-y-0.5">
-                            {(t(`buy.${business.id === 'la-borda' ? 'laborda' : 'restCentro'}MiniHighlights`, { returnObjects: true }) as string[]).map((h: string, i: number) => (
-                              <li key={i} className="flex items-start gap-1">
-                                <span className="text-amber-600 mt-px">•</span>
-                                <span>{h}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
+                      <div className="mt-2 space-y-1.5">
+                        <p className="text-[11px] text-muted-foreground leading-snug">
+                          {t(business.miniDescKey)}
+                        </p>
+                        <ul className="text-[10px] text-muted-foreground space-y-0.5">
+                          {(t(business.miniHighlightsKey, { returnObjects: true }) as string[]).map((h: string, i: number) => (
+                            <li key={i} className="flex items-start gap-1">
+                              <span className="text-amber-600 mt-px">•</span>
+                              <span>{h}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                     
                     {/* Financial Info - Orange Background */}
