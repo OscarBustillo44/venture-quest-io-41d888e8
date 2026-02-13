@@ -26,6 +26,7 @@ const sectorKeys = [
   { key: 'sectors.industry', value: 'Industria' },
   { key: 'sectors.technology', value: 'Tecnología' },
   { key: 'sectors.fintech', value: 'Fintech' },
+  { key: 'publish.other', value: 'Otros' },
 ];
 
 // Create business data from carousel slides with additional fields for filtering
@@ -204,6 +205,7 @@ const ComprarNegocio = () => {
     { value: "vender", labelKey: 'buy.operationSell' },
     { value: "traspasar", labelKey: 'buy.operationTransfer' },
     { value: "participar", labelKey: 'buy.operationInvest' },
+    { value: "otros", labelKey: 'publish.other' },
   ];
 
   const allBusinesses = useMemo(() => createBusinessData(), []);
@@ -222,6 +224,7 @@ const ComprarNegocio = () => {
     { value: "andorra", label: t('buy.locationAndorra') },
     { value: "intl-andorra", label: t('buy.locationIntlAndorra') },
     { value: "intl-spain", label: t('buy.locationIntlSpain') },
+    { value: "otros", label: t('publish.other') },
   ];
 
   const profitabilityOptions = [
