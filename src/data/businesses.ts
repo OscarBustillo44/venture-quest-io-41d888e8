@@ -208,6 +208,44 @@ export const alpinePnLData = [
   { concept: 'netProfit', y2025: 142, y2026: 404, y2027: 539, y2028: 762, y2029: 1026 },
 ];
 
+// Alpine Security Balance Sheet data (000's €)
+export const alpineBalanceData = [
+  { concept: 'immobilitzatIntangible', y2025: 211, y2026: 316, y2027: 335, y2028: 360, y2029: 386 },
+  { concept: 'immobilitzatTangible', y2025: 11, y2026: 11, y2027: 12, y2028: 14, y2029: 15 },
+  { concept: 'totalImmobilitzatNet', y2025: 223, y2026: 243, y2027: 272, y2028: 292, y2029: 309 },
+  { concept: 'inversioFinancera', y2025: 1, y2026: 1, y2027: 1, y2028: 1, y2029: 1 },
+  { concept: 'actiuFixe', y2025: 223, y2026: 244, y2027: 273, y2028: 292, y2029: 310 },
+  { concept: 'deutors', y2025: 732, y2026: 1371, y2027: 1705, y2028: 2038, y2029: 2448 },
+  { concept: 'creditors', y2025: -60, y2026: -134, y2027: -183, y2028: -203, y2029: -242 },
+  { concept: 'hisendaPublica', y2025: 0, y2026: 0, y2027: 0, y2028: 0, y2029: 0 },
+  { concept: 'nof', y2025: 672, y2026: 1237, y2027: 1521, y2028: 1835, y2029: 2206 },
+  { concept: 'actiuTotal', y2025: 895, y2026: 1481, y2027: 1794, y2028: 2127, y2029: 2516 },
+  { concept: 'capital', y2025: -6, y2026: -6, y2027: -6, y2028: -6, y2029: -6 },
+  { concept: 'reserves', y2025: -611, y2026: -1014, y2027: -1553, y2028: -2315, y2029: -3342 },
+  { concept: 'patrimoniNet', y2025: -617, y2026: -1020, y2027: -1559, y2028: -2321, y2029: -3348 },
+  { concept: 'deuteGrup', y2025: -287, y2026: -272, y2027: -259, y2028: -246, y2029: -234 },
+  { concept: 'deuteBancari', y2025: -116, y2026: -111, y2027: -105, y2028: -100, y2029: -95 },
+  { concept: 'provisionsLlt', y2025: 0, y2026: 0, y2027: 0, y2028: 0, y2029: 0 },
+  { concept: 'subvencions', y2025: 0, y2026: 0, y2027: 0, y2028: 0, y2029: 0 },
+  { concept: 'tesoreria', y2025: 125, y2026: -77, y2027: 129, y2028: 540, y2029: 1160 },
+  { concept: 'deuteFN', y2025: -278, y2026: -460, y2027: -235, y2028: 195, y2029: 832 },
+  { concept: 'pnPassiuTotal', y2025: -895, y2026: -1481, y2027: -1794, y2028: -2127, y2029: -2516 },
+];
+
+// Alpine Security KPI Metrics data
+export const alpineKpiMetricsData = [
+  { concept: 'horasFact', y2025: '9.343', y2026: '16.977', y2027: '20.703', y2028: '24.432', y2029: '28.162' },
+  { concept: 'avgPricePerHour', y2025: '123', y2026: '127', y2027: '129', y2028: '131', y2029: '136' },
+  { concept: 'totalNumEndpoint', y2025: '32.340', y2026: '54.261', y2027: '67.472', y2028: '80.477', y2029: '96.881' },
+  { concept: 'factEndpointMonth', y2025: '2,85', y2026: '2,85', y2027: '2,85', y2028: '2,85', y2029: '2,85' },
+  { concept: 'opexSobreVendes', y2025: '19,5%', y2026: '18,1%', y2027: '19,4%', y2028: '16,8%', y2029: '16,1%' },
+  { concept: 'despesesPersonalSobreVendes', y2025: '60,9%', y2026: '52,3%', y2027: '49,0%', y2028: '47,0%', y2029: '44,3%' },
+  { concept: 'fte', y2025: '9,00', y2026: '16,00', y2027: '19,00', y2028: '22,00', y2029: '25,00' },
+  { concept: 'costMigEmpleat', y2025: '78', y2026: '70', y2027: '69', y2028: '68', y2029: '68' },
+  { concept: 'ingressosEmpleat', y2025: '128', y2026: '134', y2027: '141', y2028: '145', y2029: '154' },
+  { concept: 'ebitdaSobreVendes', y2025: '19,7%', y2026: '24,6%', y2027: '25,6%', y2028: '29,5%', y2029: '32,4%' },
+];
+
 // InfinityPay specific data
 export const infinitypayKPIs = [
   { valueKey: 'businesses.infinitypay.kpis.recurrence.value', labelKey: 'businesses.infinitypay.kpis.recurrence.label' },
