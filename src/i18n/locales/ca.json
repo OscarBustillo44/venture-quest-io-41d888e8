@@ -498,7 +498,8 @@
     "descriptionPlaceholder": "Breu descripció...",
     "submit": "Publicar anunci",
     "submitting": "Publicant...",
-    "fullFormLink": "Necessites més opcions? Utilitza el formulari complet"
+    "fullFormLink": "Necessites més opcions? Utilitza el formulari complet",
+    "other": "Altres"
   },
   "common": {
     "years": "anys",

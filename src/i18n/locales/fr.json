@@ -498,7 +498,8 @@
     "descriptionPlaceholder": "Brève description...",
     "submit": "Publier l'annonce",
     "submitting": "Publication...",
-    "fullFormLink": "Besoin de plus d'options? Utilisez le formulaire complet"
+    "fullFormLink": "Besoin de plus d'options? Utilisez le formulaire complet",
+    "other": "Autre"
   },
   "common": {
     "years": "ans",

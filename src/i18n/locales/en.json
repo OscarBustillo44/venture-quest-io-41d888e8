@@ -498,7 +498,8 @@
     "descriptionPlaceholder": "Brief description...",
     "submit": "Publish listing",
     "submitting": "Publishing...",
-    "fullFormLink": "Need more options? Use the complete form"
+    "fullFormLink": "Need more options? Use the complete form",
+    "other": "Other"
   },
   "common": {
     "years": "years",
