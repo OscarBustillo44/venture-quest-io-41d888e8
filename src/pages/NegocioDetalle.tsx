@@ -804,64 +804,6 @@ const NegocioDetalle = () => {
                   <p className="text-sm text-stone-500">{t('detail.economicSummary.subtitle')}</p>
                 </CardHeader>
                 <CardContent>
-                  {/* Key metrics summary */}
-                  <div className="overflow-x-auto mb-8">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b-2 border-blue-300">
-                          <th className="text-left py-3 px-4 font-semibold text-stone-700">{t('detail.economicSummary.concept')}</th>
-                          <th className="text-right py-3 px-4 font-semibold text-stone-700">{t('detail.economicSummary.value')}</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-stone-200">
-                        <tr className="hover:bg-blue-50/50">
-                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.annualRevenue')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">310.000 €</td>
-                        </tr>
-                        <tr className="hover:bg-blue-50/50">
-                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.operatingProfit')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">160.000 €</td>
-                        </tr>
-                        <tr className="hover:bg-blue-50/50">
-                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.profitMargin')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-blue-700">52,0%</td>
-                        </tr>
-                        <tr className="hover:bg-blue-50/50">
-                          <td className="py-3 px-4 text-stone-600">{t('detail.pnl.netProfit')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">123.000 €</td>
-                        </tr>
-                        <tr className="hover:bg-blue-50/50 bg-blue-50/30">
-                          <td className="py-3 px-4 text-stone-600 font-medium">{t('detail.economicSummary.askingPrice')}</td>
-                          <td className="py-3 px-4 text-right font-bold text-blue-700 text-base">1.084.964 €</td>
-                        </tr>
-                        <tr className="hover:bg-blue-50/50">
-                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.employeesCount')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">12</td>
-                        </tr>
-                        <tr className="hover:bg-blue-50/50">
-                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.businessAge')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">5 años</td>
-                        </tr>
-                        <tr className="hover:bg-blue-50/50">
-                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.location')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">Andorra</td>
-                        </tr>
-                        <tr className="hover:bg-blue-50/50">
-                          <td className="py-3 px-4 text-amber-400 font-medium">{t('detail.targetRevenue')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-amber-400">&gt;500k €</td>
-                        </tr>
-                        <tr className="hover:bg-blue-50/50">
-                          <td className="py-3 px-4 text-amber-400 font-medium">{t('detail.targetEbitda')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-amber-400">&gt;250k €</td>
-                        </tr>
-                        <tr className="hover:bg-blue-50/50">
-                          <td className="py-3 px-4 text-amber-400 font-medium">{t('detail.economicSummary.projectedGrowth')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-amber-400">467k € / 243k € EBITDA</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-
                   {/* P&L Table */}
                   <h4 className="text-sm font-semibold text-stone-700 mb-3 flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-blue-600" />
