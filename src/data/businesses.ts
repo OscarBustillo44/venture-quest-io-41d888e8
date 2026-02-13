@@ -593,7 +593,7 @@ export const businessesData: Record<string, Business> = {
     titleKey: 'businesses.confCommerce.title',
     sectorKey: 'sectors.realEstate',
     location: 'Andorra',
-    price: '320.000 €',
+    price: '475.000 €',
     revenue: '110k €',
     ebitda: '35k €',
     profitability: '6%',
