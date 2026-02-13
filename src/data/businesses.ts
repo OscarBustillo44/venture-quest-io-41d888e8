@@ -286,7 +286,7 @@ export const restaurantCentroRevenueData = [
   { year: 'n+2', revenue: 659 },
   { year: 'n+3', revenue: 725 },
   { year: 'n+4', revenue: 798 },
-  { year: 'n+5', revenue: 878 },
+  { year: 'n+5', revenue: 877 },
 ];
 
 export const restaurantCentroEbitdaData = [
@@ -302,7 +302,7 @@ export const restaurantCentroProjectionData = [
   { year: 'n+2', revenue: 659, ebitda: 146 },
   { year: 'n+3', revenue: 725, ebitda: 172 },
   { year: 'n+4', revenue: 798, ebitda: 200 },
-  { year: 'n+5', revenue: 878, ebitda: 237 },
+  { year: 'n+5', revenue: 877, ebitda: 237 },
 ];
 
 export const restaurantCentroPortfolioData = [
