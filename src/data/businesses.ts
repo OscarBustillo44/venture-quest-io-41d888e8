@@ -307,7 +307,48 @@ export const restaurantCentroPortfolioData = [
   { nameKey: 'businesses.confRestaurantCentro.portfolio.takeaway', value: 5, amount: '15k', color: '#DEB887' },
 ];
 
-// Mock data for businesses
+export const restaurantCentroPnLData = [
+  { concept: 'ventaNeta', n1: 599400, n2: 659340, n3: 725274, n4: 797801, n5: 877582 },
+  { concept: 'cogs', n1: -209790, n2: -230769, n3: -253846, n4: -279230, n5: -307154 },
+  { concept: 'margeComercial', n1: 389610, n2: 428571, n3: 471428, n4: 518571, n5: 570428, pct: '65,0%' },
+  { concept: 'margeBrut', n1: 389610, n2: 428571, n3: 471428, n4: 518571, n5: 570428, pct: '65,0%' },
+  { concept: 'personal', n1: -219600, n2: -225090, n3: -230717, n4: -236485, n5: -236485 },
+  { concept: 'opex', n1: -238, n2: -921, n3: -1739, n4: -2711, n5: -3859 },
+  { concept: 'lloguer', n1: -36000, n2: -42897, n3: -50813, n4: -59883, n5: -70259 },
+  { concept: 'altres', n1: -12000, n2: -13200, n3: -15971, n4: -19163, n5: -22835 },
+  { concept: 'ebitda', n1: 121772, n2: 146463, n3: 172189, n4: 200329, n5: 236990, pct: '27,0%' },
+  { concept: 'amortitzacions', n1: -33000, n2: -33000, n3: -34603, n4: -36017, n5: -37337 },
+  { concept: 'ebit', n1: 88772, n2: 113463, n3: 137586, n4: 164312, n5: 199653, pct: '22,8%' },
+  { concept: 'ebt', n1: 88772, n2: 113463, n3: 137586, n4: 164312, n5: 199653, pct: '22,8%' },
+  { concept: 'is', n1: -8877, n2: -11346, n3: -13759, n4: -16431, n5: -19965 },
+  { concept: 'netProfit', n1: 79895, n2: 102117, n3: 123827, n4: 147881, n5: 179687, pct: '20,5%' },
+];
+
+export const restaurantCentroBalanceData = [
+  { concept: 'actiuFixe', n1: 142000, n2: 117500, n3: 90397, n4: 61380, n5: 30543 },
+  { concept: 'existencies', n1: 9813, n2: 10794, n3: 11873, n4: 13061, n5: 14367 },
+  { concept: 'deutors', n1: 3633, n2: 3997, n3: 4396, n4: 4836, n5: 5319 },
+  { concept: 'periodificacions', n1: -12701, n2: -13971, n3: -15368, n4: -16905, n5: -18596 },
+  { concept: 'proveidors', n1: -53389, n2: -58728, n3: -64600, n4: -71060, n5: -78166 },
+  { concept: 'creditors', n1: -11309, n2: -12440, n3: -13684, n4: -15052, n5: -16557 },
+  { concept: 'hisendaPublica', n1: -233, n2: -256, n3: -282, n4: -310, n5: -341 },
+  { concept: 'nof', n1: -64186, n2: -70604, n3: -77665, n4: -85431, n5: -93975 },
+  { concept: 'actiuTotal', n1: 77814, n2: 46896, n3: 12732, n4: -24051, n5: -63432 },
+  { concept: 'patrimoniNet', n1: -3000, n2: -3000, n3: -3000, n4: -3000, n5: -3000 },
+  { concept: 'tesoreria', n1: -74814, n2: -43896, n3: -9732, n4: 27051, n5: 66432 },
+  { concept: 'pnPassiuTotal', n1: -77814, n2: -46896, n3: -12732, n4: 24051, n5: 63432 },
+];
+
+export const restaurantCentroValuationData = [
+  { concept: 'valorFluxos', value: 477751 },
+  { concept: 'valorResidual', value: 439403 },
+  { concept: 'totalValoracio', value: 917154, isHighlight: true },
+  { concept: 'deutaExterna', value: -74814, isNegative: true },
+  { concept: 'recursosNoAfectes', value: 66432 },
+  { concept: 'totalFondsPropis', value: 908771, isHighlight: true },
+  { concept: 'evEbitdaMultiple', value: 3.87, isRatio: true },
+];
+
 export const businessesData: Record<string, Business> = {
   'la-borda': {
     id: 'la-borda',
