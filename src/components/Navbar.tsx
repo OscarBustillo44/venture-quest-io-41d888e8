@@ -38,6 +38,9 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
           <Link to="/vender" className={`${linkHoverClass} transition-colors`}>
             {t('nav.sell')}
           </Link>
+          <Link to="/que-ofrecemos" className={`${linkHoverClass} transition-colors`}>
+            {t('nav.whatWeOffer')}
+          </Link>
           <Link to="/nosotros" className={`${linkHoverClass} transition-colors`}>
             {t('nav.about')}
           </Link>
@@ -60,6 +63,9 @@ const Navbar = ({ variant = 'dark' }: NavbarProps) => {
                 </Link>
                 <Link to="/vender" className="text-lg font-medium hover:text-amber-600 transition-colors">
                   {t('nav.sell')}
+                </Link>
+                <Link to="/que-ofrecemos" className="text-lg font-medium hover:text-amber-600 transition-colors">
+                  {t('nav.whatWeOffer')}
                 </Link>
                 <Link to="/nosotros" className="text-lg font-medium hover:text-amber-600 transition-colors">
                   {t('nav.about')}
