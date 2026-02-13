@@ -558,11 +558,11 @@ const ComprarNegocio = () => {
                       <img
                         src={business.image}
                         alt={t(business.titleKey)}
-                        className={`w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105 ${business.id === 'la-borda' ? 'blur-md scale-110' : ''}`}
+                        className={`w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105 ${['la-borda', 'confidencial-restaurant-centro'].includes(business.id) ? 'blur-md scale-110' : ''}`}
                       />
                       
-                      {/* Confidential overlay for La Borda */}
-                      {business.id === 'la-borda' && (
+                      {/* Confidential overlay */}
+                      {['la-borda', 'confidencial-restaurant-centro'].includes(business.id) && (
                         <div className="absolute inset-0 bg-stone-900/40 flex flex-col items-center justify-center">
                           <Lock className="w-8 h-8 text-amber-500 mb-2" />
                           <span className="text-stone-200 text-sm font-medium">{t('buy.confidentialLocation')}</span>
