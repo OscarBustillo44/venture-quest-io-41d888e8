@@ -184,6 +184,17 @@
       "tesoreria": "Cash",
       "pnPassiuTotal": "Equity + Total Liabilities"
     },
+    "valuation": {
+      "title": "Business Valuation (DCF)",
+      "valorFluxos": "Present value of positive cash flows",
+      "valorResidual": "Residual value of last cash flow",
+      "totalValoracio": "TOTAL BUSINESS VALUATION",
+      "deutaExterna": "External debt",
+      "recursosNoAfectes": "Non-operating or idle resources",
+      "totalFondsPropis": "TOTAL EQUITY VALUATION",
+      "evEbitdaMultiple": "EV/EBITDA"
+    },
+    "targetCompanyValue": "Target company value",
     "revenue": "Revenue",
     "ebitda": "EBITDA",
     "profitability": "Profitability",

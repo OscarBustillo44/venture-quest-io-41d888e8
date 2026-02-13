@@ -184,6 +184,17 @@
       "tesoreria": "Tesorería",
       "pnPassiuTotal": "PN + Pasivo Total"
     },
+    "valuation": {
+      "title": "Valoración del Negocio (DCF)",
+      "valorFluxos": "Valor actual flujos de caja positivos",
+      "valorResidual": "Valor residual del último flujo de caja",
+      "totalValoracio": "TOTAL VALORACIÓN DEL NEGOCIO",
+      "deutaExterna": "Deuda externa",
+      "recursosNoAfectes": "Recursos no afectos o que se encuentran ociosos",
+      "totalFondsPropis": "TOTAL VALORACIÓN DE LOS FONDOS PROPIOS",
+      "evEbitdaMultiple": "EV/EBITDA"
+    },
+    "targetCompanyValue": "Objetivo valor empresa",
     "revenue": "Facturación",
     "ebitda": "EBITDA",
     "profitability": "Rentabilidad",

@@ -24,6 +24,7 @@ import {
   labordaPortfolioData,
   labordaPnLData,
   labordaBalanceData,
+  labordaValuationData,
   alpineKPIs,
   alpineRevenueData,
   alpineEbitdaData,
@@ -408,6 +409,37 @@ const NegocioDetalle = () => {
                               <td className={`py-2 px-3 text-right ${row.n2 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n2)}</td>
                               <td className={`py-2 px-3 text-right ${row.n3 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n3)}</td>
                               <td className={`py-2 px-3 text-right ${row.n4 < 0 ? 'text-red-600' : ''}`}>{fmt(row.n4)}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Valuation Table */}
+                  <h4 className="text-sm font-semibold text-stone-700 mb-3 mt-8 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-amber-600" />
+                    {t('detail.valuation.title')}
+                  </h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b-2 border-stone-300 bg-stone-100">
+                          <th className="text-left py-2 px-3 font-semibold text-stone-700">{t('detail.economicSummary.concept')}</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">{t('detail.economicSummary.value')}</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-100">
+                        {labordaValuationData.map((row) => {
+                          const fmt = (v: number) => row.isRatio ? v.toFixed(2).replace('.', ',') : v.toLocaleString('es-ES');
+                          return (
+                            <tr key={row.concept} className={row.isHighlight ? 'bg-amber-50/50 font-bold' : 'hover:bg-stone-50'}>
+                              <td className={`py-2 px-3 ${row.isHighlight ? 'text-stone-800' : 'text-stone-600'}`}>
+                                {t(`detail.valuation.${row.concept}`)}
+                              </td>
+                              <td className={`py-2 px-3 text-right ${row.isNegative ? 'text-red-600' : ''} ${row.isHighlight ? 'text-stone-800' : ''}`}>
+                                {row.isNegative ? `(${fmt(Math.abs(row.value))})` : row.isRatio ? `${fmt(row.value)}x` : fmt(row.value)}
+                              </td>
                             </tr>
                           );
                         })}
@@ -1017,6 +1049,15 @@ const NegocioDetalle = () => {
                       <span className="text-amber-400">{t('detail.targetProfitability')}</span>
                     </div>
                     <span className="font-semibold text-amber-400">{'>66%'}</span>
+                  </div>
+                )}
+                {business.id === 'la-borda' && (
+                  <div className="flex items-center justify-between py-3 border-b border-stone-700">
+                    <div className="flex items-center gap-2">
+                      <Target className="w-4 h-4 text-amber-400" />
+                      <span className="text-amber-400">{t('detail.targetCompanyValue')}</span>
+                    </div>
+                    <span className="font-semibold text-amber-400">{'489k €'}</span>
                   </div>
                 )}
                 {business.percentForSale && (
