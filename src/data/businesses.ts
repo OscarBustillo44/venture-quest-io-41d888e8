@@ -31,6 +31,15 @@ import sectorIndustria from '@/assets/generic/sector-industria.jpg';
 import sectorTecnologia from '@/assets/generic/sector-tecnologia.jpg';
 import restaurantCentroPlaceholder from '@/assets/generic/restaurant-centro-placeholder.png';
 import confHosteleriaCard from '@/assets/generic/conf-hosteleria-card.png';
+
+// Confidencial Hostelería photos (gated)
+import confHostPhoto1 from '@/assets/conf-hosteleria/photo-1.jpeg';
+import confHostPhoto2 from '@/assets/conf-hosteleria/photo-2.jpeg';
+import confHostPhoto3 from '@/assets/conf-hosteleria/photo-3.jpeg';
+import confHostPhoto4 from '@/assets/conf-hosteleria/photo-4.jpeg';
+import confHostPhoto5 from '@/assets/conf-hosteleria/photo-5.jpeg';
+import confHostPhoto6 from '@/assets/conf-hosteleria/photo-6.jpeg';
+import confHostPhoto7 from '@/assets/conf-hosteleria/photo-7.jpeg';
 import confComercioCard from '@/assets/generic/conf-comercio-card.jpg';
 import confServiciosCard from '@/assets/generic/conf-servicios-card.jpg';
 import confIndustriaCard from '@/assets/generic/conf-industria-card.jpg';
@@ -356,7 +365,7 @@ export const businessesData: Record<string, Business> = {
     isConfidential: true,
     descriptionKey: 'businesses.confHosteleria.description',
     highlightsKey: 'businesses.confHosteleria.highlights',
-    images: [confHosteleriaCard],
+    images: [confHosteleriaCard, confHostPhoto1, confHostPhoto2, confHostPhoto3, confHostPhoto4, confHostPhoto5, confHostPhoto6, confHostPhoto7],
     financialData: [
       { year: '2020', revenue: 280, ebitda: 55 },
       { year: '2021', revenue: 300, ebitda: 65 },
