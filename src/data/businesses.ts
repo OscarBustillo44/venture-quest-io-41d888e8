@@ -565,7 +565,7 @@ export const businessesData: Record<string, Business> = {
     sectorKey: 'sectors.hospitality',
     location: 'Andorra la Vella, Andorra',
     coordinates: { lat: 42.5078, lng: 1.5211 },
-    price: '150.000 €',
+    price: '180.000 €',
     revenue: '599k €',
     ebitda: '122k €',
     profitability: '>50%',
@@ -666,7 +666,7 @@ export const carouselSlides = [
     image: restaurantCentroPlaceholder,
     titleKey: 'businesses.confRestaurantCentro.title',
     descriptionKey: 'businesses.confRestaurantCentro.carouselDesc',
-    price: '150.000 €',
+    price: '180.000 €',
     sectorKey: 'sectors.hospitality',
     isConfidential: false
   }
