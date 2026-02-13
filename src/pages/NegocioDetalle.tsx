@@ -984,7 +984,7 @@ const NegocioDetalle = () => {
                       <Target className="w-4 h-4 text-amber-400" />
                       <span className="text-stone-300">{t('detail.targetRevenue')}</span>
                     </div>
-                    <span className="font-semibold text-green-400">{business.targetRevenue}</span>
+                    <span className="font-semibold text-amber-400">{business.targetRevenue}</span>
                   </div>
                 )}
                 <div className="flex items-center justify-between py-3 border-b border-stone-700">
@@ -1000,7 +1000,7 @@ const NegocioDetalle = () => {
                       <Target className="w-4 h-4 text-amber-400" />
                       <span className="text-stone-300">{t('detail.targetEbitda')}</span>
                     </div>
-                    <span className="font-semibold text-green-400">{business.targetEbitda}</span>
+                    <span className="font-semibold text-amber-400">{business.targetEbitda}</span>
                   </div>
                 )}
                 <div className="flex items-center justify-between py-3 border-b border-stone-700">
@@ -1008,8 +1008,17 @@ const NegocioDetalle = () => {
                     <TrendingUp className="w-4 h-4 text-amber-400" />
                     <span className="text-stone-300">{t('detail.profitability')}</span>
                   </div>
-                  <span className="font-semibold text-green-400">{business.profitability}</span>
+                  <span className="font-semibold text-amber-400">{business.profitability}</span>
                 </div>
+                {business.id === 'la-borda' && (
+                  <div className="flex items-center justify-between py-3 border-b border-stone-700">
+                    <div className="flex items-center gap-2">
+                      <Target className="w-4 h-4 text-amber-400" />
+                      <span className="text-stone-300">{t('detail.targetProfitability')}</span>
+                    </div>
+                    <span className="font-semibold text-amber-400">{'>66%'}</span>
+                  </div>
+                )}
                 {business.percentForSale && (
                   <div className="flex items-center justify-between py-3 border-b border-stone-700">
                     <div className="flex items-center gap-2">
