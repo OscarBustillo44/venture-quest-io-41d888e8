@@ -64,7 +64,7 @@ const createBusinessData = () => [
     descriptionKey: 'businesses.alpine.carouselDesc',
     sectorKey: 'sectors.technology',
     price: 2400000,
-    priceDisplay: "2.400.000 €",
+    priceDisplay: "1,9 Mio €",
     profitability: 18,
     publishedDate: new Date('2025-01-10'),
     isConfidential: false,
