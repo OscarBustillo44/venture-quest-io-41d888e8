@@ -47,7 +47,8 @@ const createBusinessData = () => [
     sectorKey: 'sectors.hospitality',
     price: 75000,
     priceDisplay: "75.000 €",
-    profitability: 43,
+    profitability: 33,
+    financialDisplay: "Facturación Actual 240k · EBITDA 84k · Rentabilidad >33%",
     publishedDate: new Date('2024-12-01'),
     isConfidential: false,
     operationType: 'traspasar' as OperationType,
@@ -587,7 +588,7 @@ const ComprarNegocio = () => {
                     {/* Financial Info - Orange Background */}
                     <div className="bg-amber-600 text-white p-3">
                       <p className="text-xs leading-relaxed">
-                        Facturación {business.priceDisplay} · EBITDA {Math.round(business.price * 0.25).toLocaleString('es-ES')} € · Rentabilidad {business.profitability}%
+                        {business.financialDisplay || `Facturación ${business.priceDisplay} · EBITDA ${Math.round(business.price * 0.25).toLocaleString('es-ES')} € · Rentabilidad ${business.profitability}%`}
                       </p>
                       {/* Operation Type Badge */}
                       <div className={`inline-block mt-2 px-2 py-0.5 rounded text-xs font-medium bg-white/20`}>
