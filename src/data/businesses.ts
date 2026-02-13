@@ -446,6 +446,18 @@ export const restaurantCentroValuationData = [
   { concept: 'evEbitdaMultiple', value: 3.87, isRatio: true },
 ];
 
+// Confidencial Servicios DCF data (€)
+export const confServiciosDCFData = [
+  { concept: 'ingresos', y2024: 1233375, y2025: 1356713, y2026: 1492384, y2027: 1641622, y2028: 1805785, y2029: 1986363 },
+  { concept: 'ebitMargen', y2024: 61184, y2025: 67302, y2026: 74033, y2027: 81436, y2028: 89580, y2029: 98538 },
+  { concept: 'impuestos', y2024: -6118, y2025: -6730, y2026: -7403, y2027: -8144, y2028: -8958, y2029: -9854 },
+  { concept: 'beneficioNeto', y2024: 55066, y2025: 60572, y2026: 66629, y2027: 73292, y2028: 80622, y2029: 88684 },
+  { concept: 'amortizacion', y2024: 49850, y2025: 49850, y2026: 49850, y2027: 49850, y2028: 49850, y2029: 49850 },
+  { concept: 'capex', y2024: -30000, y2025: -30000, y2026: -30000, y2027: -30000, y2028: -30000, y2029: -30000 },
+  { concept: 'variacionNOF', y2024: -10000, y2025: -10000, y2026: -10000, y2027: -10000, y2028: -10000, y2029: -10000 },
+  { concept: 'freeCashFlow', y2024: 64916, y2025: 70422, y2026: 76480, y2027: 83143, y2028: 90472, y2029: 98534 },
+];
+
 export const businessesData: Record<string, Business> = {
   'la-borda': {
     id: 'la-borda',
@@ -592,11 +604,12 @@ export const businessesData: Record<string, Business> = {
     highlightsKey: 'businesses.confServices.highlights',
     images: [confServiciosCard],
     financialData: [
-      { year: '2020', revenue: 400, ebitda: 80 },
-      { year: '2021', revenue: 450, ebitda: 100 },
-      { year: '2022', revenue: 520, ebitda: 120 },
-      { year: '2023', revenue: 560, ebitda: 135 },
-      { year: '2024', revenue: 600, ebitda: 150 },
+      { year: '2024', revenue: 1233, ebitda: 61 },
+      { year: '2025', revenue: 1357, ebitda: 67 },
+      { year: '2026', revenue: 1492, ebitda: 74 },
+      { year: '2027', revenue: 1642, ebitda: 81 },
+      { year: '2028', revenue: 1806, ebitda: 90 },
+      { year: '2029', revenue: 1986, ebitda: 99 },
     ]
   },
   'confidencial-industria': {

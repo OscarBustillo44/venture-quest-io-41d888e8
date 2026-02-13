@@ -198,7 +198,15 @@
       "comissionsCanal": "Channel Commissions",
       "altresDespeses": "Other Operating Expenses",
       "resultatFinancer": "Financial Result",
-      "resultat": "Net Result"
+      "resultat": "Net Result",
+      "ingresos": "Revenue",
+      "ebitMargen": "EBIT (Margin 5.0%)",
+      "impuestos": "(-) Taxes (10%)",
+      "beneficioNeto": "Net Income",
+      "amortizacion": "(+) Depreciation",
+      "capex": "(-) CAPEX",
+      "variacionNOF": "(-) Change in Working Capital",
+      "freeCashFlow": "Free Cash Flow"
     },
     "balance": {
       "title": "Projected Balance Sheet",

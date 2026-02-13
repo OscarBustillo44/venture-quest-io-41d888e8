@@ -198,7 +198,15 @@
       "comissionsCanal": "Commissions Canal",
       "altresDespeses": "Autres charges d'exploitation",
       "resultatFinancer": "Résultat financier",
-      "resultat": "Résultat"
+      "resultat": "Résultat",
+      "ingresos": "Chiffre d'affaires",
+      "ebitMargen": "EBIT (Marge 5,0%)",
+      "impuestos": "(-) Impôts (10%)",
+      "beneficioNeto": "Résultat Net",
+      "amortizacion": "(+) Amortissement",
+      "capex": "(-) CAPEX",
+      "variacionNOF": "(-) Variation BFR",
+      "freeCashFlow": "Free Cash Flow"
     },
     "balance": {
       "title": "Bilan Prévisionnel",
