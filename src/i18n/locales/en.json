@@ -612,6 +612,7 @@
     },
     "infinitypay": {
       "title": "InfinityPay – Payment Solutions Company",
+      "gridTitle": "Payment Solutions Company",
       "description": "Payment solutions company with payment gateway, POS terminals and security solutions. With 99% annual recurrence and a fleet of over 2000 POS units with 90% of the country's large companies integrated.",
       "carouselDesc": "Payment gateway, POS terminals · Revenue €500k · EBITDA €200k · Profitability 19%",
       "highlights": ["99% annual contract recurrence", "2000+ POS terminals installed", "90% of large companies integrated", "Own payment gateway", "Advanced security solutions", "6x growth potential in revenue"],

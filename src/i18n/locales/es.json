@@ -612,6 +612,7 @@
     },
     "infinitypay": {
       "title": "InfinityPay – Empresa de Medios de Pago",
+      "gridTitle": "Empresa de Medios de Pago",
       "description": "Empresa de medios de pago con pasarela de pagos, terminales TPV y soluciones de seguridad. Con una recurrencia del 99% anual y un parque de más de 2000 unidades TPV con el 90% de las grandes empresas del país integradas.",
       "carouselDesc": "Pasarela de pagos, TPVs · Facturación 500k € · EBITDA 200k € · Rentabilidad 19%",
       "highlights": ["99% recurrencia anual en contratos", "2000+ terminales TPV instalados", "90% de grandes empresas integradas", "Pasarela de pagos propia", "Soluciones de seguridad avanzadas", "Potencial de crecimiento 6x en facturación"],
