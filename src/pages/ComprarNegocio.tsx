@@ -302,71 +302,37 @@ const ComprarNegocio = () => {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar variant="dark" />
       
-      {/* Hero Section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-stone-50 to-amber-50">
+      {/* Compact Hero Bar */}
+      <section className="py-4 bg-stone-900 text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-6 font-serif">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+            <h1 className="text-lg md:text-xl font-bold font-serif">
               {t('buy.title')}
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              {t('buy.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-12 bg-background border-b">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-amber-100 rounded-xl">
-                <Building2 className="w-6 h-6 text-amber-700" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">{t('buy.operatingBusinesses')}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {t('buy.operatingDesc')}
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-emerald-100 rounded-xl">
-                <TrendingUp className="w-6 h-6 text-emerald-700" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">{t('buy.clearFinancial')}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {t('buy.clearFinancialDesc')}
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-blue-100 rounded-xl">
-                <Users className="w-6 h-6 text-blue-700" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">{t('buy.smeFocus')}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {t('buy.smeFocusDesc')}
-                </p>
-              </div>
+            <div className="flex flex-wrap items-center gap-4 text-xs md:text-sm text-stone-300">
+              <span className="flex items-center gap-1.5">
+                <Building2 className="w-4 h-4 text-amber-500" />
+                {t('buy.operatingBusinesses')}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <TrendingUp className="w-4 h-4 text-amber-500" />
+                {t('buy.clearFinancial')}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Users className="w-4 h-4 text-amber-500" />
+                {t('buy.smeFocus')}
+              </span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Search and Filters */}
-      <section className="py-12 bg-stone-50">
+      <section className="py-4 bg-stone-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
-              {t('buy.searchBusinesses')}
-            </h2>
-            
+          <div className="max-w-6xl mx-auto">
             {/* Search Bar */}
-            <div className="flex flex-col md:flex-row gap-4 mb-8">
+            <div className="flex flex-col md:flex-row gap-3 mb-4">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 <Input 
@@ -389,84 +355,58 @@ const ComprarNegocio = () => {
             </div>
 
             {/* Filters */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 p-6 bg-background rounded-xl shadow-sm">
-              {/* Operation Type - NEW FILTER */}
-              <div>
-                <label className="block text-sm font-medium text-muted-foreground mb-2">
-                  {t('buy.operationType')}
-                </label>
-                <Select value={selectedOperationType} onValueChange={setSelectedOperationType}>
-                  <SelectTrigger className="bg-background">
-                    <SelectValue placeholder={t('buy.allOperations')} />
-                  </SelectTrigger>
-                  <SelectContent className="bg-background z-50">
-                    {operationTypes.map((op) => (
-                      <SelectItem key={op.value} value={op.value}>{t(op.labelKey)}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-muted-foreground mb-2">
-                  {t('buy.sector')}
-                </label>
-                <Select value={selectedSector} onValueChange={setSelectedSector}>
-                  <SelectTrigger className="bg-background">
-                    <SelectValue placeholder={t('buy.allSectors')} />
-                  </SelectTrigger>
-                  <SelectContent className="bg-background z-50">
-                    <SelectItem value="all">{t('buy.allSectors')}</SelectItem>
-                    {sectorKeys.map((sector) => (
-                      <SelectItem key={sector.key} value={sector.key}>{t(sector.key)}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-muted-foreground mb-2">
-                  {t('buy.location')}
-                </label>
-                <Select value={selectedLocation} onValueChange={setSelectedLocation}>
-                  <SelectTrigger className="bg-background">
-                    <SelectValue placeholder={t('buy.allLocations')} />
-                  </SelectTrigger>
-                  <SelectContent className="bg-background z-50">
-                    {locationOptions.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-muted-foreground mb-2">
-                  {t('buy.priceRange')}
-                </label>
-                <Select value={selectedPriceRange} onValueChange={setSelectedPriceRange}>
-                  <SelectTrigger className="bg-background">
-                    <SelectValue placeholder={t('buy.allPrices')} />
-                  </SelectTrigger>
-                  <SelectContent className="bg-background z-50">
-                    {priceRanges.map((range) => (
-                      <SelectItem key={range.value} value={range.value}>{range.label}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-muted-foreground mb-2">
-                  {t('buy.minProfitability')}
-                </label>
-                <Select value={minProfitability} onValueChange={setMinProfitability}>
-                  <SelectTrigger className="bg-background">
-                    <SelectValue placeholder={t('buy.anyProfitability')} />
-                  </SelectTrigger>
-                  <SelectContent className="bg-background z-50">
-                    {profitabilityOptions.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+              <Select value={selectedOperationType} onValueChange={setSelectedOperationType}>
+                <SelectTrigger className="bg-background h-10">
+                  <SelectValue placeholder={t('buy.allOperations')} />
+                </SelectTrigger>
+                <SelectContent className="bg-background z-50">
+                  {operationTypes.map((op) => (
+                    <SelectItem key={op.value} value={op.value}>{t(op.labelKey)}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Select value={selectedSector} onValueChange={setSelectedSector}>
+                <SelectTrigger className="bg-background h-10">
+                  <SelectValue placeholder={t('buy.allSectors')} />
+                </SelectTrigger>
+                <SelectContent className="bg-background z-50">
+                  <SelectItem value="all">{t('buy.allSectors')}</SelectItem>
+                  {sectorKeys.map((sector) => (
+                    <SelectItem key={sector.key} value={sector.key}>{t(sector.key)}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Select value={selectedLocation} onValueChange={setSelectedLocation}>
+                <SelectTrigger className="bg-background h-10">
+                  <SelectValue placeholder={t('buy.allLocations')} />
+                </SelectTrigger>
+                <SelectContent className="bg-background z-50">
+                  {locationOptions.map((option) => (
+                    <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Select value={selectedPriceRange} onValueChange={setSelectedPriceRange}>
+                <SelectTrigger className="bg-background h-10">
+                  <SelectValue placeholder={t('buy.allPrices')} />
+                </SelectTrigger>
+                <SelectContent className="bg-background z-50">
+                  {priceRanges.map((range) => (
+                    <SelectItem key={range.value} value={range.value}>{range.label}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Select value={minProfitability} onValueChange={setMinProfitability}>
+                <SelectTrigger className="bg-background h-10">
+                  <SelectValue placeholder={t('buy.anyProfitability')} />
+                </SelectTrigger>
+                <SelectContent className="bg-background z-50">
+                  {profitabilityOptions.map((option) => (
+                    <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
             {/* Active filters badges */}
@@ -523,23 +463,12 @@ const ComprarNegocio = () => {
               </div>
             )}
 
-            {/* Simple explanations */}
-            <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-stone-700">
-                    <strong>{t('buy.whatIsEbitda')}</strong> {t('buy.ebitdaExplanation')}
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Filtered Business Grid */}
-      <section className="py-16 bg-gradient-to-br from-stone-800 to-stone-900">
+      <section className="py-8 bg-gradient-to-br from-stone-800 to-stone-900">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
             <div>
