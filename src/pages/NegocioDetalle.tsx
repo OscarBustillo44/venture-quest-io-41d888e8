@@ -243,7 +243,7 @@ const NegocioDetalle = () => {
             </Card>
 
             {/* Gated Access Banner */}
-            {!isUnlocked && business.isConfidential && (
+            {!isUnlocked && business.isConfidential && business.id !== 'confidencial-comercio' && (
               <GatedAccessBanner onRequestAccess={() => setVerificationOpen(true)} />
             )}
 
