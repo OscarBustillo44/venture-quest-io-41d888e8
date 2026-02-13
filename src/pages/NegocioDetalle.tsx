@@ -33,6 +33,9 @@ import {
   infinitypayKPIs,
   infinitypayRevenueEbitdaData,
   infinitypayPortfolioData,
+  infinitypayPnLData,
+  infinitypayBalanceData,
+  infinitypayValuationData,
   confHosteleriaRevenueData,
   confHosteleriaEbitdaData,
   confHosteleriaProjectionData,
@@ -786,6 +789,194 @@ const NegocioDetalle = () => {
                       </div>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Economic Summary - InfinityPay */}
+            {business.id === 'infinitypay' && (
+              <Card className="border-2 border-blue-200 bg-gradient-to-br from-stone-50 to-blue-50/30">
+                <CardHeader>
+                  <CardTitle className="font-serif flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-blue-700" />
+                    {t('detail.economicSummary.title')}
+                  </CardTitle>
+                  <p className="text-sm text-stone-500">{t('detail.economicSummary.subtitle')}</p>
+                </CardHeader>
+                <CardContent>
+                  {/* Key metrics summary */}
+                  <div className="overflow-x-auto mb-8">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b-2 border-blue-300">
+                          <th className="text-left py-3 px-4 font-semibold text-stone-700">{t('detail.economicSummary.concept')}</th>
+                          <th className="text-right py-3 px-4 font-semibold text-stone-700">{t('detail.economicSummary.value')}</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-200">
+                        <tr className="hover:bg-blue-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.annualRevenue')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">297.000 €</td>
+                        </tr>
+                        <tr className="hover:bg-blue-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.operatingProfit')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">154.000 €</td>
+                        </tr>
+                        <tr className="hover:bg-blue-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.profitMargin')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-blue-700">52,0%</td>
+                        </tr>
+                        <tr className="hover:bg-blue-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.pnl.netProfit')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">133.000 €</td>
+                        </tr>
+                        <tr className="hover:bg-blue-50/50 bg-blue-50/30">
+                          <td className="py-3 px-4 text-stone-600 font-medium">{t('detail.economicSummary.askingPrice')}</td>
+                          <td className="py-3 px-4 text-right font-bold text-blue-700 text-base">1.084.964 €</td>
+                        </tr>
+                        <tr className="hover:bg-blue-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.employeesCount')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">12</td>
+                        </tr>
+                        <tr className="hover:bg-blue-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.businessAge')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">5 años</td>
+                        </tr>
+                        <tr className="hover:bg-blue-50/50">
+                          <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.location')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">Andorra</td>
+                        </tr>
+                        <tr className="hover:bg-blue-50/50">
+                          <td className="py-3 px-4 text-amber-400 font-medium">{t('detail.economicSummary.projectedGrowth')}</td>
+                          <td className="py-3 px-4 text-right font-semibold text-amber-400">467k € / 243k € EBITDA</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* P&L Table */}
+                  <h4 className="text-sm font-semibold text-stone-700 mb-3 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-blue-600" />
+                    {t('detail.pnl.title')}
+                  </h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b-2 border-stone-300 bg-stone-100">
+                          <th className="text-left py-2 px-3 font-semibold text-stone-700">{"(000's €)"}</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2023</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2024</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2025e</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2026e</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2027e</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2028e</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2029e</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-100">
+                        {infinitypayPnLData.map((row) => {
+                          const isHighlight = ['ebitda', 'ebit', 'netProfit', 'margeBrut'].includes(row.concept);
+                          const fmt = (v: number) => v === 0 ? '-' : v < 0 ? `(${Math.abs(v).toLocaleString('es-ES')})` : v.toLocaleString('es-ES');
+                          const years = ['y2023', 'y2024', 'y2025', 'y2026', 'y2027', 'y2028', 'y2029'] as const;
+                          return (
+                            <tr key={row.concept} className={isHighlight ? 'bg-blue-50/50 font-semibold' : 'hover:bg-stone-50'}>
+                              <td className={`py-2 px-3 ${isHighlight ? 'text-stone-800' : 'text-stone-600'}`}>
+                                {t(`detail.pnl.${row.concept}`)}
+                                {row.pct && <span className="text-stone-400 ml-1">({row.pct})</span>}
+                              </td>
+                              {years.map((year, idx) => {
+                                const val = (row as any)[year] as number;
+                                return (
+                                  <td key={year} className={`py-2 px-3 text-right ${val < 0 ? 'text-red-600' : ''} ${idx >= 2 ? 'bg-amber-50/20' : ''}`}>
+                                    {fmt(val)}
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Balance Sheet Table */}
+                  <h4 className="text-sm font-semibold text-stone-700 mb-3 mt-8 flex items-center gap-2">
+                    <Building2 className="w-4 h-4 text-blue-600" />
+                    {t('detail.balance.title')}
+                  </h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b-2 border-stone-300 bg-stone-100">
+                          <th className="text-left py-2 px-3 font-semibold text-stone-700">{"(000's €)"}</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2023</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2024</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2025e</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2026e</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2027e</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2028e</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-amber-50">2029e</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-100">
+                        {infinitypayBalanceData.map((row) => {
+                          const isHighlight = ['actiuTotal', 'fondsPropis', 'pnPassiuTotal'].includes(row.concept);
+                          const fmt = (v: number) => v === 0 ? '-' : v < 0 ? `(${Math.abs(v).toLocaleString('es-ES')})` : v.toLocaleString('es-ES');
+                          const years = ['y2023', 'y2024', 'y2025', 'y2026', 'y2027', 'y2028', 'y2029'] as const;
+                          return (
+                            <tr key={row.concept} className={isHighlight ? 'bg-blue-50/50 font-semibold' : 'hover:bg-stone-50'}>
+                              <td className={`py-2 px-3 ${isHighlight ? 'text-stone-800' : 'text-stone-600'}`}>
+                                {t(`detail.balance.${row.concept}`)}
+                              </td>
+                              {years.map((year, idx) => {
+                                const val = (row as any)[year] as number;
+                                return (
+                                  <td key={year} className={`py-2 px-3 text-right ${val < 0 ? 'text-red-600' : ''} ${idx >= 2 ? 'bg-amber-50/20' : ''}`}>
+                                    {fmt(val)}
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Valuation Table */}
+                  <h4 className="text-sm font-semibold text-stone-700 mb-3 mt-8 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-blue-600" />
+                    {t('detail.valuation.title')}
+                  </h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b-2 border-stone-300 bg-stone-100">
+                          <th className="text-left py-2 px-3 font-semibold text-stone-700">{t('detail.economicSummary.concept')}</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">{"(000's €)"}</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-100">
+                        {infinitypayValuationData.map((row) => {
+                          const fmt = (v: number) => row.isRatio ? `${v.toFixed(2).replace('.', ',')}%` : v.toLocaleString('es-ES');
+                          return (
+                            <tr key={row.concept} className={row.isHighlight ? 'bg-blue-50/50 font-bold' : 'hover:bg-stone-50'}>
+                              <td className={`py-2 px-3 ${row.isHighlight ? 'text-stone-800' : 'text-stone-600'}`}>
+                                {row.label || t(`detail.valuation.${row.concept}`)}
+                              </td>
+                              <td className={`py-2 px-3 text-right ${row.isHighlight ? 'text-stone-800' : ''}`}>
+                                {fmt(row.value)}
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <p className="text-xs text-stone-400 mt-4 italic leading-relaxed">
+                    {t('detail.economicSummary.note')}
+                  </p>
                 </CardContent>
               </Card>
             )}

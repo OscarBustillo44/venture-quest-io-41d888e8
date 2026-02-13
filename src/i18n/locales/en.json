@@ -207,17 +207,24 @@
       "actiuTotal": "Total Assets",
       "patrimoniNet": "Equity",
       "tesoreria": "Cash",
-      "pnPassiuTotal": "Equity + Total Liabilities"
+      "pnPassiuTotal": "Equity + Total Liabilities",
+      "actiuCirculant": "Current Assets",
+      "fondsPropis": "Equity",
+      "passiuNoCurrent": "Non-current Liabilities",
+      "passiuCirculant": "Current Liabilities"
     },
     "valuation": {
       "title": "Business Valuation (DCF)",
-      "valorFluxos": "Present value of positive cash flows",
-      "valorResidual": "Residual value of last cash flow",
-      "totalValoracio": "TOTAL BUSINESS VALUATION",
+      "valorFluxos": "Total present value of cash flows",
+      "valorResidual": "Present value of terminal cash flow (residual value)",
+      "totalValoracio": "Enterprise Value",
       "deutaExterna": "External debt",
+      "deutaFinanceraNeta": "Net financial debt (NFD)",
       "recursosNoAfectes": "Non-operating or idle resources",
-      "totalFondsPropis": "TOTAL EQUITY VALUATION",
-      "evEbitdaMultiple": "EV/EBITDA"
+      "totalFondsPropis": "Equity Value, 100%",
+      "evEbitdaMultiple": "EV/EBITDA",
+      "percentControl": "% control",
+      "equityValueStake": "Equity Value, 41.97%"
     },
     "targetCompanyValue": "Target company value",
     "revenue": "Revenue",

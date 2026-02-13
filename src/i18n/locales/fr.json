@@ -207,17 +207,24 @@
       "actiuTotal": "Total Actif",
       "patrimoniNet": "Capitaux Propres",
       "tesoreria": "Trésorerie",
-      "pnPassiuTotal": "CP + Total Passif"
+      "pnPassiuTotal": "CP + Total Passif",
+      "actiuCirculant": "Actif Circulant",
+      "fondsPropis": "Fonds Propres",
+      "passiuNoCurrent": "Passif non courant",
+      "passiuCirculant": "Passif Circulant"
     },
     "valuation": {
       "title": "Évaluation de l'Entreprise (DCF)",
-      "valorFluxos": "Valeur actuelle des flux de trésorerie positifs",
-      "valorResidual": "Valeur résiduelle du dernier flux de trésorerie",
-      "totalValoracio": "ÉVALUATION TOTALE DE L'ENTREPRISE",
+      "valorFluxos": "Valeur actuelle totale des flux de trésorerie",
+      "valorResidual": "Valeur actuelle du flux de trésorerie final (valeur résiduelle)",
+      "totalValoracio": "Valeur de l'entreprise (Enterprise Value)",
       "deutaExterna": "Dette externe",
+      "deutaFinanceraNeta": "Dette financière nette (DFN)",
       "recursosNoAfectes": "Ressources non affectées ou oisives",
-      "totalFondsPropis": "ÉVALUATION TOTALE DES FONDS PROPRES",
-      "evEbitdaMultiple": "EV/EBITDA"
+      "totalFondsPropis": "Valeur des participations (Equity Value), 100%",
+      "evEbitdaMultiple": "EV/EBITDA",
+      "percentControl": "% contrôle",
+      "equityValueStake": "Valeur des participations (Equity Value), 41,97%"
     },
     "targetCompanyValue": "Objectif valeur entreprise",
     "revenue": "Chiffre d'affaires",

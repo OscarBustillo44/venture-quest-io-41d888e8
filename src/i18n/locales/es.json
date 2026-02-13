@@ -207,17 +207,24 @@
       "actiuTotal": "Activo Total",
       "patrimoniNet": "Patrimonio Neto",
       "tesoreria": "Tesorería",
-      "pnPassiuTotal": "PN + Pasivo Total"
+      "pnPassiuTotal": "PN + Pasivo Total",
+      "actiuCirculant": "Activo Circulante",
+      "fondsPropis": "Fondos Propios",
+      "passiuNoCurrent": "Pasivo no corriente",
+      "passiuCirculant": "Pasivo Circulante"
     },
     "valuation": {
       "title": "Valoración del Negocio (DCF)",
-      "valorFluxos": "Valor actual flujos de caja positivos",
-      "valorResidual": "Valor residual del último flujo de caja",
-      "totalValoracio": "TOTAL VALORACIÓN DEL NEGOCIO",
+      "valorFluxos": "Total valor actual de los flujos de caja",
+      "valorResidual": "Valor actual del flujo de caja final (valor residual)",
+      "totalValoracio": "Valor del negocio (Enterprise Value)",
       "deutaExterna": "Deuda externa",
+      "deutaFinanceraNeta": "Deuda financiera neta (DFN)",
       "recursosNoAfectes": "Recursos no afectos o que se encuentran ociosos",
-      "totalFondsPropis": "TOTAL VALORACIÓN DE LOS FONDOS PROPIOS",
-      "evEbitdaMultiple": "EV/EBITDA"
+      "totalFondsPropis": "Valor de las participaciones (Equity Value), 100%",
+      "evEbitdaMultiple": "EV/EBITDA",
+      "percentControl": "% control",
+      "equityValueStake": "Valor de las participaciones (Equity Value), 41,97%"
     },
     "targetCompanyValue": "Objetivo valor empresa",
     "revenue": "Facturación",
