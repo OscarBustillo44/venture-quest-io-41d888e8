@@ -30,6 +30,13 @@ import sectorServicios from '@/assets/generic/sector-servicios.jpg';
 import sectorIndustria from '@/assets/generic/sector-industria.jpg';
 import sectorTecnologia from '@/assets/generic/sector-tecnologia.jpg';
 import restaurantCentroPlaceholder from '@/assets/generic/restaurant-centro-placeholder.png';
+import restCentroTerraza1 from '@/assets/restaurant-centro/terraza-1.jpeg';
+import restCentroTerraza2 from '@/assets/restaurant-centro/terraza-2.jpeg';
+import restCentroInteriorBarra from '@/assets/restaurant-centro/interior-barra.jpeg';
+import restCentroComedor1 from '@/assets/restaurant-centro/comedor-1.jpeg';
+import restCentroComedor2 from '@/assets/restaurant-centro/comedor-2.jpeg';
+import restCentroCocina1 from '@/assets/restaurant-centro/cocina-1.jpeg';
+import restCentroCocina2 from '@/assets/restaurant-centro/cocina-2.jpeg';
 import confHosteleriaCard from '@/assets/generic/conf-hosteleria-card.png';
 
 // Confidencial Hostelería photos (gated)
@@ -570,7 +577,7 @@ export const businessesData: Record<string, Business> = {
     isConfidential: false,
     descriptionKey: 'businesses.confRestaurantCentro.description',
     highlightsKey: 'businesses.confRestaurantCentro.highlights',
-    images: [restaurantCentroPlaceholder],
+    images: [restCentroTerraza1, restCentroTerraza2, restCentroInteriorBarra, restCentroComedor1, restCentroComedor2, restCentroCocina1, restCentroCocina2],
     financialData: [
       { year: 'n0', revenue: 580, ebitda: 148 },
       { year: 'n+1', revenue: 596, ebitda: 149 },
