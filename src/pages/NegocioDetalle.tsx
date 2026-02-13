@@ -816,11 +816,11 @@ const NegocioDetalle = () => {
                       <tbody className="divide-y divide-stone-200">
                         <tr className="hover:bg-blue-50/50">
                           <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.annualRevenue')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">297.000 €</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">310.000 €</td>
                         </tr>
                         <tr className="hover:bg-blue-50/50">
                           <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.operatingProfit')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">154.000 €</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">160.000 €</td>
                         </tr>
                         <tr className="hover:bg-blue-50/50">
                           <td className="py-3 px-4 text-stone-600">{t('detail.economicSummary.profitMargin')}</td>
@@ -828,7 +828,7 @@ const NegocioDetalle = () => {
                         </tr>
                         <tr className="hover:bg-blue-50/50">
                           <td className="py-3 px-4 text-stone-600">{t('detail.pnl.netProfit')}</td>
-                          <td className="py-3 px-4 text-right font-semibold text-stone-800">133.000 €</td>
+                          <td className="py-3 px-4 text-right font-semibold text-stone-800">123.000 €</td>
                         </tr>
                         <tr className="hover:bg-blue-50/50 bg-blue-50/30">
                           <td className="py-3 px-4 text-stone-600 font-medium">{t('detail.economicSummary.askingPrice')}</td>
