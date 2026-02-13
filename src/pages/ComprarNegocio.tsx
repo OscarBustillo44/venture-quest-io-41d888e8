@@ -55,6 +55,7 @@ const createBusinessData = () => [
     image: carouselSlides.find(s => s.id === 'la-borda')?.image || '',
     miniDescKey: 'buy.labordaMiniDesc',
     miniHighlightsKey: 'buy.labordaMiniHighlights',
+    refCode: '261200001',
   },
   {
     id: 'alpine-security',
@@ -70,6 +71,7 @@ const createBusinessData = () => [
     image: carouselSlides.find(s => s.id === 'alpine-security')?.image || '',
     miniDescKey: 'buy.alpineMiniDesc',
     miniHighlightsKey: 'buy.alpineMiniHighlights',
+    refCode: '260100002',
   },
   {
     id: 'infinitypay',
@@ -85,6 +87,7 @@ const createBusinessData = () => [
     image: carouselSlides.find(s => s.id === 'infinitypay')?.image || '',
     miniDescKey: 'buy.infinitypayMiniDesc',
     miniHighlightsKey: 'buy.infinitypayMiniHighlights',
+    refCode: '260100003',
   },
   {
     id: 'confidencial-hosteleria',
@@ -100,6 +103,7 @@ const createBusinessData = () => [
     image: carouselSlides.find(s => s.id === 'confidencial-hosteleria')?.image || '',
     miniDescKey: 'buy.confHostMiniDesc',
     miniHighlightsKey: 'buy.confHostMiniHighlights',
+    refCode: '260100004',
   },
   {
     id: 'confidencial-comercio',
@@ -115,6 +119,7 @@ const createBusinessData = () => [
     image: carouselSlides.find(s => s.id === 'confidencial-comercio')?.image || '',
     miniDescKey: 'buy.confComMiniDesc',
     miniHighlightsKey: 'buy.confComMiniHighlights',
+    refCode: '260100005',
   },
   {
     id: 'confidencial-servicios',
@@ -130,6 +135,7 @@ const createBusinessData = () => [
     image: carouselSlides.find(s => s.id === 'confidencial-servicios')?.image || '',
     miniDescKey: 'buy.confServMiniDesc',
     miniHighlightsKey: 'buy.confServMiniHighlights',
+    refCode: '260100006',
   },
   {
     id: 'confidencial-industria',
@@ -145,6 +151,7 @@ const createBusinessData = () => [
     image: carouselSlides.find(s => s.id === 'confidencial-industria')?.image || '',
     miniDescKey: 'buy.confIndMiniDesc',
     miniHighlightsKey: 'buy.confIndMiniHighlights',
+    refCode: '260100007',
   },
   {
     id: 'confidencial-tecnologia',
@@ -160,6 +167,7 @@ const createBusinessData = () => [
     image: carouselSlides.find(s => s.id === 'confidencial-tecnologia')?.image || '',
     miniDescKey: 'buy.confTechMiniDesc',
     miniHighlightsKey: 'buy.confTechMiniHighlights',
+    refCode: '260100008',
   },
   {
     id: 'confidencial-restaurant-centro',
@@ -175,6 +183,7 @@ const createBusinessData = () => [
     image: carouselSlides.find(s => s.id === 'confidencial-restaurant-centro')?.image || '',
     miniDescKey: 'buy.restCentroMiniDesc',
     miniHighlightsKey: 'buy.restCentroMiniHighlights',
+    refCode: '260200009',
   }
 ];
 
@@ -585,9 +594,14 @@ const ComprarNegocio = () => {
                         <span className="text-stone-200 text-sm font-medium">{t('buy.confidentialLocation')}</span>
                       </div>
                       
-                      {/* Sector Badge */}
-                      <div className="absolute top-3 left-3 bg-stone-800/90 text-white px-2 py-1 rounded text-xs font-medium z-10">
-                        {t(business.sectorKey)}
+                      {/* Sector Badge + Ref Code */}
+                      <div className="absolute top-3 left-3 z-10 flex flex-col gap-1">
+                        <div className="bg-stone-800/90 text-white px-2 py-1 rounded text-xs font-medium">
+                          {t(business.sectorKey)}
+                        </div>
+                        <div className="bg-stone-800/70 text-stone-300 px-2 py-0.5 rounded text-[9px] font-mono tracking-wider">
+                          Ref: {business.refCode}
+                        </div>
                       </div>
                       
                       {/* Price Badge */}
