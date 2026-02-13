@@ -349,6 +349,7 @@
     "industry": "Industrie",
     "technology": "Technologie",
     "fintech": "Fintech",
+    "realEstate": "Real Estate",
     "comercio": "Commerce",
     "hosteleria": "Hôtellerie-Restauration",
     "industria": "Industrie",
@@ -650,10 +651,10 @@
       }
     },
     "confCommerce": {
-      "title": "Com260126 Secteur Commerce - [Entreprise Confidentielle]",
-      "description": "Commerce spécialisé avec marque reconnue et base de clients fidèles. Opérations optimisées et fournisseurs consolidés.",
-      "carouselDesc": "Secteur Commerce · CA 800k € · EBITDA 120k € · Rentabilité 15%",
-      "highlights": ["Marque reconnue", "Base de clients fidèles", "Fournisseurs consolidés", "Opérations optimisées", "Stock évalué inclus", "Local en propriété optionnel"]
+      "title": "Immeuble à vendre avec contrats de location en cours",
+      "description": "Business Real Estate : Immeuble à vendre avec contrats de location en cours. Investissement important nécessaire, avec un potentiel d'augmentation des revenus locatifs.",
+      "carouselDesc": "Secteur Real Estate · CA 800k € · EBITDA 120k € · Rentabilité 15%",
+      "highlights": ["Contrats de location en cours", "Potentiel d'augmentation des revenus", "Actif immobilier tangible", "Flux de trésorerie récurrents", "Potentiel de revalorisation"]
     },
     "confServices": {
       "title": "Opportunité dans une Société de Gestion Hôtelière",

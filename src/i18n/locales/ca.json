@@ -349,6 +349,7 @@
     "industry": "Indústria",
     "technology": "Tecnologia",
     "fintech": "Fintech",
+    "realEstate": "Real Estate",
     "comercio": "Comerç",
     "hosteleria": "Hostaleria",
     "industria": "Indústria",
@@ -650,10 +651,10 @@
       }
     },
     "confCommerce": {
-      "title": "Com260126 Sector Comerç - [Negoci Confidencial]",
-      "description": "Comerç especialitzat amb marca reconeguda i base de clients fidels. Operacions optimitzades i proveïdors consolidats.",
-      "carouselDesc": "Sector Comerç · Facturació 800k € · EBITDA 120k € · Rendibilitat 15%",
-      "highlights": ["Marca reconeguda", "Base de clients fidels", "Proveïdors consolidats", "Operacions optimitzades", "Stock valorat inclòs", "Local en propietat opcional"]
+      "title": "Edifici en venda amb contractes vigents de lloguer",
+      "description": "Negoci Real Estate: Edifici en venda amb contractes vigents de lloguer. Cal inversió important, amb el seu pertinent recorregut en increment d'ingressos per lloguer.",
+      "carouselDesc": "Sector Real Estate · Facturació 800k € · EBITDA 120k € · Rendibilitat 15%",
+      "highlights": ["Contractes de lloguer vigents", "Recorregut en increment d'ingressos", "Actiu immobiliari tangible", "Fluxos de caixa recurrents", "Potencial de revaloració"]
     },
     "confServices": {
       "title": "Oportunitat en una Gestora Hotelera",

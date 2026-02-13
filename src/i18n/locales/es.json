@@ -123,8 +123,8 @@
     "infinitypayMiniHighlights": ["99% recurrencia anual", "+2000 TPVs activos", "90% grandes empresas integradas", "Pasarela de pagos propia"],
     "confHostMiniDesc": "Restaurante consolidado y reconocido, con clientela fiel y ubicación inmejorable cerca de Av. Meritxell, y con recorrido de mejora hasta rentabilidades muy interesantes.",
     "confHostMiniHighlights": ["Clientela fiel y consolidada", "Ubicación privilegiada", "Cocina reconocida", "Terraza no explotada con grandes posibilidades"],
-    "confComMiniDesc": "Comercio especializado con marca reconocida y base de clientes fieles. Operaciones optimizadas y proveedores consolidados.",
-    "confComMiniHighlights": ["Marca reconocida", "Base de clientes fieles", "Proveedores consolidados", "Stock valorado incluido"],
+    "confComMiniDesc": "Negocio Real Estate: Edificio en venta con contratos vigentes de alquiler. Es necesaria inversión importante, con recorrido en incremento de ingresos por alquiler.",
+    "confComMiniHighlights": ["Contratos de alquiler vigentes", "Recorrido en incremento de ingresos", "Activo inmobiliario tangible", "Flujos de caja recurrentes"],
     "confServMiniDesc": "Empresa consolidada en el sector servicios con cartera de clientes fieles y contratos recurrentes. Ubicación estratégica y equipo formado que desea continuar.",
     "confServMiniHighlights": ["Cartera de clientes consolidada", "Contratos recurrentes", "Equipo formado y estable", "Potencial de crecimiento significativo"],
     "confIndMiniDesc": "Empresa industrial consolidada con maquinaria moderna y procesos automatizados. Contratos a largo plazo con clientes institucionales.",
@@ -349,6 +349,7 @@
     "industry": "Industria",
     "technology": "Tecnología",
     "fintech": "Fintech",
+    "realEstate": "Real Estate",
     "comercio": "Comercio",
     "hosteleria": "Hostelería",
     "industria": "Industria",
@@ -650,10 +651,10 @@
       }
     },
     "confCommerce": {
-      "title": "Com260126 Sector Comercio - [Negocio Confidencial]",
-      "description": "Comercio especializado con marca reconocida y base de clientes fieles. Operaciones optimizadas y proveedores consolidados.",
-      "carouselDesc": "Sector Comercio · Facturación 800k € · EBITDA 120k € · Rentabilidad 15%",
-      "highlights": ["Marca reconocida", "Base de clientes fieles", "Proveedores consolidados", "Operaciones optimizadas", "Stock valorado incluido", "Local en propiedad opcional"]
+      "title": "Edificio en venta con contratos vigentes de alquiler",
+      "description": "Negocio Real Estate: Edificio en venta con contratos vigentes de alquiler. Es necesaria inversión importante, con su pertinente recorrido en incremento de ingresos por alquiler.",
+      "carouselDesc": "Sector Real Estate · Facturación 800k € · EBITDA 120k € · Rentabilidad 15%",
+      "highlights": ["Contratos de alquiler vigentes", "Recorrido en incremento de ingresos", "Activo inmobiliario tangible", "Flujos de caja recurrentes", "Potencial de revalorización"]
     },
     "confServices": {
       "title": "Oportunidad en una Gestora Hotelera",
