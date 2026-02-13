@@ -217,7 +217,31 @@
       "actiuCirculant": "Current Assets",
       "fondsPropis": "Equity",
       "passiuNoCurrent": "Non-current Liabilities",
-      "passiuCirculant": "Current Liabilities"
+      "passiuCirculant": "Current Liabilities",
+      "immobilitzatIntangible": "Intangible assets",
+      "immobilitzatTangible": "Tangible assets",
+      "totalImmobilitzatNet": "Total net fixed assets",
+      "inversioFinancera": "Financial investments",
+      "capital": "Capital",
+      "reserves": "Reserves",
+      "deuteGrup": "Group debt",
+      "deuteBancari": "Bank debt",
+      "provisionsLlt": "Long-term provisions",
+      "subvencions": "Subsidies",
+      "deuteFN": "Net Financial Debt"
+    },
+    "kpiMetrics": {
+      "title": "Key Operational Indicators",
+      "horasFact": "Billed hours",
+      "avgPricePerHour": "Average price per hour",
+      "totalNumEndpoint": "Total Num EndPoint",
+      "factEndpointMonth": "Revenue x Endpoint x Month",
+      "opexSobreVendes": "%OPEX on revenue",
+      "despesesPersonalSobreVendes": "Staff costs on revenue",
+      "fte": "FTE",
+      "costMigEmpleat": "Avg cost per employee (€)",
+      "ingressosEmpleat": "Revenue per employee (€)",
+      "ebitdaSobreVendes": "%EBITDA on revenue"
     },
     "valuation": {
       "title": "Business Valuation (DCF)",

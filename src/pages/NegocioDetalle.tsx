@@ -31,6 +31,8 @@ import {
   alpineClientsData,
   alpinePortfolioData,
   alpinePnLData,
+  alpineBalanceData,
+  alpineKpiMetricsData,
   infinitypayKPIs,
   infinitypayRevenueEbitdaData,
   infinitypayPortfolioData,
@@ -732,6 +734,91 @@ const NegocioDetalle = () => {
                                 return (
                                   <td key={year} className={`py-2 px-3 text-right ${val < 0 ? 'text-red-600' : ''} ${isProjected ? 'bg-teal-50/40' : ''} ${isHighlight ? 'font-bold' : ''}`}>
                                     {fmt(val)}
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Balance Sheet Table */}
+                  <h4 className="text-sm font-semibold text-stone-700 mb-3 mt-8 flex items-center gap-2">
+                    <Building2 className="w-4 h-4 text-stone-600" />
+                    {t('detail.balance.title')}
+                  </h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b-2 border-stone-300 bg-stone-100">
+                          <th className="text-left py-2 px-3 font-semibold text-stone-700">{"(000's €)"}</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2025</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2026</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2027</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-teal-50">2028</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-teal-50">2029</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-100">
+                        {alpineBalanceData.map((row) => {
+                          const isHighlight = ['totalImmobilitzatNet', 'actiuFixe', 'nof', 'actiuTotal', 'patrimoniNet', 'deuteFN', 'pnPassiuTotal'].includes(row.concept);
+                          const fmt = (v: number) => v === 0 ? '-' : v < 0 ? `(${Math.abs(v).toLocaleString('es-ES')})` : v.toLocaleString('es-ES');
+                          const years = ['y2025', 'y2026', 'y2027', 'y2028', 'y2029'] as const;
+                          return (
+                            <tr key={row.concept} className={isHighlight ? 'bg-stone-100/70 font-semibold' : 'hover:bg-stone-50'}>
+                              <td className={`py-2 px-3 ${isHighlight ? 'text-stone-800 font-bold' : 'text-stone-600'}`}>
+                                {t(`detail.balance.${row.concept}`)}
+                              </td>
+                              {years.map((year, idx) => {
+                                const val = (row as any)[year] as number;
+                                const isProjected = idx >= 3;
+                                return (
+                                  <td key={year} className={`py-2 px-3 text-right ${val < 0 ? 'text-red-600' : ''} ${isProjected ? 'bg-teal-50/40' : ''} ${isHighlight ? 'font-bold' : ''}`}>
+                                    {fmt(val)}
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* KPI Metrics Table */}
+                  <h4 className="text-sm font-semibold text-stone-700 mb-3 mt-8 flex items-center gap-2">
+                    <Target className="w-4 h-4 text-stone-600" />
+                    {t('detail.kpiMetrics.title')}
+                  </h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b-2 border-stone-300 bg-stone-100">
+                          <th className="text-left py-2 px-3 font-semibold text-stone-700">{"(000's)"}</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2025</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2026</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700">2027</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-teal-50">2028</th>
+                          <th className="text-right py-2 px-3 font-semibold text-stone-700 bg-teal-50">2029</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-stone-100">
+                        {alpineKpiMetricsData.map((row) => {
+                          const isHighlight = ['totalNumEndpoint', 'ebitdaSobreVendes'].includes(row.concept);
+                          const years = ['y2025', 'y2026', 'y2027', 'y2028', 'y2029'] as const;
+                          return (
+                            <tr key={row.concept} className={isHighlight ? 'bg-stone-100/70 font-semibold' : 'hover:bg-stone-50'}>
+                              <td className={`py-2 px-3 ${isHighlight ? 'text-stone-800 font-bold' : 'text-stone-600'}`}>
+                                {t(`detail.kpiMetrics.${row.concept}`)}
+                              </td>
+                              {years.map((year, idx) => {
+                                const val = (row as any)[year] as string;
+                                const isProjected = idx >= 3;
+                                return (
+                                  <td key={year} className={`py-2 px-3 text-right ${isProjected ? 'bg-teal-50/40' : ''} ${isHighlight ? 'font-bold' : ''}`}>
+                                    {val}
                                   </td>
                                 );
                               })}

@@ -217,7 +217,31 @@
       "actiuCirculant": "Actif Circulant",
       "fondsPropis": "Fonds Propres",
       "passiuNoCurrent": "Passif non courant",
-      "passiuCirculant": "Passif Circulant"
+      "passiuCirculant": "Passif Circulant",
+      "immobilitzatIntangible": "Immobilisations incorporelles",
+      "immobilitzatTangible": "Immobilisations corporelles",
+      "totalImmobilitzatNet": "Total immobilisations nettes",
+      "inversioFinancera": "Investissements financiers",
+      "capital": "Capital",
+      "reserves": "Réserves",
+      "deuteGrup": "Dette Groupe",
+      "deuteBancari": "Dette bancaire",
+      "provisionsLlt": "Provisions l/t",
+      "subvencions": "Subventions",
+      "deuteFN": "Dette Financière Nette"
+    },
+    "kpiMetrics": {
+      "title": "Indicateurs Opérationnels Clés",
+      "horasFact": "Heures facturées",
+      "avgPricePerHour": "Prix moyen par heure",
+      "totalNumEndpoint": "Total Num EndPoint",
+      "factEndpointMonth": "Fact x Endpoint x Mois",
+      "opexSobreVendes": "%OPEX sur ventes",
+      "despesesPersonalSobreVendes": "Charges de personnel sur ventes",
+      "fte": "ETP",
+      "costMigEmpleat": "Coût moyen par employé (€)",
+      "ingressosEmpleat": "Revenus par employé (€)",
+      "ebitdaSobreVendes": "%EBITDA sur ventes"
     },
     "valuation": {
       "title": "Évaluation de l'Entreprise (DCF)",
