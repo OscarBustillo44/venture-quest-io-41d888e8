@@ -169,6 +169,8 @@
       "ebitda": "EBITDA",
       "amortitzacions": "Depreciation",
       "ebit": "EBIT",
+      "ebt": "EBT (Earnings Before Tax)",
+      "is": "Corporate Tax",
       "netProfit": "Net Profit"
     },
     "balance": {
