@@ -78,6 +78,7 @@ const createBusinessData = () => [
   {
     id: 'infinitypay',
     titleKey: 'businesses.infinitypay.title',
+    gridTitleKey: 'businesses.infinitypay.gridTitle',
     descriptionKey: 'businesses.infinitypay.carouselDesc',
     sectorKey: 'sectors.fintech',
     price: 1084964,

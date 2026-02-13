@@ -612,6 +612,7 @@
     },
     "infinitypay": {
       "title": "InfinityPay – Entreprise de Moyens de Paiement",
+      "gridTitle": "Entreprise de Moyens de Paiement",
       "description": "Entreprise de moyens de paiement avec passerelle de paiements, terminaux TPE et solutions de sécurité. Avec une récurrence de 99% annuel et un parc de plus de 2000 unités TPE avec 90% des grandes entreprises du pays intégrées.",
       "carouselDesc": "Passerelle de paiements, TPEs · CA 500k € · EBITDA 200k € · Rentabilité 19%",
       "highlights": ["99% récurrence annuelle en contrats", "2000+ terminaux TPE installés", "90% des grandes entreprises intégrées", "Passerelle de paiements propre", "Solutions de sécurité avancées", "Potentiel de croissance 6x en CA"],

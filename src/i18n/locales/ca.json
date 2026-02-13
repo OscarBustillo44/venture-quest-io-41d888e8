@@ -612,6 +612,7 @@
     },
     "infinitypay": {
       "title": "InfinityPay – Empresa de Mitjans de Pagament",
+      "gridTitle": "Empresa de Mitjans de Pagament",
       "description": "Empresa de mitjans de pagament amb passarel·la de pagaments, terminals TPV i solucions de seguretat. Amb una recurrència del 99% anual i un parc de més de 2000 unitats TPV amb el 90% de les grans empreses del país integrades.",
       "carouselDesc": "Passarel·la de pagaments, TPVs · Facturació 500k € · EBITDA 200k € · Rendibilitat 19%",
       "highlights": ["99% recurrència anual en contractes", "2000+ terminals TPV instal·lats", "90% de grans empreses integrades", "Passarel·la de pagaments pròpia", "Solucions de seguretat avançades", "Potencial de creixement 6x en facturació"],
