@@ -80,7 +80,7 @@ const createBusinessData = () => [
     descriptionKey: 'businesses.infinitypay.carouselDesc',
     sectorKey: 'sectors.fintech',
     price: 1084964,
-    priceDisplay: "1.084.964 €",
+    priceDisplay: "1,1 Mio €",
     profitability: 52,
     financialDisplay: "Facturación 310k € · Obj. Fact. >500k € · EBITDA 160k € · Obj. EBITDA >250k €",
     publishedDate: new Date('2025-01-15'),
