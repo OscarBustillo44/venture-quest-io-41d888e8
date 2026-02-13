@@ -591,6 +591,22 @@ const ComprarNegocio = () => {
                       <h3 className="font-serif text-base font-bold text-foreground line-clamp-2 leading-tight">
                         {t(business.titleKey)}
                       </h3>
+                      {/* Mini description & highlights for La Borda */}
+                      {business.id === 'la-borda' && (
+                        <div className="mt-2 space-y-1.5">
+                          <p className="text-[11px] text-muted-foreground leading-snug">
+                            {t('buy.labordaMiniDesc')}
+                          </p>
+                          <ul className="text-[10px] text-muted-foreground space-y-0.5">
+                            {(t('buy.labordaMiniHighlights', { returnObjects: true }) as string[]).map((h: string, i: number) => (
+                              <li key={i} className="flex items-start gap-1">
+                                <span className="text-amber-600 mt-px">•</span>
+                                <span>{h}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                     
                     {/* Financial Info - Orange Background */}
