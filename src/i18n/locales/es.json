@@ -192,7 +192,13 @@
       "ebit": "EBIT",
       "ebt": "EBT (Beneficio antes de impuestos)",
       "is": "Impuesto de Sociedades",
-      "netProfit": "Beneficio Neto"
+      "netProfit": "Beneficio Neto",
+      "prestacioServeis": "Prestación de servicios",
+      "consumExplotacio": "Consumo de explotación",
+      "comissionsCanal": "Comisiones Canal",
+      "altresDespeses": "Otros gastos de explotación",
+      "resultatFinancer": "Resultado financiero",
+      "resultat": "Resultado"
     },
     "balance": {
       "title": "Balance Patrimonial Proyectado",

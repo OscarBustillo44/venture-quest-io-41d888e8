@@ -190,6 +190,24 @@ export const alpinePortfolioData = [
   { nameKey: 'businesses.alpine.portfolio.offensive', value: 5, amount: '60k', color: '#90b4ce' },
 ];
 
+// Alpine Security P&L data (000's €)
+export const alpinePnLData = [
+  { concept: 'prestacioServeis', y2025: 1148, y2026: 2150, y2027: 2674, y2028: 3196, y2029: 3840, growth: ['0,0%', '87,2%', '24,4%', '19,5%', '20,1%'] },
+  { concept: 'consumExplotacio', y2025: 0, y2026: -85, y2027: -133, y2028: -185, y2029: -240, pctRow: ['0,0%', '4,0%', '5,0%', '5,8%', '6,3%'] },
+  { concept: 'comissionsCanal', y2025: 0, y2026: -21, y2027: -27, y2028: -32, y2029: -38, pctRow: ['0,0%', '1,0%', '1,0%', '1,0%', '1,0%'] },
+  { concept: 'margeComercial', y2025: 1148, y2026: 2043, y2027: 2514, y2028: 2979, y2029: 3562, pctRow: ['100,0%', '95,0%', '94,0%', '93,2%', '92,7%'] },
+  { concept: 'margeBrut', y2025: 1148, y2026: 2043, y2027: 2514, y2028: 2979, y2029: 3562, pctRow: ['100,0%', '95,0%', '94,0%', '93,2%', '92,7%'] },
+  { concept: 'personal', y2025: -699, y2026: -1125, y2027: -1310, y2028: -1501, y2029: -1700 },
+  { concept: 'altresDespeses', y2025: -223, y2026: -389, y2027: -519, y2028: -535, y2029: -619 },
+  { concept: 'ebitda', y2025: 226, y2026: 529, y2027: 685, y2028: 943, y2029: 1243, pctRow: ['19,7%', '24,6%', '25,6%', '29,5%', '32,4%'] },
+  { concept: 'amortitzacions', y2025: -84, y2026: -74, y2027: -81, y2028: -91, y2029: -97 },
+  { concept: 'ebit', y2025: 142, y2026: 454, y2027: 604, y2028: 852, y2029: 1146 },
+  { concept: 'resultatFinancer', y2025: 0, y2026: -6, y2027: -6, y2028: -5, y2029: -5 },
+  { concept: 'ebt', y2025: 142, y2026: 449, y2027: 599, y2028: 847, y2029: 1141 },
+  { concept: 'is', y2025: 0, y2026: -45, y2027: -60, y2028: -85, y2029: -114 },
+  { concept: 'netProfit', y2025: 142, y2026: 404, y2027: 539, y2028: 762, y2029: 1026 },
+];
+
 // InfinityPay specific data
 export const infinitypayKPIs = [
   { valueKey: 'businesses.infinitypay.kpis.recurrence.value', labelKey: 'businesses.infinitypay.kpis.recurrence.label' },
