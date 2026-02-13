@@ -113,7 +113,7 @@ const createBusinessData = () => [
     id: 'confidencial-comercio',
     titleKey: 'businesses.confCommerce.title',
     descriptionKey: 'businesses.confCommerce.carouselDesc',
-    sectorKey: 'sectors.commerce',
+    sectorKey: 'sectors.realEstate',
     price: 320000,
     priceDisplay: "320.000 €",
     profitability: 15,

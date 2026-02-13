@@ -349,6 +349,7 @@
     "industry": "Industry",
     "technology": "Technology",
     "fintech": "Fintech",
+    "realEstate": "Real Estate",
     "comercio": "Commerce",
     "hosteleria": "Hospitality",
     "industria": "Industry",
@@ -650,10 +651,10 @@
       }
     },
     "confCommerce": {
-      "title": "Com260126 Commerce Sector - [Confidential Business]",
-      "description": "Specialized commerce with recognized brand and loyal customer base. Optimized operations and consolidated suppliers.",
-      "carouselDesc": "Commerce Sector · Revenue €800k · EBITDA €120k · Profitability 15%",
-      "highlights": ["Recognized brand", "Loyal customer base", "Consolidated suppliers", "Optimized operations", "Valued stock included", "Optional owned premises"]
+      "title": "Building for sale with active rental contracts",
+      "description": "Real Estate Business: Building for sale with active rental contracts. Significant investment required, with corresponding potential for rental income growth.",
+      "carouselDesc": "Real Estate Sector · Revenue €800k · EBITDA €120k · Profitability 15%",
+      "highlights": ["Active rental contracts", "Potential for income growth", "Tangible real estate asset", "Recurring cash flows", "Appreciation potential"]
     },
     "confServices": {
       "title": "Opportunity in a Hotel Management Company",

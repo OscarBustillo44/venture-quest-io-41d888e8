@@ -571,7 +571,7 @@ export const businessesData: Record<string, Business> = {
   'confidencial-comercio': {
     id: 'confidencial-comercio',
     titleKey: 'businesses.confCommerce.title',
-    sectorKey: 'sectors.commerce',
+    sectorKey: 'sectors.realEstate',
     location: 'Andorra',
     price: '320.000 €',
     revenue: '800.000 €',
