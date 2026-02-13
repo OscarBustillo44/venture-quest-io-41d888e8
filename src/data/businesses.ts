@@ -458,6 +458,15 @@ export const confServiciosDCFData = [
   { concept: 'freeCashFlow', y2024: 64916, y2025: 70422, y2026: 76480, y2027: 83143, y2028: 90472, y2029: 98534 },
 ];
 
+// Confidencial Servicios Valuation data (€)
+export const confServiciosValuationData = [
+  { concept: 'valorFluxos', value: 312668, label: 'Suma VP Flujos Operativos (2025-2029)' },
+  { concept: 'valorResidual', value: 780069, label: '(+) VP Valor Terminal' },
+  { concept: 'totalValoracio', value: 1092738, isHighlight: true, label: 'EV (Enterprise Value)' },
+  { concept: 'deutaExterna', value: -272942, isNegative: true, label: '(-) Deuda Neta' },
+  { concept: 'totalFondsPropis', value: 819796, isHighlight: true, isOrange: true, label: 'EV (Equity Value)' },
+];
+
 export const businessesData: Record<string, Business> = {
   'la-borda': {
     id: 'la-borda',
