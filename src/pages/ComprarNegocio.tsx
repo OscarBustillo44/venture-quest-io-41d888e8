@@ -70,7 +70,7 @@ const createBusinessData = () => [
     priceDisplay: "2,3 Mio €",
     profitability: 18,
     publishedDate: new Date('2025-01-10'),
-    isConfidential: false,
+    isConfidential: true,
     operationType: 'participar' as OperationType,
     image: carouselSlides.find(s => s.id === 'alpine-security')?.image || '',
     miniDescKey: 'buy.alpineMiniDesc',
