@@ -17,6 +17,7 @@ import PublishBusinessCard from "@/components/PublishBusinessCard";
 import { Link } from "react-router-dom";
 
 import { carouselSlides, businessesData } from '@/data/businesses';
+import restaurantCentroGridImg from '@/assets/restaurant-centro/grid-card.png';
 
 // Sector keys for translation
 const sectorKeys = [
@@ -195,7 +196,7 @@ const createBusinessData = () => [
     publishedDate: new Date('2025-02-09'),
     isConfidential: false,
     operationType: 'vender' as OperationType,
-    image: carouselSlides.find(s => s.id === 'confidencial-restaurant-centro')?.image || '',
+    image: restaurantCentroGridImg,
     miniDescKey: 'buy.restCentroMiniDesc',
     miniHighlightsKey: 'buy.restCentroMiniHighlights',
     refCode: '260200009',
@@ -532,7 +533,7 @@ const ComprarNegocio = () => {
                       <img
                         src={business.image}
                         alt={t(business.titleKey)}
-                        className={`w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105 ${business.isConfidential ? 'blur-md scale-110' : ''}`}
+                        className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${business.isConfidential ? 'object-contain object-center p-4 blur-md scale-110' : 'object-cover'}`}
                       />
                       
                       {/* Confidential overlay */}
