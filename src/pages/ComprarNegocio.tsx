@@ -59,6 +59,7 @@ const createBusinessData = () => [
     miniHighlightsKey: 'buy.labordaMiniHighlights',
     refCode: '261200001',
     visits: 444,
+    lastVisitDate: new Date('2026-02-18'),
   },
   {
     id: 'alpine-security',
@@ -77,6 +78,7 @@ const createBusinessData = () => [
     miniHighlightsKey: 'buy.alpineMiniHighlights',
     refCode: '260100002',
     visits: 312,
+    lastVisitDate: new Date('2026-02-15'),
   },
   {
     id: 'infinitypay',
@@ -96,6 +98,7 @@ const createBusinessData = () => [
     miniHighlightsKey: 'buy.infinitypayMiniHighlights',
     refCode: '260100003',
     visits: 287,
+    lastVisitDate: new Date('2026-02-20'),
   },
   {
     id: 'confidencial-hosteleria',
@@ -113,6 +116,7 @@ const createBusinessData = () => [
     miniHighlightsKey: 'buy.confHostMiniHighlights',
     refCode: '260100004',
     visits: 198,
+    lastVisitDate: new Date('2026-02-11'),
   },
   {
     id: 'confidencial-comercio',
@@ -131,6 +135,7 @@ const createBusinessData = () => [
     miniHighlightsKey: 'buy.confComMiniHighlights',
     refCode: '260100005',
     visits: 156,
+    lastVisitDate: new Date('2026-02-08'),
   },
   {
     id: 'confidencial-servicios',
@@ -149,6 +154,7 @@ const createBusinessData = () => [
     miniHighlightsKey: 'buy.confServMiniHighlights',
     refCode: '260100006',
     visits: 231,
+    lastVisitDate: new Date('2026-02-19'),
   },
   {
     id: 'confidencial-industria',
@@ -166,6 +172,7 @@ const createBusinessData = () => [
     miniHighlightsKey: 'buy.confIndMiniHighlights',
     refCode: '260100007',
     visits: 175,
+    lastVisitDate: new Date('2026-02-14'),
   },
   {
     id: 'confidencial-tecnologia',
@@ -183,6 +190,7 @@ const createBusinessData = () => [
     miniHighlightsKey: 'buy.confTechMiniHighlights',
     refCode: '260100008',
     visits: 389,
+    lastVisitDate: new Date('2026-02-21'),
   },
   {
     id: 'confidencial-restaurant-centro',
@@ -201,6 +209,7 @@ const createBusinessData = () => [
     miniHighlightsKey: 'buy.restCentroMiniHighlights',
     refCode: '260200009',
     visits: 521,
+    lastVisitDate: new Date('2026-02-22'),
   }
 ];
 
@@ -599,6 +608,11 @@ const ComprarNegocio = () => {
                         {/* Operation Type Badge */}
                         <div className={`inline-block px-2 py-0.5 rounded text-xs font-medium bg-white/20`}>
                           {t(operationBadgeConfig[business.operationType].labelKey)}
+                        </div>
+                        {/* Last visit date */}
+                        <div className="flex items-center gap-1 text-white/80 text-[10px]">
+                          <Calendar className="w-3 h-3" />
+                          {business.lastVisitDate?.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })}
                         </div>
                         {/* Visit counter */}
                         <div className="flex items-center gap-1 text-white/80 text-[10px]">
