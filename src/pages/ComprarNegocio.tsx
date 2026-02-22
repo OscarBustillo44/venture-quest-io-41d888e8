@@ -532,14 +532,16 @@ const ComprarNegocio = () => {
                       <img
                         src={business.image}
                         alt={t(business.titleKey)}
-                        className="w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105 blur-md scale-110"
+                        className={`w-full h-full object-contain object-center p-4 transition-transform duration-500 group-hover:scale-105 ${business.isConfidential ? 'blur-md scale-110' : ''}`}
                       />
                       
                       {/* Confidential overlay */}
-                      <div className="absolute inset-0 bg-stone-900/40 flex flex-col items-center justify-center">
-                        <Lock className="w-8 h-8 text-amber-500 mb-2" />
-                        <span className="text-stone-200 text-sm font-medium">{t('buy.confidentialLocation')}</span>
-                      </div>
+                      {business.isConfidential && (
+                        <div className="absolute inset-0 bg-stone-900/40 flex flex-col items-center justify-center">
+                          <Lock className="w-8 h-8 text-amber-500 mb-2" />
+                          <span className="text-stone-200 text-sm font-medium">{t('buy.confidentialLocation')}</span>
+                        </div>
+                      )}
                       
                       {/* Sector Badge + Ref Code */}
                       <div className="absolute top-3 left-3 z-10 flex flex-col gap-1">
