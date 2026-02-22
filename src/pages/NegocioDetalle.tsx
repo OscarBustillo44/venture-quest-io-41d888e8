@@ -59,6 +59,18 @@ import {
   confComercioValuationData,
 } from '@/data/businesses';
 
+const refCodes: Record<string, string> = {
+  'la-borda': '261200001',
+  'alpine-security': '260100002',
+  'infinitypay': '260100003',
+  'confidencial-hosteleria': '260100004',
+  'confidencial-comercio': '260100005',
+  'confidencial-servicios': '260100006',
+  'confidencial-industria': '260100007',
+  'confidencial-tecnologia': '260100008',
+  'confidencial-restaurant-centro': '260200009',
+};
+
 const NegocioDetalle = () => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
@@ -139,7 +151,14 @@ const NegocioDetalle = () => {
         {/* Title Section */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
           <div>
-            <Badge className="bg-amber-600 text-white mb-2">{t(business.sectorKey)}</Badge>
+            <div className="flex items-center gap-2 mb-2">
+              <Badge className="bg-amber-600 text-white">{t(business.sectorKey)}</Badge>
+              {refCodes[business.id] && (
+                <span className="text-[11px] font-mono tracking-wider text-stone-400 bg-stone-100 px-2 py-0.5 rounded">
+                  Ref: {refCodes[business.id]}
+                </span>
+              )}
+            </div>
             <h1 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-2">
               {isUnlocked || !business.isConfidential || business.id === 'confidencial-servicios' ? t(business.titleKey) : t('detail.gated.anonymousTitle', { sector: t(business.sectorKey) })}
             </h1>
