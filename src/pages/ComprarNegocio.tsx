@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Search, Filter, Building2, TrendingUp, Users, CheckCircle, X, ArrowUpDown, Lock, Target, Calendar, AlertTriangle } from "lucide-react";
+import { Search, Filter, Building2, TrendingUp, Users, CheckCircle, X, ArrowUpDown, Lock, Target, Calendar, AlertTriangle, Eye } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -57,6 +57,7 @@ const createBusinessData = () => [
     miniDescKey: 'buy.labordaMiniDesc',
     miniHighlightsKey: 'buy.labordaMiniHighlights',
     refCode: '261200001',
+    visits: 444,
   },
   {
     id: 'alpine-security',
@@ -74,6 +75,7 @@ const createBusinessData = () => [
     miniDescKey: 'buy.alpineMiniDesc',
     miniHighlightsKey: 'buy.alpineMiniHighlights',
     refCode: '260100002',
+    visits: 312,
   },
   {
     id: 'infinitypay',
@@ -92,6 +94,7 @@ const createBusinessData = () => [
     miniDescKey: 'buy.infinitypayMiniDesc',
     miniHighlightsKey: 'buy.infinitypayMiniHighlights',
     refCode: '260100003',
+    visits: 287,
   },
   {
     id: 'confidencial-hosteleria',
@@ -108,6 +111,7 @@ const createBusinessData = () => [
     miniDescKey: 'buy.confHostMiniDesc',
     miniHighlightsKey: 'buy.confHostMiniHighlights',
     refCode: '260100004',
+    visits: 198,
   },
   {
     id: 'confidencial-comercio',
@@ -125,6 +129,7 @@ const createBusinessData = () => [
     miniDescKey: 'buy.confComMiniDesc',
     miniHighlightsKey: 'buy.confComMiniHighlights',
     refCode: '260100005',
+    visits: 156,
   },
   {
     id: 'confidencial-servicios',
@@ -142,6 +147,7 @@ const createBusinessData = () => [
     miniDescKey: 'buy.confServMiniDesc',
     miniHighlightsKey: 'buy.confServMiniHighlights',
     refCode: '260100006',
+    visits: 231,
   },
   {
     id: 'confidencial-industria',
@@ -158,6 +164,7 @@ const createBusinessData = () => [
     miniDescKey: 'buy.confIndMiniDesc',
     miniHighlightsKey: 'buy.confIndMiniHighlights',
     refCode: '260100007',
+    visits: 175,
   },
   {
     id: 'confidencial-tecnologia',
@@ -174,6 +181,7 @@ const createBusinessData = () => [
     miniDescKey: 'buy.confTechMiniDesc',
     miniHighlightsKey: 'buy.confTechMiniHighlights',
     refCode: '260100008',
+    visits: 389,
   },
   {
     id: 'confidencial-restaurant-centro',
@@ -191,6 +199,7 @@ const createBusinessData = () => [
     miniDescKey: 'buy.restCentroMiniDesc',
     miniHighlightsKey: 'buy.restCentroMiniHighlights',
     refCode: '260200009',
+    visits: 521,
   }
 ];
 
@@ -551,6 +560,12 @@ const ComprarNegocio = () => {
                       <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-stone-900/70 text-stone-300 px-2 py-1 rounded text-[10px] z-10">
                         <Lock className="w-3 h-3" />
                         {t('buy.confidential')}
+                      </div>
+
+                      {/* Visit counter */}
+                      <div className="absolute bottom-2 left-2 flex items-center gap-1 bg-stone-900/70 text-stone-300 px-2 py-1 rounded text-[10px] z-10">
+                        <Eye className="w-3 h-3" />
+                        {business.visits} VISITES
                       </div>
                     </div>
                     
