@@ -562,11 +562,8 @@ const ComprarNegocio = () => {
                         {t('buy.confidential')}
                       </div>
 
-                      {/* Visit counter */}
-                      <div className="absolute bottom-2 left-2 flex items-center gap-1 bg-stone-900/70 text-stone-300 px-2 py-1 rounded text-[10px] z-10">
-                        <Eye className="w-3 h-3" />
-                        {business.visits} VISITES
-                      </div>
+
+
                     </div>
                     
                     {/* Title Section */}
@@ -595,9 +592,16 @@ const ComprarNegocio = () => {
                       <p className="text-xs leading-relaxed">
                         {business.financialDisplay || `Facturación ${business.priceDisplay} · EBITDA ${Math.round(business.price * 0.25).toLocaleString('es-ES')} € · Rentabilidad ${business.profitability}%`}
                       </p>
-                      {/* Operation Type Badge */}
-                      <div className={`inline-block mt-2 px-2 py-0.5 rounded text-xs font-medium bg-white/20`}>
-                        {t(operationBadgeConfig[business.operationType].labelKey)}
+                      <div className="flex items-center justify-between mt-2">
+                        {/* Operation Type Badge */}
+                        <div className={`inline-block px-2 py-0.5 rounded text-xs font-medium bg-white/20`}>
+                          {t(operationBadgeConfig[business.operationType].labelKey)}
+                        </div>
+                        {/* Visit counter */}
+                        <div className="flex items-center gap-1 text-white/80 text-[10px]">
+                          <Eye className="w-3 h-3" />
+                          {business.visits} VISITES
+                        </div>
                       </div>
                     </div>
                   </div>
