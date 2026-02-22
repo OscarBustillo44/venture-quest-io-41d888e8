@@ -89,7 +89,7 @@ const createBusinessData = () => [
     profitability: 52,
     financialDisplay: "Facturación 310k € · Obj. Fact. >500k € · EBITDA 160k € · Obj. EBITDA >250k €",
     publishedDate: new Date('2025-01-15'),
-    isConfidential: false,
+    isConfidential: true,
     operationType: 'vender' as OperationType,
     image: carouselSlides.find(s => s.id === 'infinitypay')?.image || '',
     miniDescKey: 'buy.infinitypayMiniDesc',
