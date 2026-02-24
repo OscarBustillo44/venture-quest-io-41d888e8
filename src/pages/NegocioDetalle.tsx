@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
+import { useAdminAccess } from '@/hooks/useAdminAccess';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -15,6 +16,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import GatedAccessBanner from '@/components/GatedAccessBanner';
 import VerificationModal from '@/components/VerificationModal';
+import ConfidentialBlockScreen from '@/components/ConfidentialBlockScreen';
 import {
   businessesData,
   labordaKPIs,
@@ -75,6 +77,7 @@ const NegocioDetalle = () => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
   const { user } = useAuth();
+  const { isAdmin } = useAdminAccess();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [verificationOpen, setVerificationOpen] = useState(false);
@@ -115,6 +118,16 @@ const NegocioDetalle = () => {
           </Link>
         </div>
       </div>
+    );
+  }
+
+  // Block confidential listings for non-admin users
+  if (business.isConfidential && !isAdmin) {
+    return (
+      <ConfidentialBlockScreen
+        sector={t(business.sectorKey)}
+        refCode={refCodes[business.id] || ''}
+      />
     );
   }
 
