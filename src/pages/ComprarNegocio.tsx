@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 
 import { carouselSlides, businessesData } from '@/data/businesses';
 import restaurantCentroGridImg from '@/assets/restaurant-centro/grid-card.png';
+import restaurantCentroFachada from '@/assets/restaurant-centro/fachada.png';
 
 // Sector keys for translation
 const sectorKeys = [
@@ -204,7 +205,7 @@ const createBusinessData = () => [
     publishedDate: new Date('2025-02-09'),
     isConfidential: false,
     operationType: 'vender' as OperationType,
-    image: restaurantCentroGridImg,
+    image: restaurantCentroFachada,
     miniDescKey: 'buy.restCentroMiniDesc',
     miniHighlightsKey: 'buy.restCentroMiniHighlights',
     refCode: '260200009',
