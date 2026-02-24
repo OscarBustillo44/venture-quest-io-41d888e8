@@ -58,7 +58,7 @@ const createBusinessData = () => [
     image: carouselSlides.find(s => s.id === 'la-borda')?.image || '',
     miniDescKey: 'buy.labordaMiniDesc',
     miniHighlightsKey: 'buy.labordaMiniHighlights',
-    refCode: '261200001',
+    refCode: '260200001',
     visits: 444,
     lastVisitDate: new Date('2026-02-18'),
   },

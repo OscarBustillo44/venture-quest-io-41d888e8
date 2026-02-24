@@ -60,7 +60,7 @@ import {
 } from '@/data/businesses';
 
 const refCodes: Record<string, string> = {
-  'la-borda': '261200001',
+  'la-borda': '260200001',
   'alpine-security': '260100002',
   'infinitypay': '260100003',
   'confidencial-hosteleria': '260100004',
