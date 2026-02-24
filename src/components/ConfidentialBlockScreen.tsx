@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Lock, Mail, Phone, ArrowLeft, KeyRound } from 'lucide-react';
+import { Lock, Mail, Phone, ArrowLeft, KeyRound, Send, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useAdminAccess } from '@/hooks/useAdminAccess';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { toast } from 'sonner';
 
 interface ConfidentialBlockScreenProps {
   sector: string;
@@ -18,6 +20,9 @@ const ConfidentialBlockScreen = ({ sector, refCode }: ConfidentialBlockScreenPro
   const [showPasswordInput, setShowPasswordInput] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [formSent, setFormSent] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
 
   const handleLogin = () => {
     const success = loginAdmin(password);
@@ -25,7 +30,17 @@ const ConfidentialBlockScreen = ({ sector, refCode }: ConfidentialBlockScreenPro
       setError(true);
       setPassword('');
     }
-    // If success, parent component will re-render and show the detail
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error("Si us plau, ompliu tots els camps obligatoris.");
+      return;
+    }
+    // For now just show success - could integrate with backend later
+    setFormSent(true);
+    toast.success("Sol·licitud enviada correctament!");
   };
 
   return (
@@ -61,23 +76,120 @@ const ConfidentialBlockScreen = ({ sector, refCode }: ConfidentialBlockScreenPro
                 Si esteu interessats en obtenir més informació sobre aquest negoci, poseu-vos en contacte amb nosaltres.
               </p>
 
-              {/* Contact Info */}
-              <div className="w-full max-w-sm space-y-4 pt-4">
-                <a
-                  href="mailto:info@buscobusiness.com"
-                  className="flex items-center justify-center gap-3 bg-amber-600 hover:bg-amber-700 text-white px-6 py-4 rounded-lg text-base font-semibold transition-colors"
+              {/* Contactar Button */}
+              {!showContactForm && !formSent && (
+                <Button
+                  onClick={() => setShowContactForm(true)}
+                  className="bg-amber-600 hover:bg-amber-700 text-white px-10 py-6 text-lg font-semibold rounded-lg shadow-md"
                 >
-                  <Mail className="w-5 h-5" />
-                  info@buscobusiness.com
-                </a>
-                <a
-                  href="tel:+376337670"
-                  className="flex items-center justify-center gap-3 bg-stone-700 hover:bg-stone-800 text-white px-6 py-3 rounded-lg text-sm font-medium transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  +376 337 670
-                </a>
-              </div>
+                  Contactar
+                </Button>
+              )}
+
+              {/* Contact Panel */}
+              {showContactForm && !formSent && (
+                <div className="w-full max-w-md space-y-6 pt-2 text-left">
+                  {/* Quick contact links */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <a
+                      href="tel:+376337670"
+                      className="flex items-center justify-center gap-2 bg-stone-700 hover:bg-stone-800 text-white px-4 py-3 rounded-lg text-sm font-medium transition-colors"
+                    >
+                      <Phone className="w-4 h-4" />
+                      +376 337 670
+                    </a>
+                    <a
+                      href="mailto:info@buscobusiness.com"
+                      className="flex items-center justify-center gap-2 bg-stone-700 hover:bg-stone-800 text-white px-4 py-3 rounded-lg text-sm font-medium transition-colors"
+                    >
+                      <Mail className="w-4 h-4" />
+                      Email
+                    </a>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="flex items-center gap-3">
+                    <div className="flex-1 h-px bg-stone-200" />
+                    <span className="text-xs text-stone-400 uppercase tracking-wider">o envieu-nos un missatge</span>
+                    <div className="flex-1 h-px bg-stone-200" />
+                  </div>
+
+                  {/* Form */}
+                  <form onSubmit={handleFormSubmit} className="space-y-4">
+                    <div>
+                      <label className="text-sm font-medium text-stone-700 mb-1 block">Nom complet *</label>
+                      <Input
+                        value={formData.name}
+                        onChange={(e) => setFormData(p => ({ ...p, name: e.target.value }))}
+                        placeholder="El vostre nom"
+                        required
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className="text-sm font-medium text-stone-700 mb-1 block">Email *</label>
+                        <Input
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => setFormData(p => ({ ...p, email: e.target.value }))}
+                          placeholder="email@exemple.com"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="text-sm font-medium text-stone-700 mb-1 block">Telèfon</label>
+                        <Input
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => setFormData(p => ({ ...p, phone: e.target.value }))}
+                          placeholder="+376..."
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-stone-700 mb-1 block">
+                        Què us interessa saber? *
+                      </label>
+                      <Textarea
+                        value={formData.message}
+                        onChange={(e) => setFormData(p => ({ ...p, message: e.target.value }))}
+                        placeholder="Expliqueu breument el vostre interès en aquest negoci..."
+                        rows={4}
+                        required
+                      />
+                    </div>
+                    <p className="text-xs text-stone-400">
+                      Ref: {refCode} · {sector}
+                    </p>
+                    <Button
+                      type="submit"
+                      className="w-full bg-amber-600 hover:bg-amber-700 text-white py-5 text-base font-semibold"
+                    >
+                      <Send className="w-4 h-4 mr-2" />
+                      Enviar sol·licitud
+                    </Button>
+                  </form>
+                </div>
+              )}
+
+              {/* Success State */}
+              {formSent && (
+                <div className="flex flex-col items-center space-y-4 py-4">
+                  <CheckCircle className="w-14 h-14 text-green-600" />
+                  <h2 className="text-xl font-semibold text-stone-800">Sol·licitud enviada!</h2>
+                  <p className="text-stone-600 max-w-sm">
+                    Gràcies pel vostre interès. Ens posarem en contacte amb vosaltres el més aviat possible.
+                  </p>
+                  <div className="flex gap-3 pt-2">
+                    <a href="tel:+376337670" className="flex items-center gap-2 text-sm text-stone-600 hover:text-stone-800">
+                      <Phone className="w-4 h-4" /> +376 337 670
+                    </a>
+                    <a href="mailto:info@buscobusiness.com" className="flex items-center gap-2 text-sm text-stone-600 hover:text-stone-800">
+                      <Mail className="w-4 h-4" /> info@buscobusiness.com
+                    </a>
+                  </div>
+                </div>
+              )}
 
               {/* Admin access */}
               <div className="pt-6 w-full max-w-sm">
