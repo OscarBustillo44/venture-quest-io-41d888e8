@@ -611,7 +611,7 @@ export const businessesData: Record<string, Business> = {
     targetRevenue: '>250k €',
     targetEbitda: '>150k €',
     percentForSale: '100%',
-    isConfidential: true,
+    isConfidential: false,
     descriptionKey: 'businesses.confCommerce.description',
     highlightsKey: 'businesses.confCommerce.highlights',
     images: [confComercioCard],
@@ -773,9 +773,9 @@ export const carouselSlides = [
     image: confComercioCard,
     titleKey: 'businesses.confCommerce.title',
     descriptionKey: 'businesses.confCommerce.carouselDesc',
-    price: '320.000 €',
-    sectorKey: 'sectors.commerce',
-    isConfidential: true
+    price: '475.000 €',
+    sectorKey: 'sectors.realEstate',
+    isConfidential: false
   },
   {
     id: 'confidencial-servicios',
