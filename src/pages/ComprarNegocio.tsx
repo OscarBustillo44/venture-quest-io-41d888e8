@@ -23,6 +23,7 @@ import restaurantCentroFachada from '@/assets/restaurant-centro/fachada.png';
 // Sector keys for translation
 const sectorKeys = [
   { key: 'sectors.hospitality', value: 'Hostelería' },
+  { key: 'sectors.realEstate', value: 'Real Estate' },
   { key: 'sectors.commerce', value: 'Comercio' },
   { key: 'sectors.services', value: 'Servicios' },
   { key: 'sectors.industry', value: 'Industria' },
