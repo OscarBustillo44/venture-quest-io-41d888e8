@@ -5,6 +5,10 @@ import labordaProducte from '@/assets/laborda/producte.png';
 import labordaCollage from '@/assets/laborda/collage.png';
 import labordaInterior from '@/assets/laborda/interior.png';
 import labordaFachada from '@/assets/laborda/fachada.png';
+import labordaFachadaExterior from '@/assets/laborda/fachada-exterior.jpeg';
+import labordaComedorPrivado1 from '@/assets/laborda/comedor-privado-1.jpeg';
+import labordaComedorPrivado2 from '@/assets/laborda/comedor-privado-2.jpeg';
+import labordaTerrassaNoche from '@/assets/laborda/terrassa-noche.jpeg';
 
 // Alpine Security images
 import alpineLogo from '@/assets/alpine/logo-main.png';
@@ -505,7 +509,7 @@ export const businessesData: Record<string, Business> = {
     percentForSale: '100%',
     descriptionKey: 'businesses.laborda.description',
     highlightsKey: 'businesses.laborda.highlights',
-    images: [labordaFachada, labordaInterior, labordaProducte, labordaTerrassa, labordaCollage, labordaFacturacio],
+    images: [labordaFachadaExterior, labordaFachada, labordaInterior, labordaComedorPrivado1, labordaComedorPrivado2, labordaProducte, labordaTerrassaNoche, labordaTerrassa, labordaCollage, labordaFacturacio],
     financialData: [
       { year: 'n0', revenue: 218, ebitda: 83 },
       { year: 'n+1', revenue: 223, ebitda: 84 },
