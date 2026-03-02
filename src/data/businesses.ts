@@ -509,7 +509,7 @@ export const businessesData: Record<string, Business> = {
     percentForSale: '100%',
     descriptionKey: 'businesses.laborda.description',
     highlightsKey: 'businesses.laborda.highlights',
-    images: [labordaFachadaExterior, labordaFachada, labordaInterior, labordaComedorPrivado1, labordaComedorPrivado2, labordaProducte, labordaTerrassaNoche, labordaTerrassa, labordaCollage, labordaFacturacio],
+    images: [labordaFachadaExterior, labordaFachada, labordaInterior, labordaComedorPrivado2, labordaProducte, labordaTerrassaNoche, labordaTerrassa, labordaCollage, labordaFacturacio],
     financialData: [
       { year: 'n0', revenue: 218, ebitda: 83 },
       { year: 'n+1', revenue: 223, ebitda: 84 },
