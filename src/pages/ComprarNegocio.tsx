@@ -202,7 +202,7 @@ const createBusinessData = () => [
     price: 180000,
     priceDisplay: "180.000 €",
     profitability: 50,
-    financialDisplay: "Facturación 600k € · Obj. Fact. >900k € · EBITDA 121k € · Obj. EBITDA >260k € · Rentabilidad 50% · Obj. Valor Empresa 908k €",
+    financialDisplayKey: "buy.restCentroFinancial",
     publishedDate: new Date('2025-02-09'),
     isConfidential: false,
     operationType: 'vender' as OperationType,
