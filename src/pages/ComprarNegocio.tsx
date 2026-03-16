@@ -91,7 +91,7 @@ const createBusinessData = () => [
     price: 1084964,
     priceDisplay: "1,1 Mio €",
     profitability: 52,
-    financialDisplay: "Facturación 310k € · Obj. Fact. >500k € · EBITDA 160k € · Obj. EBITDA >250k €",
+    financialDisplayKey: "buy.infinitypayFinancial",
     publishedDate: new Date('2025-01-15'),
     isConfidential: true,
     operationType: 'vender' as OperationType,
