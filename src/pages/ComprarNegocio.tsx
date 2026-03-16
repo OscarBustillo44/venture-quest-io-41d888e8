@@ -72,6 +72,7 @@ const createBusinessData = () => [
     price: 2400000,
     priceDisplay: "2,3 Mio €",
     profitability: 18,
+    financialDisplayKey: "buy.alpineFinancial",
     publishedDate: new Date('2025-01-10'),
     isConfidential: true,
     operationType: 'participar' as OperationType,
