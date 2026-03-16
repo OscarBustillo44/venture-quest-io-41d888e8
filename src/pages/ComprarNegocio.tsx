@@ -52,7 +52,7 @@ const createBusinessData = () => [
     price: 75000,
     priceDisplay: "75.000 €",
     profitability: 33,
-    financialDisplay: "Facturación 217.760 € · Obj. Fact. >260k € · EBITDA 83.449 € · Obj. EBITDA >120k € · Rentabilidad 38,3% · Obj. Rent. >66% · Obj. Valor Empresa 489k €",
+    financialDisplayKey: "buy.labordaFinancial",
     publishedDate: new Date('2024-12-01'),
     isConfidential: false,
     operationType: 'traspasar' as OperationType,
@@ -72,6 +72,7 @@ const createBusinessData = () => [
     price: 2400000,
     priceDisplay: "2,3 Mio €",
     profitability: 18,
+    financialDisplayKey: "buy.alpineFinancial",
     publishedDate: new Date('2025-01-10'),
     isConfidential: true,
     operationType: 'participar' as OperationType,
@@ -91,7 +92,7 @@ const createBusinessData = () => [
     price: 1084964,
     priceDisplay: "1,1 Mio €",
     profitability: 52,
-    financialDisplay: "Facturación 310k € · Obj. Fact. >500k € · EBITDA 160k € · Obj. EBITDA >250k €",
+    financialDisplayKey: "buy.infinitypayFinancial",
     publishedDate: new Date('2025-01-15'),
     isConfidential: true,
     operationType: 'vender' as OperationType,
@@ -110,6 +111,7 @@ const createBusinessData = () => [
     price: 180000,
     priceDisplay: "180.000 €",
     profitability: 24,
+    financialDisplayKey: "buy.confHostFinancial",
     publishedDate: new Date('2025-01-20'),
     isConfidential: true,
     operationType: 'traspasar' as OperationType,
@@ -128,7 +130,7 @@ const createBusinessData = () => [
     price: 475000,
     priceDisplay: "475.000 €",
     profitability: 6,
-    financialDisplay: "Facturación 110k € · Obj. Fact. >250k € · EBITDA 35k € · Obj. EBITDA >150k € · Rentabilidad 6%",
+    financialDisplayKey: "buy.confComFinancial",
     publishedDate: new Date('2025-01-22'),
     isConfidential: true,
     operationType: 'vender' as OperationType,
@@ -147,7 +149,7 @@ const createBusinessData = () => [
     price: 500000,
     priceDisplay: "0,5 Mio €",
     profitability: 20,
-    financialDisplay: "Facturación 1,3 Mio € · Obj. Fact. >2 Mio € · EBITDA 62k € · Obj. EBITDA >150k € · Rentabilidad 16%",
+    financialDisplayKey: "buy.confServFinancial",
     publishedDate: new Date('2025-01-23'),
     isConfidential: true,
     operationType: 'vender' as OperationType,
@@ -202,7 +204,7 @@ const createBusinessData = () => [
     price: 180000,
     priceDisplay: "180.000 €",
     profitability: 50,
-    financialDisplay: "Facturación 600k € · Obj. Fact. >900k € · EBITDA 121k € · Obj. EBITDA >260k € · Rentabilidad 50% · Obj. Valor Empresa 908k €",
+    financialDisplayKey: "buy.restCentroFinancial",
     publishedDate: new Date('2025-02-09'),
     isConfidential: false,
     operationType: 'vender' as OperationType,
@@ -604,7 +606,7 @@ const ComprarNegocio = () => {
                     {/* Financial Info - Orange Background */}
                     <div className="bg-amber-600 text-white p-3 mt-auto">
                       <p className="text-xs leading-relaxed">
-                        {business.financialDisplay || `Facturación ${business.priceDisplay} · EBITDA ${Math.round(business.price * 0.25).toLocaleString('es-ES')} € · Rentabilidad ${business.profitability}%`}
+                        {business.financialDisplayKey ? t(business.financialDisplayKey) : t('buy.defaultFinancialTemplate', { price: business.priceDisplay, ebitda: Math.round(business.price * 0.25).toLocaleString('es-ES'), profitability: business.profitability })}
                       </p>
                       <div className="flex items-center justify-between mt-2">
                         {/* Operation Type Badge */}
