@@ -128,7 +128,7 @@ const createBusinessData = () => [
     price: 475000,
     priceDisplay: "475.000 €",
     profitability: 6,
-    financialDisplay: "Facturación 110k € · Obj. Fact. >250k € · EBITDA 35k € · Obj. EBITDA >150k € · Rentabilidad 6%",
+    financialDisplayKey: "buy.confComFinancial",
     publishedDate: new Date('2025-01-22'),
     isConfidential: true,
     operationType: 'vender' as OperationType,
