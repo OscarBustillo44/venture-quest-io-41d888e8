@@ -110,6 +110,7 @@ const createBusinessData = () => [
     price: 180000,
     priceDisplay: "180.000 €",
     profitability: 24,
+    financialDisplayKey: "buy.confHostFinancial",
     publishedDate: new Date('2025-01-20'),
     isConfidential: true,
     operationType: 'traspasar' as OperationType,
