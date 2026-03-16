@@ -604,7 +604,7 @@ const ComprarNegocio = () => {
                     {/* Financial Info - Orange Background */}
                     <div className="bg-amber-600 text-white p-3 mt-auto">
                       <p className="text-xs leading-relaxed">
-                        {business.financialDisplay || `Facturación ${business.priceDisplay} · EBITDA ${Math.round(business.price * 0.25).toLocaleString('es-ES')} € · Rentabilidad ${business.profitability}%`}
+                        {business.financialDisplayKey ? t(business.financialDisplayKey) : t('buy.defaultFinancialTemplate', { price: business.priceDisplay, ebitda: Math.round(business.price * 0.25).toLocaleString('es-ES'), profitability: business.profitability })}
                       </p>
                       <div className="flex items-center justify-between mt-2">
                         {/* Operation Type Badge */}
