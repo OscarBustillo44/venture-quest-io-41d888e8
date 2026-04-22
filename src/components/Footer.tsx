@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Separator } from "@/components/ui/separator";
 import bbLogoInverted from "@/assets/generic/buscobusiness-logo-inverted.png";
-import { buildContactMailtoHref } from "@/lib/contact";
+import { buildContactMailtoHref, buildValuationMailtoHref } from "@/lib/contact";
 
 
 const Footer = () => {
@@ -103,7 +103,7 @@ const Footer = () => {
         <div className="flex items-center justify-center gap-2 mb-8 py-4">
           <span className="text-sm text-primary-foreground/70">{t('footer.partnerLabel')}</span>
           <a
-            href="https://icfobusiness.com?utm_source=buscobusiness&utm_medium=footer&utm_campaign=cross-link"
+            href={buildValuationMailtoHref()}
             className="text-sm font-semibold text-primary-foreground hover:text-primary-foreground/90 transition-colors underline underline-offset-2"
           >
             iCFObusiness
