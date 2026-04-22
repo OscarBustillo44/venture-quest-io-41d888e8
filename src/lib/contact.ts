@@ -1,6 +1,6 @@
 export const CONTACT_EMAIL = 'info@buscobusiness.com';
-export const CONTACT_SUBJECT = 'Contacto desde BuscoBusiness';
-export const CONTACT_BODY = 'Hola, me gustaría recibir más información sobre los negocios disponibles / vender mi negocio.';
+export const CONTACT_SUBJECT = 'Contacto BuscoBusiness';
+export const CONTACT_BODY = 'Hola, me gustaría información';
 
 export const buildContactMailtoHref = (extraLines: string[] = []) => {
   const details = extraLines.map((line) => line.trim()).filter(Boolean);
