@@ -3,6 +3,7 @@ import { Target, Shield, TrendingUp, Users, Building2, Briefcase, Mail, Phone } 
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { buildContactMailtoHref } from '@/lib/contact';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -307,7 +308,7 @@ const Nosotros = () => {
               +376 337 670
             </motion.a>
             <motion.a 
-              href="mailto:info@buscobusiness.com" 
+              href={buildContactMailtoHref()} 
               className="flex items-center gap-3 text-lg text-stone-700 hover:text-amber-600 transition-colors"
               variants={fadeInUp}
               whileHover={{ scale: 1.05 }}
