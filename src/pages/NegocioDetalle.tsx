@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { useAdminAccess } from '@/hooks/useAdminAccess';
 import { supabase } from '@/integrations/supabase/client';
+import { buildContactMailtoHref, openContactMailto } from '@/lib/contact';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -142,7 +143,17 @@ const NegocioDetalle = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    const extraLines = [
+      business ? `Negocio: ${t(business.titleKey)}` : '',
+      refCodes[business?.id ?? ''] ? `Referencia: ${refCodes[business?.id ?? '']}` : '',
+      `Nombre: ${formData.name}`,
+      `Email: ${formData.email}`,
+      formData.phone ? `Teléfono: ${formData.phone}` : '',
+      formData.message?.trim() ? `Mensaje: ${formData.message.trim()}` : '',
+    ].filter(Boolean) as string[];
+
+    openContactMailto(extraLines);
     setIsSubmitting(false);
     setSubmitted(true);
   };
@@ -2022,7 +2033,7 @@ const NegocioDetalle = () => {
                     <Phone className="w-5 h-5" />
                     +376 337 670
                   </a>
-                  <a href="mailto:info@buscobusiness.com" className="flex items-center gap-3 text-stone-600 hover:text-amber-600 transition-colors">
+                  <a href={buildContactMailtoHref([business ? `Negocio: ${t(business.titleKey)}` : "", refCodes[business.id] ? `Referencia: ${refCodes[business.id]}` : ""].filter(Boolean))} className="flex items-center gap-3 text-stone-600 hover:text-amber-600 transition-colors">
                     <Mail className="w-5 h-5" />
                     info@buscobusiness.com
                   </a>
