@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PublishBusinessCard from "@/components/PublishBusinessCard";
 import { Link } from "react-router-dom";
-import { buildContactMailtoHref } from "@/lib/contact";
+import { buildFindBusinessMailtoHref } from "@/lib/contact";
 
 import { carouselSlides, businessesData } from '@/data/businesses';
 import restaurantCentroGridImg from '@/assets/restaurant-centro/grid-card.png';
@@ -655,7 +655,7 @@ const ComprarNegocio = () => {
             {t('buy.notFindingDesc')}
           </p>
           <Button asChild size="lg" variant="secondary" className="bg-background text-amber-700 hover:bg-amber-50">
-            <a href={buildContactMailtoHref()}>{t('buy.contact')}</a>
+            <a href={buildFindBusinessMailtoHref()}>{t('buy.contact')}</a>
           </Button>
         </div>
       </section>
