@@ -25,7 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { buildContactMailtoHref, openContactMailto } from '@/lib/contact';
+import { buildContactMailtoHref, buildValuationMailtoHref, openContactMailto } from '@/lib/contact';
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, { message: "El nombre es obligatorio" }).max(100),
@@ -208,14 +208,13 @@ const Vender = () => {
           </p>
 
           <div className="text-center">
-            <a href="https://icfobusiness.com/pre-market-valuation?utm_source=buscobusiness&utm_medium=marketplace&utm_campaign=pre-market-valuation">
-              <Button
-                size="lg"
-                className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-10 py-6 text-base"
-              >
-                {t('sell.valuation.cta')}
-              </Button>
-            </a>
+            <Button
+              asChild
+              size="lg"
+              className="bg-amber-600 hover:bg-amber-700 text-white font-bold px-10 py-6 text-base"
+            >
+              <a href={buildValuationMailtoHref()}>{t('sell.valuation.cta')}</a>
+            </Button>
             <p className="text-xs text-stone-500 mt-4 max-w-md mx-auto">
               {t('sell.valuation.legalNote')}
             </p>

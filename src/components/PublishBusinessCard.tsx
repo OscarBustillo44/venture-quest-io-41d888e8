@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Link } from 'react-router-dom';
+import { buildValuationMailtoHref } from '@/lib/contact';
 
 const sectorKeys = [
   { key: 'sectors.hospitality', value: 'Hostelería' },
@@ -160,7 +161,7 @@ const PublishBusinessCard = ({ onSubmit }: PublishBusinessCardProps) => {
 
           {/* CTA 2: Valoración profesional */}
           <a
-            href="https://icfobusiness.com/pre-market-valuation?utm_source=buscobusiness&utm_medium=publish-card&utm_campaign=pre-market-valuation"
+            href={buildValuationMailtoHref()}
             className="block rounded-lg border border-amber-500/30 hover:border-amber-500/60 bg-amber-600/10 hover:bg-amber-600/20 p-3 mb-3 transition-all group"
           >
             <div className="flex items-start gap-3">
