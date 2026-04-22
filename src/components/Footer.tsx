@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Separator } from "@/components/ui/separator";
 import bbLogoInverted from "@/assets/generic/buscobusiness-logo-inverted.png";
+import { buildContactMailtoHref } from "@/lib/contact";
 
 
 const Footer = () => {
@@ -79,7 +80,7 @@ const Footer = () => {
             <div className="space-y-2 text-sm">
               <p className="text-primary-foreground/80">
                 <a 
-                  href="mailto:info@buscobusiness.com" 
+                  href={buildContactMailtoHref()} 
                   className="hover:text-primary-foreground transition-colors"
                 >
                   info@buscobusiness.com

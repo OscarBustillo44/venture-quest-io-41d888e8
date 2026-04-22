@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Lock, Mail, Phone, ArrowLeft, KeyRound, Send, CheckCircle } from 'lucide-react';
+import { buildContactMailtoHref, openContactMailto } from '@/lib/contact';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -8,7 +9,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useAdminAccess } from '@/hooks/useAdminAccess';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { toast } from 'sonner';
 
 interface ConfidentialBlockScreenProps {
   sector: string;
@@ -34,13 +34,18 @@ const ConfidentialBlockScreen = ({ sector, refCode }: ConfidentialBlockScreenPro
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      toast.error("Si us plau, ompliu tots els camps obligatoris.");
-      return;
-    }
-    // For now just show success - could integrate with backend later
+
+    const extraLines = [
+      `Referencia: ${refCode}`,
+      `Sector: ${sector}`,
+      `Nombre: ${formData.name}`,
+      `Email: ${formData.email}`,
+      formData.phone ? `Teléfono: ${formData.phone}` : '',
+      formData.message?.trim() ? `Mensaje: ${formData.message.trim()}` : '',
+    ].filter(Boolean) as string[];
+
+    openContactMailto(extraLines);
     setFormSent(true);
-    toast.success("Sol·licitud enviada correctament!");
   };
 
   return (
@@ -79,7 +84,7 @@ const ConfidentialBlockScreen = ({ sector, refCode }: ConfidentialBlockScreenPro
               {/* Contactar Button */}
               {!showContactForm && !formSent && (
                 <Button
-                  onClick={() => setShowContactForm(true)}
+                  onClick={() => openContactMailto([`Referencia: ${refCode}`, `Sector: ${sector}`])}
                   className="bg-amber-600 hover:bg-amber-700 text-white px-10 py-6 text-lg font-semibold rounded-lg shadow-md"
                 >
                   Contactar
@@ -99,7 +104,7 @@ const ConfidentialBlockScreen = ({ sector, refCode }: ConfidentialBlockScreenPro
                       +376 337 670
                     </a>
                     <a
-                      href="mailto:info@buscobusiness.com"
+                      href={buildContactMailtoHref([`Referencia: ${refCode}`, `Sector: ${sector}`])}
                       className="flex items-center justify-center gap-2 bg-stone-700 hover:bg-stone-800 text-white px-4 py-3 rounded-lg text-sm font-medium transition-colors"
                     >
                       <Mail className="w-4 h-4" />
@@ -184,7 +189,7 @@ const ConfidentialBlockScreen = ({ sector, refCode }: ConfidentialBlockScreenPro
                     <a href="tel:+376337670" className="flex items-center gap-2 text-sm text-stone-600 hover:text-stone-800">
                       <Phone className="w-4 h-4" /> +376 337 670
                     </a>
-                    <a href="mailto:info@buscobusiness.com" className="flex items-center gap-2 text-sm text-stone-600 hover:text-stone-800">
+                    <a href={buildContactMailtoHref([`Referencia: ${refCode}`, `Sector: ${sector}`])} className="flex items-center gap-2 text-sm text-stone-600 hover:text-stone-800">
                       <Mail className="w-4 h-4" /> info@buscobusiness.com
                     </a>
                   </div>

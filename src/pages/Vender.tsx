@@ -9,9 +9,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
 import {
   Form,
   FormControl,
@@ -27,6 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { buildContactMailtoHref, openContactMailto } from '@/lib/contact';
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, { message: "El nombre es obligatorio" }).max(100),
@@ -43,7 +42,6 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 const Vender = () => {
   const { t } = useTranslation();
-  const { toast } = useToast();
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -60,13 +58,20 @@ const Vender = () => {
   });
 
   const onSubmit = (data: ContactFormData) => {
-    // Here we would send the data to a backend
-    console.log('Form submitted:', data);
-    toast({
-      title: t('sell.form.successTitle'),
-      description: t('sell.form.successMessage'),
-    });
-    form.reset();
+    const extraLines = [
+      `Nombre: ${data.name}`,
+      `Email: ${data.email}`,
+      `Teléfono: ${data.phone}`,
+      `Empresa: ${data.companyName}`,
+      `Sector: ${data.sector}`,
+      `Facturación: ${data.revenue}`,
+    ];
+
+    if (data.message?.trim()) {
+      extraLines.push(`Mensaje: ${data.message.trim()}`);
+    }
+
+    openContactMailto(extraLines);
   };
 
   const processSteps = [
@@ -509,7 +514,7 @@ const Vender = () => {
             size="lg" 
             className="bg-stone-900 hover:bg-stone-800 text-white font-bold px-8 py-6"
           >
-            <a href="#contacto">{t('sell.cta.button')}</a>
+            <a href={buildContactMailtoHref()}>{t('sell.cta.button')}</a>
           </Button>
         </div>
       </section>
