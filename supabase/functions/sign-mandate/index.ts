@@ -17,7 +17,66 @@ function getCorsHeaders(req: Request) {
   };
 }
 
-const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+const AZURE_TENANT_ID = Deno.env.get("AZURE_TENANT_ID");
+const AZURE_CLIENT_ID = Deno.env.get("AZURE_CLIENT_ID");
+const AZURE_CLIENT_SECRET = Deno.env.get("AZURE_CLIENT_SECRET");
+const SENDER_EMAIL = "info@buscobusiness.com";
+
+async function getGraphAccessToken(): Promise<string | null> {
+  if (!AZURE_TENANT_ID || !AZURE_CLIENT_ID || !AZURE_CLIENT_SECRET) return null;
+  const tokenUrl = `https://login.microsoftonline.com/${AZURE_TENANT_ID}/oauth2/v2.0/token`;
+  const res = await fetch(tokenUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      client_id: AZURE_CLIENT_ID,
+      client_secret: AZURE_CLIENT_SECRET,
+      scope: "https://graph.microsoft.com/.default",
+      grant_type: "client_credentials",
+    }),
+  });
+  if (!res.ok) {
+    console.error("Graph token error:", await res.text());
+    return null;
+  }
+  const data = await res.json();
+  return data.access_token;
+}
+
+async function sendEmailViaGraph(
+  accessToken: string,
+  to: string,
+  subject: string,
+  htmlBody: string,
+  bcc: string[] = [],
+): Promise<boolean> {
+  const res = await fetch(
+    `https://graph.microsoft.com/v1.0/users/${SENDER_EMAIL}/sendMail`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: {
+          subject,
+          body: { contentType: "HTML", content: htmlBody },
+          toRecipients: [{ emailAddress: { address: to } }],
+          bccRecipients: bcc.map((addr) => ({
+            emailAddress: { address: addr },
+          })),
+        },
+        saveToSentItems: true,
+      }),
+    },
+  );
+  if (!res.ok) {
+    console.error("Graph sendMail error:", res.status, await res.text());
+    return false;
+  }
+  return true;
+}
 
 function escapeHtml(str: string): string {
   return str
@@ -363,37 +422,33 @@ Deno.serve(async (req) => {
         .eq("id", data.id);
     }
 
-    // Send confirmation email via Resend
+    // Send confirmation email via Microsoft Graph API (Office 365)
     const t = translations[lang] || translations["ca"];
-    if (RESEND_API_KEY) {
+    const accessToken = await getGraphAccessToken();
+    if (accessToken) {
       try {
-        const emailRes = await fetch("https://api.resend.com/emails", {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${RESEND_API_KEY}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            from: "BuscoBusiness <noreply@buscobusiness.com>",
-            to: [email.trim()],
-            bcc: ["info@buscobusiness.com"],
-            subject: t.emailSubject,
-            html: `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;padding:20px;">
-              <h2 style="color:#d97706;">BuscoBusiness.com</h2>
-              <p>${escapeHtml(t.emailBody)}</p>
-              <hr style="border-color:#d97706;margin:20px 0;">
-              ${contractHtml}
-              <hr style="border-color:#d97706;margin:20px 0;">
-              <p style="font-size:11px;color:#78716c;">
-                ID: ${data.id}<br>
-                IP: ${ipAddress}<br>
-                ${new Date(data.signed_at).toISOString()}
-              </p>
-            </div>`,
-          }),
-        });
+        const emailHtml = `<div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;padding:20px;">
+          <h2 style="color:#d97706;">BuscoBusiness.com</h2>
+          <p>${escapeHtml(t.emailBody)}</p>
+          <hr style="border-color:#d97706;margin:20px 0;">
+          ${contractHtml}
+          <hr style="border-color:#d97706;margin:20px 0;">
+          <p style="font-size:11px;color:#78716c;">
+            ID: ${data.id}<br>
+            IP: ${ipAddress}<br>
+            ${new Date(data.signed_at).toISOString()}
+          </p>
+        </div>`;
 
-        if (emailRes.ok) {
+        const sent = await sendEmailViaGraph(
+          accessToken,
+          email.trim(),
+          t.emailSubject,
+          emailHtml,
+          [SENDER_EMAIL],
+        );
+
+        if (sent) {
           await serviceClient
             .from("mandate_signatures")
             .update({
@@ -401,8 +456,6 @@ Deno.serve(async (req) => {
               confirmation_email_sent_at: new Date().toISOString(),
             })
             .eq("id", data.id);
-        } else {
-          console.error("Email send failed:", await emailRes.text());
         }
       } catch (emailErr) {
         console.error("Email error:", emailErr);
