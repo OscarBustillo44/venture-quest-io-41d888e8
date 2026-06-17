@@ -730,6 +730,8 @@
     "viewContract": "Veure i signar el contracte",
     "submit": "Signar mandat i accedir",
     "fillAllRequired": "Completeu tots els camps obligatoris (*) i marqueu les quatre caselles per signar.",
+    "signing": "Signant...",
+    "submitError": "Error en signar el contracte. Si us plau, torneu-ho a intentar.",
     "contract": {
       "title": "Acord de confidencialitat, no elusió i mandat d'intermediació per a l'adquisició d'empreses i actius",
       "buyerData": "Dades del comprador",

@@ -2,3 +2,6 @@ project_id = "ufytnjphxkdsmbhlcyli"
 
 [functions.verify-business-access]
 verify_jwt = false
+
+[functions.sign-mandate]
+verify_jwt = false

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Lock, Shield, FileText, ChevronDown, ChevronUp } from 'lucide-react';
+import { Lock, Shield, FileText, ChevronDown, ChevronUp, Loader2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -13,6 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { supabase } from '@/integrations/supabase/client';
 
 interface MandateBannerProps {
   onMandateSigned: () => void;
@@ -20,7 +21,7 @@ interface MandateBannerProps {
 }
 
 const MandateBanner = ({ onMandateSigned, businessSlug }: MandateBannerProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [showContract, setShowContract] = useState(false);
 
   const [form, setForm] = useState({
@@ -45,20 +46,53 @@ const MandateBanner = ({ onMandateSigned, businessSlug }: MandateBannerProps) =>
     acceptElectronicSignature: false,
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
   const allChecked = checks.readFully && checks.acceptClauses && checks.acknowledgeHonoraires && checks.acceptElectronicSignature;
   const requiredFieldsFilled = form.fullName && form.birthDate && form.nationality && form.docType && form.docNumber && form.address && form.email && form.phone && form.investmentCapacity;
-  const canSubmit = allChecked && requiredFieldsFilled;
+  const canSubmit = allChecked && requiredFieldsFilled && !isSubmitting;
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!canSubmit) return;
-    const signatureData = {
-      ...form,
-      checks,
-      signedAt: new Date().toISOString(),
-      businessSlug,
-    };
-    localStorage.setItem(`bb_mandate_${businessSlug}`, JSON.stringify(signatureData));
-    onMandateSigned();
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('sign-mandate', {
+        body: {
+          businessSlug,
+          fullName: form.fullName,
+          birthDate: form.birthDate,
+          nationality: form.nationality,
+          docType: form.docType,
+          docNumber: form.docNumber,
+          address: form.address,
+          email: form.email,
+          phone: form.phone,
+          company: form.company || null,
+          position: form.position || null,
+          companyRegNumber: form.companyRegNumber || null,
+          investmentCapacity: form.investmentCapacity,
+          language: i18n.language,
+          checkReadFully: checks.readFully,
+          checkAcceptClauses: checks.acceptClauses,
+          checkAcknowledgeHonoraires: checks.acknowledgeHonoraires,
+          checkAcceptElectronicSignature: checks.acceptElectronicSignature,
+        },
+      });
+
+      if (error) throw error;
+      if (!data?.success) throw new Error(data?.error || 'Unknown error');
+
+      localStorage.setItem(`bb_mandate_${businessSlug}`, 'true');
+      onMandateSigned();
+    } catch (err) {
+      console.error('Mandate sign error:', err);
+      setSubmitError(t('mandate.submitError'));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const updateForm = (field: string, value: string) => {
@@ -274,9 +308,13 @@ const MandateBanner = ({ onMandateSigned, businessSlug }: MandateBannerProps) =>
                   size="lg"
                   className="bg-amber-600 hover:bg-amber-700 text-white px-10 py-3 text-base font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {t('mandate.submit')}
+                  {isSubmitting && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
+                  {isSubmitting ? t('mandate.signing') : t('mandate.submit')}
                 </Button>
-                {!canSubmit && (
+                {submitError && (
+                  <p className="text-xs text-red-600 mt-2">{submitError}</p>
+                )}
+                {!canSubmit && !isSubmitting && !submitError && (
                   <p className="text-xs text-stone-400 mt-2">{t('mandate.fillAllRequired')}</p>
                 )}
               </div>

@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { supabase } from '@/integrations/supabase/client';
 
 interface InterestRegistrationModalProps {
   open: boolean;
@@ -35,7 +36,7 @@ const InterestRegistrationModal = ({
   const [phone, setPhone] = useState('');
   const [reason, setReason] = useState('');
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -54,15 +55,24 @@ const InterestRegistrationModal = ({
       `bb_interest_${businessSlug}`,
       JSON.stringify(registration)
     );
-
-    // Set global registered flag
     localStorage.setItem('bb_registered', 'true');
+
+    // Persist to Supabase (best-effort, don't block UX)
+    supabase
+      .from('interest_registrations')
+      .insert({
+        business_slug: businessSlug,
+        full_name: name.trim(),
+        email: email.trim(),
+        phone: phone.trim(),
+        reason: reason.trim() || null,
+      })
+      .then(({ error }) => { if (error) console.error('Interest save error:', error); });
 
     setIsSubmitting(false);
     onRegistered();
     onOpenChange(false);
 
-    // Reset form
     setName('');
     setEmail('');
     setPhone('');

@@ -730,6 +730,8 @@
     "viewContract": "Voir et signer le contrat",
     "submit": "Signer le mandat et accéder",
     "fillAllRequired": "Remplissez tous les champs obligatoires (*) et cochez les quatre cases pour signer.",
+    "signing": "Signature en cours...",
+    "submitError": "Erreur lors de la signature du contrat. Veuillez réessayer.",
     "contract": {
       "title": "Accord de confidentialité, de non-contournement et mandat d'intermédiation pour l'acquisition d'entreprises et d'actifs",
       "buyerData": "Données de l'acheteur",

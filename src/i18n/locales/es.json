@@ -740,6 +740,8 @@
     "viewContract": "Ver y firmar el contrato",
     "submit": "Firmar mandato y acceder",
     "fillAllRequired": "Complete todos los campos obligatorios (*) y marque las cuatro casillas para firmar.",
+    "signing": "Firmando...",
+    "submitError": "Error al firmar el contrato. Por favor, inténtelo de nuevo.",
     "contract": {
       "title": "Acuerdo de confidencialidad, no elusión y mandato de intermediación para la adquisición de empresas y activos",
       "buyerData": "Datos del comprador",

@@ -730,6 +730,8 @@
     "viewContract": "View and sign the contract",
     "submit": "Sign mandate and access",
     "fillAllRequired": "Complete all required fields (*) and check all four boxes to sign.",
+    "signing": "Signing...",
+    "submitError": "Error signing the contract. Please try again.",
     "contract": {
       "title": "Confidentiality, non-circumvention and intermediation mandate agreement for the acquisition of companies and assets",
       "buyerData": "Buyer information",
