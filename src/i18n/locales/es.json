@@ -735,16 +735,103 @@
     "privacyNote": "Tus datos se tratarán de forma confidencial y solo se utilizarán para gestionar tu interés en este negocio."
   },
   "mandate": {
-    "title": "Acceder a información financiera completa",
-    "description": "Para acceder a los estados financieros detallados (P&L, Balance, Valoración y Gráficos), es necesario firmar el mandato de transacción.",
-    "terms": {
-      "commission": "Comisión del 5% sobre cualquier transacción resultante de esta presentación",
-      "traceability": "Trazabilidad legal de la operación",
-      "confidentiality": "Acuerdo de confidencialidad sobre la información proporcionada"
-    },
-    "acceptTerms": "Acepto los términos del mandato de transacción, incluyendo la comisión del 5% aplicable en caso de formalización de la operación.",
+    "title": "Acceder a la información financiera completa",
+    "description": "Para acceder a los estados financieros detallados (P&L, Balance, Valoración y Gráficos), es necesario firmar el acuerdo de confidencialidad, no elusión y mandato de intermediación.",
+    "viewContract": "Ver y firmar el contrato",
     "submit": "Firmar mandato y acceder",
-    "signing": "Firmando..."
+    "fillAllRequired": "Complete todos los campos obligatorios (*) y marque las cuatro casillas para firmar.",
+    "contract": {
+      "title": "Acuerdo de confidencialidad, no elusión y mandato de intermediación para la adquisición de empresas y activos",
+      "buyerData": "Datos del comprador",
+      "fields": {
+        "fullName": "Nombre y apellidos",
+        "birthDate": "Fecha de nacimiento",
+        "nationality": "Nacionalidad",
+        "docType": "Documento identificativo",
+        "passport": "Pasaporte",
+        "residencePermit": "Permiso de residencia de Andorra",
+        "docNumber": "Número de documento",
+        "address": "Dirección completa",
+        "email": "Correo electrónico",
+        "phone": "Teléfono móvil",
+        "company": "Empresa (si procede)",
+        "position": "Cargo",
+        "companyRegNumber": "Número de registro de sociedad (si procede)",
+        "investmentCapacity": "Patrimonio o capacidad estimada de inversión",
+        "capacityLess100k": "Menos de 100.000 €",
+        "capacity100k500k": "Entre 100.000 € y 500.000 €",
+        "capacity500k1M": "Entre 500.000 € y 1.000.000 €",
+        "capacity1M5M": "Entre 1.000.000 € y 5.000.000 €",
+        "capacityMore5M": "Más de 5.000.000 €"
+      },
+      "electronicSignature": "Firma electrónica",
+      "checks": {
+        "readFully": "He leído íntegramente el documento.",
+        "acceptClauses": "Acepto todas las cláusulas del presente acuerdo.",
+        "acknowledgeHonoraires": "Reconozco los honorarios de éxito del 5% sobre el valor total de la transacción, con un mínimo de 5.000 €.",
+        "acceptElectronicSignature": "Acepto la validez de la firma electrónica."
+      },
+      "clauses": [
+        {
+          "title": "OBJETO",
+          "body": "Mediante el presente acuerdo, BUSCOBUSINESS facilita al COMPRADOR información confidencial relativa a empresas, negocios, participaciones societarias, activos inmobiliarios, operaciones corporativas, inversiones u oportunidades empresariales publicadas en la plataforma.\nEl COMPRADOR manifiesta su interés real en analizar una posible adquisición o inversión."
+        },
+        {
+          "title": "INFORMACIÓN CONFIDENCIAL",
+          "body": "Tendrá la consideración de información confidencial toda la documentación facilitada por BUSCOBUSINESS, incluyendo, entre otras:",
+          "items": ["Identidad del vendedor", "Cuentas anuales", "Cuentas de explotación", "Balances", "Facturación", "EBITDA", "Información fiscal", "Información financiera", "Información comercial", "Dossiers de inversión", "Data Rooms", "Información verbal"]
+        },
+        {
+          "title": "OBLIGACIÓN DE CONFIDENCIALIDAD",
+          "body": "El COMPRADOR se compromete a:\na) Mantener absoluta confidencialidad.\nb) No divulgar información a terceros.\nc) Utilizarla exclusivamente para analizar la operación.\nd) Custodiar adecuadamente la documentación recibida.\nEsta obligación tendrá una duración mínima de cinco (5) años."
+        },
+        {
+          "title": "CLÁUSULA DE NO ELUSIÓN",
+          "body": "El COMPRADOR reconoce expresamente que la información y la oportunidad de negocio han sido puestas en su conocimiento por BUSCOBUSINESS.\nEn consecuencia, se compromete a no evitar, eludir, sustituir o esquivar la intervención de BUSCOBUSINESS."
+        },
+        {
+          "title": "PROHIBICIÓN DE CONTACTO DIRECTO",
+          "body": "El COMPRADOR se compromete a no contactar directa ni indirectamente con:",
+          "items": ["Propietarios", "Accionistas", "Administradores", "Directivos", "Trabajadores", "Clientes", "Proveedores", "Asesores"],
+          "body2": "sin autorización expresa y escrita de BUSCOBUSINESS."
+        },
+        {
+          "title": "RECONOCIMIENTO DE INTERMEDIACIÓN",
+          "body": "El COMPRADOR reconoce que cualquier operación futura derivada de la información facilitada será consecuencia directa de la intervención de BUSCOBUSINESS."
+        },
+        {
+          "title": "MANDATO DE INTERMEDIACIÓN Y ADQUISICIÓN",
+          "body": "El COMPRADOR nombra a BUSCOBUSINESS como intermediario exclusivo respecto de la oportunidad concreta visualizada.\nLa vigencia de este mandato será de veinticuatro (24) meses."
+        },
+        {
+          "title": "HONORARIOS DE ÉXITO",
+          "body": "En caso de que el COMPRADOR, directa o indirectamente, realice cualquiera de las operaciones siguientes:",
+          "items": ["Adquiera la empresa", "Adquiera participaciones sociales", "Adquiera acciones", "Adquiera activos", "Formalice una ampliación de capital", "Conceda financiamiento convertible", "Invierta en cualquier forma"],
+          "body2": "abonará a BUSCOBUSINESS unos honorarios profesionales equivalentes al 5% DEL VALOR TOTAL DE LA TRANSACCIÓN, con un mínimo de 5.000 euros."
+        },
+        {
+          "title": "OPERACIONES INDIRECTAS",
+          "body": "La obligación de pago subsistirá aunque la operación se formalice mediante:",
+          "items": ["Sociedades vinculadas", "Holding", "Vehículos de inversión", "Family Office", "Fondos de inversión", "Cónyuge", "Familiares", "Socios", "Terceros interpuestos"]
+        },
+        {
+          "title": "CLÁUSULA PENAL",
+          "body": "En caso de incumplimiento:\na) Honorarios íntegros del 5%.\nb) Penalización adicional equivalente al 100% de los honorarios.\nc) Intereses legales.\nd) Costas judiciales y abogados."
+        },
+        {
+          "title": "PROTECCIÓN DE DATOS",
+          "body": "El COMPRADOR autoriza expresamente a BUSCOBUSINESS a tratar sus datos personales para la gestión de las oportunidades de inversión y adquisición."
+        },
+        {
+          "title": "LEGISLACIÓN Y JURISDICCIÓN",
+          "body": "Este acuerdo se regirá íntegramente por la legislación vigente en el Principado de Andorra.\nLas partes se someten expresamente a los Batlles y Tribunales del Principado de Andorra."
+        },
+        {
+          "title": "FIRMA ELECTRÓNICA",
+          "body": "El COMPRADOR reconoce la validez legal de la firma electrónica realizada a través de la plataforma BUSCOBUSINESS."
+        }
+      ]
+    }
   },
   "verification": {
     "title": "Verificación de identidad",

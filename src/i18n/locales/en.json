@@ -725,16 +725,103 @@
     "privacyNote": "Your data will be treated confidentially and used only to manage your interest in this business."
   },
   "mandate": {
-    "title": "Access complete financial information",
-    "description": "To access detailed financial statements (P&L, Balance Sheet, Valuation and Charts), you must sign the transaction mandate.",
-    "terms": {
-      "commission": "5% commission on any transaction resulting from this introduction",
-      "traceability": "Legal traceability of the operation",
-      "confidentiality": "Confidentiality agreement on the information provided"
-    },
-    "acceptTerms": "I accept the transaction mandate terms, including the 5% commission applicable if the transaction is completed.",
+    "title": "Access full financial information",
+    "description": "To access detailed financial statements (P&L, Balance Sheet, Valuation and Charts), you must sign the confidentiality, non-circumvention and intermediation mandate agreement.",
+    "viewContract": "View and sign the contract",
     "submit": "Sign mandate and access",
-    "signing": "Signing..."
+    "fillAllRequired": "Complete all required fields (*) and check all four boxes to sign.",
+    "contract": {
+      "title": "Confidentiality, non-circumvention and intermediation mandate agreement for the acquisition of companies and assets",
+      "buyerData": "Buyer information",
+      "fields": {
+        "fullName": "Full name",
+        "birthDate": "Date of birth",
+        "nationality": "Nationality",
+        "docType": "Identification document",
+        "passport": "Passport",
+        "residencePermit": "Andorra residence permit",
+        "docNumber": "Document number",
+        "address": "Full address",
+        "email": "Email address",
+        "phone": "Mobile phone",
+        "company": "Company (if applicable)",
+        "position": "Position",
+        "companyRegNumber": "Company registration number (if applicable)",
+        "investmentCapacity": "Estimated investment capacity",
+        "capacityLess100k": "Less than €100,000",
+        "capacity100k500k": "Between €100,000 and €500,000",
+        "capacity500k1M": "Between €500,000 and €1,000,000",
+        "capacity1M5M": "Between €1,000,000 and €5,000,000",
+        "capacityMore5M": "More than €5,000,000"
+      },
+      "electronicSignature": "Electronic signature",
+      "checks": {
+        "readFully": "I have read the document in its entirety.",
+        "acceptClauses": "I accept all clauses of this agreement.",
+        "acknowledgeHonoraires": "I acknowledge the 5% success fee on the total transaction value, with a minimum of €5,000.",
+        "acceptElectronicSignature": "I accept the validity of the electronic signature."
+      },
+      "clauses": [
+        {
+          "title": "PURPOSE",
+          "body": "Through this agreement, BUSCOBUSINESS provides the BUYER with confidential information relating to companies, businesses, corporate holdings, real estate assets, corporate transactions, investments or business opportunities published on the platform.\nThe BUYER declares a genuine interest in analysing a potential acquisition or investment."
+        },
+        {
+          "title": "CONFIDENTIAL INFORMATION",
+          "body": "All documentation provided by BUSCOBUSINESS shall be considered confidential information, including but not limited to:",
+          "items": ["Identity of the seller", "Annual accounts", "Operating accounts", "Balance sheets", "Revenue", "EBITDA", "Tax information", "Financial information", "Commercial information", "Investment dossiers", "Data Rooms", "Verbal information"]
+        },
+        {
+          "title": "CONFIDENTIALITY OBLIGATION",
+          "body": "The BUYER undertakes to:\na) Maintain absolute confidentiality.\nb) Not disclose information to third parties.\nc) Use it exclusively to analyse the transaction.\nd) Properly safeguard all documentation received.\nThis obligation shall have a minimum duration of five (5) years."
+        },
+        {
+          "title": "NON-CIRCUMVENTION CLAUSE",
+          "body": "The BUYER expressly acknowledges that the information and business opportunity have been brought to their attention by BUSCOBUSINESS.\nConsequently, they undertake not to avoid, circumvent, replace or bypass the intervention of BUSCOBUSINESS."
+        },
+        {
+          "title": "PROHIBITION OF DIRECT CONTACT",
+          "body": "The BUYER undertakes not to contact directly or indirectly:",
+          "items": ["Owners", "Shareholders", "Directors", "Executives", "Employees", "Clients", "Suppliers", "Advisors"],
+          "body2": "without the express written authorisation of BUSCOBUSINESS."
+        },
+        {
+          "title": "ACKNOWLEDGEMENT OF INTERMEDIATION",
+          "body": "The BUYER acknowledges that any future transaction arising from the information provided shall be a direct consequence of the intervention of BUSCOBUSINESS."
+        },
+        {
+          "title": "INTERMEDIATION AND ACQUISITION MANDATE",
+          "body": "The BUYER appoints BUSCOBUSINESS as exclusive intermediary with respect to the specific opportunity viewed.\nThe term of this mandate shall be twenty-four (24) months."
+        },
+        {
+          "title": "SUCCESS FEES",
+          "body": "In the event that the BUYER, directly or indirectly, carries out any of the following transactions:",
+          "items": ["Acquires the company", "Acquires corporate holdings", "Acquires shares", "Acquires assets", "Executes a capital increase", "Grants convertible financing", "Invests in any form"],
+          "body2": "they shall pay BUSCOBUSINESS professional fees equivalent to 5% OF THE TOTAL TRANSACTION VALUE, with a minimum of €5,000."
+        },
+        {
+          "title": "INDIRECT TRANSACTIONS",
+          "body": "The payment obligation shall survive even if the transaction is completed through:",
+          "items": ["Affiliated companies", "Holding companies", "Investment vehicles", "Family Office", "Investment funds", "Spouse", "Family members", "Partners", "Interposed third parties"]
+        },
+        {
+          "title": "PENALTY CLAUSE",
+          "body": "In the event of non-compliance:\na) Full 5% fees.\nb) Additional penalty equivalent to 100% of the fees.\nc) Legal interest.\nd) Court costs and legal fees."
+        },
+        {
+          "title": "DATA PROTECTION",
+          "body": "The BUYER expressly authorises BUSCOBUSINESS to process their personal data for the management of investment and acquisition opportunities."
+        },
+        {
+          "title": "GOVERNING LAW AND JURISDICTION",
+          "body": "This agreement shall be governed entirely by the laws in force in the Principality of Andorra.\nThe parties expressly submit to the Courts and Tribunals of the Principality of Andorra."
+        },
+        {
+          "title": "ELECTRONIC SIGNATURE",
+          "body": "The BUYER acknowledges the legal validity of the electronic signature made through the BUSCOBUSINESS platform."
+        }
+      ]
+    }
   },
   "verification": {
     "title": "Identity verification",

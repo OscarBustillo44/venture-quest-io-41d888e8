@@ -726,15 +726,102 @@
   },
   "mandate": {
     "title": "Accéder aux informations financières complètes",
-    "description": "Pour accéder aux états financiers détaillés (P&L, Bilan, Valorisation et Graphiques), vous devez signer le mandat de transaction.",
-    "terms": {
-      "commission": "Commission de 5% sur toute transaction résultant de cette présentation",
-      "traceability": "Traçabilité légale de l'opération",
-      "confidentiality": "Accord de confidentialité sur les informations fournies"
-    },
-    "acceptTerms": "J'accepte les termes du mandat de transaction, y compris la commission de 5% applicable en cas de conclusion de l'opération.",
+    "description": "Pour accéder aux états financiers détaillés (P&L, Bilan, Valorisation et Graphiques), il est nécessaire de signer l'accord de confidentialité, de non-contournement et de mandat d'intermédiation.",
+    "viewContract": "Voir et signer le contrat",
     "submit": "Signer le mandat et accéder",
-    "signing": "Signature en cours..."
+    "fillAllRequired": "Remplissez tous les champs obligatoires (*) et cochez les quatre cases pour signer.",
+    "contract": {
+      "title": "Accord de confidentialité, de non-contournement et mandat d'intermédiation pour l'acquisition d'entreprises et d'actifs",
+      "buyerData": "Données de l'acheteur",
+      "fields": {
+        "fullName": "Nom et prénoms",
+        "birthDate": "Date de naissance",
+        "nationality": "Nationalité",
+        "docType": "Document d'identité",
+        "passport": "Passeport",
+        "residencePermit": "Permis de résidence d'Andorre",
+        "docNumber": "Numéro de document",
+        "address": "Adresse complète",
+        "email": "Adresse e-mail",
+        "phone": "Téléphone portable",
+        "company": "Entreprise (le cas échéant)",
+        "position": "Poste",
+        "companyRegNumber": "Numéro d'enregistrement de société (le cas échéant)",
+        "investmentCapacity": "Patrimoine ou capacité d'investissement estimée",
+        "capacityLess100k": "Moins de 100 000 €",
+        "capacity100k500k": "Entre 100 000 € et 500 000 €",
+        "capacity500k1M": "Entre 500 000 € et 1 000 000 €",
+        "capacity1M5M": "Entre 1 000 000 € et 5 000 000 €",
+        "capacityMore5M": "Plus de 5 000 000 €"
+      },
+      "electronicSignature": "Signature électronique",
+      "checks": {
+        "readFully": "J'ai lu le document dans son intégralité.",
+        "acceptClauses": "J'accepte toutes les clauses du présent accord.",
+        "acknowledgeHonoraires": "Je reconnais les honoraires de succès de 5 % sur la valeur totale de la transaction, avec un minimum de 5 000 €.",
+        "acceptElectronicSignature": "J'accepte la validité de la signature électronique."
+      },
+      "clauses": [
+        {
+          "title": "OBJET",
+          "body": "Par le présent accord, BUSCOBUSINESS fournit à l'ACHETEUR des informations confidentielles relatives à des entreprises, commerces, participations sociétaires, actifs immobiliers, opérations corporatives, investissements ou opportunités d'affaires publiées sur la plateforme.\nL'ACHETEUR manifeste son intérêt réel à analyser une éventuelle acquisition ou investissement."
+        },
+        {
+          "title": "INFORMATIONS CONFIDENTIELLES",
+          "body": "Toute la documentation fournie par BUSCOBUSINESS sera considérée comme information confidentielle, y compris, entre autres :",
+          "items": ["Identité du vendeur", "Comptes annuels", "Comptes d'exploitation", "Bilans", "Chiffre d'affaires", "EBITDA", "Informations fiscales", "Informations financières", "Informations commerciales", "Dossiers d'investissement", "Data Rooms", "Informations verbales"]
+        },
+        {
+          "title": "OBLIGATION DE CONFIDENTIALITÉ",
+          "body": "L'ACHETEUR s'engage à :\na) Maintenir une confidentialité absolue.\nb) Ne pas divulguer d'informations à des tiers.\nc) Les utiliser exclusivement pour analyser l'opération.\nd) Conserver convenablement la documentation reçue.\nCette obligation aura une durée minimale de cinq (5) ans."
+        },
+        {
+          "title": "CLAUSE DE NON-CONTOURNEMENT",
+          "body": "L'ACHETEUR reconnaît expressément que l'information et l'opportunité d'affaires ont été portées à sa connaissance par BUSCOBUSINESS.\nEn conséquence, il s'engage à ne pas éviter, contourner, remplacer ou esquiver l'intervention de BUSCOBUSINESS."
+        },
+        {
+          "title": "INTERDICTION DE CONTACT DIRECT",
+          "body": "L'ACHETEUR s'engage à ne pas contacter directement ni indirectement :",
+          "items": ["Propriétaires", "Actionnaires", "Administrateurs", "Dirigeants", "Employés", "Clients", "Fournisseurs", "Conseillers"],
+          "body2": "sans l'autorisation expresse et écrite de BUSCOBUSINESS."
+        },
+        {
+          "title": "RECONNAISSANCE D'INTERMÉDIATION",
+          "body": "L'ACHETEUR reconnaît que toute opération future découlant de l'information fournie sera une conséquence directe de l'intervention de BUSCOBUSINESS."
+        },
+        {
+          "title": "MANDAT D'INTERMÉDIATION ET D'ACQUISITION",
+          "body": "L'ACHETEUR nomme BUSCOBUSINESS comme intermédiaire exclusif pour l'opportunité concrète consultée.\nLa durée de ce mandat sera de vingt-quatre (24) mois."
+        },
+        {
+          "title": "HONORAIRES DE SUCCÈS",
+          "body": "Dans le cas où l'ACHETEUR, directement ou indirectement, réaliserait l'une des opérations suivantes :",
+          "items": ["Acquisition de l'entreprise", "Acquisition de participations sociales", "Acquisition d'actions", "Acquisition d'actifs", "Réalisation d'une augmentation de capital", "Octroi d'un financement convertible", "Investissement sous quelque forme que ce soit"],
+          "body2": "il versera à BUSCOBUSINESS des honoraires professionnels équivalents à 5 % DE LA VALEUR TOTALE DE LA TRANSACTION, avec un minimum de 5 000 euros."
+        },
+        {
+          "title": "OPÉRATIONS INDIRECTES",
+          "body": "L'obligation de paiement subsistera même si l'opération est formalisée par l'intermédiaire de :",
+          "items": ["Sociétés liées", "Holding", "Véhicules d'investissement", "Family Office", "Fonds d'investissement", "Conjoint", "Membres de la famille", "Associés", "Tiers interposés"]
+        },
+        {
+          "title": "CLAUSE PÉNALE",
+          "body": "En cas de manquement :\na) Honoraires intégraux de 5 %.\nb) Pénalité supplémentaire équivalente à 100 % des honoraires.\nc) Intérêts légaux.\nd) Frais de justice et d'avocat."
+        },
+        {
+          "title": "PROTECTION DES DONNÉES",
+          "body": "L'ACHETEUR autorise expressément BUSCOBUSINESS à traiter ses données personnelles pour la gestion des opportunités d'investissement et d'acquisition."
+        },
+        {
+          "title": "LOI APPLICABLE ET JURIDICTION",
+          "body": "Cet accord sera régi intégralement par la législation en vigueur dans la Principauté d'Andorre.\nLes parties se soumettent expressément aux Batlles et Tribunaux de la Principauté d'Andorre."
+        },
+        {
+          "title": "SIGNATURE ÉLECTRONIQUE",
+          "body": "L'ACHETEUR reconnaît la validité juridique de la signature électronique réalisée via la plateforme BUSCOBUSINESS."
+        }
+      ]
+    }
   },
   "verification": {
     "title": "Vérification d'identité",

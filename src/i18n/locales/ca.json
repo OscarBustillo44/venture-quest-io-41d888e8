@@ -726,15 +726,102 @@
   },
   "mandate": {
     "title": "Accedir a la informació financera completa",
-    "description": "Per accedir als estats financers detallats (P&L, Balanç, Valoració i Gràfics), cal signar el mandat de transacció.",
-    "terms": {
-      "commission": "Comissió del 5% sobre qualsevol transacció resultant d'aquesta presentació",
-      "traceability": "Traçabilitat legal de l'operació",
-      "confidentiality": "Acord de confidencialitat sobre la informació proporcionada"
-    },
-    "acceptTerms": "Accepto els termes del mandat de transacció, incloent la comissió del 5% aplicable en cas de formalització de l'operació.",
+    "description": "Per accedir als estats financers detallats (P&L, Balanç, Valoració i Gràfics), cal signar l'acord de confidencialitat, no elusió i mandat d'intermediació.",
+    "viewContract": "Veure i signar el contracte",
     "submit": "Signar mandat i accedir",
-    "signing": "Signant..."
+    "fillAllRequired": "Completeu tots els camps obligatoris (*) i marqueu les quatre caselles per signar.",
+    "contract": {
+      "title": "Acord de confidencialitat, no elusió i mandat d'intermediació per a l'adquisició d'empreses i actius",
+      "buyerData": "Dades del comprador",
+      "fields": {
+        "fullName": "Nom i cognoms",
+        "birthDate": "Data de naixement",
+        "nationality": "Nacionalitat",
+        "docType": "Document identificatiu",
+        "passport": "Passaport",
+        "residencePermit": "Permís de residència d'Andorra",
+        "docNumber": "Número de document",
+        "address": "Adreça completa",
+        "email": "Correu electrònic",
+        "phone": "Telèfon mòbil",
+        "company": "Empresa (si escau)",
+        "position": "Càrrec",
+        "companyRegNumber": "Número de registre de societat (si escau)",
+        "investmentCapacity": "Patrimoni o capacitat estimada d'inversió",
+        "capacityLess100k": "Menys de 100.000 €",
+        "capacity100k500k": "Entre 100.000 € i 500.000 €",
+        "capacity500k1M": "Entre 500.000 € i 1.000.000 €",
+        "capacity1M5M": "Entre 1.000.000 € i 5.000.000 €",
+        "capacityMore5M": "Més de 5.000.000 €"
+      },
+      "electronicSignature": "Signatura electrònica",
+      "checks": {
+        "readFully": "He llegit íntegrament el document.",
+        "acceptClauses": "Accepto totes les clàusules del present acord.",
+        "acknowledgeHonoraires": "Reconec els honoraris d'èxit del 5% sobre el valor total de la transacció, amb un mínim de 5.000 €.",
+        "acceptElectronicSignature": "Accepto la validesa de la signatura electrònica."
+      },
+      "clauses": [
+        {
+          "title": "OBJECTE",
+          "body": "Mitjançant el present acord, BUSCOBUSINESS facilita al COMPRADOR informació confidencial relativa a empreses, negocis, participacions societàries, actius immobiliaris, operacions corporatives, inversions o oportunitats empresarials publicades a la plataforma.\nEl COMPRADOR manifesta el seu interès real en analitzar una possible adquisició o inversió."
+        },
+        {
+          "title": "INFORMACIÓ CONFIDENCIAL",
+          "body": "Tindrà la consideració d'informació confidencial tota la documentació facilitada per BUSCOBUSINESS, incloent, entre d'altres:",
+          "items": ["Identitat del venedor", "Comptes anuals", "Comptes d'explotació", "Balanços", "Facturació", "EBITDA", "Informació fiscal", "Informació financera", "Informació comercial", "Dossiers d'inversió", "Data Rooms", "Informació verbal"]
+        },
+        {
+          "title": "OBLIGACIÓ DE CONFIDENCIALITAT",
+          "body": "El COMPRADOR es compromet a:\na) Mantenir absoluta confidencialitat.\nb) No divulgar informació a tercers.\nc) Utilitzar-la exclusivament per analitzar l'operació.\nd) Custodiar adequadament la documentació rebuda.\nAquesta obligació tindrà una durada mínima de cinc (5) anys."
+        },
+        {
+          "title": "CLÀUSULA DE NO ELUSIÓ",
+          "body": "El COMPRADOR reconeix expressament que la informació i l'oportunitat de negoci han estat posades al seu coneixement per BUSCOBUSINESS.\nEn conseqüència, es compromet a no evitar, eludir, substituir o esquivar la intervenció de BUSCOBUSINESS."
+        },
+        {
+          "title": "PROHIBICIÓ DE CONTACTE DIRECTE",
+          "body": "El COMPRADOR es compromet a no contactar directament ni indirectament amb:",
+          "items": ["Propietaris", "Accionistes", "Administradors", "Directius", "Treballadors", "Clients", "Proveïdors", "Assessors"],
+          "body2": "sense autorització expressa i escrita de BUSCOBUSINESS."
+        },
+        {
+          "title": "RECONEIXEMENT D'INTERMEDIACIÓ",
+          "body": "El COMPRADOR reconeix que qualsevol operació futura derivada de la informació facilitada serà conseqüència directa de la intervenció de BUSCOBUSINESS."
+        },
+        {
+          "title": "MANDAT D'INTERMEDIACIÓ I ADQUISICIÓ",
+          "body": "El COMPRADOR nomena BUSCOBUSINESS com a intermediari exclusiu respecte de l'oportunitat concreta visualitzada.\nLa vigència d'aquest mandat serà de vint-i-quatre (24) mesos."
+        },
+        {
+          "title": "HONORARIS D'ÈXIT",
+          "body": "En cas que el COMPRADOR, directament o indirectament, realitzi qualsevol de les operacions següents:",
+          "items": ["Adquireixi l'empresa", "Adquireixi participacions socials", "Adquireixi accions", "Adquireixi actius", "Formalitzi una ampliació de capital", "Concedeixi finançament convertible", "Inverteixi en qualsevol forma"],
+          "body2": "abonarà a BUSCOBUSINESS uns honoraris professionals equivalents al 5% DEL VALOR TOTAL DE LA TRANSACCIÓ, amb un mínim de 5.000 euros."
+        },
+        {
+          "title": "OPERACIONS INDIRECTES",
+          "body": "L'obligació de pagament subsistirà encara que l'operació es formalitzi mitjançant:",
+          "items": ["Societats vinculades", "Holding", "Vehicles d'inversió", "Family Office", "Fons d'inversió", "Cònjuge", "Familiars", "Socis", "Tercers interposats"]
+        },
+        {
+          "title": "CLÀUSULA PENAL",
+          "body": "En cas d'incompliment:\na) Honoraris íntegres del 5%.\nb) Penalització addicional equivalent al 100% dels honoraris.\nc) Interessos legals.\nd) Costes judicials i advocats."
+        },
+        {
+          "title": "PROTECCIÓ DE DADES",
+          "body": "El COMPRADOR autoritza expressament BUSCOBUSINESS a tractar les seves dades personals per a la gestió de les oportunitats d'inversió i adquisició."
+        },
+        {
+          "title": "LEGISLACIÓ I JURISDICCIÓ",
+          "body": "Aquest acord es regirà íntegrament per la legislació vigent al Principat d'Andorra.\nLes parts se sotmeten expressament als Batlles i Tribunals del Principat d'Andorra."
+        },
+        {
+          "title": "SIGNATURA ELECTRÒNICA",
+          "body": "El COMPRADOR reconeix la validesa legal de la signatura electrònica realitzada a través de la plataforma BUSCOBUSINESS."
+        }
+      ]
+    }
   },
   "verification": {
     "title": "Verificació d'identitat",
