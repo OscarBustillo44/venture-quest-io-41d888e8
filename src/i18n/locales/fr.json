@@ -150,13 +150,16 @@
     "badgeBuy": "Achat",
     "badgeSell": "Vente",
     "badgeTransfer": "Transfert",
-    "badgeInvest": "Investissement"
+    "badgeInvest": "Investissement",
+    "employeesLabel": "employés"
   },
   "detail": {
     "businessNotFound": "Entreprise non trouvée",
     "backToList": "Retour à la liste",
     "salePrice": "Prix de vente",
     "businessDescription": "Description de l'entreprise",
+    "employees": "employés",
+    "transactionReason": "Motif de la transaction",
     "keyHighlights": "Points forts",
     "keyIndicators": "Indicateurs clés de l'entreprise",
     "postUnlockWarning": "Cette entreprise vous a été présentée par buscobusiness.com. Toute transaction résultant de cette présentation est soumise à une commission contractuelle et à une traçabilité légale.",
@@ -595,6 +598,7 @@
   "businesses": {
     "laborda": {
       "title": "Opportunité : Borda Restaurant unique en Andorre en activité avec marge d'amélioration",
+      "transactionReason": "Retraite",
       "description": "Restaurant Borda emblématique d'Andorre, avec cuisine traditionnelle andorrane, dans une ambiance rustique et accueillante avec cheminée. Clientèle fidèle et consolidée, et possibilité de croissance avec terrasse extérieure à exploiter.",
       "carouselDesc": "CA 300.000 € · EBITDA 75.000 € · Rentabilité 43%",
       "highlights": ["Restaurant Borda reconnu et avec histoire en Andorre", "Clientèle fidèle et consolidée", "Équipe souhaitant continuer", "Possibilité terrasse extérieure", "Emplacement privilégié", "Cuisine traditionnelle reconnue"],
@@ -614,6 +618,7 @@
     "alpine": {
       "title": "Alpine Security – Entreprise de Cybersécurité",
       "gridTitle": "Entreprise de Cybersécurité",
+      "transactionReason": "Recherche de partenaire investisseur",
       "description": "Entreprise leader en cybersécurité avec des opérations en Andorre et en Espagne. Portfolio de produits/services : 1.3M en Contrats (86% Threat Hunting, 9% Conseil et 5% Cybersécurité Offensive). Alpine a dépassé les prévisions de CA et de portefeuille clients.",
       "carouselDesc": "Entreprise de Cybersécurité (Andorre et Espagne) · CA 1,3M € · EBITDA 300k € · Rentabilité 18%",
       "highlights": ["Leader en cybersécurité en Andorre et Espagne", "50K+ endpoints protégés 24x7x365", "500+ incidents résolus avec succès", "Croissance supérieure aux prévisions", "Contrats récurrents consolidés", "Équipe technique avec 20 ans d'expérience"],
@@ -632,6 +637,7 @@
     "infinitypay": {
       "title": "InfinityPay – Entreprise de Moyens de Paiement",
       "gridTitle": "Entreprise de Moyens de Paiement",
+      "transactionReason": "Vente pour changement stratégique",
       "description": "Entreprise de moyens de paiement avec passerelle de paiements, terminaux TPE et solutions de sécurité. Avec une récurrence de 99% annuel et un parc de plus de 2000 unités TPE avec 90% des grandes entreprises du pays intégrées.",
       "carouselDesc": "Passerelle de paiements, TPEs · CA 500k € · EBITDA 200k € · Rentabilité 19%",
       "highlights": ["99% récurrence annuelle en contrats", "2000+ terminaux TPE installés", "90% des grandes entreprises intégrées", "Passerelle de paiements propre", "Solutions de sécurité avancées", "Potentiel de croissance 6x en CA"],
@@ -650,6 +656,7 @@
     },
     "confHosteleria": {
       "title": "Opportunité : Restaurant consolidé et reconnu, avec clientèle fidèle et emplacement imbattable près de l'Av. Meritxell, avec marge d'amélioration vers des rentabilités très intéressantes",
+      "transactionReason": "Retraite",
       "description": "Restaurant consolidé et reconnu, avec une clientèle fidèle et un emplacement imbattable près de l'Av. Meritxell, avec une capacité et une marge d'amélioration vers des rentabilités très intéressantes.",
       "carouselDesc": "Secteur Hôtellerie · CA 350k € · EBITDA 85k € · Rentabilité 24%",
       "highlights": ["Clientèle fidèle et consolidée", "Emplacement privilégié", "Cuisine reconnue", "Équipe stable", "Terrasse inexploitée avec un grand potentiel", "Licences à jour"],
@@ -662,30 +669,35 @@
     },
     "confCommerce": {
       "title": "Immeuble à vendre avec contrats de location en cours",
+      "transactionReason": "Désinvestissement d'actif",
       "description": "Business Real Estate : Immeuble à vendre avec contrats de location en cours. Investissement important nécessaire, avec un potentiel d'augmentation des revenus locatifs.",
       "carouselDesc": "Secteur Real Estate · CA 800k € · EBITDA 120k € · Rentabilité 15%",
       "highlights": ["Contrats de location en cours", "Potentiel d'augmentation des revenus", "Actif immobilier tangible", "Flux de trésorerie récurrents", "Potentiel de revalorisation"]
     },
     "confServices": {
       "title": "Opportunité dans une Société de Gestion Hôtelière",
+      "transactionReason": "Besoin de capital",
       "description": "Gestionnaire hôtelier avec actif et emplacement unique, ainsi qu'une équipe spécialisée et une demande croissante pour notre profil client. Grand potentiel de croissance à moyen et long terme. Besoin d'injection de capital.",
       "carouselDesc": "Secteur Services · CA 1,3 Mio € · EBITDA 62k € · Rentabilité 20%",
       "highlights": ["Portefeuille clients consolidé", "Contrats récurrents", "Équipe formée et stable", "Emplacement stratégique", "Potentiel de croissance significatif"]
     },
     "confIndustry": {
       "title": "Ind260126 Secteur Industrie - [Entreprise Confidentielle]",
+      "transactionReason": "Retraite",
       "description": "Entreprise industrielle consolidée avec machines modernes et processus automatisés. Contrats à long terme avec clients institutionnels.",
       "carouselDesc": "Secteur Industrie · CA 1,2M € · EBITDA 280k € · Rentabilité 23%",
       "highlights": ["Machines modernes", "Processus automatisés", "Clients institutionnels", "Contrats à long terme", "Entrepôt en propriété optionnel", "Certifications qualité"]
     },
     "confTechnology": {
       "title": "Entreprise Technologie, fournisseur de services Hardware et Software, ainsi que cybersécurité",
+      "transactionReason": "Recherche de partenaire stratégique",
       "description": "Nous fournissons un support intégral pour tous vos besoins IT et télécommunications : Virtualisation, Microsoft 365 Partner, Support Technique, Gestion de Réseaux, Communications d'Entreprise VoIP, Services Cloud, Cybersécurité, Conseil IT, Wifi Haute Performance, 3CX PBX Gold Partner.",
       "carouselDesc": "Secteur Technologie · CA 600k € · EBITDA 100k € · Rentabilité 27%",
       "highlights": ["Microsoft 365 Partner", "3CX PBX Gold Partner", "Virtualisation et Cloud", "Cybersécurité avancée", "VoIP et communications d'entreprise", "Support technique intégral"]
     },
     "confRestaurantCentro": {
       "title": "Opportunité : Restaurant consolidé et reconnu au centre du Pays",
+      "transactionReason": "Retraite",
       "description": "Restaurant consolidé au centre du pays avec une rentabilité opérationnelle exceptionnelle supérieure à 50%. CA supérieur à 0,5M €, EBITDA de 150k € et sans besoin d'investissement initial en capex.",
       "carouselDesc": "Secteur Hôtellerie · CA >0,5M € · EBITDA 150k € · Rentabilité >50% · Sans capex initial",
       "highlights": ["CA supérieur à 0,5M €", "Rentabilité opérationnelle exceptionnelle >50%", "EBITDA de 150k €", "Aucun investissement en capex initial requis", "Emplacement central privilégié", "Forte génération de trésorerie"],
@@ -696,6 +708,33 @@
         "takeaway": "À emporter"
       }
     }
+  },
+  "interest": {
+    "title": "Inscrivez-vous pour voir cette entreprise",
+    "description": "Pour accéder à la fiche complète de l'entreprise (prix, détails, photos), vous devez vous inscrire. Vous n'avez besoin de le faire qu'une seule fois.",
+    "name": "Nom complet",
+    "namePlaceholder": "Prénom et nom",
+    "email": "Email",
+    "emailPlaceholder": "votre@email.com",
+    "phone": "Téléphone",
+    "phonePlaceholder": "+376 / +34 600 000 000",
+    "reason": "Pourquoi êtes-vous intéressé par cette entreprise ?",
+    "reasonPlaceholder": "Expliquez brièvement votre intérêt, votre expérience dans le secteur ou votre motivation pour cette opportunité...",
+    "submit": "S'inscrire et voir l'entreprise",
+    "submitting": "Inscription en cours...",
+    "privacyNote": "Vos données seront traitées de manière confidentielle et utilisées uniquement pour gérer votre intérêt pour cette entreprise."
+  },
+  "mandate": {
+    "title": "Accéder aux informations financières complètes",
+    "description": "Pour accéder aux états financiers détaillés (P&L, Bilan, Valorisation et Graphiques), vous devez signer le mandat de transaction.",
+    "terms": {
+      "commission": "Commission de 5% sur toute transaction résultant de cette présentation",
+      "traceability": "Traçabilité légale de l'opération",
+      "confidentiality": "Accord de confidentialité sur les informations fournies"
+    },
+    "acceptTerms": "J'accepte les termes du mandat de transaction, y compris la commission de 5% applicable en cas de conclusion de l'opération.",
+    "submit": "Signer le mandat et accéder",
+    "signing": "Signature en cours..."
   },
   "verification": {
     "title": "Vérification d'identité",

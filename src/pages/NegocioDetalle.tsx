@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
@@ -18,6 +18,7 @@ import Navbar from '@/components/Navbar';
 import GatedAccessBanner from '@/components/GatedAccessBanner';
 import VerificationModal from '@/components/VerificationModal';
 import ConfidentialBlockScreen from '@/components/ConfidentialBlockScreen';
+import MandateBanner from '@/components/MandateBanner';
 import {
   businessesData,
   labordaKPIs,
@@ -91,6 +92,8 @@ const NegocioDetalle = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [isRegistered] = useState(() => localStorage.getItem('bb_registered') === 'true');
+  const [isMandateSigned, setIsMandateSigned] = useState(() => id ? localStorage.getItem(`bb_mandate_${id}`) === 'true' : false);
 
   // Check if user already verified this business
   useEffect(() => {
@@ -120,6 +123,10 @@ const NegocioDetalle = () => {
         </div>
       </div>
     );
+  }
+
+  if (!isRegistered) {
+    return <Navigate to="/comprar" replace />;
   }
 
   // Block confidential listings for non-admin users
@@ -272,7 +279,20 @@ const NegocioDetalle = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-stone-600 leading-relaxed">{t(business.descriptionKey)}</p>
-                
+
+                <div className="flex flex-wrap gap-4 mt-4 mb-6">
+                  <div className="flex items-center gap-2 text-stone-700 bg-stone-100 px-3 py-1.5 rounded-md text-sm">
+                    <Users className="w-4 h-4 text-amber-600" />
+                    <span className="font-medium">{business.employees}</span> {t('detail.employees')}
+                  </div>
+                  {business.transactionReasonKey && (
+                    <div className="flex items-center gap-2 text-stone-700 bg-stone-100 px-3 py-1.5 rounded-md text-sm">
+                      <Building2 className="w-4 h-4 text-amber-600" />
+                      <span>{t('detail.transactionReason')}:</span> <span className="font-medium">{t(business.transactionReasonKey)}</span>
+                    </div>
+                  )}
+                </div>
+
                 <h3 className="font-semibold text-stone-800 mt-6 mb-4">{t('detail.keyHighlights')}</h3>
                 <div className="grid md:grid-cols-2 gap-3">
                   {Array.isArray(highlights) && highlights.map((highlight, idx) => (
@@ -302,6 +322,17 @@ const NegocioDetalle = () => {
                 </p>
               </div>
             )}
+
+            {/* Level 3 Gate: Transaction Mandate */}
+            {!isMandateSigned && (
+              <MandateBanner
+                onMandateSigned={() => setIsMandateSigned(true)}
+                businessSlug={id || ''}
+              />
+            )}
+
+            {/* Deep Financial Data — only visible after signing mandate */}
+            {isMandateSigned && (<>
 
             {/* La Borda KPIs */}
             {business.id === 'la-borda' && (
@@ -1842,6 +1873,8 @@ const NegocioDetalle = () => {
                 </CardContent>
               </Card>
             )}
+
+            </>)}
           </div>
 
           {/* Right Column - Key Metrics & Contact */}

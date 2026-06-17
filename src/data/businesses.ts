@@ -86,6 +86,7 @@ export interface Business {
   targetRevenue?: string;
   targetEbitda?: string;
   percentForSale?: string;
+  transactionReasonKey?: string;
 }
 
 // La Borda specific data
@@ -515,6 +516,7 @@ export const businessesData: Record<string, Business> = {
     targetRevenue: '>260k €',
     targetEbitda: '>120k €',
     percentForSale: '100%',
+    transactionReasonKey: 'businesses.laborda.transactionReason',
     descriptionKey: 'businesses.laborda.description',
     highlightsKey: 'businesses.laborda.highlights',
     images: [labordaFachadaExterior, labordaFachadaExteriorVerano, labordaFachadaEntrada, labordaFachada, labordaComedorBarra, labordaComedorChimenea, labordaComedorPrivado2, labordaPlatoVedellaFoie, labordaPlatoPulpo, labordaPlatoTrinxat, labordaProducte, labordaTerrassaNoche, labordaTerrassaNoche2, labordaTerrassa, labordaCollage, labordaFacturacio],
@@ -540,6 +542,7 @@ export const businessesData: Record<string, Business> = {
     targetRevenue: '>3 Mio €',
     targetEbitda: '1,3 Mio €',
     percentForSale: '23,4%',
+    transactionReasonKey: 'businesses.alpine.transactionReason',
     descriptionKey: 'businesses.alpine.description',
     highlightsKey: 'businesses.alpine.highlights',
     images: [alpineLogo, alpineOverview, alpineRevenue, alpineEbitda, alpineClients, alpinePortfolio, alpineKpiExperience, alpineKpiMalware, alpineKpiIncidents],
@@ -565,6 +568,7 @@ export const businessesData: Record<string, Business> = {
     targetRevenue: '>500k €',
     targetEbitda: '>250k €',
     percentForSale: '100%',
+    transactionReasonKey: 'businesses.infinitypay.transactionReason',
     descriptionKey: 'businesses.infinitypay.description',
     highlightsKey: 'businesses.infinitypay.highlights',
     images: [infinitypayServeis, infinitypayPresencials, infinitypaySeguretat, infinitypayContacte, infinitypayOnline, infinitypayAdreca],
@@ -588,6 +592,7 @@ export const businessesData: Record<string, Business> = {
     targetRevenue: '>878k €',
     targetEbitda: '>237k €',
     percentForSale: '100%',
+    transactionReasonKey: 'businesses.confHosteleria.transactionReason',
     isConfidential: true,
     descriptionKey: 'businesses.confHosteleria.description',
     highlightsKey: 'businesses.confHosteleria.highlights',
@@ -614,6 +619,7 @@ export const businessesData: Record<string, Business> = {
     targetRevenue: '>250k €',
     targetEbitda: '>150k €',
     percentForSale: '100%',
+    transactionReasonKey: 'businesses.confCommerce.transactionReason',
     isConfidential: false,
     descriptionKey: 'businesses.confCommerce.description',
     highlightsKey: 'businesses.confCommerce.highlights',
@@ -640,6 +646,7 @@ export const businessesData: Record<string, Business> = {
     targetRevenue: '>2 Mio €',
     targetEbitda: '>200k €',
     percentForSale: '100%',
+    transactionReasonKey: 'businesses.confServices.transactionReason',
     isConfidential: true,
     descriptionKey: 'businesses.confServices.description',
     highlightsKey: 'businesses.confServices.highlights',
@@ -667,6 +674,7 @@ export const businessesData: Record<string, Business> = {
     targetRevenue: '>2 Mio €',
     targetEbitda: '500k €',
     percentForSale: '100%',
+    transactionReasonKey: 'businesses.confIndustry.transactionReason',
     isConfidential: true,
     descriptionKey: 'businesses.confIndustry.description',
     highlightsKey: 'businesses.confIndustry.highlights',
@@ -693,6 +701,7 @@ export const businessesData: Record<string, Business> = {
     targetRevenue: '>1,5 Mio €',
     targetEbitda: '500k €',
     percentForSale: '75%',
+    transactionReasonKey: 'businesses.confTechnology.transactionReason',
     isConfidential: true,
     descriptionKey: 'businesses.confTechnology.description',
     highlightsKey: 'businesses.confTechnology.highlights',
@@ -719,6 +728,7 @@ export const businessesData: Record<string, Business> = {
     yearsOperating: '14',
     targetRevenue: '>900k €',
     targetEbitda: '>260k €',
+    transactionReasonKey: 'businesses.confRestaurantCentro.transactionReason',
     isConfidential: false,
     descriptionKey: 'businesses.confRestaurantCentro.description',
     highlightsKey: 'businesses.confRestaurantCentro.highlights',

@@ -150,13 +150,16 @@
     "badgeBuy": "Purchase",
     "badgeSell": "Sale",
     "badgeTransfer": "Transfer",
-    "badgeInvest": "Investment"
+    "badgeInvest": "Investment",
+    "employeesLabel": "employees"
   },
   "detail": {
     "businessNotFound": "Business not found",
     "backToList": "Back to list",
     "salePrice": "Sale price",
     "businessDescription": "Business description",
+    "employees": "employees",
+    "transactionReason": "Transaction reason",
     "keyHighlights": "Key highlights",
     "keyIndicators": "Key Business Indicators",
     "postUnlockWarning": "This business has been introduced to you through buscobusiness.com. Any transaction resulting from this introduction is subject to contractual commission and legal traceability.",
@@ -595,6 +598,7 @@
   "businesses": {
     "laborda": {
       "title": "Opportunity: Unique Borda Restaurant in Andorra, operating with room for improvement",
+      "transactionReason": "Retirement",
       "description": "Emblematic Borda restaurant in Andorra, with traditional Andorran cuisine, in a rustic and cozy atmosphere with fireplace. Loyal and consolidated clientele, with growth potential from an unexploited outdoor terrace.",
       "carouselDesc": "Revenue €300,000 · EBITDA €75,000 · Profitability 43%",
       "highlights": ["Renowned Borda Restaurant with history in Andorra", "Loyal and consolidated clientele", "Team wishing to continue", "Outdoor terrace possibility", "Privileged location", "Recognized traditional cuisine"],
@@ -614,6 +618,7 @@
     "alpine": {
       "title": "Alpine Security – Cybersecurity Company",
       "gridTitle": "Cybersecurity Company",
+      "transactionReason": "Seeking investment partner",
       "description": "Leading cybersecurity company with operations in Andorra and Spain. Product/service portfolio: 1.3M in Contracts (86% Threat Hunting, 9% Consulting and 5% Offensive Cybersecurity). Alpine has exceeded revenue and client portfolio forecasts.",
       "carouselDesc": "Cybersecurity Company (Andorra and Spain) · Revenue €1.3M · EBITDA €300k · Profitability 18%",
       "highlights": ["Leader in cybersecurity in Andorra and Spain", "50K+ endpoints protected 24x7x365", "500+ incidents successfully resolved", "Growth exceeding forecasts", "Consolidated recurring contracts", "Technical team with 20 years of experience"],
@@ -632,6 +637,7 @@
     "infinitypay": {
       "title": "InfinityPay – Payment Solutions Company",
       "gridTitle": "Payment Solutions Company",
+      "transactionReason": "Strategic change sale",
       "description": "Payment solutions company with payment gateway, POS terminals and security solutions. With 99% annual recurrence and a fleet of over 2000 POS units with 90% of the country's large companies integrated.",
       "carouselDesc": "Payment gateway, POS terminals · Revenue €500k · EBITDA €200k · Profitability 19%",
       "highlights": ["99% annual contract recurrence", "2000+ POS terminals installed", "90% of large companies integrated", "Own payment gateway", "Advanced security solutions", "6x growth potential in revenue"],
@@ -650,6 +656,7 @@
     },
     "confHosteleria": {
       "title": "Opportunity: Consolidated and recognized restaurant with loyal clientele and unbeatable location near Av. Meritxell, with room for improvement towards very attractive profitability",
+      "transactionReason": "Retirement",
       "description": "Consolidated and well-recognized restaurant with loyal clientele and unbeatable location near Av. Meritxell, with capacity and room for improvement towards very attractive profitability levels.",
       "carouselDesc": "Hospitality Sector · Revenue €350k · EBITDA €85k · Profitability 24%",
       "highlights": ["Loyal and consolidated clientele", "Privileged location", "Recognized cuisine", "Stable team", "Unexploited terrace with great potential", "Licenses up to date"],
@@ -662,30 +669,35 @@
     },
     "confCommerce": {
       "title": "Building for sale with active rental contracts",
+      "transactionReason": "Asset divestment",
       "description": "Real Estate Business: Building for sale with active rental contracts. Significant investment required, with corresponding potential for rental income growth.",
       "carouselDesc": "Real Estate Sector · Revenue €800k · EBITDA €120k · Profitability 15%",
       "highlights": ["Active rental contracts", "Potential for income growth", "Tangible real estate asset", "Recurring cash flows", "Appreciation potential"]
     },
     "confServices": {
       "title": "Opportunity in a Hotel Management Company",
+      "transactionReason": "Capital injection needed",
       "description": "Hotel Manager with unique asset and location, as well as a specialized team and growing demand for our client profile. Great potential for medium and long-term growth. Need for capital injection.",
       "carouselDesc": "Services Sector · Revenue €1.3M · EBITDA €62k · Profitability 20%",
       "highlights": ["Consolidated client portfolio", "Recurring contracts", "Trained and stable team", "Strategic location", "Significant growth potential"]
     },
     "confIndustry": {
       "title": "Ind260126 Industry Sector - [Confidential Business]",
+      "transactionReason": "Retirement",
       "description": "Consolidated industrial company with modern machinery and automated processes. Long-term contracts with institutional clients.",
       "carouselDesc": "Industry Sector · Revenue €1.2M · EBITDA €280k · Profitability 23%",
       "highlights": ["Modern machinery", "Automated processes", "Institutional clients", "Long-term contracts", "Optional owned warehouse", "Quality certifications"]
     },
     "confTechnology": {
       "title": "Technology Company, provider of Hardware and Software services, as well as cybersecurity",
+      "transactionReason": "Seeking strategic partner",
       "description": "We provide comprehensive support for all your IT and telecommunications needs: Virtualization, Microsoft 365 Partner, Technical Support, Network Management, Business VoIP Communications, Cloud Services, Cybersecurity, IT Consulting, High-Performance Wifi, 3CX PBX Gold Partner.",
       "carouselDesc": "Technology Sector · Revenue €600k · EBITDA €100k · Profitability 27%",
       "highlights": ["Microsoft 365 Partner", "3CX PBX Gold Partner", "Virtualization and Cloud", "Advanced cybersecurity", "VoIP and business communications", "Comprehensive technical support"]
     },
     "confRestaurantCentro": {
       "title": "Opportunity: Consolidated and recognized restaurant in the center of the country",
+      "transactionReason": "Retirement",
       "description": "Consolidated restaurant in the center of the country with exceptional operating profitability above 50%. Revenue exceeding €0.5M, EBITDA of €150k and no initial capex investment required.",
       "carouselDesc": "Hospitality Sector · Revenue >€0.5M · EBITDA €150k · Profitability >50% · No initial capex",
       "highlights": ["Revenue exceeding €0.5M", "Exceptional operating profitability >50%", "EBITDA of €150k", "No initial capex investment required", "Privileged central location", "High cash generation"],
@@ -696,6 +708,33 @@
         "takeaway": "Takeaway"
       }
     }
+  },
+  "interest": {
+    "title": "Register to view this business",
+    "description": "To access the full business listing (price, details, photos), you need to register. You only need to do this once.",
+    "name": "Full name",
+    "namePlaceholder": "First and last name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone",
+    "phonePlaceholder": "+376 / +34 600 000 000",
+    "reason": "Why are you interested in this business?",
+    "reasonPlaceholder": "Briefly explain your interest, sector experience, or motivation for this opportunity...",
+    "submit": "Register and view business",
+    "submitting": "Registering...",
+    "privacyNote": "Your data will be treated confidentially and used only to manage your interest in this business."
+  },
+  "mandate": {
+    "title": "Access complete financial information",
+    "description": "To access detailed financial statements (P&L, Balance Sheet, Valuation and Charts), you must sign the transaction mandate.",
+    "terms": {
+      "commission": "5% commission on any transaction resulting from this introduction",
+      "traceability": "Legal traceability of the operation",
+      "confidentiality": "Confidentiality agreement on the information provided"
+    },
+    "acceptTerms": "I accept the transaction mandate terms, including the 5% commission applicable if the transaction is completed.",
+    "submit": "Sign mandate and access",
+    "signing": "Signing..."
   },
   "verification": {
     "title": "Identity verification",

@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Search, Filter, Building2, TrendingUp, Users, CheckCircle, X, ArrowUpDown, Lock, Target, Calendar, AlertTriangle, Eye } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -14,7 +14,8 @@ import { Badge } from "@/components/ui/badge";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PublishBusinessCard from "@/components/PublishBusinessCard";
-import { Link } from "react-router-dom";
+import InterestRegistrationModal from "@/components/InterestRegistrationModal";
+import { Link, useNavigate } from "react-router-dom";
 import { buildFindBusinessMailtoHref } from "@/lib/contact";
 
 import { carouselSlides, businessesData } from '@/data/businesses';
@@ -53,7 +54,12 @@ const createBusinessData = () => [
     price: 75000,
     priceDisplay: "75.000 €",
     profitability: 33,
-    financialDisplayKey: "buy.labordaFinancial",
+    revenue: '217.760 €',
+    ebitda: '83.449 €',
+    targetRevenue: '>260k €',
+    targetEbitda: '>120k €',
+    employees: '2',
+    transactionReasonKey: 'businesses.laborda.transactionReason',
     publishedDate: new Date('2024-12-01'),
     isConfidential: false,
     operationType: 'traspasar' as OperationType,
@@ -73,7 +79,12 @@ const createBusinessData = () => [
     price: 2400000,
     priceDisplay: "2,3 Mio €",
     profitability: 18,
-    financialDisplayKey: "buy.alpineFinancial",
+    revenue: '1.300.000 €',
+    ebitda: '300.000 €',
+    targetRevenue: '>3 Mio €',
+    targetEbitda: '1,3 Mio €',
+    employees: '15',
+    transactionReasonKey: 'businesses.alpine.transactionReason',
     publishedDate: new Date('2025-01-10'),
     isConfidential: true,
     operationType: 'participar' as OperationType,
@@ -93,7 +104,12 @@ const createBusinessData = () => [
     price: 1084964,
     priceDisplay: "1,1 Mio €",
     profitability: 52,
-    financialDisplayKey: "buy.infinitypayFinancial",
+    revenue: '310.000 €',
+    ebitda: '160.000 €',
+    targetRevenue: '>500k €',
+    targetEbitda: '>250k €',
+    employees: '12',
+    transactionReasonKey: 'businesses.infinitypay.transactionReason',
     publishedDate: new Date('2025-01-15'),
     isConfidential: true,
     operationType: 'vender' as OperationType,
@@ -112,7 +128,12 @@ const createBusinessData = () => [
     price: 180000,
     priceDisplay: "180.000 €",
     profitability: 24,
-    financialDisplayKey: "buy.confHostFinancial",
+    revenue: '599.400 €',
+    ebitda: '121.772 €',
+    targetRevenue: '>878k €',
+    targetEbitda: '>237k €',
+    employees: '6',
+    transactionReasonKey: 'businesses.confHosteleria.transactionReason',
     publishedDate: new Date('2025-01-20'),
     isConfidential: true,
     operationType: 'traspasar' as OperationType,
@@ -131,7 +152,12 @@ const createBusinessData = () => [
     price: 475000,
     priceDisplay: "475.000 €",
     profitability: 6,
-    financialDisplayKey: "buy.confComFinancial",
+    revenue: '110k €',
+    ebitda: '35k €',
+    targetRevenue: '>250k €',
+    targetEbitda: '>150k €',
+    employees: '-',
+    transactionReasonKey: 'businesses.confCommerce.transactionReason',
     publishedDate: new Date('2025-01-22'),
     isConfidential: true,
     operationType: 'vender' as OperationType,
@@ -150,7 +176,12 @@ const createBusinessData = () => [
     price: 500000,
     priceDisplay: "0,5 Mio €",
     profitability: 20,
-    financialDisplayKey: "buy.confServFinancial",
+    revenue: '1,3 Mio €',
+    ebitda: '62k €',
+    targetRevenue: '>2 Mio €',
+    targetEbitda: '>200k €',
+    employees: '23',
+    transactionReasonKey: 'businesses.confServices.transactionReason',
     publishedDate: new Date('2025-01-23'),
     isConfidential: true,
     operationType: 'vender' as OperationType,
@@ -169,6 +200,12 @@ const createBusinessData = () => [
     price: 750000,
     priceDisplay: "750.000 €",
     profitability: 23,
+    revenue: '1.200.000 €',
+    ebitda: '280.000 €',
+    targetRevenue: '>2 Mio €',
+    targetEbitda: '500k €',
+    employees: '18',
+    transactionReasonKey: 'businesses.confIndustry.transactionReason',
     publishedDate: new Date('2025-01-24'),
     isConfidential: true,
     operationType: 'participar' as OperationType,
@@ -187,6 +224,12 @@ const createBusinessData = () => [
     price: 514788,
     priceDisplay: "514.788 €",
     profitability: 27,
+    revenue: '600.000 €',
+    ebitda: '100.000 €',
+    targetRevenue: '>1,5 Mio €',
+    targetEbitda: '500k €',
+    employees: '4',
+    transactionReasonKey: 'businesses.confTechnology.transactionReason',
     publishedDate: new Date('2025-01-26'),
     isConfidential: true,
     operationType: 'participar' as OperationType,
@@ -205,7 +248,12 @@ const createBusinessData = () => [
     price: 180000,
     priceDisplay: "180.000 €",
     profitability: 50,
-    financialDisplayKey: "buy.restCentroFinancial",
+    revenue: '599k €',
+    ebitda: '122k €',
+    targetRevenue: '>900k €',
+    targetEbitda: '>260k €',
+    employees: '6',
+    transactionReasonKey: 'businesses.confRestaurantCentro.transactionReason',
     publishedDate: new Date('2025-02-09'),
     isConfidential: false,
     operationType: 'vender' as OperationType,
@@ -220,7 +268,29 @@ const createBusinessData = () => [
 
 const ComprarNegocio = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
+  const [interestModalOpen, setInterestModalOpen] = useState(false);
+  const [selectedBusinessForInterest, setSelectedBusinessForInterest] = useState<{ id: string; titleKey: string } | null>(null);
+
+  const isUserRegistered = useCallback(() => {
+    return localStorage.getItem('bb_registered') === 'true';
+  }, []);
+
+  const handleCardClick = useCallback((e: React.MouseEvent, business: { id: string; titleKey: string }) => {
+    if (isUserRegistered()) {
+      return; // Let the Link navigate normally
+    }
+    e.preventDefault();
+    setSelectedBusinessForInterest(business);
+    setInterestModalOpen(true);
+  }, [isUserRegistered]);
+
+  const handleRegistered = useCallback(() => {
+    if (selectedBusinessForInterest) {
+      navigate(`/negocio/${selectedBusinessForInterest.id}`);
+    }
+  }, [selectedBusinessForInterest, navigate]);
   const [selectedSector, setSelectedSector] = useState<string>("all");
   const [selectedLocation, setSelectedLocation] = useState<string>("all");
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>("all");
@@ -540,7 +610,7 @@ const ComprarNegocio = () => {
               )}
               
               {filteredAndSortedBusinesses.map((business) => (
-                <Link to={`/negocio/${business.id}`} key={business.id} className="flex">
+                <Link to={`/negocio/${business.id}`} key={business.id} className="flex" onClick={(e) => handleCardClick(e, business)}>
                   <div className="rounded-xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card flex flex-col h-full">
                     {/* Image Section */}
                     <div className="relative h-[180px] overflow-hidden bg-stone-800">
@@ -568,9 +638,9 @@ const ComprarNegocio = () => {
                         </div>
                       </div>
                       
-                      {/* Price Badge */}
-                      <div className="absolute top-3 right-3 bg-amber-600 text-white px-3 py-1 rounded-md text-sm font-semibold shadow-lg z-10">
-                        {business.priceDisplay}
+                      {/* Operation Type Badge */}
+                      <div className="absolute top-3 right-3 bg-amber-600 text-white px-2 py-1 rounded-md text-xs font-medium shadow-lg z-10">
+                        {t(operationBadgeConfig[business.operationType].labelKey)}
                       </div>
 
                       {/* Lock indicator */}
@@ -593,6 +663,16 @@ const ComprarNegocio = () => {
                         <p className="text-[11px] text-muted-foreground leading-snug">
                           {t(business.miniDescKey)}
                         </p>
+                        <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-[10px] text-muted-foreground mt-1">
+                          <span className="flex items-center gap-1">
+                            <Users className="w-3 h-3 text-amber-600" />
+                            {business.employees} {t('buy.employeesLabel')}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Building2 className="w-3 h-3 text-amber-600" />
+                            {t(business.transactionReasonKey)}
+                          </span>
+                        </div>
                         <ul className="text-[10px] text-muted-foreground space-y-0.5">
                           {(t(business.miniHighlightsKey, { returnObjects: true }) as string[]).map((h: string, i: number) => (
                             <li key={i} className="flex items-start gap-1">
@@ -604,25 +684,38 @@ const ComprarNegocio = () => {
                       </div>
                     </div>
                     
-                    {/* Financial Info - Orange Background */}
+                    {/* Financial Info - Structured Grid */}
                     <div className="bg-amber-600 text-white p-3 mt-auto">
-                      <p className="text-xs leading-relaxed">
-                        {business.financialDisplayKey ? t(business.financialDisplayKey) : t('buy.defaultFinancialTemplate', { price: business.priceDisplay, ebitda: Math.round(business.price * 0.25).toLocaleString('es-ES'), profitability: business.profitability })}
-                      </p>
-                      <div className="flex items-center justify-between mt-2">
-                        {/* Operation Type Badge */}
-                        <div className={`inline-block px-2 py-0.5 rounded text-xs font-medium bg-white/20`}>
-                          {t(operationBadgeConfig[business.operationType].labelKey)}
+                      <div className="grid grid-cols-2 gap-x-3 gap-y-1.5">
+                        <div>
+                          <span className="text-[10px] text-white/70 uppercase tracking-wide">{t('buy.financialLabels.revenue')}</span>
+                          <p className="text-sm font-semibold">{business.revenue}</p>
                         </div>
-                        {/* Last visit date */}
+                        <div>
+                          <span className="text-[10px] text-white/70 uppercase tracking-wide">EBITDA</span>
+                          <p className="text-sm font-semibold">{business.ebitda}</p>
+                        </div>
+                        <div>
+                          <span className="text-[10px] text-white/70 uppercase tracking-wide flex items-center gap-0.5"><Target className="w-2.5 h-2.5" />{t('buy.financialLabels.targetRevenue')}</span>
+                          <p className="text-sm font-semibold">{business.targetRevenue}</p>
+                        </div>
+                        <div>
+                          <span className="text-[10px] text-white/70 uppercase tracking-wide flex items-center gap-0.5"><Target className="w-2.5 h-2.5" />{t('buy.financialLabels.targetEbitda')}</span>
+                          <p className="text-sm font-semibold">{business.targetEbitda}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between mt-2 pt-2 border-t border-white/20">
+                        <div className="flex items-center gap-1 text-white/80 text-[10px]">
+                          <Users className="w-3 h-3" />
+                          {business.employees} {t('buy.employeesLabel')}
+                        </div>
                         <div className="flex items-center gap-1 text-white/80 text-[10px]">
                           <Calendar className="w-3 h-3" />
                           {business.lastVisitDate?.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })}
                         </div>
-                        {/* Visit counter */}
                         <div className="flex items-center gap-1 text-white/80 text-[10px]">
                           <Eye className="w-3 h-3" />
-                          {business.visits} VISITES
+                          {business.visits}
                         </div>
                       </div>
                     </div>
@@ -673,6 +766,14 @@ const ComprarNegocio = () => {
       </section>
 
       <Footer />
+
+      <InterestRegistrationModal
+        open={interestModalOpen}
+        onOpenChange={setInterestModalOpen}
+        onRegistered={handleRegistered}
+        businessSlug={selectedBusinessForInterest?.id || ''}
+        businessTitle={selectedBusinessForInterest ? t(selectedBusinessForInterest.titleKey) : ''}
+      />
     </div>
   );
 };

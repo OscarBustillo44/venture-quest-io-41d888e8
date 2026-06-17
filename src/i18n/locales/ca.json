@@ -150,13 +150,16 @@
     "badgeBuy": "Compra",
     "badgeSell": "Venda",
     "badgeTransfer": "Traspàs",
-    "badgeInvest": "Inversió"
+    "badgeInvest": "Inversió",
+    "employeesLabel": "empleats"
   },
   "detail": {
     "businessNotFound": "Negoci no trobat",
     "backToList": "Tornar a la llista",
     "salePrice": "Preu de venda",
     "businessDescription": "Descripció del negoci",
+    "employees": "empleats",
+    "transactionReason": "Motiu de la transacció",
     "keyHighlights": "Punts destacats",
     "keyIndicators": "Indicadors Clau del Negoci",
     "postUnlockWarning": "Aquest negoci li ha estat presentat a través de buscobusiness.com. Qualsevol transacció resultant d'aquesta presentació està subjecta a comissió contractual i traçabilitat legal.",
@@ -595,6 +598,7 @@
   "businesses": {
     "laborda": {
       "title": "Oportunitat: Borda Restaurant única a Andorra en funcionament amb recorregut de millora",
+      "transactionReason": "Jubilació",
       "description": "Restaurant Borda emblemàtic d'Andorra, amb cuina tradicional andorrana, en ambient rústic i acollidor amb xemeneia. Clientela fidel i consolidada, i possibilitat de creixement amb terrassa exterior pendent d'explotar.",
       "carouselDesc": "Facturació 300.000 € · EBITDA 75.000 € · Rendibilitat 43%",
       "highlights": ["Restaurant Borda reconegut i amb història a Andorra", "Clientela fidel i consolidada", "Equip que desitja continuar", "Possibilitat terrassa exterior", "Ubicació privilegiada", "Cuina tradicional reconeguda"],
@@ -614,6 +618,7 @@
     "alpine": {
       "title": "Alpine Security – Empresa de Ciberseguretat",
       "gridTitle": "Empresa de Ciberseguretat",
+      "transactionReason": "Cerca de soci inversor",
       "description": "Empresa líder en ciberseguretat amb operacions a Andorra i Espanya. Portfolio de productes/serveis: 1.3Mio en Contractes (86% Threat Hunting, 9% Consultoria i 5% Ciberseguretat Ofensiva). Alpine ha superat les previsions de facturació i cartera de clients.",
       "carouselDesc": "Empresa de Ciberseguretat (Andorra i Espanya) · Facturació 1,3M € · EBITDA 300k € · Rendibilitat 18%",
       "highlights": ["Líder en ciberseguretat a Andorra i Espanya", "50K+ endpoints protegits 24x7x365", "500+ incidents resolts satisfactòriament", "Creixement superior a previsions", "Contractes recurrents consolidats", "Equip tècnic amb 20 anys experiència"],
@@ -632,6 +637,7 @@
     "infinitypay": {
       "title": "InfinityPay – Empresa de Mitjans de Pagament",
       "gridTitle": "Empresa de Mitjans de Pagament",
+      "transactionReason": "Venda per canvi estratègic",
       "description": "Empresa de mitjans de pagament amb passarel·la de pagaments, terminals TPV i solucions de seguretat. Amb una recurrència del 99% anual i un parc de més de 2000 unitats TPV amb el 90% de les grans empreses del país integrades.",
       "carouselDesc": "Passarel·la de pagaments, TPVs · Facturació 500k € · EBITDA 200k € · Rendibilitat 19%",
       "highlights": ["99% recurrència anual en contractes", "2000+ terminals TPV instal·lats", "90% de grans empreses integrades", "Passarel·la de pagaments pròpia", "Solucions de seguretat avançades", "Potencial de creixement 6x en facturació"],
@@ -650,6 +656,7 @@
     },
     "confHosteleria": {
       "title": "Oportunitat: Restaurant consolidat i reconegut, amb clientela fidel i ubicació immillorable a prop de l'Av. Meritxell, i amb recorregut de millora fins a rendibilitats molt interessants",
+      "transactionReason": "Jubilació",
       "description": "Restaurant consolidat i reconegut, amb clientela fidel i ubicació immillorable a prop de l'Av. Meritxell, i amb capacitat i recorregut de millora fins a rendibilitats molt interessants.",
       "carouselDesc": "Sector Hostaleria · Facturació 350k € · EBITDA 85k € · Rendibilitat 24%",
       "highlights": ["Clientela fidel i consolidada", "Ubicació privilegiada", "Cuina reconeguda", "Equip estable", "Terrassa fins ara no explotada amb grans possibilitats", "Llicències al dia"],
@@ -662,30 +669,35 @@
     },
     "confCommerce": {
       "title": "Edifici en venda amb contractes vigents de lloguer",
+      "transactionReason": "Desinversió d'actiu",
       "description": "Negoci Real Estate: Edifici en venda amb contractes vigents de lloguer. Cal inversió important, amb el seu pertinent recorregut en increment d'ingressos per lloguer.",
       "carouselDesc": "Sector Real Estate · Facturació 800k € · EBITDA 120k € · Rendibilitat 15%",
       "highlights": ["Contractes de lloguer vigents", "Recorregut en increment d'ingressos", "Actiu immobiliari tangible", "Fluxos de caixa recurrents", "Potencial de revaloració"]
     },
     "confServices": {
       "title": "Oportunitat en una Gestora Hotelera",
+      "transactionReason": "Necessitat de capital",
       "description": "Gestor Hoteler amb actiu i ubicació única, així com un equip especialitzat i amb una demanda creixent pel nostre perfil de client. Molt potencial a mig i llarg termini de creixement. Necessitat d'injecció de Capital.",
       "carouselDesc": "Sector Serveis · Facturació 1,3 Mio € · EBITDA 62k € · Rendibilitat 20%",
       "highlights": ["Cartera de clients consolidada", "Contractes recurrents", "Equip format i estable", "Ubicació estratègica", "Potencial de creixement significatiu"]
     },
     "confIndustry": {
       "title": "Ind260126 Sector Indústria - [Negoci Confidencial]",
+      "transactionReason": "Jubilació",
       "description": "Empresa industrial consolidada amb maquinària moderna i processos automatitzats. Contractes a llarg termini amb clients institucionals.",
       "carouselDesc": "Sector Indústria · Facturació 1,2M € · EBITDA 280k € · Rendibilitat 23%",
       "highlights": ["Maquinària moderna", "Processos automatitzats", "Clients institucionals", "Contractes a llarg termini", "Nau en propietat opcional", "Certificacions de qualitat"]
     },
     "confTechnology": {
       "title": "Empresa Tecnologia, proveïdora de serveis de Hardware i Software, així com ciberseguretat",
+      "transactionReason": "Cerca de soci estratègic",
       "description": "Proporcionem suport integral per a totes les vostres necessitats de TI i telecomunicacions: Virtualització, Microsoft 365 Partner, Suport Tècnic, Gestió de Xarxes, Comunicacions Empresarials VoIP, Serveis al Núvol, Ciberseguretat, Consultoria de TI, Wifi d'Alt Rendiment, 3CX PBX Gold Partner.",
       "carouselDesc": "Sector Tecnologia · Facturació 600k € · EBITDA 100k € · Rendibilitat 27%",
       "highlights": ["Microsoft 365 Partner", "3CX PBX Gold Partner", "Virtualització i Cloud", "Ciberseguretat avançada", "VoIP i comunicacions empresarials", "Suport tècnic integral"]
     },
     "confRestaurantCentro": {
       "title": "Oportunitat: Restaurant consolidat i reconegut al centre del País",
+      "transactionReason": "Jubilació",
       "description": "Restaurant consolidat al centre del país amb rendibilitat operativa excepcional superior al 50%. Facturació superior a 0,5M €, EBITDA de 150k € i sense necessitat d'inversió inicial en capex.",
       "carouselDesc": "Sector Hostaleria · Facturació >0,5M € · EBITDA 150k € · Rendibilitat >50% · Sense capex inicial",
       "highlights": ["Facturació superior a 0,5M €", "Rendibilitat operativa excepcional >50%", "EBITDA de 150k €", "No requereix inversió en capex d'inici", "Ubicació cèntrica privilegiada", "Alta generació de caixa"],
@@ -696,6 +708,33 @@
         "takeaway": "Per emportar"
       }
     }
+  },
+  "interest": {
+    "title": "Registra't per veure aquest negoci",
+    "description": "Per accedir a la fitxa completa del negoci (preu, detalls, fotos), necessitem que et registris. Només cal fer-ho un cop.",
+    "name": "Nom complet",
+    "namePlaceholder": "Nom i cognoms",
+    "email": "Correu electrònic",
+    "emailPlaceholder": "el_teu@email.com",
+    "phone": "Telèfon",
+    "phonePlaceholder": "+376 / +34 600 000 000",
+    "reason": "Per què t'interessa aquest negoci?",
+    "reasonPlaceholder": "Explica breument el teu interès, experiència en el sector o motivació per aquesta oportunitat...",
+    "submit": "Registrar-me i veure el negoci",
+    "submitting": "Registrant...",
+    "privacyNote": "Les teves dades es tractaran de forma confidencial i només s'utilitzaran per gestionar el teu interès en aquest negoci."
+  },
+  "mandate": {
+    "title": "Accedir a la informació financera completa",
+    "description": "Per accedir als estats financers detallats (P&L, Balanç, Valoració i Gràfics), cal signar el mandat de transacció.",
+    "terms": {
+      "commission": "Comissió del 5% sobre qualsevol transacció resultant d'aquesta presentació",
+      "traceability": "Traçabilitat legal de l'operació",
+      "confidentiality": "Acord de confidencialitat sobre la informació proporcionada"
+    },
+    "acceptTerms": "Accepto els termes del mandat de transacció, incloent la comissió del 5% aplicable en cas de formalització de l'operació.",
+    "submit": "Signar mandat i accedir",
+    "signing": "Signant..."
   },
   "verification": {
     "title": "Verificació d'identitat",
